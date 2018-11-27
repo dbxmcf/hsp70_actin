@@ -45,6 +45,7 @@ class JaccardCoefficient:
 
         fNo = 0
         #Add code for normalization later
+        print('lines:',len(lines))
         for i in lines:
             fNo = fNo+1 
             normal = []

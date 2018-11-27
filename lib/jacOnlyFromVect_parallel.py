@@ -109,7 +109,9 @@ class JaccardCoefficient:
         #                 backend="multiprocessing", batch_size="auto")(\
         #                 delayed(unwrap_self)(i, lines) for i in lines)
         #file, normal_all, generalised_all, sarika_all, wu_all, cosine_all
-        results   = Parallel(n_jobs=cpu_count() - 1, verbose=10, \
+        #results   = Parallel(n_jobs=cpu_count() - 1, verbose=10, \
+        #                backend="multiprocessing", batch_size="auto")(delayed(unwrap_self)(i) for i in zip([self]*len(lines),lines))
+        results   = Parallel(n_jobs=9, verbose=10, \
                         backend="multiprocessing", batch_size="auto")(delayed(unwrap_self)(i) for i in zip([self]*len(lines),lines))
 
 

@@ -92,6 +92,7 @@ def run_classification_pipeline(**kwargs):
 
 	# JaccardCoefficient
 	print('--------------------------Start Jaccard-----------------------------------------')
+	print('fileslist:', filesList)
 	jaccard = JaccardCoefficient(outFolder = outFolder, setting = setting, filesList = filesList, normalize=kwargs['normalize'],sample_dict = df_dict)
 	jaccard.calculate_jaccard()
 	print('--------------------------End Jaccard-------------------------------------------')
@@ -108,10 +109,12 @@ if __name__ == '__main__':
 	args = parser.parse_args()
 	if socket.gethostname().startswith('qb'):
 		#path = '//work//wxx6941//TSR//Protein_Database//'
-		path = '//work//fchen14//user_errs//wxx6941//TSR//Protein_Database//'
+		#path = '//work//fchen14//user_errs//wxx6941//TSR//Protein_Database//'
+		path = os.path.dirname(os.path.realpath(__file__)) + '/'
 	else:
 		path = '/home/linc/c00219805/Research/Protien_Database/'
-	subFolder= '//extracted_samples/testing/'+args.sample_name+'//'
+	#subFolder= '//extracted_samples/testing/'+args.sample_name+'//'
+	subFolder= args.sample_name+'/'
 	sampleDetailsFile = path+subFolder+'sample_details.csv'
 	thetaBounds = list(map(float, args.thetaBounds.split(',')))
 	distBounds =list(map(float, args.distBounds.split(',')))
