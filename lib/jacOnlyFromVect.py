@@ -104,7 +104,7 @@ class JaccardCoefficient:
             wu_all.append(wu)
             cosine_all.append(cosine) 
             
-            
+        print('sarika_all_len:',len(sarika_all)
 
         end_time=time.time()
         total_time=((end_time)-(start_time))

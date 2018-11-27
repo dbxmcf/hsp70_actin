@@ -35,7 +35,8 @@ class JaccardCoefficient:
 
         self.lines = self.files.readlines()
         self.lines = array(self.lines)
-        #print type(self.lines), type(array(self.lines))
+        print type(self.lines), type(array(self.lines))
+        print("self.lines.shape:",self.lines.shape)
         self.files.close()
         self.fileNames = []
 
@@ -122,6 +123,8 @@ class JaccardCoefficient:
         sarika_all = [x[3] for x in results]
         wu_all = [x[4] for x in results]
         cosine_all = [x[5] for x in results]
+
+        print('sarika_all_len:',len(sarika_all))
             
         end_time=time.time()
         total_time=((end_time)-(start_time))
