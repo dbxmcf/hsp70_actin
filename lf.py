@@ -15,8 +15,17 @@ f = "sample_hsp70_actin/theta29_dist35/localFeatureVect_theta29_dist35_NoFeature
 #f = "test.csv"
 
 #lines = np.loadtxt(f,usecols=(1,))
+start_time=time.time()
 s = open(f).read().replace(';',',')
+end_time=time.time()
+total_time=((end_time)-(start_time))
+print("Time taken for reading files: {}".format(total_time))
+
+start_time=time.time()
 data = np.genfromtxt(StringIO.StringIO(s),delimiter=",")[:,1:-1]
+end_time=time.time()
+total_time=((end_time)-(start_time))
+print("Time taken for genfromtxt: {}".format(total_time))
 
 start_time=time.time()
 #print(data)
