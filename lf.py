@@ -2,7 +2,7 @@
 
 from __future__ import print_function
 import pandas as pd
-
+import time
 import numpy as np
 import StringIO
 import itertools
@@ -18,6 +18,7 @@ f = "sample_hsp70_actin/theta29_dist35/localFeatureVect_theta29_dist35_NoFeature
 s = open(f).read().replace(';',',')
 data = np.genfromtxt(StringIO.StringIO(s),delimiter=",")[:,1:]
 
+start_time=time.time()
 #print(data)
 print(data.shape)
 print(data.dtype)
@@ -84,12 +85,15 @@ for c in lst_cmb:
     cosine[idx_a,idx_b] = result*100
     cosine[idx_b,idx_a] = result*100
         
-pd.DataFrame(normal).to_csv("normal")
-pd.DataFrame(generalised).to_csv("generalised")
-pd.DataFrame(sarika).to_csv("sarika1")
-pd.DataFrame(wu).to_csv("wu")
-pd.DataFrame(cosine).to_csv("cosine")
+pd.DataFrame(normal).to_csv("csv/normal.csv")
+pd.DataFrame(generalised).to_csv("csv/generalised.csv")
+pd.DataFrame(sarika).to_csv("csv/sarika1.csv")
+pd.DataFrame(wu).to_csv("csv/wu.csv")
+pd.DataFrame(cosine).to_csv("csv/cosine.csv")
 
+end_time=time.time()
+total_time=((end_time)-(start_time))
+print("Time taken for writing to files: {}".format(total_time))
 
 
     #    normal.append(str(dist_jac)) 

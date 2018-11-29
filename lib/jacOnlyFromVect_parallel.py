@@ -40,8 +40,6 @@ class JaccardCoefficient:
         self.files.close()
         self.fileNames = []
 
-        self.lines_np = 
-
     def process_files(self,i):
             #print("i.shape=",i.shape)
             normal = []
