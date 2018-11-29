@@ -1,4 +1,4 @@
-#!/usr/bin/evn python
+#!/usr/bin/env python
 
 from __future__ import print_function
 import pandas as pd
@@ -16,7 +16,7 @@ f = "sample_hsp70_actin/theta29_dist35/localFeatureVect_theta29_dist35_NoFeature
 
 #lines = np.loadtxt(f,usecols=(1,))
 s = open(f).read().replace(';',',')
-data = np.genfromtxt(StringIO.StringIO(s),delimiter=",")[:,1:]
+data = np.genfromtxt(StringIO.StringIO(s),delimiter=",")[:,1:-1]
 
 start_time=time.time()
 #print(data)
@@ -24,8 +24,8 @@ print(data.shape)
 print(data.dtype)
 
 data_sum = np.sum(data,axis=1)
-data_jac = data
-data_jac[data>0]=1
+data_jac = np.copy(data)
+data_jac[data_jac>0]=1
 
 #lst_a = np.arange(data.shape[0]).tolist()
 #lst_b = np.arange(data.shape[0]).tolist()
