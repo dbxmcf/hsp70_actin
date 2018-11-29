@@ -35,12 +35,15 @@ class JaccardCoefficient:
 
         self.lines = self.files.readlines()
         self.lines = array(self.lines)
-        print type(self.lines), type(array(self.lines))
-        print("self.lines.shape:",self.lines.shape)
+        #print type(self.lines), type(array(self.lines))
+        #print("self.lines.shape:",self.lines.shape)
         self.files.close()
         self.fileNames = []
 
+        self.lines_np = 
+
     def process_files(self,i):
+            #print("i.shape=",i.shape)
             normal = []
             generalised = []
             sarika = []
@@ -99,6 +102,7 @@ class JaccardCoefficient:
         #lines = self.fileNames.readlines()
         #self.fileNames.close()
         lines = self.lines      
+        #print("lines=",len(lines))
         start_time=time.time()
         
         #Add code for normalization later
@@ -112,7 +116,7 @@ class JaccardCoefficient:
         #file, normal_all, generalised_all, sarika_all, wu_all, cosine_all
         #results   = Parallel(n_jobs=cpu_count() - 1, verbose=10, \
         #                backend="multiprocessing", batch_size="auto")(delayed(unwrap_self)(i) for i in zip([self]*len(lines),lines))
-        results   = Parallel(n_jobs=9, verbose=10, \
+        results   = Parallel(n_jobs=cpu_count() - 1, verbose=10, \
                         backend="multiprocessing", batch_size="auto")(delayed(unwrap_self)(i) for i in zip([self]*len(lines),lines))
 
 
@@ -124,7 +128,7 @@ class JaccardCoefficient:
         wu_all = [x[4] for x in results]
         cosine_all = [x[5] for x in results]
 
-        print('sarika_all_len:',len(sarika_all))
+        #print('sarika_all_len:',len(sarika_all))
             
         end_time=time.time()
         total_time=((end_time)-(start_time))
