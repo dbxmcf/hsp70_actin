@@ -11,21 +11,32 @@ from scipy import spatial
 from cartesian import *
 from itertools import combinations
 
-f = "sample_hsp70_actin/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
+fname = "sample_hsp70_actin/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 #f = "test.csv"
 
 #lines = np.loadtxt(f,usecols=(1,))
 start_time=time.time()
-s = open(f).read().replace(';',',')
-end_time=time.time()
-total_time=((end_time)-(start_time))
-print("Time taken for reading files: {}".format(total_time))
+#s = open(f).read().replace(';',',')
+#end_time=time.time()
+#total_time=((end_time)-(start_time))
+#print("Time taken for reading files: {}".format(total_time))
+#
+#start_time=time.time()
+#data = np.genfromtxt(StringIO.StringIO(s),delimiter=",")[:,1:-1]
+arrs = []
+with open(fname) as fcsv:
+    lines=fcsv.readlines()
+    for idx,line in enumerate(lines):
+        l = list(line.split(';')[1].split(','))
+        l_arr = np.asarray(l[:-1]).astype(np.float) 
+        arrs.append(l_arr)
+data = np.array(arrs)
 
-start_time=time.time()
-data = np.genfromtxt(StringIO.StringIO(s),delimiter=",")[:,1:-1]
 end_time=time.time()
 total_time=((end_time)-(start_time))
 print("Time taken for genfromtxt: {}".format(total_time))
+
+#exit()
 
 start_time=time.time()
 #print(data)
@@ -103,43 +114,3 @@ pd.DataFrame(cosine).to_csv("csv/cosine.csv")
 end_time=time.time()
 total_time=((end_time)-(start_time))
 print("Time taken for writing to files: {}".format(total_time))
-
-
-    #    normal.append(str(dist_jac)) 
-    #    generalised.append(str(dist_gen_jac))                      
-    #    sarika.append(str(dist_sarika))
-    #    wu.append(str(dist_wu))
-    #    cosine.append(str(result*100))
-    #return (name, normal, generalised, sarika, wu, cosine)
-#lst_b = np.arange(data.shape[0])
-#
-#print(lst_a)
-#print(lst_b)
-#
-#permutation_list = cartesian((lst_a, lst_b))
-#print(permutation_list)
-#non_zeros = 
-
-#            i=list(i.split(';')[1].split(','))
-#            a = np.asarray(i[:-1]).astype(np.float)  
-#            a_sum = np.sum(a)
-#            a_jac = np.copy(a)
-#            a_jac[a_jac>0] = 1
-#            
-#            for j in self.lines:
-#                j = list(j.split(';')[1].split(','))
-#                b = np.asarray(j[:-1]).astype(np.float)
-#                non_zeros = (a >0) & (b > 0)
-#                summed_array = a + b
-#                b_sum = np.sum(b)
-#                b_jac = np.copy(b)
-#                b_jac[b_jac>0] = 1
-#                
-#                numerator_jac = np.sum(np.minimum(a_jac,b_jac))
-#                denomenator_jac = np.sum(np.maximum(a_jac,b_jac))
-#                numerator_gen_jac =np.sum(np.minimum(a,b))
-#                denomenator_gen_jac =np.sum(np.maximum(a,b))
-#                num_sim = np.sum(summed_array[non_zeros])
-#                result = 1 - spatial.distance.cosine(a, b)
-
-
