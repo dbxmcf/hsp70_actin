@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python
 import os
 import glob
 import ntpath
@@ -91,11 +91,15 @@ def run_classification_pipeline(**kwargs):
 
 
 	# JaccardCoefficient
+	start_time=time.time()
 	print('--------------------------Start Jaccard-----------------------------------------')
 	print('fileslist:', filesList)
 	jaccard = JaccardCoefficient(outFolder = outFolder, setting = setting, filesList = filesList, normalize=kwargs['normalize'],sample_dict = df_dict)
 	jaccard.calculate_jaccard()
 	print('--------------------------End Jaccard-------------------------------------------')
+	end_time=time.time()
+	total_time=((end_time)-(start_time))
+	print("JJJaccard Process done. Total Time taken(secs): {}".format(total_time))
 
 	# Dendogram
 	print('--------------------------Start Clustering--------------------------------------')

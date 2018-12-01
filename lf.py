@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
+import sys
 import pandas as pd
 import time
 import numpy as np
@@ -11,18 +12,17 @@ from scipy import spatial
 from cartesian import *
 from itertools import combinations
 
-fname = "sample_hsp70_actin/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
-#f = "test.csv"
+orig_stdout = sys.stdout
+f = open('log.txt', 'w')
+sys.stdout = f
 
-#lines = np.loadtxt(f,usecols=(1,))
+#fname = "test.csv"
+#fname = "sample_hsp70_actin/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
+#fname = "sample_a-b_mix_2/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
+fname = "sample_protease_mix_1/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
+
 start_time=time.time()
-#s = open(f).read().replace(';',',')
-#end_time=time.time()
-#total_time=((end_time)-(start_time))
-#print("Time taken for reading files: {}".format(total_time))
-#
-#start_time=time.time()
-#data = np.genfromtxt(StringIO.StringIO(s),delimiter=",")[:,1:-1]
+
 arrs = []
 with open(fname) as fcsv:
     lines=fcsv.readlines()
@@ -31,29 +31,20 @@ with open(fname) as fcsv:
         l_arr = np.asarray(l[:-1]).astype(np.float) 
         arrs.append(l_arr)
 data = np.array(arrs)
+print(data.shape)
+print(data.dtype)
 
 end_time=time.time()
 total_time=((end_time)-(start_time))
-print("Time taken for genfromtxt: {}".format(total_time))
-
-#exit()
+print("Time taken for makeing matrix: {}".format(total_time))
 
 start_time=time.time()
-#print(data)
-print(data.shape)
-print(data.dtype)
 
 data_sum = np.sum(data,axis=1)
 data_jac = np.copy(data)
 data_jac[data_jac>0]=1
 
-#lst_a = np.arange(data.shape[0]).tolist()
-#lst_b = np.arange(data.shape[0]).tolist()
 lst_a = np.arange(data.shape[0])
-#lst_a = np.arange(5)
-
-lst_cmb = list(combinations(lst_a,2))
-print(len(lst_cmb))
 
 normal = np.zeros((data.shape[0],data.shape[0]))
 generalised = np.zeros_like(normal)
@@ -61,9 +52,15 @@ sarika = np.zeros_like(normal)
 wu = np.zeros_like(normal)
 cosine = np.zeros_like(normal)
 
-for c in lst_cmb:
+lst_cmb = list(combinations(lst_a,2))
+total_cmb = len(lst_cmb)
+print("total_cmb=",total_cmb)
+nitvl = min(total_cmb, 20)
+itvl = total_cmb/nitvl
+print("itvl=",itvl)
+
+for i, c in enumerate(lst_cmb):
     idx_a, idx_b = c
-    #print("a=",a,"b=",b)
     a = data[idx_a]
     a_sum = data_sum[idx_a]
     a_jac = data_jac[idx_a]
@@ -104,6 +101,8 @@ for c in lst_cmb:
     wu[idx_b,idx_a] = dist_wu
     cosine[idx_a,idx_b] = result*100
     cosine[idx_b,idx_a] = result*100
+    if (i % itvl) == 0:
+        print("iter:\t",i,"\ttime at {}".format(time.time()-start_time))
         
 pd.DataFrame(normal).to_csv("csv/normal.csv")
 pd.DataFrame(generalised).to_csv("csv/generalised.csv")
@@ -113,4 +112,8 @@ pd.DataFrame(cosine).to_csv("csv/cosine.csv")
 
 end_time=time.time()
 total_time=((end_time)-(start_time))
-print("Time taken for writing to files: {}".format(total_time))
+print("Time taken for Jaccard: {}".format(total_time))
+
+sys.stdout = orig_stdout
+f.close()
+
