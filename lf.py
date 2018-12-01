@@ -12,9 +12,9 @@ from scipy import spatial
 from cartesian import *
 from itertools import combinations
 
-orig_stdout = sys.stdout
-f = open('log.txt', 'w')
-sys.stdout = f
+#orig_stdout = sys.stdout
+#f = open('log.txt', 'w')
+#sys.stdout = f
 
 #fname = "test.csv"
 #fname = "sample_hsp70_actin/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
@@ -36,7 +36,7 @@ print(data.dtype)
 
 end_time=time.time()
 total_time=((end_time)-(start_time))
-print("Time taken for makeing matrix: {}".format(total_time))
+print("Time taken for making matrix: {}".format(total_time))
 
 start_time=time.time()
 
@@ -114,6 +114,6 @@ end_time=time.time()
 total_time=((end_time)-(start_time))
 print("Time taken for Jaccard: {}".format(total_time))
 
-sys.stdout = orig_stdout
-f.close()
+#sys.stdout = orig_stdout
+#f.close()
 
