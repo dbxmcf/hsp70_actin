@@ -39,9 +39,9 @@ with open(fname) as fcsv:
         #l_arr = np.asarray(l[:-1]).astype(np.float) 
         l_arr = np.asarray(l[:-1],dtype=m_datatype)
         arrs.append(l_arr)
-        del l_arr[:]
+        #del l
 data = np.array(arrs,dtype=m_datatype)
-del arrs[:]
+#del arrs[:]
 print(data.shape)
 print(data.dtype)
 
