@@ -31,12 +31,15 @@ with open(fname) as fcsv:
         l_arr = np.asarray(l[:-1]).astype(np.float) 
         arrs.append(l_arr)
 data = np.array(arrs)
+del arrs[:]
 print(data.shape)
 print(data.dtype)
 
 end_time=time.time()
 total_time=((end_time)-(start_time))
 print("Time taken for making matrix: {}".format(total_time))
+
+#exit()
 
 start_time=time.time()
 

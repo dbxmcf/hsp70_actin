@@ -30,14 +30,16 @@ fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeature
 start_time=time.time()
 
 arrs = []
+m_datatype = np.float32
+
 with open(fname) as fcsv:
     lines=fcsv.readlines()
     for idx,line in enumerate(lines):
         l = list(line.split(';')[1].split(','))
         #l_arr = np.asarray(l[:-1]).astype(np.float) 
-        l_arr = np.asarray(l[:-1],dtype=np.float32)
+        l_arr = np.asarray(l[:-1],dtype=m_datatype)
         arrs.append(l_arr)
-data = np.array(arrs,dtype=np.float32)
+data = np.array(arrs,dtype=m_datatype)
 del arrs[:]
 print(data.shape)
 print(data.dtype)
@@ -114,7 +116,7 @@ for i, c in enumerate(lst_cmb):
     if (i % itvl) == 0:
         print("iter:\t",i,"\ttime at {}".format(time.time()-start_time))
         
-csv_folder_name = sample_name+"_csvf32"
+csv_folder_name = sample_name+"_csv_"+m_datatype.__name__
 if not os.path.exists(csv_folder_name):
     os.mkdir(csv_folder_name)
 pd.DataFrame(normal).to_csv(csv_folder_name+"/normal.csv")
