@@ -23,8 +23,8 @@ from itertools import combinations
 #fname = "sample_protease_mix_1/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
 #sample_name = "sample_hsp70_actin"
-#sample_name = "sample_a-b_mix_2"
-sample_name = "sample_protease_mix_1"
+sample_name = "sample_a-b_mix_2"
+#sample_name = "sample_protease_mix_1"
 fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
 start_time=time.time()
@@ -34,6 +34,10 @@ m_datatype = np.float32
 
 with open(fname) as fcsv:
     lines=fcsv.readlines()
+    n_lines = len(lines)
+    n_div = 2
+    n_st = n_lines/n_div
+    #for idx,line in enumerate(lines[n_st:]):
     for idx,line in enumerate(lines):
         l = list(line.split(';')[1].split(','))
         #l_arr = np.asarray(l[:-1]).astype(np.float) 

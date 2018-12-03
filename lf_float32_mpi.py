@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
+from mpi4py import MPI
 import sys
 import os
 import pandas as pd
@@ -13,6 +14,15 @@ from scipy import spatial
 from cartesian import *
 from itertools import combinations
 
+def chunk_list(seq, num):
+    avg = len(seq) / float(num)
+    out = []
+    last = 0.0
+    while last < len(seq):
+        out.append(seq[int(last):int(last + avg)])
+        last += avg
+    return out
+
 #orig_stdout = sys.stdout
 #f = open('log.txt', 'w')
 #sys.stdout = f
@@ -23,9 +33,11 @@ from itertools import combinations
 #fname = "sample_protease_mix_1/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
 #sample_name = "sample_hsp70_actin"
-sample_name = "sample_a-b_mix_2"
+#sample_name = "sample_a-b_mix_2"
 #sample_name = "sample_protease_mix_1"
-fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
+#fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
+sample_name = "tmpi"
+fname = sample_name + "/test.csv"
 
 start_time=time.time()
 
@@ -53,6 +65,8 @@ total_time=((end_time)-(start_time))
 print("Time taken for making matrix: {}".format(total_time))
 
 #exit()
+comm = MPI.COMM_WORLD
+rank = comm.Get_rank()
 
 start_time=time.time()
 
@@ -70,12 +84,22 @@ cosine = np.ones_like(normal)
 
 lst_cmb = list(combinations(lst_a,2))
 total_cmb = len(lst_cmb)
+
+# divide the entire list into n parts
+n_parts = 2
+lst_cmb_chunks = chunk_list(lst_cmb, n_parts) 
+lst_cmb_rank = lst_cmb_chunks[rank]
+
+print(lst_cmb_rank)
+
+exit()
+
 print("total_cmb=",total_cmb)
 nitvl = min(total_cmb, 20)
 itvl = total_cmb/nitvl
 print("itvl=",itvl)
 
-for i, c in enumerate(lst_cmb):
+for i, c in enumerate(lst_cmb_rank):
     idx_a, idx_b = c
     a = data[idx_a]
     a_sum = data_sum[idx_a]
@@ -117,17 +141,18 @@ for i, c in enumerate(lst_cmb):
     wu[idx_b,idx_a] = dist_wu
     cosine[idx_a,idx_b] = result*100
     cosine[idx_b,idx_a] = result*100
-    if (i % itvl) == 0:
-        print("iter:\t",i,"\ttime at {}".format(time.time()-start_time))
+    #if (i % itvl) == 0:
+    #    print("itvl:\t",i,"\ttime at {}".format(time.time()-start_time))
         
-csv_folder_name = sample_name+"_csv_"+m_datatype.__name__
-if not os.path.exists(csv_folder_name):
-    os.mkdir(csv_folder_name)
-pd.DataFrame(normal).to_csv(csv_folder_name+"/normal.csv")
-pd.DataFrame(generalised).to_csv(csv_folder_name+"/generalised.csv")
-pd.DataFrame(sarika).to_csv(csv_folder_name+"/sarika1.csv")
-pd.DataFrame(wu).to_csv(csv_folder_name + "/wu.csv")
-pd.DataFrame(cosine).to_csv(csv_folder_name + "/cosine.csv")
+if rank == 0:
+    csv_folder_name = sample_name+"_csv_"+m_datatype.__name__
+    if not os.path.exists(csv_folder_name):
+        os.mkdir(csv_folder_name)
+    pd.DataFrame(normal).to_csv(csv_folder_name+"/normal.csv")
+    pd.DataFrame(generalised).to_csv(csv_folder_name+"/generalised.csv")
+    pd.DataFrame(sarika).to_csv(csv_folder_name+"/sarika1.csv")
+    pd.DataFrame(wu).to_csv(csv_folder_name + "/wu.csv")
+    pd.DataFrame(cosine).to_csv(csv_folder_name + "/cosine.csv")
 
 end_time=time.time()
 total_time=((end_time)-(start_time))
