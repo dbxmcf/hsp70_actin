@@ -143,6 +143,9 @@ for i, c in enumerate(lst_cmb_rank):
     cosine[idx_b,idx_a] = result*100
     #if (i % itvl) == 0:
     #    print("itvl:\t",i,"\ttime at {}".format(time.time()-start_time))
+
+# need to do reduction for data here
+
         
 if rank == 0:
     csv_folder_name = sample_name+"_csv_"+m_datatype.__name__

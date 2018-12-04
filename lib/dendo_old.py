@@ -10,6 +10,8 @@ from sklearn.cluster import AgglomerativeClustering, KMeans
 from sklearn.neighbors import kneighbors_graph
 from sklearn.metrics.pairwise import cosine_similarity, euclidean_distances
 from sklearn.manifold import MDS
+import matplotlib as mpl
+mpl.use('Agg')
 import matplotlib.pyplot as plt
 from collections import Counter
 import seaborn as sns
