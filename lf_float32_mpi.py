@@ -54,20 +54,26 @@ n_parts = int(np.sqrt(2.0*nprocs))
 
 # off-diagnal combinations
 offdiag_cmbs = list(combinations(range(n_parts),2))
+#print(offdiag_cmbs)
 # diagnal combinations
 diag_cmbs = [(i, i) for i in range(n_parts)]
-parts_cmbs = offdiag_cmbs + diag_cmbs
+#print(diag_cmbs)
+diag_cmbs_fold = []
+n_half_parts = int(n_parts/2)
+for i in range(n_half_parts):
+    diag_cmbs_fold.append((diag_cmbs[i],diag_cmbs[-1-i]))
+#print(diag_cmbs_fold)
+
+parts_cmbs = offdiag_cmbs + diag_cmbs_fold
+#print(parts_cmbs)
 parts_cmb_rank = parts_cmbs[rank]
+#if rank > int(n_parts*(n_parts-1)/2-1):
 print("rank=",rank,", parts_cmb_rank=", parts_cmb_rank)
 
 #chunks = chunk_list(lst_n, n_parts)
 #chunk_rank = lst_n_chunks[rank]
 
 exit()
-
-
-
-print(lst_cmb_rank)
 
 with open(fname) as fcsv:
     lines=fcsv.readlines()
