@@ -7,7 +7,7 @@ import os
 import pandas as pd
 import time
 import numpy as np
-import StringIO
+#import StringIO
 import itertools
 from scipy import spatial
 #import cartesian
@@ -44,6 +44,31 @@ start_time=time.time()
 arrs = []
 m_datatype = np.float32
 
+comm = MPI.COMM_WORLD
+nprocs = comm.Get_size()
+rank = comm.Get_rank()
+
+# divide the entire list into n parts
+n_parts = int(np.sqrt(2.0*nprocs))
+#print("n_parts=", n_parts)
+
+# off-diagnal combinations
+offdiag_cmbs = list(combinations(range(n_parts),2))
+# diagnal combinations
+diag_cmbs = [(i, i) for i in range(n_parts)]
+parts_cmbs = offdiag_cmbs + diag_cmbs
+parts_cmb_rank = parts_cmbs[rank]
+print("rank=",rank,", parts_cmb_rank=", parts_cmb_rank)
+
+#chunks = chunk_list(lst_n, n_parts)
+#chunk_rank = lst_n_chunks[rank]
+
+exit()
+
+
+
+print(lst_cmb_rank)
+
 with open(fname) as fcsv:
     lines=fcsv.readlines()
     n_lines = len(lines)
@@ -65,8 +90,7 @@ total_time=((end_time)-(start_time))
 print("Time taken for making matrix: {}".format(total_time))
 
 #exit()
-comm = MPI.COMM_WORLD
-rank = comm.Get_rank()
+
 
 start_time=time.time()
 
@@ -85,12 +109,6 @@ cosine = np.ones_like(normal)
 lst_cmb = list(combinations(lst_a,2))
 total_cmb = len(lst_cmb)
 
-# divide the entire list into n parts
-n_parts = 2
-lst_cmb_chunks = chunk_list(lst_cmb, n_parts) 
-lst_cmb_rank = lst_cmb_chunks[rank]
-
-print(lst_cmb_rank)
 
 exit()
 
@@ -144,7 +162,7 @@ for i, c in enumerate(lst_cmb_rank):
     #if (i % itvl) == 0:
     #    print("itvl:\t",i,"\ttime at {}".format(time.time()-start_time))
 
-# need to do reduction for data here
+# need to do gather for data here
 
         
 if rank == 0:
