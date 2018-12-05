@@ -68,34 +68,43 @@ parts_cmbs = offdiag_cmbs + diag_cmbs_fold
 #print(parts_cmbs)
 parts_cmb_rank = parts_cmbs[rank]
 #if rank > int(n_parts*(n_parts-1)/2-1):
-print("rank=",rank,", parts_cmb_rank=", parts_cmb_rank)
-
-#chunks = chunk_list(lst_n, n_parts)
-#chunk_rank = lst_n_chunks[rank]
-
-exit()
+#print("rank=",rank,", parts_cmb_rank=", parts_cmb_rank)
 
 with open(fname) as fcsv:
     lines=fcsv.readlines()
     n_lines = len(lines)
-    n_div = 2
-    n_st = n_lines/n_div
-    #for idx,line in enumerate(lines[n_st:]):
-    for idx,line in enumerate(lines):
-        l = list(line.split(';')[1].split(','))
-        #l_arr = np.asarray(l[:-1]).astype(np.float) 
-        l_arr = np.asarray(l[:-1],dtype=m_datatype)
-        arrs.append(l_arr)
+
+line_numbers = list(np.arange(n_lines))
+
+chunks = chunk_list(line_numbers, n_parts)
+
+if rank <= int(n_parts*(n_parts-1)/2-1):
+    #print("rank=",rank,", parts_cmb_rank=", parts_cmb_rank)
+    parts_lines = chunks[parts_cmb_rank[0]] + chunks[parts_cmb_rank[1]]
+    print("rank=",rank,", parts_cmb_rank=", parts_cmb_rank, ", parts_lines=", parts_lines) 
+else:
+    parts_lines = (chunks[parts_cmb_rank[0][0]] + chunks[parts_cmb_rank[1][0]])
+    print("rank=",rank,", parts_cmb_rank=", parts_cmb_rank, ", parts_lines=", parts_lines)
+
+#print(chunks)
+#chunk_rank = lst_n_chunks[rank]
+    
+for line in lines:
+    l = list(line.split(';')[1].split(','))
+    #l_arr = np.asarray(l[:-1]).astype(np.float) 
+    l_arr = np.asarray(l[:-1],dtype=m_datatype)
+    arrs.append(l_arr)
+
 data = np.array(arrs,dtype=m_datatype)
-del arrs[:]
+
 print(data.shape)
-print(data.dtype)
+#print(data.dtype)
 
 end_time=time.time()
 total_time=((end_time)-(start_time))
-print("Time taken for making matrix: {}".format(total_time))
+#print("Time taken for making matrix: {}".format(total_time))
 
-#exit()
+exit()
 
 
 start_time=time.time()
