@@ -74,8 +74,7 @@ with open(fname) as fcsv:
     lines=fcsv.readlines()
     n_lines = len(lines)
 
-line_numbers = list(np.arange(n_lines))
-
+line_numbers = list(range(n_lines))
 chunks = chunk_list(line_numbers, n_parts)
 
 if rank <= int(n_parts*(n_parts-1)/2-1):
@@ -84,6 +83,7 @@ if rank <= int(n_parts*(n_parts-1)/2-1):
     print("rank=",rank,", parts_cmb_rank=", parts_cmb_rank, ", parts_lines=", parts_lines) 
 else:
     parts_lines = (chunks[parts_cmb_rank[0][0]] + chunks[parts_cmb_rank[1][0]])
+    #FIXME
     print("rank=",rank,", parts_cmb_rank=", parts_cmb_rank, ", parts_lines=", parts_lines)
 
 #print(chunks)
