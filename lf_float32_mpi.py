@@ -75,7 +75,9 @@ with open(fname) as fcsv:
 line_numbers = list(range(n_lines))
 chunks = chunk_list(line_numbers, n_parts)
 
-if rank <= int(n_parts*(n_parts-1)/2-1):
+rank_div = int(n_parts*(n_parts-1)/2-1)
+
+if rank <= rank_div:
     #print("rank=",rank,", parts_cmb_rank=", parts_cmb_rank)
     parts_lines = chunks[parts_cmb_rank[0]] + chunks[parts_cmb_rank[1]]
     parts_line_cmbs = list(combinations(parts_lines,2))
@@ -137,7 +139,7 @@ sarika = []
 wu = []
 cosine = []
 
-print("total_cmb_in_rank=",len(parts_line_cmbs))
+print("total_cmb_in_rank[", rank, "]=",len(parts_line_cmbs))
 #nitvl = min(total_cmb, 20)
 #itvl = total_cmb/nitvl
 #print("itvl=",itvl)
@@ -197,17 +199,17 @@ for i, c in enumerate(parts_line_cmbs):
 
 # need to do gather for data here
 
-exit()
+#exit()
         
-if rank == 0:
-    csv_folder_name = sample_name+"_csv_"+m_datatype.__name__
-    if not os.path.exists(csv_folder_name):
-        os.mkdir(csv_folder_name)
-    pd.DataFrame(normal).to_csv(csv_folder_name+"/normal.csv")
-    pd.DataFrame(generalised).to_csv(csv_folder_name+"/generalised.csv")
-    pd.DataFrame(sarika).to_csv(csv_folder_name+"/sarika1.csv")
-    pd.DataFrame(wu).to_csv(csv_folder_name + "/wu.csv")
-    pd.DataFrame(cosine).to_csv(csv_folder_name + "/cosine.csv")
+#if rank == 0:
+csv_folder_name = sample_name+"_csv_"+m_datatype.__name__
+if not os.path.exists(csv_folder_name):
+    os.mkdir(csv_folder_name)
+pd.DataFrame(normal).to_csv(csv_folder_name+"/normal_" + str(rank) + ".csv")
+pd.DataFrame(generalised).to_csv(csv_folder_name+"/generalised_" + str(rank) + ".csv")
+pd.DataFrame(sarika).to_csv(csv_folder_name+"/sarika_" + str(rank) + ".csv")
+pd.DataFrame(wu).to_csv(csv_folder_name + "/wu_" + str(rank) + ".csv")
+pd.DataFrame(cosine).to_csv(csv_folder_name + "/cosine_" + str(rank) + ".csv")
 
 end_time=time.time()
 total_time=((end_time)-(start_time))
