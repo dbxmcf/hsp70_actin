@@ -88,15 +88,21 @@ else:
 
 rank_lines = itemgetter(*parts_lines)(lines)
 
-for line in rank_lines:
+data = {}
+data_sum = {}
+data_jac = {}
+for pl, line in zip(parts_lines,rank_lines):
     l = list(line.split(';')[1].split(','))
     #l_arr = np.asarray(l[:-1]).astype(np.float) 
-    l_arr = np.asarray(l[:-1],dtype=m_datatype)
-    arrs.append(l_arr)
+    data[pl] = np.asarray(l[:-1],dtype=m_datatype)
+    #arrs.append(l_arr)
+    data_sum[pl] = np.sum(data[pl])
+    data_jac[pl] = np.copy(data[pl])
+    data_jac[pl][data_jac[pl]>0]=1
 
-data = np.array(arrs,dtype=m_datatype)
+#data = np.array(arrs,dtype=m_datatype)
 
-print(data.shape)
+#print(data.shape)
 #print(data.dtype)
 
 end_time=time.time()
@@ -108,33 +114,39 @@ total_time=((end_time)-(start_time))
 
 start_time=time.time()
 
-data_sum = {}
-data_jac = {}
-for l, d in zip(parts_lines, data):
-    print(l,d)
-    data_sum[l] = np.sum(d)
-    data_jac[l] = np.copy(d)
-    data_jac[l][data_jac[l]>0]=1
 
+#for l, d in zip(parts_lines, data):
+    #print("rank=",rank,l,d)
+#    data_sum[l] = np.sum(d)
+#    data_jac[l] = np.copy(d)
+#    data_jac[l][data_jac[l]>0]=1
+
+#print(rank, data_sum, data_jac)
 #lst_a = np.arange(data.shape[0])
-exit()
+#exit()
 
-normal = np.zeros((data.shape[0],data.shape[0]))
-generalised = np.zeros_like(normal)
-sarika = np.zeros_like(normal)
-wu = np.zeros_like(normal)
-cosine = np.ones_like(normal)
+#normal = np.zeros((len(parts_lines),len(parts_lines)))
+#generalised = np.zeros_like(normal)
+#sarika = np.zeros_like(normal)
+#wu = np.zeros_like(normal)
+#cosine = np.ones_like(normal)
+
+normal = []
+generalised = []
+sarika = []
+wu = []
+cosine = []
 
 print("total_cmb_in_rank=",len(parts_line_cmbs))
 #nitvl = min(total_cmb, 20)
 #itvl = total_cmb/nitvl
 #print("itvl=",itvl)
 
-if rank <= int(n_parts*(n_parts-1)/2-1):
-    exit()
+#if rank > int(n_parts*(n_parts-1)/2-1):
+#    exit()
 for i, c in enumerate(parts_line_cmbs):
     idx_a, idx_b = c
-    print(idx_a, idx_b)
+    #print(idx_a, idx_b)
     a = data[idx_a]
     a_sum = data_sum[idx_a]
     a_jac = data_jac[idx_a]
@@ -164,7 +176,12 @@ for i, c in enumerate(parts_line_cmbs):
         numerator_sarika = num_sim
         denomenator_sarika = a_sum+b_sum
         dist_sarika = 1.0-(float(numerator_sarika)/float(denomenator_sarika))
-
+    
+    normal.append((idx_a, idx_b, dist_jac))
+    generalised.append((idx_a, idx_b, dist_gen_jac))
+    sarika.append((idx_a, idx_b, dist_sarika))
+    wu.append((idx_a, idx_b, dist_wu))
+    cosine.append((idx_a, idx_b, result*100))
     #normal[idx_a,idx_b] = dist_jac
     #normal[idx_b,idx_a] = dist_jac
     #generalised[idx_a,idx_b] = dist_gen_jac
