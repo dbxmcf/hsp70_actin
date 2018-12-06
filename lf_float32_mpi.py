@@ -7,12 +7,10 @@ import os
 import pandas as pd
 import time
 import numpy as np
-#import StringIO
-import itertools
+#import itertools
 from scipy import spatial
-#import cartesian
-from cartesian import *
 from itertools import combinations
+from operator import itemgetter
 
 def chunk_list(seq, num):
     avg = len(seq) / float(num)
@@ -80,16 +78,17 @@ chunks = chunk_list(line_numbers, n_parts)
 if rank <= int(n_parts*(n_parts-1)/2-1):
     #print("rank=",rank,", parts_cmb_rank=", parts_cmb_rank)
     parts_lines = chunks[parts_cmb_rank[0]] + chunks[parts_cmb_rank[1]]
-    print("rank=",rank,", parts_cmb_rank=", parts_cmb_rank, ", parts_lines=", parts_lines) 
+    parts_line_cmbs = list(combinations(parts_lines,2))
+    #print("rank=",rank,", parts_cmb_rank=", parts_cmb_rank, ", parts_lines=", parts_lines,", parts_line_cmbs=", parts_line_cmbs) 
 else:
-    parts_lines = (chunks[parts_cmb_rank[0][0]] + chunks[parts_cmb_rank[1][0]])
-    #FIXME
-    print("rank=",rank,", parts_cmb_rank=", parts_cmb_rank, ", parts_lines=", parts_lines)
+    parts_lines = chunks[parts_cmb_rank[0][0]] + chunks[parts_cmb_rank[1][0]]
+    parts_line_cmbs = (list(combinations(chunks[parts_cmb_rank[0][0]],2))
+                       + list(combinations(chunks[parts_cmb_rank[1][0]],2)))
+    #print("rank=",rank,", parts_cmb_rank=", parts_cmb_rank, ", parts_lines=", parts_lines,", parts_line_cmbs=", parts_line_cmbs) 
 
-#print(chunks)
-#chunk_rank = lst_n_chunks[rank]
-    
-for line in lines:
+rank_lines = itemgetter(*parts_lines)(lines)
+
+for line in rank_lines:
     l = list(line.split(';')[1].split(','))
     #l_arr = np.asarray(l[:-1]).astype(np.float) 
     l_arr = np.asarray(l[:-1],dtype=m_datatype)
@@ -104,16 +103,21 @@ end_time=time.time()
 total_time=((end_time)-(start_time))
 #print("Time taken for making matrix: {}".format(total_time))
 
-exit()
+#exit()
 
 
 start_time=time.time()
 
-data_sum = np.sum(data,axis=1)
-data_jac = np.copy(data)
-data_jac[data_jac>0]=1
+data_sum = {}
+data_jac = {}
+for l, d in zip(parts_lines, data):
+    print(l,d)
+    data_sum[l] = np.sum(d)
+    data_jac[l] = np.copy(d)
+    data_jac[l][data_jac[l]>0]=1
 
-lst_a = np.arange(data.shape[0])
+#lst_a = np.arange(data.shape[0])
+exit()
 
 normal = np.zeros((data.shape[0],data.shape[0]))
 generalised = np.zeros_like(normal)
@@ -121,19 +125,16 @@ sarika = np.zeros_like(normal)
 wu = np.zeros_like(normal)
 cosine = np.ones_like(normal)
 
-lst_cmb = list(combinations(lst_a,2))
-total_cmb = len(lst_cmb)
+print("total_cmb_in_rank=",len(parts_line_cmbs))
+#nitvl = min(total_cmb, 20)
+#itvl = total_cmb/nitvl
+#print("itvl=",itvl)
 
-
-exit()
-
-print("total_cmb=",total_cmb)
-nitvl = min(total_cmb, 20)
-itvl = total_cmb/nitvl
-print("itvl=",itvl)
-
-for i, c in enumerate(lst_cmb_rank):
+if rank <= int(n_parts*(n_parts-1)/2-1):
+    exit()
+for i, c in enumerate(parts_line_cmbs):
     idx_a, idx_b = c
+    print(idx_a, idx_b)
     a = data[idx_a]
     a_sum = data_sum[idx_a]
     a_jac = data_jac[idx_a]
@@ -164,21 +165,22 @@ for i, c in enumerate(lst_cmb_rank):
         denomenator_sarika = a_sum+b_sum
         dist_sarika = 1.0-(float(numerator_sarika)/float(denomenator_sarika))
 
-    normal[idx_a,idx_b] = dist_jac
-    normal[idx_b,idx_a] = dist_jac
-    generalised[idx_a,idx_b] = dist_gen_jac
-    generalised[idx_b,idx_a] = dist_gen_jac
-    sarika[idx_a,idx_b] = dist_sarika
-    sarika[idx_b,idx_a] = dist_sarika
-    wu[idx_a,idx_b] = dist_wu
-    wu[idx_b,idx_a] = dist_wu
-    cosine[idx_a,idx_b] = result*100
-    cosine[idx_b,idx_a] = result*100
+    #normal[idx_a,idx_b] = dist_jac
+    #normal[idx_b,idx_a] = dist_jac
+    #generalised[idx_a,idx_b] = dist_gen_jac
+    #generalised[idx_b,idx_a] = dist_gen_jac
+    #sarika[idx_a,idx_b] = dist_sarika
+    #sarika[idx_b,idx_a] = dist_sarika
+    #wu[idx_a,idx_b] = dist_wu
+    #wu[idx_b,idx_a] = dist_wu
+    #cosine[idx_a,idx_b] = result*100
+    #cosine[idx_b,idx_a] = result*100
     #if (i % itvl) == 0:
     #    print("itvl:\t",i,"\ttime at {}".format(time.time()-start_time))
 
 # need to do gather for data here
 
+exit()
         
 if rank == 0:
     csv_folder_name = sample_name+"_csv_"+m_datatype.__name__
