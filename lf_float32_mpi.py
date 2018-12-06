@@ -113,8 +113,8 @@ total_time=((end_time)-(start_time))
 
 #exit()
 
-
-start_time=time.time()
+if rank == 0:
+    start_time=time.time()
 
 
 #for l, d in zip(parts_lines, data):
@@ -133,20 +133,22 @@ start_time=time.time()
 #wu = np.zeros_like(normal)
 #cosine = np.ones_like(normal)
 
-normal = []
-generalised = []
-sarika = []
-wu = []
-cosine = []
 
-print("total_cmb_in_rank[", rank, "]=",len(parts_line_cmbs))
+total_cmbs_in_rank = len(parts_line_cmbs)
+print("total_cmb_in_rank[", rank, "]=",total_cmbs_in_rank)
 #nitvl = min(total_cmb, 20)
 #itvl = total_cmb/nitvl
 #print("itvl=",itvl)
+rank_idx = np.zeros((total_cmbs_in_rank,2), dtype = int)
+normal = np.zeros(total_cmbs_in_rank, dtype=m_datatype)
+generalised = np.zeros_like(normal, dtype=m_datatype)
+sarika = np.zeros_like(normal, dtype=m_datatype)
+wu = np.zeros_like(normal, dtype=m_datatype)
+cosine = np.zeros_like(normal, dtype=m_datatype)
 
 #if rank > int(n_parts*(n_parts-1)/2-1):
 #    exit()
-for i, c in enumerate(parts_line_cmbs):
+for idx, c in enumerate(parts_line_cmbs):
     idx_a, idx_b = c
     #print(idx_a, idx_b)
     a = data[idx_a]
@@ -179,11 +181,19 @@ for i, c in enumerate(parts_line_cmbs):
         denomenator_sarika = a_sum+b_sum
         dist_sarika = 1.0-(float(numerator_sarika)/float(denomenator_sarika))
     
-    normal.append((idx_a, idx_b, dist_jac))
-    generalised.append((idx_a, idx_b, dist_gen_jac))
-    sarika.append((idx_a, idx_b, dist_sarika))
-    wu.append((idx_a, idx_b, dist_wu))
-    cosine.append((idx_a, idx_b, result*100))
+    #normal.append((idx_a, idx_b, dist_jac))
+    #generalised.append((idx_a, idx_b, dist_gen_jac))
+    #sarika.append((idx_a, idx_b, dist_sarika))
+    #wu.append((idx_a, idx_b, dist_wu))
+    #cosine.append((idx_a, idx_b, result*100))
+    
+    rank_idx[idx,0], rank_idx[idx,1] = idx_a, idx_b
+    normal[idx] = dist_jac
+    generalised[idx] = dist_gen_jac
+    sarika[idx] = dist_sarika
+    wu[idx] = dist_wu
+    cosine[idx] = result*100
+    
     #normal[idx_a,idx_b] = dist_jac
     #normal[idx_b,idx_a] = dist_jac
     #generalised[idx_a,idx_b] = dist_gen_jac
@@ -211,9 +221,10 @@ pd.DataFrame(sarika).to_csv(csv_folder_name+"/sarika_" + str(rank) + ".csv")
 pd.DataFrame(wu).to_csv(csv_folder_name + "/wu_" + str(rank) + ".csv")
 pd.DataFrame(cosine).to_csv(csv_folder_name + "/cosine_" + str(rank) + ".csv")
 
-end_time=time.time()
-total_time=((end_time)-(start_time))
-print("Time taken for Jaccard: {}".format(total_time))
+if rank == 0:
+    end_time=time.time()
+    total_time=((end_time)-(start_time))
+    print("Time taken for Jaccard: {}".format(total_time))
 
 #sys.stdout = orig_stdout
 #f.close()
