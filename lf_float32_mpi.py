@@ -187,7 +187,7 @@ for idx, c in enumerate(parts_line_cmbs):
     #wu.append((idx_a, idx_b, dist_wu))
     #cosine.append((idx_a, idx_b, result*100))
     
-    rank_idx[idx,0], rank_idx[idx,1] = idx_a, idx_b
+    #rank_idx[idx,0], rank_idx[idx,1] = idx_a, idx_b
     normal[idx] = dist_jac
     generalised[idx] = dist_gen_jac
     sarika[idx] = dist_sarika
