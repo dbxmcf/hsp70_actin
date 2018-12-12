@@ -30,7 +30,7 @@ fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeature
 start_time=time.time()
 
 arrs = []
-m_datatype = np.uint8
+m_datatype = np.uint16
 
 with open(fname) as fcsv:
     lines=fcsv.readlines()
