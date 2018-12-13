@@ -34,9 +34,6 @@ m_datatype = np.uint16
 
 with open(fname) as fcsv:
     lines=fcsv.readlines()
-    n_lines = len(lines)
-    n_div = 2
-    n_st = n_lines/n_div
     #for idx,line in enumerate(lines[n_st:]):
     for idx,line in enumerate(lines):
         l = list(line.split(';')[1].split(','))
@@ -57,8 +54,9 @@ start_time=time.time()
 
 cvt_type = np.float32
 data_sum = np.sum(data,axis=1,dtype=cvt_type)
-data_jac = np.copy(data)
-data_jac[data_jac>0]=1
+#data_jac = np.copy(data)
+#data_jac[data_jac>0]=1
+data_jac = data > 0
 
 lst_a = np.arange(data.shape[0])
 
@@ -75,6 +73,16 @@ nitvl = min(total_cmb, 20)
 itvl = total_cmb/nitvl
 print("itvl=",itvl)
 
+from scipy.spatial.distance import pdist
+
+jcd = pdist(data, metric='cosine')
+cosine = 1.0-jcd
+#print("jcd=",jcd)
+#print("jcd_size=",jcd.size)
+print("cosine=",cosine)
+
+exit()
+
 for i, c in enumerate(lst_cmb):
     idx_a, idx_b = c
     a = data[idx_a]
@@ -84,16 +92,18 @@ for i, c in enumerate(lst_cmb):
     b_sum = data_sum[idx_b]
     b_jac = data_jac[idx_b]
 
-    non_zeros = (a >0) & (b > 0)
+    #non_zeros = (a >0) & (b > 0)
+    non_zeros = a_jac & b_jac
     summed_array = a + b
 
-    numerator_jac = np.sum(np.minimum(a_jac,b_jac))
-    denomenator_jac = np.sum(np.maximum(a_jac,b_jac))
+    #numerator_jac = np.sum(np.minimum(a_jac,b_jac))
+    #denomenator_jac = np.sum(np.maximum(a_jac,b_jac))
+    numerator_jac = np.sum(non_zeros)
+    denomenator_jac = np.sum(a_jac | b_jac)
     numerator_gen_jac =np.sum(np.minimum(a,b))
     denomenator_gen_jac =np.sum(np.maximum(a,b))
     num_sim = np.sum(summed_array[non_zeros])
-    #result = 1 - spatial.distance.cosine(a.astype(np.float32), b.astype(np.float32))
-    result = 1 - spatial.distance.cosine(a, b)
+    result = 1 - spatial.distance.cosine(a.astype(cvt_type), b.astype(cvt_type))
 
     if (denomenator_jac == 0):
         print('There is something wrong. Denominator is Zero! ', idx_a, idx_b, numerator_jac, denomenator_jac)
@@ -120,7 +130,6 @@ for i, c in enumerate(lst_cmb):
     cosine[idx_b,idx_a] = result*100
     if (i % itvl) == 0:
         print("iter:\t",i,"\ttime at {}".format(time.time()-start_time))
-        #print(result,idx_a,idx_b)
         
 csv_folder_name = sample_name+"_csv_"+m_datatype.__name__
 if not os.path.exists(csv_folder_name):
