@@ -194,32 +194,22 @@ for idx, c in enumerate(parts_line_cmbs):
     wu[idx] = dist_wu
     cosine[idx] = result*100
     
-    #normal[idx_a,idx_b] = dist_jac
-    #normal[idx_b,idx_a] = dist_jac
-    #generalised[idx_a,idx_b] = dist_gen_jac
-    #generalised[idx_b,idx_a] = dist_gen_jac
-    #sarika[idx_a,idx_b] = dist_sarika
-    #sarika[idx_b,idx_a] = dist_sarika
-    #wu[idx_a,idx_b] = dist_wu
-    #wu[idx_b,idx_a] = dist_wu
-    #cosine[idx_a,idx_b] = result*100
-    #cosine[idx_b,idx_a] = result*100
-    #if (i % itvl) == 0:
-    #    print("itvl:\t",i,"\ttime at {}".format(time.time()-start_time))
-
 # need to do gather for data here
-
-#exit()
+send_data = parts_line_cmbs
+recv_data = None
+if rank == 0:
+    total_cmbs = len(parts_cmbs)
+    recv_data = np.empty(
         
 #if rank == 0:
-csv_folder_name = sample_name+"_csv_"+m_datatype.__name__
-if not os.path.exists(csv_folder_name):
-    os.mkdir(csv_folder_name)
-pd.DataFrame(normal).to_csv(csv_folder_name+"/normal_" + str(rank) + ".csv")
-pd.DataFrame(generalised).to_csv(csv_folder_name+"/generalised_" + str(rank) + ".csv")
-pd.DataFrame(sarika).to_csv(csv_folder_name+"/sarika_" + str(rank) + ".csv")
-pd.DataFrame(wu).to_csv(csv_folder_name + "/wu_" + str(rank) + ".csv")
-pd.DataFrame(cosine).to_csv(csv_folder_name + "/cosine_" + str(rank) + ".csv")
+#csv_folder_name = sample_name+"_csv_"+m_datatype.__name__
+#if not os.path.exists(csv_folder_name):
+#    os.mkdir(csv_folder_name)
+#pd.DataFrame(normal).to_csv(csv_folder_name+"/normal_" + str(rank) + ".csv")
+#pd.DataFrame(generalised).to_csv(csv_folder_name+"/generalised_" + str(rank) + ".csv")
+#pd.DataFrame(sarika).to_csv(csv_folder_name+"/sarika_" + str(rank) + ".csv")
+#pd.DataFrame(wu).to_csv(csv_folder_name + "/wu_" + str(rank) + ".csv")
+#pd.DataFrame(cosine).to_csv(csv_folder_name + "/cosine_" + str(rank) + ".csv")
 
 if rank == 0:
     end_time=time.time()
