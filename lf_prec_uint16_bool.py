@@ -23,8 +23,8 @@ from itertools import combinations
 #fname = "sample_protease_mix_1/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
 #sample_name = "sample_hsp70_actin"
-sample_name = "sample_a-b_mix_2"
-#sample_name = "sample_protease_mix_1"
+#sample_name = "sample_a-b_mix_2"
+sample_name = "sample_protease_mix_1"
 fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
 start_time=time.time()
@@ -94,6 +94,7 @@ for i, c in enumerate(lst_cmb):
     denomenator_gen_jac =np.sum(np.maximum(a,b))
     num_sim = np.sum(summed_array[non_zeros])
     result = 1 - spatial.distance.cosine(a.astype(cvt_type), b.astype(cvt_type))
+    #result = 1 - spatial.distance.cosine(a, b)
 
     if (denomenator_jac == 0):
         print('There is something wrong. Denominator is Zero! ', idx_a, idx_b, numerator_jac, denomenator_jac)

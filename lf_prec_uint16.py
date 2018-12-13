@@ -6,7 +6,7 @@ import os
 import pandas as pd
 import time
 import numpy as np
-import StringIO
+#import StringIO
 import itertools
 from scipy import spatial
 #import cartesian
@@ -22,9 +22,9 @@ from itertools import combinations
 #fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 #fname = "sample_protease_mix_1/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
-#sample_name = "sample_hsp70_actin"
+sample_name = "sample_hsp70_actin"
 #sample_name = "sample_a-b_mix_2"
-sample_name = "sample_protease_mix_1"
+#sample_name = "sample_protease_mix_1"
 fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
 start_time=time.time()
@@ -92,6 +92,7 @@ for i, c in enumerate(lst_cmb):
     numerator_gen_jac =np.sum(np.minimum(a,b))
     denomenator_gen_jac =np.sum(np.maximum(a,b))
     num_sim = np.sum(summed_array[non_zeros])
+    #result = 1 - spatial.distance.cosine(a.astype(np.float32), b.astype(np.float32))
     result = 1 - spatial.distance.cosine(a, b)
 
     if (denomenator_jac == 0):
@@ -118,7 +119,9 @@ for i, c in enumerate(lst_cmb):
     cosine[idx_a,idx_b] = result*100
     cosine[idx_b,idx_a] = result*100
     if (i % itvl) == 0:
+        #print(result,idx_a,idx_b)
         print("iter:\t",i,"\ttime at {}".format(time.time()-start_time))
+        #exit()
         
 csv_folder_name = sample_name+"_csv_"+m_datatype.__name__
 if not os.path.exists(csv_folder_name):

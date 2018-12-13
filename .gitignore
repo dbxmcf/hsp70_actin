@@ -1,3 +1,4 @@
 *.pyc
 lib/*.pyc
 jcd.o*
+sample_*
