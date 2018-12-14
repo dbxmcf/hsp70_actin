@@ -6,6 +6,7 @@ import os
 import pandas as pd
 import time
 import numpy as np
+from numpy import linalg as LA
 #import StringIO
 import itertools
 from scipy import spatial
@@ -23,8 +24,8 @@ from itertools import combinations
 #fname = "sample_protease_mix_1/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
 #sample_name = "sample_hsp70_actin"
-#sample_name = "sample_a-b_mix_2"
-sample_name = "sample_protease_mix_1"
+sample_name = "sample_a-b_mix_2"
+#sample_name = "sample_protease_mix_1"
 fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
 start_time=time.time()
@@ -73,6 +74,7 @@ nitvl = min(total_cmb, 20)
 itvl = total_cmb/nitvl
 print("itvl=",itvl)
 
+one_data_norm = 1.0/LA.norm(data,axis=1)
 for i, c in enumerate(lst_cmb):
     idx_a, idx_b = c
     a = data[idx_a]
@@ -88,13 +90,18 @@ for i, c in enumerate(lst_cmb):
 
     #numerator_jac = np.sum(np.minimum(a_jac,b_jac))
     #denomenator_jac = np.sum(np.maximum(a_jac,b_jac))
-    numerator_jac = np.sum(non_zeros)
-    denomenator_jac = np.sum(a_jac | b_jac)
+    #numerator_jac = np.sum(non_zeros)
+    #denomenator_jac = np.sum(a_jac | b_jac)
+    numerator_jac = np.count_nonzero(non_zeros)
+    denomenator_jac = np.count_nonzero(a_jac | b_jac)
     numerator_gen_jac =np.sum(np.minimum(a,b))
     denomenator_gen_jac =np.sum(np.maximum(a,b))
     num_sim = np.sum(summed_array[non_zeros])
-    result = 1 - spatial.distance.cosine(a.astype(cvt_type), b.astype(cvt_type))
+    #result = 1 - spatial.distance.cosine(a.astype(cvt_type), b.astype(cvt_type))
     #result = 1 - spatial.distance.cosine(a, b)
+    one_an = one_data_norm[idx_a]
+    one_bn = one_data_norm[idx_b]
+    result = 1 - a.dot(b)*one_an*one_bn
 
     if (denomenator_jac == 0):
         print('There is something wrong. Denominator is Zero! ', idx_a, idx_b, numerator_jac, denomenator_jac)
