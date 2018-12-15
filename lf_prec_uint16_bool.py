@@ -24,8 +24,8 @@ from itertools import combinations
 #fname = "sample_protease_mix_1/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
 #sample_name = "sample_hsp70_actin"
-sample_name = "sample_a-b_mix_2"
-#sample_name = "sample_protease_mix_1"
+#sample_name = "sample_a-b_mix_2"
+sample_name = "sample_protease_mix_1"
 fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
 start_time=time.time()
