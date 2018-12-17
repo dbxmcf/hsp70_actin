@@ -35,7 +35,7 @@ df = pd.DataFrame(data)
 
 # Save to HDF5
 #df.to_hdf(filename, 'data', mode='w', format='table')
-df.to_hdf(filename, 'data', mode='w') #, format='table')
+df.to_hdf(filename, 'data', mode='w', complib=clib, complevel=9) #, format='table')
 del df    # allow df to be garbage collected
 print('done with: ', filename)
 # Append more data
