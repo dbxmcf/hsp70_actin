@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 import numpy as np
 import pandas as pd
+import h5py
 
-#sample_name = "sample_hsp70_actin"
-sample_name = "sample_a-b_mix_2"
+sample_name = "sample_hsp70_actin"
+#sample_name = "sample_a-b_mix_2"
 #sample_name = "sample_protease_mix_1"
 fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
@@ -22,12 +23,20 @@ data = np.array(arrs,dtype=m_datatype)
 
 filename = sample_name + '.h5'
 
+np.save(sample_name + '.npy',data)
+np.savetxt(sample_name + '.txt',data)
+
+h5f = h5py.File(sample_name + '.h5', 'w')
+h5f.create_dataset('ds1', data=data)
+h5f.close()
+
 #df = pd.DataFrame(np.arange(10).reshape((5,2)), columns=['A', 'B'])
 #df = pd.DataFrame(np.arange(10).reshape((5,2)))
-df = pd.DataFrame(data)
+#df = pd.DataFrame(data)
 #print(df)
 #    A  B
-# 0  0  1
+# 0  0  1h5ls
+
 # 1  2  3
 # 2  4  5
 # 3  6  7
@@ -35,8 +44,8 @@ df = pd.DataFrame(data)
 
 # Save to HDF5
 #df.to_hdf(filename, 'data', mode='w', format='table')
-df.to_hdf(filename, 'data', mode='w', complib=clib, complevel=9) #, format='table')
-del df    # allow df to be garbage collected
+#df.to_hdf(filename, 'data', mode='w', complib=clib, complevel=9) #, format='table')
+#del df    # allow df to be garbage collected
 print('done with: ', filename)
 # Append more data
 #df2 = pd.DataFrame(np.arange(10).reshape((5,2))*10, columns=['A', 'B'])

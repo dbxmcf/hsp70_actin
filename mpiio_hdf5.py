@@ -6,7 +6,8 @@ comm = MPI.COMM_WORLD # Communicator which links all our processes together
 rank = comm.rank # Number which identifies this process. Since we'll
                  # have 4 processes, this will be in the range 0-3.
 f = h5py.File('coords.hdf5', driver='mpio', comm=comm)
-coords_dset = f['coords']
+#coords_dset = f['coords']
+coords_dset = np.arange(1000)
 distances_dset = f.create_dataset('distances', (1000,), dtype='f4')
 
 idx = rank*250 # This will be our starting index. Rank 0 handles coordinate
