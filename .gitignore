@@ -2,3 +2,4 @@
 lib/*.pyc
 jcd.o*
 sample_*
+*.o
