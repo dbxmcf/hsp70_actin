@@ -54,22 +54,24 @@ main (int argc, char **argv)
     file_id = H5Fcreate(H5FILE_NAME, H5F_ACC_TRUNC, H5P_DEFAULT, plist_id);
     H5Pclose(plist_id);
    
+    /*
+     * variable data size on each rank.
+     */
     int rank_size = mpi_rank+1;
-    /*printf("rk[%d],rk_size=%d\n",mpi_rank, rank_size);*/
-    
-    int *rk_gather=(int *) malloc(sizeof(int)*mpi_size);
-    
+    int *rk_gather=(int *)malloc(sizeof(int)*mpi_size);
+    int *ofst_accu=(int *)malloc(sizeof(int)*mpi_size);
     MPI_Allgather(&rank_size,1,MPI_INT,rk_gather,1,MPI_INT,comm);
     int nx = 0;
-    for (i=0;i<mpi_size;i++)
+    for (i=0;i<mpi_size;i++) {
+        ofst_accu[i] = nx;
         nx += rk_gather[i];
-    
-    printf("rk[%d],rk_size=%d,nx=%d\n",mpi_rank, rank_size,nx);
+    }
+    printf("rk[%d],rk_size=%d,nx=%d,ofst=%d\n",mpi_rank, rank_size,nx,ofst_accu[mpi_rank]);
 
     /*
      * Create the dataspace for the dataset.
      */
-    dimsf[0] = NX;
+    dimsf[0] = nx; //(unsigned int)nx;
     dimsf[1] = NY;
     filespace = H5Screate_simple(RANK, dimsf, NULL); 
 
@@ -84,9 +86,14 @@ main (int argc, char **argv)
      * Each process defines dataset in memory and writes it to the hyperslab
      * in the file.
      */
-    count[0] = dimsf[0]/mpi_size;
+    /*
+     *count[0] = dimsf[0]/mpi_size;
+     */
+    //count[0] = dimsf[0]/mpi_size;
+    count[0] = rank_size;
     count[1] = dimsf[1];
-    offset[0] = mpi_rank * count[0];
+    //offset[0] = mpi_rank * count[0];
+    offset[0] = ofst_accu[mpi_rank];
     offset[1] = 0;
     memspace = H5Screate_simple(RANK, count, NULL);
 
@@ -112,8 +119,13 @@ main (int argc, char **argv)
     
     status = H5Dwrite(dset_id, H5T_NATIVE_INT, memspace, filespace,
 		      plist_id, data);
+    
+    /*
+     * free custom data used
+     */
     free(data);
-
+    free(rk_gather);
+    free(ofst_accu);
     /*
      * Close/release resources.
      */
