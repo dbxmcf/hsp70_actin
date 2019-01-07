@@ -54,6 +54,17 @@ main (int argc, char **argv)
     file_id = H5Fcreate(H5FILE_NAME, H5F_ACC_TRUNC, H5P_DEFAULT, plist_id);
     H5Pclose(plist_id);
    
+    int rank_size = mpi_rank+1;
+    /*printf("rk[%d],rk_size=%d\n",mpi_rank, rank_size);*/
+    
+    int *rk_gather=(int *) malloc(sizeof(int)*mpi_size);
+    
+    MPI_Allgather(&rank_size,1,MPI_INT,rk_gather,1,MPI_INT,comm);
+    int nx = 0;
+    for (i=0;i<mpi_size;i++)
+        nx += rk_gather[i];
+    
+    printf("rk[%d],rk_size=%d,nx=%d\n",mpi_rank, rank_size,nx);
 
     /*
      * Create the dataspace for the dataset.
