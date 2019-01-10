@@ -59,14 +59,14 @@ main (int argc, char **argv)
      */
     int rank_size = mpi_rank+1;
     int *rk_gather=(int *)malloc(sizeof(int)*mpi_size);
-    int *ofst_accu=(int *)malloc(sizeof(int)*mpi_size);
+    int *ofst_rk=(int *)malloc(sizeof(int)*mpi_size);
     MPI_Allgather(&rank_size,1,MPI_INT,rk_gather,1,MPI_INT,comm);
     int nx = 0;
     for (i=0;i<mpi_size;i++) {
-        ofst_accu[i] = nx;
+        ofst_rk[i] = nx;
         nx += rk_gather[i];
     }
-    printf("rk[%d],rk_size=%d,nx=%d,ofst=%d\n",mpi_rank, rank_size,nx,ofst_accu[mpi_rank]);
+    printf("rk[%d],rk_size=%d,nx=%d,ofst=%d\n",mpi_rank, rank_size,nx,ofst_rk[mpi_rank]);
 
     /*
      * Create the dataspace for the dataset.
@@ -93,7 +93,7 @@ main (int argc, char **argv)
     count[0] = rank_size;
     count[1] = dimsf[1];
     //offset[0] = mpi_rank * count[0];
-    offset[0] = ofst_accu[mpi_rank];
+    offset[0] = ofst_rk[mpi_rank];
     offset[1] = 0;
     memspace = H5Screate_simple(RANK, count, NULL);
 
@@ -125,7 +125,7 @@ main (int argc, char **argv)
      */
     free(data);
     free(rk_gather);
-    free(ofst_accu);
+    free(ofst_rk);
     /*
      * Close/release resources.
      */
