@@ -56,6 +56,7 @@ tint get_non_zeros_single(tint *a, tint vec_dim)
     for (i=0;i<vec_dim;i++)
         if (a[i] != 0)
            count++;
+    return count;
 }
 
 void get_sum_vec(tint *a, tint *b, tint vec_dim)
@@ -73,14 +74,14 @@ void vec_add(tint *a, tint *b, tint *c,tint vec_dim)
         c[i] = a[i]+b[i];
 }
 
-tint vec_and(tint *a, tint *b, tint *c,tint vec_dim)
+void vec_and(tint *a, tint *b, tint *c,tint vec_dim)
 {
   tint i;  
   for(i=0; i<vec_dim; i++) 
         c[i] = a[i] & b[i];
 }
 
-tint vec_or(tint *a, tint *b, tint *c,tint vec_dim)
+void vec_or(tint *a, tint *b, tint *c,tint vec_dim)
 {
   tint i;  
   for(i=0; i<vec_dim; i++) 
