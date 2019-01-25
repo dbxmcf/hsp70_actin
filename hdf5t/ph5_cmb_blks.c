@@ -91,7 +91,7 @@ int mpi_size, mpi_rank;				/* mpi variables */
 int verbose = 0;			/* verbose, default as no. */
 int doread=1;				/* read test */
 int dowrite=1;				/* write test */
-int docleanup=1;			/* cleanup */
+int docleanup=0;			/* cleanup */
 
 /* Prototypes */
 void slab_set(hsize_t start[], hsize_t count[], hsize_t stride[], int mode);
@@ -1083,8 +1083,8 @@ main(int argc, char **argv)
     }
 
     if (dowrite){
-	MPI_BANNER("testing PHDF5 dataset using split communicators...");
-	test_split_comm_access(testfiles);
+	  // MPI_BANNER("testing PHDF5 dataset using split communicators...");
+	  // test_split_comm_access(testfiles);
 	MPI_BANNER("testing PHDF5 dataset independent write...");
 	phdf5writeInd(testfiles[0]);
 	MPI_BANNER("testing PHDF5 dataset collective write...");
