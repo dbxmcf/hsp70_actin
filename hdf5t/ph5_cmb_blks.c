@@ -90,7 +90,7 @@ int mpi_size, mpi_rank;				/* mpi variables */
 /* option flags */
 int verbose = 0;			/* verbose, default as no. */
 int doread=1;				/* read test */
-int dowrite=1;				/* write test */
+int dowrite=0;				/* write test */
 int docleanup=0;			/* cleanup */
 
 /* Prototypes */
@@ -1091,8 +1091,8 @@ main(int argc, char **argv)
 	phdf5writeAll(testfiles[1]);
     }
     if (doread){
-	MPI_BANNER("testing PHDF5 dataset independent read...");
-	phdf5readInd(testfiles[0]);
+	//MPI_BANNER("testing PHDF5 dataset independent read...");
+	//phdf5readInd(testfiles[0]);
 	MPI_BANNER("testing PHDF5 dataset collective read...");
 	phdf5readAll(testfiles[1]);
     }
