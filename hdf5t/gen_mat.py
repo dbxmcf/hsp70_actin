@@ -10,7 +10,7 @@ n = 17
 m = 24
 test_arr = np.random.randint(val_range, size=(n, m),dtype=np.uint16)
 h5f = h5py.File('ta.h5', 'w')
-h5f.create_dataset('test_arr_name', data=test_arr)
+h5f.create_dataset('Data1', data=test_arr)
 h5f.close()
 
 print(test_arr)
