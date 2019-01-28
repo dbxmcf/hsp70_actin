@@ -729,21 +729,16 @@ phdf5readAll(char *filename)
      * Open the datasets in it
      * ------------------------- */
     /* open the dataset1 collectively */
-    dataset1 = H5Dopen2(fid1, DATASETNAME1, H5P_DEFAULT);
+    dataset1 = H5Dopen2(fid1, "test_arr_name", H5P_DEFAULT);
     assert(dataset1 != FAIL);
     MESG("H5Dopen2 succeed");
-
-    /* open another dataset collectively */
-    dataset2 = H5Dopen2(fid1, DATASETNAME1, H5P_DEFAULT);
-    assert(dataset2 != FAIL);
-    MESG("H5Dopen2 2 succeed");
 
     /*
      * Set up dimensions of the slab this process accesses.
      */
 
     /* Dataset1: each process takes a block of columns. */
-    slab_set(start, count, stride, BYCOL);
+    slab_set(start, count, stride, BYROW);
 if (verbose)
     printf("start[]=(%lu,%lu), count[]=(%lu,%lu), total datapoints=%lu\n",
 	(unsigned long)start[0], (unsigned long)start[1],
@@ -791,57 +786,6 @@ if (verbose)
     /* release all temporary handles. */
     /* Could have used them for dataset2 but it is cleaner */
     /* to create them again.*/
-    H5Sclose(file_dataspace);
-    H5Sclose(mem_dataspace);
-    H5Pclose(xfer_plist);
-
-    /* Dataset2: each process takes a block of rows. */
-    slab_set(start, count, stride, BYROW);
-if (verbose)
-    printf("start[]=(%lu,%lu), count[]=(%lu,%lu), total datapoints=%lu\n",
-	(unsigned long)start[0], (unsigned long)start[1],
-        (unsigned long)count[0], (unsigned long)count[1],
-        (unsigned long)(count[0]*count[1]));
-
-    /* create a file dataspace independently */
-    file_dataspace = H5Dget_space (dataset1);
-    assert(file_dataspace != FAIL);
-    MESG("H5Dget_space succeed");
-    ret=H5Sselect_hyperslab(file_dataspace, H5S_SELECT_SET, start, stride,
-	    count, NULL);
-    assert(ret != FAIL);
-    MESG("H5Sset_hyperslab succeed");
-
-    /* create a memory dataspace independently */
-    mem_dataspace = H5Screate_simple (SPACE1_RANK, count, NULL);
-    assert (mem_dataspace != FAIL);
-
-    /* fill dataset with test data */
-    dataset_fill(start, count, stride, &data_origin1[0][0]);
-    MESG("data_array initialized");
-    if (verbose){
-	MESG("data_array created");
-	dataset_print(start, count, stride, &data_array1[0][0]);
-    }
-
-    /* set up the collective transfer properties list */
-    xfer_plist = H5Pcreate (H5P_DATASET_XFER);
-    assert(xfer_plist != FAIL);
-    ret=H5Pset_dxpl_mpio(xfer_plist, H5FD_MPIO_COLLECTIVE);
-    assert(ret != FAIL);
-    MESG("H5Pcreate xfer succeed");
-
-    /* read data independently */
-    ret = H5Dread(dataset2, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
-	    xfer_plist, data_array1);
-    assert(ret != FAIL);
-    MESG("H5Dread succeed");
-
-    /* verify the read data with original expected data */
-    ret = dataset_vrfy(start, count, stride, &data_array1[0][0], &data_origin1[0][0]);
-    assert(ret != FAIL);
-
-    /* release all temporary handles. */
     H5Sclose(file_dataspace);
     H5Sclose(mem_dataspace);
     H5Pclose(xfer_plist);
@@ -1076,25 +1020,28 @@ main(int argc, char **argv)
     /* show test file names */
     if (mpi_rank == 0){
 	n = sizeof(testfiles)/sizeof(testfiles[0]);
+    /*
 	printf("Parallel test files are:\n");
 	for (i=0; i<n; i++){
 	    printf("   %s\n", testfiles[i]);
 	}
+    */
     }
 
-    if (dowrite){
+    //if (dowrite){
 	  // MPI_BANNER("testing PHDF5 dataset using split communicators...");
 	  // test_split_comm_access(testfiles);
-	MPI_BANNER("testing PHDF5 dataset independent write...");
-	phdf5writeInd(testfiles[0]);
-	MPI_BANNER("testing PHDF5 dataset collective write...");
-	phdf5writeAll(testfiles[1]);
-    }
+	//MPI_BANNER("testing PHDF5 dataset independent write...");
+	//phdf5writeInd(testfiles[0]);
+	//MPI_BANNER("testing PHDF5 dataset collective write...");
+	//phdf5writeAll(testfiles[1]);
+    //}
     if (doread){
-	MPI_BANNER("testing PHDF5 dataset independent read...");
-	phdf5readInd(testfiles[0]);
+	//MPI_BANNER("testing PHDF5 dataset independent read...");
+	//phdf5readInd(testfiles[0]);
 	MPI_BANNER("testing PHDF5 dataset collective read...");
-	phdf5readAll(testfiles[1]);
+	//phdf5readAll(testfiles[1]);
+    phdf5readAll("ta.h5");
     }
 
     if (!(dowrite || doread)){
