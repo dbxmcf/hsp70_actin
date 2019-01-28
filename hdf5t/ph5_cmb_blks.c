@@ -743,12 +743,12 @@ phdf5readAll(char *filename)
      */
 
     /* Dataset1: each process takes a block of columns. */
-    slab_set(start, count, stride, BYCOL);
-if (verbose)
-    printf("start[]=(%lu,%lu), count[]=(%lu,%lu), total datapoints=%lu\n",
-	(unsigned long)start[0], (unsigned long)start[1],
-        (unsigned long)count[0], (unsigned long)count[1],
-        (unsigned long)(count[0]*count[1]));
+    slab_set(start, count, stride, BYROW);
+    if (verbose)
+        printf("start[]=(%lu,%lu), count[]=(%lu,%lu), total datapoints=%lu\n",
+        (unsigned long)start[0], (unsigned long)start[1],
+            (unsigned long)count[0], (unsigned long)count[1],
+            (unsigned long)(count[0]*count[1]));
 
     /* create a file dataspace independently */
     file_dataspace = H5Dget_space (dataset1);
@@ -1094,7 +1094,8 @@ main(int argc, char **argv)
 	//MPI_BANNER("testing PHDF5 dataset independent read...");
 	//phdf5readInd(testfiles[0]);
 	MPI_BANNER("testing PHDF5 dataset collective read...");
-	phdf5readAll(testfiles[1]);
+	//phdf5readAll(testfiles[1]);
+    phdf5readAll("ta.h5");
     }
 
     if (!(dowrite || doread)){
