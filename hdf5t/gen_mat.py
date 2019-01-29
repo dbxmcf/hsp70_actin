@@ -6,7 +6,7 @@ import pandas as pd
 import h5py
 
 val_range = 16
-n = 17
+n = 19
 m = 24
 test_arr = np.random.randint(val_range, size=(n, m),dtype=np.uint16)
 h5f = h5py.File('ta.h5', 'w')
