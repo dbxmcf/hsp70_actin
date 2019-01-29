@@ -765,7 +765,7 @@ phdf5readAll(char *filename)
     printf("mat_rk=%d,dims_out[0]=%d,dims_out[1]=%d\n", fs_rank,dims_out[0],dims_out[1]);
     assert(file_dataspace != FAIL);
     MESG("H5Dget_space succeed");
-    start[0]=mpi_rank;
+    start[0]=mpi_rank*2;
     start[1]=0;
     count[0]=space_dim1; //!FIXME
     count[1]=space_dim2;
@@ -805,8 +805,9 @@ phdf5readAll(char *filename)
     MESG("H5Dread succeed");
     for (i=0;i<space_dim1;i++)
     {
+        printf("mpi_rank[%d]:",mpi_rank);
         for (j=0;j<space_dim2;j++)
-            printf("%3d",data_array1[i][j]);
+            printf("%5d",data_array1[i][j]);
         printf("\n");
     }
 //
