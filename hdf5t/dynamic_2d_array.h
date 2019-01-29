@@ -5,7 +5,7 @@
 #include <stdlib.h>
              
 //typedef double real;
-typedef float real;
+typedef int real;
 #define MPI_REALNUM MPI_FLOAT
 
 real **allocate_dynamic_2d_array(int nrows, int ncols);

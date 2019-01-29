@@ -38,6 +38,7 @@
 #include "hdf5.h"
 #include <string.h>
 #include <stdlib.h>
+#include "dynamic_2d_array.h"
 
 #ifdef H5_HAVE_PARALLEL
 /* Temporary source code */
@@ -693,9 +694,9 @@ phdf5readAll(char *filename)
 
     hid_t dataset1, dataset2;	/* Dataset ID */
     //DATATYPE data_array1[SPACE1_DIM1][SPACE1_DIM2];	/* data buffer */
-    const int space_dim1=2;
-    const int space_dim2=12;
-    DATATYPE data_array1[space_dim1][space_dim2];	/* data buffer */
+    unsigned long space_dim0, space_dim1=0;
+    //DATATYPE data_array1[space_dim1][space_dim2];	/* data buffer */
+    //DATATYPE **data_array1=NULL;	/* data buffer */
     DATATYPE data_origin1[SPACE1_DIM1][SPACE1_DIM2];	/* expected data buffer */
 
     hsize_t start[SPACE1_RANK];			/* for hyperslab setting */
@@ -703,6 +704,7 @@ phdf5readAll(char *filename)
 
     herr_t ret;         	/* Generic return value */
     int i,j,status_n, fs_rank;
+    int average_lines,remainder_lines;
 
     MPI_Comm comm = MPI_COMM_WORLD;
     MPI_Info info = MPI_INFO_NULL;
@@ -749,26 +751,33 @@ phdf5readAll(char *filename)
      * Set up dimensions of the slab this process accesses.
      */
 
-    /* Dataset1: each process takes a block of columns. */
+    /* Dataset1: each process takes a block of rows. */
     //slab_set(start, count, stride, BYROW);
-
-    //start[0]=mpi_rank;
-    //start[1]=0;
-    //count[0]= ;
-    //count[1]= ;
-
 
     /* create a file dataspace independently */
     file_dataspace = H5Dget_space (dataset1);
     fs_rank      = H5Sget_simple_extent_ndims (file_dataspace);
     status_n  = H5Sget_simple_extent_dims (file_dataspace, dims_out, NULL);
-    printf("mat_rk=%d,dims_out[0]=%d,dims_out[1]=%d\n", fs_rank,dims_out[0],dims_out[1]);
+    printf("mat_rk=%d,dims_out[0]=%lu,dims_out[1]=%lu\n", fs_rank,(unsigned long)dims_out[0],(unsigned long)dims_out[1]);
     assert(file_dataspace != FAIL);
     MESG("H5Dget_space succeed");
-    start[0]=mpi_rank*2;
-    start[1]=0;
-    count[0]=space_dim1; //!FIXME
-    count[1]=space_dim2;
+
+    /* now calculate start[0] for each rank*/
+    average_lines = dims_out[0] / mpi_size;
+    remainder_lines = dims_out[0] % mpi_size;
+    printf("average_lines=%d, remainder_lines=%d\n", average_lines,remainder_lines);
+    if (mpi_rank<remainder_lines) {
+        start[0]=mpi_rank*(average_lines+1);
+        start[1]=0;
+        count[0]=average_lines+1; //!FIXME
+        count[1]=dims_out[1]; //width of each line
+    }
+    else {
+        start[0]=remainder_lines*(average_lines+1)+(mpi_rank-remainder_lines)*average_lines;
+        start[1]=0;
+        count[0]=average_lines; //!FIXME
+        count[1]=dims_out[1]; //width of each line        
+    }
     if (verbose)
         printf("start[]=(%lu,%lu), count[]=(%lu,%lu), total datapoints=%lu\n",
             (unsigned long)start[0], (unsigned long)start[1],
@@ -784,12 +793,19 @@ phdf5readAll(char *filename)
     assert (mem_dataspace != FAIL);
 //
     ///* fill dataset with test data */
+    DATATYPE **data_array1=NULL;	/* data buffer */
+    //DATATYPE data_array1[5][12];
+    space_dim0 = (unsigned long)count[0];
+    space_dim1 = (unsigned long)count[1];
+    printf("space_dim0=%lu,,space_dim1=%lu\n",space_dim0,space_dim1);
+    data_array1 = allocate_dynamic_2d_array(space_dim0,space_dim1);
+    //printf("%5d",data_array1[3][3]);
     //dataset_fill(start, count, stride, &data_origin1[0][0]);
     //MESG("data_array initialized");
-    //if (verbose){
-	//MESG("data_array created");
-	//dataset_print(start, count, stride, &data_array1[0][0]);
-    //}
+    if (verbose){
+        MESG("data_array created");
+        dataset_print(start, count, stride, &data_array1[0][0]);
+    }
 //
     ///* set up the collective transfer properties list */
     xfer_plist = H5Pcreate (H5P_DATASET_XFER);
@@ -803,13 +819,18 @@ phdf5readAll(char *filename)
 	    xfer_plist, data_array1);
     assert(ret != FAIL);
     MESG("H5Dread succeed");
-    for (i=0;i<space_dim1;i++)
-    {
-        printf("mpi_rank[%d]:",mpi_rank);
-        for (j=0;j<space_dim2;j++)
-            printf("%5d",data_array1[i][j]);
-        printf("\n");
-    }
+
+    //printf("data_array1=%p\n",data_array1);
+    //printf("%5d",data_array1[0][0]);
+    //for (i=0;i<space_dim0;i++)
+    //{
+    //    printf("mpi_rank[%d]:",mpi_rank);
+    //    for (j=0;j<space_dim1;j++)
+    //        printf("%5d",data_array1[i][j]);
+    //    printf("\n");
+    //}
+
+    free_dynamic_2d_array(data_array1);
 //
     ///* verify the read data with original expected data */
     //ret = dataset_vrfy(start, count, stride, &data_array1[0][0], &data_origin1[0][0]);
