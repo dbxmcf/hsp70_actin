@@ -816,12 +816,12 @@ phdf5readAll(char *filename)
 //
     ///* read data collectively */
     ret = H5Dread(dataset1, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
-	    xfer_plist, data_array1);
+	    xfer_plist, &data_array1[0][0]);
     assert(ret != FAIL);
     MESG("H5Dread succeed");
 
     //printf("data_array1=%p\n",data_array1);
-    //printf("%5d",data_array1[0][0]);
+    printf("%5d",data_array1[0][0]);
     //for (i=0;i<space_dim0;i++)
     //{
     //    printf("mpi_rank[%d]:",mpi_rank);
