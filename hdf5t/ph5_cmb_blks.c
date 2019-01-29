@@ -821,14 +821,14 @@ phdf5readAll(char *filename)
     MESG("H5Dread succeed");
 
     //printf("data_array1=%p\n",data_array1);
-    printf("%5d",data_array1[0][0]);
-    //for (i=0;i<space_dim0;i++)
-    //{
-    //    printf("mpi_rank[%d]:",mpi_rank);
-    //    for (j=0;j<space_dim1;j++)
-    //        printf("%5d",data_array1[i][j]);
-    //    printf("\n");
-    //}
+    //printf("%5d",data_array1[0][0]);
+    for (i=0;i<space_dim0;i++)
+    {
+        printf("mpi_rank[%d]:",mpi_rank);
+        for (j=0;j<space_dim1;j++)
+            printf("%5d",data_array1[i][j]);
+        printf("\n");
+    }
 
     free_dynamic_2d_array(data_array1);
 //
