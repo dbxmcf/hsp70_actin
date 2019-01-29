@@ -692,14 +692,17 @@ phdf5readAll(char *filename)
     hsize_t     dims_out[2];
 
     hid_t dataset1, dataset2;	/* Dataset ID */
-    DATATYPE data_array1[SPACE1_DIM1][SPACE1_DIM2];	/* data buffer */
+    //DATATYPE data_array1[SPACE1_DIM1][SPACE1_DIM2];	/* data buffer */
+    const int space_dim1=2;
+    const int space_dim2=12;
+    DATATYPE data_array1[space_dim1][space_dim2];	/* data buffer */
     DATATYPE data_origin1[SPACE1_DIM1][SPACE1_DIM2];	/* expected data buffer */
 
     hsize_t start[SPACE1_RANK];			/* for hyperslab setting */
     hsize_t count[SPACE1_RANK], stride[SPACE1_RANK];	/* for hyperslab setting */
 
     herr_t ret;         	/* Generic return value */
-    int status_n, rank;
+    int i,j,status_n, fs_rank;
 
     MPI_Comm comm = MPI_COMM_WORLD;
     MPI_Info info = MPI_INFO_NULL;
@@ -753,23 +756,28 @@ phdf5readAll(char *filename)
     //start[1]=0;
     //count[0]= ;
     //count[1]= ;
-    if (verbose)
-        printf("start[]=(%lu,%lu), count[]=(%lu,%lu), total datapoints=%lu\n",
-        (unsigned long)start[0], (unsigned long)start[1],
-            (unsigned long)count[0], (unsigned long)count[1],
-            (unsigned long)(count[0]*count[1]));
+
 
     /* create a file dataspace independently */
     file_dataspace = H5Dget_space (dataset1);
-    rank      = H5Sget_simple_extent_ndims (file_dataspace);
+    fs_rank      = H5Sget_simple_extent_ndims (file_dataspace);
     status_n  = H5Sget_simple_extent_dims (file_dataspace, dims_out, NULL);
-    printf("mat_rk=%d,dims_out[0]=%d,dims_out[1]=%d\n", rank,dims_out[0],dims_out[1]);
+    printf("mat_rk=%d,dims_out[0]=%d,dims_out[1]=%d\n", fs_rank,dims_out[0],dims_out[1]);
     assert(file_dataspace != FAIL);
     MESG("H5Dget_space succeed");
-    //ret=H5Sselect_hyperslab(file_dataspace, H5S_SELECT_SET, start, NULL,
-	//    count, NULL);
-    //assert(ret != FAIL);
-    //MESG("H5Sset_hyperslab succeed");
+    start[0]=mpi_rank;
+    start[1]=0;
+    count[0]=space_dim1; //!FIXME
+    count[1]=space_dim2;
+    if (verbose)
+        printf("start[]=(%lu,%lu), count[]=(%lu,%lu), total datapoints=%lu\n",
+            (unsigned long)start[0], (unsigned long)start[1],
+            (unsigned long)count[0], (unsigned long)count[1],
+            (unsigned long)(count[0]*count[1]));
+    ret=H5Sselect_hyperslab(file_dataspace, H5S_SELECT_SET, start, NULL,
+	    count, NULL);
+    assert(ret != FAIL);
+    MESG("H5Sset_hyperslab succeed");
 //
     ///* create a memory dataspace independently */
     mem_dataspace = H5Screate_simple (SPACE1_RANK, count, NULL);
@@ -784,17 +792,23 @@ phdf5readAll(char *filename)
     //}
 //
     ///* set up the collective transfer properties list */
-    //xfer_plist = H5Pcreate (H5P_DATASET_XFER);
-    //assert(xfer_plist != FAIL);
-    //ret=H5Pset_dxpl_mpio(xfer_plist, H5FD_MPIO_COLLECTIVE);
-    //assert(ret != FAIL);
-    //MESG("H5Pcreate xfer succeed");
+    xfer_plist = H5Pcreate (H5P_DATASET_XFER);
+    assert(xfer_plist != FAIL);
+    ret=H5Pset_dxpl_mpio(xfer_plist, H5FD_MPIO_COLLECTIVE);
+    assert(ret != FAIL);
+    MESG("H5Pcreate xfer succeed");
 //
     ///* read data collectively */
-    //ret = H5Dread(dataset1, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
-	//    xfer_plist, data_array1);
-    //assert(ret != FAIL);
-    //MESG("H5Dread succeed");
+    ret = H5Dread(dataset1, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
+	    xfer_plist, data_array1);
+    assert(ret != FAIL);
+    MESG("H5Dread succeed");
+    for (i=0;i<space_dim1;i++)
+    {
+        for (j=0;j<space_dim2;j++)
+            printf("%3d",data_array1[i][j]);
+        printf("\n");
+    }
 //
     ///* verify the read data with original expected data */
     //ret = dataset_vrfy(start, count, stride, &data_array1[0][0], &data_origin1[0][0]);
