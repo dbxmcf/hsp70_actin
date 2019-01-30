@@ -25,16 +25,17 @@ data[] ---> Temporary array to store current combination
 start & end ---> Staring and Ending indexes in arr[] 
 index ---> Current index in data[] 
 r ---> Size of a combination to be printed */
-void combination_util(int arr[], int n) //, int **cmbs, int num_cmb) 
+void combination_util(int n, int **cmbs) //, int **cmbs, int num_cmb) 
 { 
-	int i, j;
+	int i, j, idx;
 	// Current combination is ready to be printed, print it 
-	for (i=1;i<n;i++)
+	for (i=0;i<n;i++)
 	{ 
-        for (j=0; j<i; j++) {
-			printf("%d %d\n", i, j); 
-			//cmbs[i][j] = data[j];
-			//*idx_cmb++;
+        for (j=i+1; j<n; j++) {
+			//printf("%d %d\n", i, j); 
+			cmbs[idx][0]=i;
+            cmbs[idx][1]=j;
+			idx++;
 		}
 	} 
 
@@ -43,9 +44,13 @@ void combination_util(int arr[], int n) //, int **cmbs, int num_cmb)
 // Driver program to test above functions 
 int main() 
 { 
-	int arr[] = {1, 2, 3, 4, 5}; 
-	int r = 2; 
-	int n = sizeof(arr)/sizeof(arr[0]); 
+	int n=5,r=2; 
+	int **cmbs=NULL;
+    int num_cmbs = n*(n-1)/2;
+    printf("num_cmbs=%d\n",num_cmbs);
+    cmbs = allocate_dynamic_2d_array(num_cmbs,2);
     printf("n=%d\n",n);
-	combination_util(arr,10); 
+	combination_util(n,cmbs); 
+    print_matrix(cmbs, num_cmbs, r, "%3d");
+    free_dynamic_2d_array(cmbs);
 } 
