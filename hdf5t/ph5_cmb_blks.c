@@ -694,7 +694,7 @@ phdf5readAll(char *filename)
 
     hid_t dataset1, dataset2;	/* Dataset ID */
     //DATATYPE data_array1[SPACE1_DIM1][SPACE1_DIM2];	/* data buffer */
-    unsigned long space_dim0, space_dim1=0;
+    unsigned long space_dim0=0, space_dim1=0;
     //DATATYPE data_array1[space_dim1][space_dim2];	/* data buffer */
     //DATATYPE **data_array1=NULL;	/* data buffer */
     DATATYPE data_origin1[SPACE1_DIM1][SPACE1_DIM2];	/* expected data buffer */
@@ -758,14 +758,18 @@ phdf5readAll(char *filename)
     file_dataspace = H5Dget_space (dataset1);
     fs_rank      = H5Sget_simple_extent_ndims (file_dataspace);
     status_n  = H5Sget_simple_extent_dims (file_dataspace, dims_out, NULL);
-    printf("mat_rk=%d,dims_out[0]=%lu,dims_out[1]=%lu\n", fs_rank,(unsigned long)dims_out[0],(unsigned long)dims_out[1]);
+    if (verbose)
+        printf("mat_rk=%d,dims_out[0]=%lu,dims_out[1]=%lu\n", 
+               fs_rank,
+               (unsigned long)dims_out[0],(unsigned long)dims_out[1]);
     assert(file_dataspace != FAIL);
     MESG("H5Dget_space succeed");
 
     /* now calculate start[0] for each rank*/
     average_lines = dims_out[0] / mpi_size;
     remainder_lines = dims_out[0] % mpi_size;
-    printf("average_lines=%d, remainder_lines=%d\n", average_lines,remainder_lines);
+    if (verbose)
+        printf("average_lines=%d, remainder_lines=%d\n", average_lines,remainder_lines);
     if (mpi_rank<remainder_lines) {
         start[0]=mpi_rank*(average_lines+1);
         start[1]=0;
@@ -794,10 +798,11 @@ phdf5readAll(char *filename)
 //
     ///* fill dataset with test data */
     DATATYPE **data_array1=NULL;	/* data buffer */
-    //DATATYPE data_array1[5][12];
+    DATATYPE **data_array2=NULL;
     space_dim0 = (unsigned long)count[0];
     space_dim1 = (unsigned long)count[1];
-    printf("space_dim0=%lu,,space_dim1=%lu\n",space_dim0,space_dim1);
+    if (verbose)
+        printf("space_dim0=%lu,space_dim1=%lu\n",space_dim0,space_dim1);
     data_array1 = allocate_dynamic_2d_array(space_dim0,space_dim1);
     //printf("%5d",data_array1[3][3]);
     //dataset_fill(start, count, stride, &data_origin1[0][0]);
@@ -822,13 +827,14 @@ phdf5readAll(char *filename)
 
     //printf("data_array1=%p\n",data_array1);
     //printf("%5d",data_array1[0][0]);
-    for (i=0;i<space_dim0;i++)
-    {
-        printf("mpi_rank[%d]:",mpi_rank);
-        for (j=0;j<space_dim1;j++)
-            printf("%5d",data_array1[i][j]);
-        printf("\n");
-    }
+    if (verbose)
+        for (i=0;i<space_dim0;i++)
+        {
+            printf("mpi_rank[%d]:",mpi_rank);
+            for (j=0;j<space_dim1;j++)
+                printf("%5d",data_array1[i][j]);
+            printf("\n");
+        }
 
 
     /* release all temporary handles. */

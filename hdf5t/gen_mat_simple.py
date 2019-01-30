@@ -6,7 +6,7 @@ import pandas as pd
 import h5py
 
 val_range = 16
-n = 19
+n = 17
 m = 12
 #test_arr = np.random.randint(val_range, size=(n, m),dtype=np.uint16)
 data_type = np.int
