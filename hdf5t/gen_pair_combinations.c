@@ -10,7 +10,7 @@ index ---> Current index in data[]
 r ---> Size of a combination to be printed */
 void combination_util(int n, int **cmbs) //, int **cmbs, int num_cmb) 
 { 
-	int i, j, idx;
+	int i, j, idx=0;
 	// Current combination is ready to be printed, print it 
 	for (i=0;i<n;i++)
 	{ 
