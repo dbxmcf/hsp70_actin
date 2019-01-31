@@ -92,6 +92,8 @@ int mpi_size, mpi_rank;				/* mpi variables */
 
 /* option flags */
 int verbose = 0;			/* verbose, default as no. */
+int debug_mpi_rank = 0;		/* specify an mpi rank to print */
+int debug_info = 0;          /* enable print mpi infos*/
 int doread=1;				/* read test */
 int dowrite=0;				/* write test */
 int docleanup=0;			/* cleanup */
@@ -842,7 +844,8 @@ phdf5readAll(char *filename)
     start_part_b[1]=chunk_start[mpi_rk_chunk1][1];
     count_part_b[0]=chunk_count[mpi_rk_chunk1][0];
     count_part_b[1]=chunk_count[mpi_rk_chunk1][1];
-     
+    
+
 
     if (verbose)
         printf("start[]=(%lu,%lu), count[]=(%lu,%lu), total datapoints=%lu\n",
@@ -858,7 +861,6 @@ phdf5readAll(char *filename)
     mem_dataspace = H5Screate_simple (SPACE1_RANK, count_part_a, NULL);
     assert (mem_dataspace != FAIL);
 //
-    ///* fill dataset with test data */
     DATATYPE **data_array_a=NULL;	/* data buffer */
     DATATYPE **data_array_b=NULL;
     space_dim_a0 = (unsigned long)count_part_a[0];
@@ -873,14 +875,7 @@ phdf5readAll(char *filename)
 
     data_array_a = allocate_dynamic_2d_array(space_dim_a0,space_dim_a1);
     data_array_b = allocate_dynamic_2d_array(space_dim_a0,space_dim_a1);
-    //printf("%5d",data_array_a[3][3]);
-    //dataset_fill(start, count, stride, &data_origin1[0][0]);
-    //MESG("data_array initialized");
-    //if (verbose){
-    //    MESG("data_array created");
-    //    dataset_print(start, count, stride, &data_array_a[0][0]);
-    //}
-//
+
     ///* set up the collective transfer properties list */
     xfer_plist = H5Pcreate (H5P_DATASET_XFER);
     assert(xfer_plist != FAIL);
@@ -892,31 +887,46 @@ phdf5readAll(char *filename)
     ret = H5Dread(dataset1, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
 	    xfer_plist, &data_array_a[0][0]);
     assert(ret != FAIL);
-    MESG("H5Dread succeed");
+    MESG("H5Dread data_array_a succeed");
 
     //printf("data_array_a=%p\n",data_array_a);
     //printf("%5d",data_array_a[0][0]);
-    //if (verbose)
-        if (0==mpi_rank) 
+
+
+
+    ret=H5Sselect_hyperslab(file_dataspace, H5S_SELECT_SET, start_part_b, NULL,
+	    count_part_b, NULL);
+    assert(ret != FAIL);
+    MESG("H5Sset_hyperslab data_array_b succeed");
+
+    mem_dataspace = H5Screate_simple (SPACE1_RANK, count_part_b, NULL);
+    assert (mem_dataspace != FAIL);
+
+    ret = H5Dread(dataset1, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
+	    xfer_plist, &data_array_b[0][0]);
+    assert(ret != FAIL);
+    MESG("H5Dread data_array_b succeed");
+
+    // verify results
+    //int debug_mpi_rank = 7;
+    if (debug_info)
+        if (debug_mpi_rank == mpi_rank) 
         {
             for (i=0;i<space_dim_a0;i++)
             {
-                printf("mpi_rank[%d]:",mpi_rank);
+                printf("mpi_rank[%d]a:",mpi_rank);
                 for (j=0;j<space_dim_a1;j++)
                     printf("%5d",data_array_a[i][j]);
                 printf("\n");
             }
-            
-            //for (i=0;i<space_dim_a0;i++)
-            //{
-            //    printf("mpi_rank[%d]:",mpi_rank);
-            //    for (j=0;j<space_dim_a1;j++)
-            //        printf("%5d",data_array_a[i][j]);
-            //    printf("\n");
-            //}
+            for (i=0;i<space_dim_b0;i++)
+            {
+                printf("mpi_rank[%d]b:",mpi_rank);
+                for (j=0;j<space_dim_b1;j++)
+                    printf("%5d",data_array_b[i][j]);
+                printf("\n");
+            }
         }
-
-
 
     /* release all temporary handles. */
     /* Could have used them for dataset2 but it is cleaner */
@@ -1094,6 +1104,13 @@ parse_options(int argc, char **argv){
 		case 'w':   dowrite = 0;
 			    break;
 		case 'v':   verbose = 1;
+			    break;
+        case 'g':   debug_info = 1;
+			    break;
+        case 'd':   
+                ++argv,--argc;
+                debug_mpi_rank = atoi(*argv);
+                printf("debug_mpi_rank=%d\n",debug_mpi_rank);
 			    break;
 		default:    usage();
 			    nerrors++;
