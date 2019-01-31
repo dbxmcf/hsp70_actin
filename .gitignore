@@ -25,3 +25,4 @@ parallel_test.hdf5
 t1/
 test.h5
 tmpi_csv_float32/
+.vscode

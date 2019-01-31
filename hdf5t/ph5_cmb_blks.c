@@ -948,7 +948,11 @@ phdf5readAll(char *filename)
 
     /* now starting on the processing */
     if (mpi_rank < num_cmbs){
+        /* process off-diagnol blocks*/
         
+    }
+    else {
+        /* process two diagnol triangles*/
     }
 
     /* now starting to work on the writing */
