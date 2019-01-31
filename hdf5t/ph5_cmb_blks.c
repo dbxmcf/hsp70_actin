@@ -912,6 +912,7 @@ phdf5readAll(char *filename)
     if (debug_info)
         if (debug_mpi_rank == mpi_rank) 
         {
+            printf("debug_mpi_rank=%d\n",debug_mpi_rank);
             for (i=0;i<space_dim_a0;i++)
             {
                 printf("mpi_rank[%d]a:",mpi_rank);
@@ -944,6 +945,13 @@ phdf5readAll(char *filename)
 
     /* close the file collectively */
     H5Fclose(fid1);
+
+    /* now starting on the processing */
+    if (mpi_rank < num_cmbs){
+        
+    }
+
+    /* now starting to work on the writing */
 
     free_dynamic_2d_array(data_array_a);
     free_dynamic_2d_array(data_array_b);
@@ -1110,7 +1118,7 @@ parse_options(int argc, char **argv){
         case 'd':   
                 ++argv,--argc;
                 debug_mpi_rank = atoi(*argv);
-                printf("debug_mpi_rank=%d\n",debug_mpi_rank);
+                
 			    break;
 		default:    usage();
 			    nerrors++;
