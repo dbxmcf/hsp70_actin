@@ -695,11 +695,11 @@ phdf5readAll(char *filename)
     hsize_t     dims_out[2];
 
     hid_t dataset1, dataset2;	/* Dataset ID */
-    //DATATYPE data_array0[SPACE1_DIM1][SPACE1_DIM2];	/* data buffer */
+    //DATATYPE data_array_a[SPACE1_DIM1][SPACE1_DIM2];	/* data buffer */
     unsigned long space_dim_a0=0, space_dim_a1=0;
     unsigned long space_dim_b0=0, space_dim_b1=0;
-    //DATATYPE data_array0[space_dim_a1][space_dim2];	/* data buffer */
-    //DATATYPE **data_array0=NULL;	/* data buffer */
+    //DATATYPE data_array_a[space_dim_a1][space_dim2];	/* data buffer */
+    //DATATYPE **data_array_a=NULL;	/* data buffer */
     DATATYPE data_origin1[SPACE1_DIM1][SPACE1_DIM2];	/* expected data buffer */
 
     hsize_t start[SPACE1_RANK];			/* for hyperslab setting */
@@ -859,19 +859,26 @@ phdf5readAll(char *filename)
     assert (mem_dataspace != FAIL);
 //
     ///* fill dataset with test data */
-    DATATYPE **data_array0=NULL;	/* data buffer */
-    DATATYPE **data_array1=NULL;
+    DATATYPE **data_array_a=NULL;	/* data buffer */
+    DATATYPE **data_array_b=NULL;
     space_dim_a0 = (unsigned long)count_part_a[0];
     space_dim_a1 = (unsigned long)count_part_a[1];
+    space_dim_b0 = (unsigned long)count_part_b[0];
+    space_dim_b1 = (unsigned long)count_part_b[1];
     if (verbose)
+    {
         printf("space_dim_a0=%lu,space_dim_a1=%lu\n",space_dim_a0,space_dim_a1);
-    data_array0 = allocate_dynamic_2d_array(space_dim_a0,space_dim_a1);
-    //printf("%5d",data_array0[3][3]);
+        printf("space_dim_b0=%lu,space_dim_b1=%lu\n",space_dim_b0,space_dim_b1);
+    }
+
+    data_array_a = allocate_dynamic_2d_array(space_dim_a0,space_dim_a1);
+    data_array_b = allocate_dynamic_2d_array(space_dim_a0,space_dim_a1);
+    //printf("%5d",data_array_a[3][3]);
     //dataset_fill(start, count, stride, &data_origin1[0][0]);
     //MESG("data_array initialized");
     //if (verbose){
     //    MESG("data_array created");
-    //    dataset_print(start, count, stride, &data_array0[0][0]);
+    //    dataset_print(start, count, stride, &data_array_a[0][0]);
     //}
 //
     ///* set up the collective transfer properties list */
@@ -883,12 +890,12 @@ phdf5readAll(char *filename)
 //
     ///* read data collectively */
     ret = H5Dread(dataset1, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
-	    xfer_plist, &data_array0[0][0]);
+	    xfer_plist, &data_array_a[0][0]);
     assert(ret != FAIL);
     MESG("H5Dread succeed");
 
-    //printf("data_array0=%p\n",data_array0);
-    //printf("%5d",data_array0[0][0]);
+    //printf("data_array_a=%p\n",data_array_a);
+    //printf("%5d",data_array_a[0][0]);
     //if (verbose)
         if (0==mpi_rank) 
         {
@@ -896,7 +903,7 @@ phdf5readAll(char *filename)
             {
                 printf("mpi_rank[%d]:",mpi_rank);
                 for (j=0;j<space_dim_a1;j++)
-                    printf("%5d",data_array0[i][j]);
+                    printf("%5d",data_array_a[i][j]);
                 printf("\n");
             }
             
@@ -904,7 +911,7 @@ phdf5readAll(char *filename)
             //{
             //    printf("mpi_rank[%d]:",mpi_rank);
             //    for (j=0;j<space_dim_a1;j++)
-            //        printf("%5d",data_array0[i][j]);
+            //        printf("%5d",data_array_a[i][j]);
             //    printf("\n");
             //}
         }
@@ -928,7 +935,8 @@ phdf5readAll(char *filename)
     /* close the file collectively */
     H5Fclose(fid1);
 
-    free_dynamic_2d_array(data_array0);
+    free_dynamic_2d_array(data_array_a);
+    free_dynamic_2d_array(data_array_b);
     free_dynamic_2d_array(chunk_start);
     free_dynamic_2d_array(chunk_count);
 
