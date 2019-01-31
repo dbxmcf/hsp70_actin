@@ -947,6 +947,7 @@ phdf5readAll(char *filename)
     H5Fclose(fid1);
 
     /* now starting on the processing */
+    int **block_cmbs;
     if (mpi_rank < num_cmbs){
         /* process off-diagnol blocks*/
         
