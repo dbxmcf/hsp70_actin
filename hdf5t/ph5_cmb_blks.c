@@ -823,6 +823,9 @@ phdf5readAll(char *filename)
             print_matrix(chunk_count,num_data_chunks,2,"%3d ");
         }
 
+    // now starting assign chunks to each mpi rank
+    // FIXME
+
     free_dynamic_2d_array(chunk_start);
     free_dynamic_2d_array(chunk_count);
 
