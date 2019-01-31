@@ -704,6 +704,9 @@ phdf5readAll(char *filename)
     hsize_t start[SPACE1_RANK];			/* for hyperslab setting */
     hsize_t count[SPACE1_RANK], stride[SPACE1_RANK];	/* for hyperslab setting */
 
+    hsize_t start_part_a[SPACE1_RANK], start_part_b[SPACE1_RANK];			/* for hyperslab setting */
+    hsize_t count_part_a[SPACE1_RANK], count_part_b[SPACE1_RANK];
+
     herr_t ret;         	/* Generic return value */
     int i,j,status_n, fs_rank;
     int average_lines,remainder_lines, num_data_chunks;
@@ -823,46 +826,42 @@ phdf5readAll(char *filename)
             print_matrix(chunk_count,num_data_chunks,2,"%3d ");
         }
 
-    // now starting assign chunks to each mpi rank
-    // FIXME
+    // now starting assign two chunks, part_a and part_b to each mpi rank
+    // you might directly use chunk_start[mpi_rk_chunk0] and chunk_start[mpi_rk_chunk1]
+    // but I believe this more understandable
+ 
+    // part_a
+    start_part_a[0]=chunk_start[mpi_rk_chunk0][0];
+    start_part_a[1]=chunk_start[mpi_rk_chunk0][1];
+    count_part_a[0]=chunk_count[mpi_rk_chunk0][0];
+    count_part_a[1]=chunk_count[mpi_rk_chunk0][1];
 
-    free_dynamic_2d_array(chunk_start);
-    free_dynamic_2d_array(chunk_count);
+    // part b
+    start_part_b[0]=chunk_start[mpi_rk_chunk1][0];
+    start_part_b[1]=chunk_start[mpi_rk_chunk1][1];
+    count_part_b[0]=chunk_count[mpi_rk_chunk1][0];
+    count_part_b[1]=chunk_count[mpi_rk_chunk1][1];
+     
 
-    /* now calculate start[0] for each rank*/
-    average_lines = dims_out[0] / mpi_size;
-    remainder_lines = dims_out[0] % mpi_size;
-    if (mpi_rank<remainder_lines) {
-        start[0]=mpi_rank*(average_lines+1);
-        start[1]=0;
-        count[0]=average_lines+1; //!FIXME
-        count[1]=dims_out[1]; //width of each line
-    }
-    else {
-        start[0]=remainder_lines*(average_lines+1)+(mpi_rank-remainder_lines)*average_lines;
-        start[1]=0;
-        count[0]=average_lines; //!FIXME
-        count[1]=dims_out[1]; //width of each line        
-    }
     if (verbose)
         printf("start[]=(%lu,%lu), count[]=(%lu,%lu), total datapoints=%lu\n",
             (unsigned long)start[0], (unsigned long)start[1],
             (unsigned long)count[0], (unsigned long)count[1],
             (unsigned long)(count[0]*count[1]));
-    ret=H5Sselect_hyperslab(file_dataspace, H5S_SELECT_SET, start, NULL,
-	    count, NULL);
+    ret=H5Sselect_hyperslab(file_dataspace, H5S_SELECT_SET, start_part_a, NULL,
+	    count_part_a, NULL);
     assert(ret != FAIL);
     MESG("H5Sset_hyperslab succeed");
 //
     ///* create a memory dataspace independently */
-    mem_dataspace = H5Screate_simple (SPACE1_RANK, count, NULL);
+    mem_dataspace = H5Screate_simple (SPACE1_RANK, count_part_a, NULL);
     assert (mem_dataspace != FAIL);
 //
     ///* fill dataset with test data */
     DATATYPE **data_array1=NULL;	/* data buffer */
     DATATYPE **data_array2=NULL;
-    space_dim0 = (unsigned long)count[0];
-    space_dim1 = (unsigned long)count[1];
+    space_dim0 = (unsigned long)count_part_a[0];
+    space_dim1 = (unsigned long)count_part_a[1];
     if (verbose)
         printf("space_dim0=%lu,space_dim1=%lu\n",space_dim0,space_dim1);
     data_array1 = allocate_dynamic_2d_array(space_dim0,space_dim1);
@@ -889,14 +888,26 @@ phdf5readAll(char *filename)
 
     //printf("data_array1=%p\n",data_array1);
     //printf("%5d",data_array1[0][0]);
-    if (verbose)
-        for (i=0;i<space_dim0;i++)
+    //if (verbose)
+        if (0==mpi_rank) 
         {
-            printf("mpi_rank[%d]:",mpi_rank);
-            for (j=0;j<space_dim1;j++)
-                printf("%5d",data_array1[i][j]);
-            printf("\n");
+            for (i=0;i<space_dim0;i++)
+            {
+                printf("mpi_rank[%d]:",mpi_rank);
+                for (j=0;j<space_dim1;j++)
+                    printf("%5d",data_array1[i][j]);
+                printf("\n");
+            }
+            
+            //for (i=0;i<space_dim0;i++)
+            //{
+            //    printf("mpi_rank[%d]:",mpi_rank);
+            //    for (j=0;j<space_dim1;j++)
+            //        printf("%5d",data_array1[i][j]);
+            //    printf("\n");
+            //}
         }
+
 
 
     /* release all temporary handles. */
@@ -917,6 +928,9 @@ phdf5readAll(char *filename)
     H5Fclose(fid1);
 
     free_dynamic_2d_array(data_array1);
+    free_dynamic_2d_array(chunk_start);
+    free_dynamic_2d_array(chunk_count);
+
 }
 
 /*
