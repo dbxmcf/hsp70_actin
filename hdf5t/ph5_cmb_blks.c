@@ -790,6 +790,7 @@ phdf5readAll(char *filename)
         mpi_rk_chunk0 = (mpi_rank-num_cmbs)*2;
         mpi_rk_chunk1 = mpi_rk_chunk0 + 1;
     }
+    //if (verbose)
     printf("mrk[%d]:mpi_rk_chunk0=%d, mpi_rk_chunk1=%d\n",mpi_rank,mpi_rk_chunk0, mpi_rk_chunk1);
     free_dynamic_2d_array(cmbs);
 
