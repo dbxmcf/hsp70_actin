@@ -790,20 +790,45 @@ phdf5readAll(char *filename)
         mpi_rk_chunk0 = (mpi_rank-num_cmbs)*2;
         mpi_rk_chunk1 = mpi_rk_chunk0 + 1;
     }
-    //if (verbose)
-    printf("mrk[%d]:mpi_rk_chunk0=%d, mpi_rk_chunk1=%d\n",mpi_rank,mpi_rk_chunk0, mpi_rk_chunk1);
+    if (verbose)
+        printf("mrk[%d]:mpi_rk_chunk0=%d, mpi_rk_chunk1=%d\n",mpi_rank,mpi_rk_chunk0, mpi_rk_chunk1);
     free_dynamic_2d_array(cmbs);
+
+    /* now calculate start[0] for each rank*/
+    average_lines = dims_out[0] / num_data_chunks;
+    remainder_lines = dims_out[0] % num_data_chunks;
+    if (verbose)
+        printf("average_lines=%d, remainder_lines=%d\n", average_lines,remainder_lines);
+
+    DATATYPE **chunk_start=NULL, **chunk_count=NULL;
+    chunk_start = allocate_dynamic_2d_array(num_data_chunks,2);
+    chunk_count = allocate_dynamic_2d_array(num_data_chunks,2);
+    for (i=0;i<remainder_lines;i++) {
+        chunk_start[i][0] = i*(average_lines+1);
+        chunk_start[i][1] = 0;
+        chunk_count[i][0] = average_lines+1;
+        chunk_count[i][1] = dims_out[1];
+    }
+
+    for (i=remainder_lines;i<num_data_chunks;i++){
+        chunk_start[i][0] = remainder_lines*(average_lines+1)+(i-remainder_lines)*average_lines;
+        chunk_start[i][1] = 0;
+        chunk_count[i][0] = average_lines;
+        chunk_count[i][1] = dims_out[1];
+    }
+
+    if (verbose)
+        if ( 0==mpi_rank ) {
+            print_matrix(chunk_start,num_data_chunks,2,"%3d ");
+            print_matrix(chunk_count,num_data_chunks,2,"%3d ");
+        }
+
+    free_dynamic_2d_array(chunk_start);
+    free_dynamic_2d_array(chunk_count);
 
     /* now calculate start[0] for each rank*/
     average_lines = dims_out[0] / mpi_size;
     remainder_lines = dims_out[0] % mpi_size;
-    if (verbose)
-        printf("average_lines=%d, remainder_lines=%d\n", average_lines,remainder_lines);
-
-
-    
-
-
     if (mpi_rank<remainder_lines) {
         start[0]=mpi_rank*(average_lines+1);
         start[1]=0;
