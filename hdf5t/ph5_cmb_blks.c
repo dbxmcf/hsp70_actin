@@ -775,18 +775,22 @@ phdf5readAll(char *filename)
     //int n=5,r=2; 
     int **cmbs=NULL;
     int num_cmbs = num_data_chunks*(num_data_chunks-1)/2;
-    printf("num_cmbs=%d\n",num_cmbs);
+    //printf("num_cmbs=%d\n",num_cmbs);
     cmbs = allocate_dynamic_2d_array(num_cmbs,2);
     //printf("n=%d\n",n);
 	combination_util(num_data_chunks,cmbs); 
     //print_matrix(cmbs, num_cmbs, 2, "%3d");
     int mpi_rk_chunk0, mpi_rk_chunk1;
-    if (mpi_rank < num_cmbs) {
+    if (mpi_rank < num_cmbs) { // an off-diagnal full block
         //printf("mpi_rank=%d\n",mpi_rank);
         mpi_rk_chunk0 = cmbs[mpi_rank][0];
         mpi_rk_chunk1 = cmbs[mpi_rank][1];
-        printf("mpi_rk_chunk0=%d, mpi_rk_chunk1=%d\n",mpi_rk_chunk0, mpi_rk_chunk1);
     }
+    else { // two diagnal triangles
+        mpi_rk_chunk0 = (mpi_rank-num_cmbs)*2;
+        mpi_rk_chunk1 = mpi_rk_chunk0 + 1;
+    }
+    printf("mrk[%d]:mpi_rk_chunk0=%d, mpi_rk_chunk1=%d\n",mpi_rank,mpi_rk_chunk0, mpi_rk_chunk1);
     free_dynamic_2d_array(cmbs);
 
     /* now calculate start[0] for each rank*/
