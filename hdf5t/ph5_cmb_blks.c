@@ -38,7 +38,9 @@
 #include "hdf5.h"
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
 #include "dynamic_2d_array.h"
+#include "pair_cmbs.h"
 
 #ifdef H5_HAVE_PARALLEL
 /* Temporary source code */
@@ -704,7 +706,7 @@ phdf5readAll(char *filename)
 
     herr_t ret;         	/* Generic return value */
     int i,j,status_n, fs_rank;
-    int average_lines,remainder_lines;
+    int average_lines,remainder_lines, num_data_chunks;
 
     MPI_Comm comm = MPI_COMM_WORLD;
     MPI_Info info = MPI_INFO_NULL;
@@ -765,11 +767,38 @@ phdf5readAll(char *filename)
     assert(file_dataspace != FAIL);
     MESG("H5Dget_space succeed");
 
+    // Calculate number of data chunks
+    num_data_chunks = (int)sqrt(mpi_size*2);
+    if (verbose)
+        printf("mpi_size=%d,ndchunks=%d\n",mpi_size,num_data_chunks);
+    // assign chunk combinations to each mpi_rank
+    //int n=5,r=2; 
+    int **cmbs=NULL;
+    int num_cmbs = num_data_chunks*(num_data_chunks-1)/2;
+    printf("num_cmbs=%d\n",num_cmbs);
+    cmbs = allocate_dynamic_2d_array(num_cmbs,2);
+    //printf("n=%d\n",n);
+	combination_util(num_data_chunks,cmbs); 
+    //print_matrix(cmbs, num_cmbs, 2, "%3d");
+    int mpi_rk_chunk0, mpi_rk_chunk1;
+    if (mpi_rank < num_cmbs) {
+        //printf("mpi_rank=%d\n",mpi_rank);
+        mpi_rk_chunk0 = cmbs[mpi_rank][0];
+        mpi_rk_chunk1 = cmbs[mpi_rank][1];
+        printf("mpi_rk_chunk0=%d, mpi_rk_chunk1=%d\n",mpi_rk_chunk0, mpi_rk_chunk1);
+    }
+    free_dynamic_2d_array(cmbs);
+
     /* now calculate start[0] for each rank*/
     average_lines = dims_out[0] / mpi_size;
     remainder_lines = dims_out[0] % mpi_size;
     if (verbose)
         printf("average_lines=%d, remainder_lines=%d\n", average_lines,remainder_lines);
+
+
+    
+
+
     if (mpi_rank<remainder_lines) {
         start[0]=mpi_rank*(average_lines+1);
         start[1]=0;
