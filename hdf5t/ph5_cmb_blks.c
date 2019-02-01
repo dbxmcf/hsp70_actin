@@ -781,13 +781,9 @@ phdf5readAll(char *filename)
     // assign chunk combinations to each mpi_rank
     //int n=5,r=2; 
     int **cmbs=NULL;
-    int num_cmbs = num_data_chunks*(num_data_chunks-1)/2;
-    int num_cmbs1 =0;
-    //printf("num_cmbs=%d\n",num_cmbs);
-    
-    //printf("n=%d\n",n);
-	cmbs=combination_util(num_data_chunks,&num_cmbs1); 
-    printf("num_cmb=%d,num_cmbs1=%d\n",num_cmbs,num_cmbs1);
+    int num_cmbs = 0;
+	cmbs=combination_util(num_data_chunks,&num_cmbs); 
+    //printf("num_cmb=%d,num_cmbs1=%d\n",num_cmbs,num_cmbs1);
     //print_matrix(cmbs, num_cmbs, 2, "%3d");
     int mpi_rk_chunk0, mpi_rk_chunk1;
     if (mpi_rank < num_cmbs) { // an off-diagnal full block
