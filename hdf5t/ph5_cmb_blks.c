@@ -41,6 +41,7 @@
 #include <math.h>
 #include "dynamic_2d_array.h"
 #include "pair_cmbs.h"
+#include "calc_coeffs.h"
 
 #ifdef H5_HAVE_PARALLEL
 /* Temporary source code */
@@ -947,10 +948,14 @@ phdf5readAll(char *filename)
     H5Fclose(fid1);
 
     /* now starting on the processing */
-    int **block_cmbs;
+
     if (mpi_rank < num_cmbs){
+        real **block_cmbs;
         /* process off-diagnol blocks*/
-        
+        block_cmbs = allocate_dynamic_2d_array_real(space_dim_a0,space_dim_b0);
+        calc_coeffs_block(data_array_a, space_dim_a0 ,data_array_b, space_dim_b0);
+        free_dynamic_2d_array_real(block_cmbs);
+
     }
     else {
         /* process two diagnol triangles*/
