@@ -782,7 +782,7 @@ phdf5readAll(char *filename)
     int **cmbs=NULL;
     int num_cmbs = num_data_chunks*(num_data_chunks-1)/2;
     //printf("num_cmbs=%d\n",num_cmbs);
-    cmbs = allocate_dynamic_2d_array(num_cmbs,2);
+    cmbs = allocate_dynamic_2d_array_integer(num_cmbs,2);
     //printf("n=%d\n",n);
 	combination_util(num_data_chunks,cmbs); 
     //print_matrix(cmbs, num_cmbs, 2, "%3d");
@@ -798,7 +798,7 @@ phdf5readAll(char *filename)
     }
     if (verbose)
         printf("mrk[%d]:mpi_rk_chunk0=%d, mpi_rk_chunk1=%d\n",mpi_rank,mpi_rk_chunk0, mpi_rk_chunk1);
-    free_dynamic_2d_array(cmbs);
+    free_dynamic_2d_array_integer(cmbs);
 
     /* now calculate start[0] for each rank*/
     average_lines = dims_out[0] / num_data_chunks;
@@ -807,8 +807,8 @@ phdf5readAll(char *filename)
         printf("average_lines=%d, remainder_lines=%d\n", average_lines,remainder_lines);
 
     DATATYPE **chunk_start=NULL, **chunk_count=NULL;
-    chunk_start = allocate_dynamic_2d_array(num_data_chunks,2);
-    chunk_count = allocate_dynamic_2d_array(num_data_chunks,2);
+    chunk_start = allocate_dynamic_2d_array_integer(num_data_chunks,2);
+    chunk_count = allocate_dynamic_2d_array_integer(num_data_chunks,2);
     for (i=0;i<remainder_lines;i++) {
         chunk_start[i][0] = i*(average_lines+1);
         chunk_start[i][1] = 0;
@@ -825,8 +825,8 @@ phdf5readAll(char *filename)
 
     if (verbose)
         if ( 0==mpi_rank ) {
-            print_matrix(chunk_start,num_data_chunks,2,"%3d ");
-            print_matrix(chunk_count,num_data_chunks,2,"%3d ");
+            print_matrix_integer(chunk_start,num_data_chunks,2,"%3d ");
+            print_matrix_integer(chunk_count,num_data_chunks,2,"%3d ");
         }
 
     // now starting assign two chunks, part_a and part_b to each mpi rank
@@ -873,8 +873,8 @@ phdf5readAll(char *filename)
         printf("space_dim_b0=%lu,space_dim_b1=%lu\n",space_dim_b0,space_dim_b1);
     }
 
-    data_array_a = allocate_dynamic_2d_array(space_dim_a0,space_dim_a1);
-    data_array_b = allocate_dynamic_2d_array(space_dim_a0,space_dim_a1);
+    data_array_a = allocate_dynamic_2d_array_integer(space_dim_a0,space_dim_a1);
+    data_array_b = allocate_dynamic_2d_array_integer(space_dim_a0,space_dim_a1);
 
     ///* set up the collective transfer properties list */
     xfer_plist = H5Pcreate (H5P_DATASET_XFER);
@@ -958,10 +958,10 @@ phdf5readAll(char *filename)
 
     /* now starting to work on the writing */
 
-    free_dynamic_2d_array(data_array_a);
-    free_dynamic_2d_array(data_array_b);
-    free_dynamic_2d_array(chunk_start);
-    free_dynamic_2d_array(chunk_count);
+    free_dynamic_2d_array_integer(data_array_a);
+    free_dynamic_2d_array_integer(data_array_b);
+    free_dynamic_2d_array_integer(chunk_start);
+    free_dynamic_2d_array_integer(chunk_count);
 
 }
 
