@@ -951,7 +951,8 @@ phdf5readAll(char *filename)
         real **block_cmbs;
         /* process off-diagnol blocks*/
         block_cmbs = allocate_dynamic_2d_array_real(space_dim_a0,space_dim_b0);
-        calc_coeffs_block(data_array_a, space_dim_a0 ,data_array_b, space_dim_b0);
+        calc_coeffs_block(data_array_a, space_dim_a0, space_dim_a1, 
+                          data_array_b, space_dim_b0, space_dim_b1);
         free_dynamic_2d_array_real(block_cmbs);
 
     }
