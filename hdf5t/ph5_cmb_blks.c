@@ -914,14 +914,14 @@ phdf5readAll(char *filename)
             {
                 printf("mpi_rank[%d]a:",mpi_rank);
                 for (j=0;j<space_dim_a1;j++)
-                    printf("%5d",data_array_a[i][j]);
+                    printf("%4d,",data_array_a[i][j]);
                 printf("\n");
             }
             for (i=0;i<space_dim_b0;i++)
             {
                 printf("mpi_rank[%d]b:",mpi_rank);
                 for (j=0;j<space_dim_b1;j++)
-                    printf("%5d",data_array_b[i][j]);
+                    printf("%4d,",data_array_b[i][j]);
                 printf("\n");
             }
         }
@@ -966,9 +966,14 @@ phdf5readAll(char *filename)
                           data_array_b, space_dim_b0, space_dim_b1,
                           &rp);
         if (debug_info)
-            if (mpi_rank = debug_mpi_rank)
-                print_matrix_real(rp.normal,space_dim_a0, space_dim_b0, "%7.3f ");
-        //free_dynamic_2d_array_real(block_cmbs);
+            if (mpi_rank == debug_mpi_rank)
+                print_matrix_real(rp.cosine,space_dim_a0, space_dim_b0, "%7.3e ");
+
+        free_dynamic_2d_array_real(rp.normal);
+        free_dynamic_2d_array_real(rp.generalised);
+        free_dynamic_2d_array_real(rp.wu);
+        free_dynamic_2d_array_real(rp.sarika);
+        free_dynamic_2d_array_real(rp.cosine);
 
     }
     else {
