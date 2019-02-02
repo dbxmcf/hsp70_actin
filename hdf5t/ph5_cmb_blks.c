@@ -844,8 +844,6 @@ phdf5readAll(char *filename)
     count_part_b[0]=chunk_count[mpi_rk_chunk1][0];
     count_part_b[1]=chunk_count[mpi_rk_chunk1][1];
     
-
-
     if (verbose)
         printf("start[]=(%lu,%lu), count[]=(%lu,%lu), total datapoints=%lu\n",
             (unsigned long)start[0], (unsigned long)start[1],
@@ -948,12 +946,29 @@ phdf5readAll(char *filename)
     /* now starting on the processing */
 
     if (mpi_rank < num_cmbs){
-        real **block_cmbs;
+        //real **block_cmbs;
         /* process off-diagnol blocks*/
-        block_cmbs = allocate_dynamic_2d_array_real(space_dim_a0,space_dim_b0);
+        //block_cmbs = allocate_dynamic_2d_array_real(space_dim_a0,space_dim_b0);
+        //real **normal = allocate_dynamic_2d_array_real(part_a_dim0, part_b_dim0);
+        //real **generalised = allocate_dynamic_2d_array_real(part_a_dim0, part_b_dim0);
+        //real **wu = allocate_dynamic_2d_array_real(part_a_dim0, part_b_dim0);
+        //real **sarika = allocate_dynamic_2d_array_real(part_a_dim0, part_b_dim0);
+        //real **cosine = allocate_dynamic_2d_array_real(part_a_dim0, part_b_dim0);
+
+        result_pointers rp;
+        rp.normal = allocate_dynamic_2d_array_real(space_dim_a0, space_dim_b0);
+        rp.generalised = allocate_dynamic_2d_array_real(space_dim_a0, space_dim_b0);
+        rp.wu = allocate_dynamic_2d_array_real(space_dim_a0, space_dim_b0);
+        rp.sarika = allocate_dynamic_2d_array_real(space_dim_a0, space_dim_b0);
+        rp.cosine = allocate_dynamic_2d_array_real(space_dim_a0, space_dim_b0);
+
         calc_coeffs_block(data_array_a, space_dim_a0, space_dim_a1, 
-                          data_array_b, space_dim_b0, space_dim_b1);
-        free_dynamic_2d_array_real(block_cmbs);
+                          data_array_b, space_dim_b0, space_dim_b1,
+                          &rp);
+        if (debug_info)
+            if (mpi_rank = debug_mpi_rank)
+                print_matrix_real(rp.normal,space_dim_a0, space_dim_b0, "%7.3f ");
+        //free_dynamic_2d_array_real(block_cmbs);
 
     }
     else {

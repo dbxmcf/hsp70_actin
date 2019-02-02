@@ -14,6 +14,15 @@
 //typedef float real;
 typedef int tint;
 
+typedef struct result_arrays {
+    real **normal;
+    real **generalised;
+    real **wu;
+    real **sarika;
+    real **cosine;
+} result_pointers;
+
+
 // https://www.geeksforgeeks.org/compute-the-minimum-or-maximum-max-of-two-integers-without-branching/
 // https://stackoverflow.com/questions/24529504/find-out-max-min-of-two-number-without-using-if-else
 // http://graphics.stanford.edu/~seander/bithacks.html#IntegerMinOrMax
@@ -117,7 +126,8 @@ void read_h5()
 }
 
 int calc_coeffs_block(tint **data_part_a, tint part_a_dim0, tint part_a_dim1,
-                      tint **data_part_b, tint part_b_dim0, tint part_b_dim1)
+                      tint **data_part_b, tint part_b_dim0, tint part_b_dim1,
+                      result_pointers *rp)
 {
     //int i, j, idx_a, idx_b;
     tint i, j, idx_a, idx_b;
@@ -155,11 +165,7 @@ int calc_coeffs_block(tint **data_part_a, tint part_a_dim0, tint part_a_dim1,
     //cosine[idx_a,idx_b] = result*100
     //cosine[idx_b,idx_a] = result*100
 
-    real **normal = allocate_dynamic_2d_array_real(part_a_dim0, part_b_dim0);
-    real **generalised = allocate_dynamic_2d_array_real(part_a_dim0, part_b_dim0);
-    real **wu = allocate_dynamic_2d_array_real(part_a_dim0, part_b_dim0);
-    real **sarika = allocate_dynamic_2d_array_real(part_a_dim0, part_b_dim0);
-    real **cosine = allocate_dynamic_2d_array_real(part_a_dim0, part_b_dim0);
+
 
     // part_a values
     for (i=0;i<part_a_dim0;i++) {
@@ -223,11 +229,11 @@ int calc_coeffs_block(tint **data_part_a, tint part_a_dim0, tint part_a_dim1,
             denomenator_sarika = a_sum+b_sum;
             dist_sarika = 1.0-numerator_sarika/denomenator_sarika;
 
-            normal[idx_a][idx_b] = dist_jac;
-            generalised[idx_a][idx_b] = dist_gen_jac;
-            sarika[idx_a][idx_b] = dist_sarika;
-            wu[idx_a][idx_b] = dist_wu;
-            cosine[idx_a][idx_b] = result*100;
+            rp->normal[idx_a][idx_b] = dist_jac;
+            rp->generalised[idx_a][idx_b] = dist_gen_jac;
+            rp->sarika[idx_a][idx_b] = dist_sarika;
+            rp->wu[idx_a][idx_b] = dist_wu;
+            rp->cosine[idx_a][idx_b] = result*100;
         }
     }
 
@@ -239,7 +245,7 @@ int calc_coeffs_block(tint **data_part_a, tint part_a_dim0, tint part_a_dim1,
     free_dynamic_2d_array_integer(data_jac_a);
     free_dynamic_2d_array_integer(data_jac_b);
 
-    print_matrix_real(normal, part_a_dim0, part_b_dim0, "%5.3f ");
+    //print_matrix_real(normal, part_a_dim0, part_b_dim0, "%5.3f ");
     //free_dynamic_2d_array_integer(cmb_ab);
 
     ////tint data[N][D] = {{1,2,3,4,5},{6,7,8,9,10},{7,8,9,10,11}};
