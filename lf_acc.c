@@ -220,11 +220,11 @@ int main(void)
         denomenator_sarika = a_sum+b_sum;
         dist_sarika = 1.0-numerator_sarika/denomenator_sarika;
         
-        printf("normal = %f\n", dist_jac);
-        printf("generalised =%f\n", dist_gen_jac);
-        printf("sarika =%f\n", dist_sarika);
-        printf("wu =%f\n", dist_wu);
-        printf("result = %f\n", result*100);
+        //printf("normal = %f\n", dist_jac);
+        //printf("generalised =%f\n", dist_gen_jac);
+        //printf("sarika =%f\n", dist_sarika);
+        //printf("wu =%f\n", dist_wu);
+        //printf("result = %f\n", result*100);
         
         //non_zeros = (a >0) & (b > 0)
         //summed_array = a + b
