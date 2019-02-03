@@ -966,8 +966,14 @@ phdf5readAll(char *filename)
                           data_array_b, space_dim_b0, space_dim_b1,
                           &rp);
         if (debug_info)
-            if (mpi_rank == debug_mpi_rank)
+            if (mpi_rank == debug_mpi_rank) {
                 print_matrix_real(rp.normal,space_dim_a0, space_dim_b0, "%7.3f ");
+                print_matrix_real(rp.generalised,space_dim_a0, space_dim_b0, "%7.3f ");
+                print_matrix_real(rp.wu,space_dim_a0, space_dim_b0, "%7.3f ");
+                print_matrix_real(rp.sarika,space_dim_a0, space_dim_b0, "%7.3f ");
+                print_matrix_real(rp.cosine,space_dim_a0, space_dim_b0, "%7.3f ");
+            }
+
 
         free_dynamic_2d_array_real(rp.normal);
         free_dynamic_2d_array_real(rp.generalised);

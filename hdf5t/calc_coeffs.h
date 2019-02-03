@@ -12,7 +12,8 @@
 
 
 //typedef float real;
-typedef unsigned short tint;
+//typedef unsigned short tint;
+typedef int tint;
 
 typedef struct result_arrays {
     real **normal;
@@ -31,7 +32,8 @@ real sum_minimum_vec(tint *a, tint *b, tint vec_dim)
   tint i, c;  
   real sum=0;
   for (i=0;i<vec_dim;i++) {
-        c = b[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // min(x, y)
+        // c = b[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // min(x, y)
+        c = ((a[i])<(b[i]))?(a[i]):(b[i]);
         //printf("%d, %d, %d\n", a[i],b[i],c);
         sum += c;
   }
@@ -43,7 +45,8 @@ real sum_maximum_vec(tint *a, tint *b, tint vec_dim)
   tint i, c;  
   real sum=0;  
   for (i=0;i<vec_dim;i++) {
-        c = a[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // max(x, y)
+        //c = a[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // max(x, y)
+        c = ((a[i])>(b[i]))?(a[i]):(b[i]);
         sum += c;
   }
   return sum;

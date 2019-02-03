@@ -45,6 +45,7 @@ with open(fname) as fcsv:
         l_arr = np.asarray(l[:],dtype=m_datatype)
         arrs.append(l_arr)
 data = np.array(arrs,dtype=m_datatype)
+print(data)
 print(data.shape)
 print(data.dtype)
 
@@ -129,8 +130,13 @@ for i, c in enumerate(lst_cmb):
     wu[idx_b,idx_a] = dist_wu
     cosine[idx_a,idx_b] = result*100
     cosine[idx_b,idx_a] = result*100
-    if (i % itvl) == 0:
-        print("iter:\t",i,"\ttime at {}".format(time.time()-start_time))
+    #print("normal=",dist_jac)
+    #print("generalised=",dist_gen_jac)
+    #print("sarika=",dist_sarika)
+    #print("wu=",dist_wu)
+    #print("cosine=",result*100)
+    #if (i % itvl) == 0:
+    #    print("iter:\t",i,"\ttime at {}".format(time.time()-start_time))
         
 csv_folder_name = sample_name+"_csv_"+m_datatype.__name__
 if not os.path.exists(csv_folder_name):
@@ -138,10 +144,10 @@ if not os.path.exists(csv_folder_name):
 
 csv_fmt = '%7.3f'
 np.savetxt(csv_folder_name+"/normal.csv", normal, delimiter=",",fmt=csv_fmt)
-np.savetxt(csv_folder_name+"/generalised.csv", normal, delimiter=",",fmt=csv_fmt)
-np.savetxt(csv_folder_name+"/sarika.csv", normal, delimiter=",",fmt=csv_fmt)
-np.savetxt(csv_folder_name+"/wu.csv", normal, delimiter=",",fmt=csv_fmt)
-np.savetxt(csv_folder_name+"/cosine.csv", normal, delimiter=",",fmt=csv_fmt)
+np.savetxt(csv_folder_name+"/generalised.csv", generalised, delimiter=",",fmt=csv_fmt)
+np.savetxt(csv_folder_name+"/sarika.csv", sarika, delimiter=",",fmt=csv_fmt)
+np.savetxt(csv_folder_name+"/wu.csv", wu, delimiter=",",fmt=csv_fmt)
+np.savetxt(csv_folder_name+"/cosine.csv", cosine, delimiter=",",fmt=csv_fmt)
 #pd.DataFrame(normal).to_csv(csv_folder_name+"/normal.csv")
 #pd.DataFrame(generalised).to_csv(csv_folder_name+"/generalised.csv")
 #pd.DataFrame(sarika).to_csv(csv_folder_name+"/sarika1.csv")
