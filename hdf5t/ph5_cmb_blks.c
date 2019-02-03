@@ -967,7 +967,7 @@ phdf5readAll(char *filename)
                           &rp);
         if (debug_info)
             if (mpi_rank == debug_mpi_rank)
-                print_matrix_real(rp.cosine,space_dim_a0, space_dim_b0, "%5.3e ");
+                print_matrix_real(rp.normal,space_dim_a0, space_dim_b0, "%7.3f ");
 
         free_dynamic_2d_array_real(rp.normal);
         free_dynamic_2d_array_real(rp.generalised);

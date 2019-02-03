@@ -42,7 +42,7 @@ with open(fname) as fcsv:
     for idx,line in enumerate(lines):
         l = list(line.split(';')[1].split(','))
         #l_arr = np.asarray(l[:-1]).astype(np.float) 
-        l_arr = np.asarray(l[:-1],dtype=m_datatype)
+        l_arr = np.asarray(l[:],dtype=m_datatype)
         arrs.append(l_arr)
 data = np.array(arrs,dtype=m_datatype)
 print(data.shape)
