@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include "hdf5t/dynamic_2d_array.h"
 
 #define N 17
 #define D 12
@@ -258,5 +259,8 @@ int main(void)
         //denomenator_sarika = a_sum+b_sum
         //dist_sarika = 1.0-(float(numerator_sarika)/float(denomenator_sarika))
     }
+
+    //print_matrix_real((real**)normal,N,C,"7.3f");
+
 
 }
