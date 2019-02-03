@@ -160,6 +160,7 @@ int main(void)
         {14, 15}, {14, 16}, 
         {15, 16}
     };
+    real normal[N][N],generalised[N][N], sarika[N][N],wu[N][N],cosine[N][N];
     real data_sum[N], a_sum, b_sum, one_data_norm[N], one_an, one_bn, result;
     real dist_gen_jac, dist_jac, denomenator_wu, dist_wu; 
     real numerator_sarika, denomenator_sarika, dist_sarika;
@@ -219,6 +220,17 @@ int main(void)
         numerator_sarika = num_sim;
         denomenator_sarika = a_sum+b_sum;
         dist_sarika = 1.0-numerator_sarika/denomenator_sarika;
+
+        normal[idx_a][idx_b] = dist_jac;
+        normal[idx_b][idx_a] = dist_jac;
+        generalised[idx_a][idx_b] = dist_gen_jac;
+        generalised[idx_b][idx_a] = dist_gen_jac;
+        sarika[idx_a][idx_b] = dist_sarika;
+        sarika[idx_b][idx_a] = dist_sarika;
+        wu[idx_a][idx_b] = dist_wu;
+        wu[idx_b][idx_a] = dist_wu;
+        cosine[idx_a][idx_b] = result*100;
+        cosine[idx_b][idx_a] = result*100;       
         
         //printf("normal = %f\n", dist_jac);
         //printf("generalised =%f\n", dist_gen_jac);
@@ -246,4 +258,5 @@ int main(void)
         //denomenator_sarika = a_sum+b_sum
         //dist_sarika = 1.0-(float(numerator_sarika)/float(denomenator_sarika))
     }
+
 }
