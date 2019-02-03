@@ -23,10 +23,13 @@ from itertools import combinations
 #fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 #fname = "sample_protease_mix_1/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
-sample_name = "sample_hsp70_actin"
+#sample_name = "sample_hsp70_actin"
 #sample_name = "sample_a-b_mix_2"
 #sample_name = "sample_protease_mix_1"
-fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
+#fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
+
+sample_name = "hdf5t"
+fname = sample_name + "/ta.csv"
 
 start_time=time.time()
 
@@ -132,11 +135,18 @@ for i, c in enumerate(lst_cmb):
 csv_folder_name = sample_name+"_csv_"+m_datatype.__name__
 if not os.path.exists(csv_folder_name):
     os.mkdir(csv_folder_name)
-pd.DataFrame(normal).to_csv(csv_folder_name+"/normal.csv")
-pd.DataFrame(generalised).to_csv(csv_folder_name+"/generalised.csv")
-pd.DataFrame(sarika).to_csv(csv_folder_name+"/sarika1.csv")
-pd.DataFrame(wu).to_csv(csv_folder_name + "/wu.csv")
-pd.DataFrame(cosine).to_csv(csv_folder_name + "/cosine.csv")
+
+csv_fmt = '%7.3f'
+np.savetxt(csv_folder_name+"/normal.csv", normal, delimiter=",",fmt=csv_fmt)
+np.savetxt(csv_folder_name+"/generalised.csv", normal, delimiter=",",fmt=csv_fmt)
+np.savetxt(csv_folder_name+"/sarika.csv", normal, delimiter=",",fmt=csv_fmt)
+np.savetxt(csv_folder_name+"/wu.csv", normal, delimiter=",",fmt=csv_fmt)
+np.savetxt(csv_folder_name+"/cosine.csv", normal, delimiter=",",fmt=csv_fmt)
+#pd.DataFrame(normal).to_csv(csv_folder_name+"/normal.csv")
+#pd.DataFrame(generalised).to_csv(csv_folder_name+"/generalised.csv")
+#pd.DataFrame(sarika).to_csv(csv_folder_name+"/sarika1.csv")
+#pd.DataFrame(wu).to_csv(csv_folder_name + "/wu.csv")
+#pd.DataFrame(cosine).to_csv(csv_folder_name + "/cosine.csv")
 
 end_time=time.time()
 total_time=((end_time)-(start_time))

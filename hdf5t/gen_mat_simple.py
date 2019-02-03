@@ -13,6 +13,7 @@ data_type = np.int
 test_arr = np.zeros((n,m),dtype=data_type)
 test_arr[0:n,:]=np.arange(n).reshape(n,-1)*100
 test_arr += np.arange(m,dtype=data_type)
+np.savetxt("ta.csv", test_arr, delimiter=",",fmt='%5d')
 h5f = h5py.File('ta.h5', 'w')
 h5f.create_dataset('Data1', data=test_arr)
 h5f.close()
