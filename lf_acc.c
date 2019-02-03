@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include "hdf5t/dynamic_2d_array.h"
+//#include "hdf5t/dynamic_2d_array.h"
 
 #define N 17
 #define D 12
@@ -260,7 +260,19 @@ int main(void)
         //dist_sarika = 1.0-(float(numerator_sarika)/float(denomenator_sarika))
     }
 
-    //print_matrix_real((real**)normal,N,C,"7.3f");
+    print_matrix(&normal[0][0],N,N,"7.3f");
 
 
+}
+
+
+void print_matrix(real **array_dynamic, int nrows, int ncols, char* fmt_string) {
+    int i,j;
+    printf("\n");
+    for (i = 0; i < nrows; i++){
+        for (j = 0; j < ncols; j++){
+            printf(fmt_string, array_dynamic[i][j]);
+        }
+        printf("\n");
+    }
 }
