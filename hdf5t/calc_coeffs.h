@@ -220,7 +220,8 @@ int calc_coeffs_block(tint **data_part_a, tint part_a_dim0, tint part_a_dim1,
             
             one_an = one_data_norm_a[idx_a];
             one_bn = one_data_norm_b[idx_b];
-            result = 1.0 - vec_dot(a,b,dim1)*one_an*one_bn;
+            //result = 1.0 - vec_dot(a,b,dim1)*one_an*one_bn;
+            result = vec_dot(a,b,dim1)*one_an*one_bn;
             
             dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
             dist_jac = 1.0-numerator_jac/denomenator_jac;

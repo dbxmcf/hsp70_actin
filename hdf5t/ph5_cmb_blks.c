@@ -967,10 +967,15 @@ phdf5readAll(char *filename)
                           &rp);
         if (debug_info)
             if (mpi_rank == debug_mpi_rank) {
+                printf("normal");
                 print_matrix_real(rp.normal,space_dim_a0, space_dim_b0, "%7.3f ");
+                printf("generalised");
                 print_matrix_real(rp.generalised,space_dim_a0, space_dim_b0, "%7.3f ");
+                printf("wu");
                 print_matrix_real(rp.wu,space_dim_a0, space_dim_b0, "%7.3f ");
+                printf("sarika");
                 print_matrix_real(rp.sarika,space_dim_a0, space_dim_b0, "%7.3f ");
+                printf("cosine");
                 print_matrix_real(rp.cosine,space_dim_a0, space_dim_b0, "%7.3f ");
             }
 
