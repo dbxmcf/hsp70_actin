@@ -224,6 +224,14 @@ int calc_coeffs_block(tint **data_part_a, tint part_a_dim0, tint part_a_dim1,
             result = vec_dot(a,b,dim1)*one_an*one_bn;
             
             dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
+            //if (numerator_jac < 0 || denomenator_jac > 100) {
+            if (numerator_jac < 0 ) {
+                printf("a[0]=%d\n",a[0]);
+                printf("b[0]=%d\n",b[0]);
+                printf("numerator_jac:%lf \n",numerator_jac);
+                printf("denomenator_jac:%lf \n",denomenator_jac);
+            }
+
             dist_jac = 1.0-numerator_jac/denomenator_jac;
             
             denomenator_wu = MIN(denomenator_gen_jac,MAX(a_sum,b_sum));
