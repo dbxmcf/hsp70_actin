@@ -227,8 +227,9 @@ int main(void)
         one_an = one_data_norm[idx_a];
         one_bn = one_data_norm[idx_b];
         real adotb = vec_dot(a,b,D);
-        printf("%d %d %.3e\n", idx_a, idx_b, adotb);
-        result = 1.0 - adotb*one_an*one_bn;
+        //printf("%d %d %.3e\n", idx_a, idx_b, adotb);
+        //result = 1.0 - adotb*one_an*one_bn;
+        result = adotb*one_an*one_bn;
         
         dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
         dist_jac = 1.0-numerator_jac/denomenator_jac;
