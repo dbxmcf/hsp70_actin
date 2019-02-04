@@ -112,8 +112,10 @@ for i, c in enumerate(lst_cmb):
     b1 = b.astype(np.int)
     adotb = a1.dot(b1)
     print(idx_a, idx_b, adotb)
-    #result = 1 - a1.dot(b1)*one_an*one_bn
-    result = 1 - spatial.distance.cosine(a.astype(cvt_type), b.astype(cvt_type))
+    one_an1 = one_an.astype(float)
+    one_bn1 = one_bn.astype(float)
+    result = 1 - a1.dot(b1)*one_an1*one_bn1
+    #result = 1 - spatial.distance.cosine(a.astype(cvt_type), b.astype(cvt_type))
 
     if (denomenator_jac == 0):
         print('There is something wrong. Denominator is Zero! ', idx_a, idx_b, numerator_jac, denomenator_jac)
