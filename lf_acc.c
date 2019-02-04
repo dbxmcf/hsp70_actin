@@ -13,6 +13,17 @@
 typedef float real;
 typedef unsigned short tint;
 
+void print_matrix(real array_dynamic[N][N], int nrows, int ncols, char* fmt_string) {
+    int i,j;
+    printf("\n");
+    for (i = 0; i < nrows; i++){
+        for (j = 0; j < ncols; j++){
+            printf(fmt_string, array_dynamic[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 // https://www.geeksforgeeks.org/compute-the-minimum-or-maximum-max-of-two-integers-without-branching/
 // https://stackoverflow.com/questions/24529504/find-out-max-min-of-two-number-without-using-if-else
 // http://graphics.stanford.edu/~seander/bithacks.html#IntegerMinOrMax
@@ -102,9 +113,10 @@ real vec_norm(tint *a, tint vec_dim)
 real vec_dot(tint *a, tint *b, tint vec_dim)
 {
     tint i;
-    real sum=0;
+    real sum=0,tmp=0;
     for(i=0;i<vec_dim; i++) {
-        sum += a[i]*b[i];
+        tmp = a[i]*b[i];
+        sum += tmp;
     }
     return sum;
 }
@@ -161,7 +173,7 @@ int main(void)
         {14, 15}, {14, 16}, 
         {15, 16}
     };
-    real normal[N][N],generalised[N][N], sarika[N][N],wu[N][N],cosine[N][N];
+    real normal[N][N]={0},generalised[N][N]={0}, sarika[N][N]={0},wu[N][N]={0},cosine[N][N]={0};
     real data_sum[N], a_sum, b_sum, one_data_norm[N], one_an, one_bn, result;
     real dist_gen_jac, dist_jac, denomenator_wu, dist_wu; 
     real numerator_sarika, denomenator_sarika, dist_sarika;
@@ -182,6 +194,10 @@ int main(void)
         }
         one_data_norm[i] = 1.0/vec_norm(data[i], D);
     }
+
+    for (i=0;i<N;i++)
+        printf("%.7e ",one_data_norm[i]);
+    printf("\n");
 
     for (i=0;i< C;i++) {
         idx_a = cmb[i][0], idx_b = cmb[i][1];
@@ -210,7 +226,9 @@ int main(void)
         
         one_an = one_data_norm[idx_a];
         one_bn = one_data_norm[idx_b];
-        result = 1.0 - vec_dot(a,b,D)*one_an*one_bn;
+        real adotb = vec_dot(a,b,D);
+        printf("%d %d %.3e\n", idx_a, idx_b, adotb);
+        result = 1.0 - adotb*one_an*one_bn;
         
         dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
         dist_jac = 1.0-numerator_jac/denomenator_jac;
@@ -260,19 +278,17 @@ int main(void)
         //dist_sarika = 1.0-(float(numerator_sarika)/float(denomenator_sarika))
     }
 
-    print_matrix(&normal[0][0],N,N,"7.3f");
-
-
+    //print_matrix(&normal[0][0],N,N,"7.3f");
+    printf("normal:\n");
+    print_matrix(normal,N,N,"%7.3f");
+    printf("generalised:\n");
+    print_matrix(generalised,N,N,"%7.3f");    
+    printf("sarika:\n");
+    print_matrix(sarika,N,N,"%7.3f");   
+    printf("wu:\n");
+    print_matrix(wu,N,N,"%7.3f");
+    printf("cosine:\n");
+    print_matrix(cosine,N,N,"%7.3f");
 }
 
 
-void print_matrix(real **array_dynamic, int nrows, int ncols, char* fmt_string) {
-    int i,j;
-    printf("\n");
-    for (i = 0; i < nrows; i++){
-        for (j = 0; j < ncols; j++){
-            printf(fmt_string, array_dynamic[i][j]);
-        }
-        printf("\n");
-    }
-}

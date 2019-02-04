@@ -79,6 +79,7 @@ itvl = total_cmb/nitvl
 print("itvl=",itvl)
 
 one_data_norm = 1.0/LA.norm(data,axis=1)
+print("one_data_norm:",one_data_norm)
 for i, c in enumerate(lst_cmb):
     idx_a, idx_b = c
     a = data[idx_a]
@@ -105,7 +106,14 @@ for i, c in enumerate(lst_cmb):
     #result = 1 - spatial.distance.cosine(a, b)
     one_an = one_data_norm[idx_a]
     one_bn = one_data_norm[idx_b]
-    result = 1 - a.dot(b)*one_an*one_bn
+    print(a)
+    print(b)
+    a1 = a.astype(np.int)
+    b1 = b.astype(np.int)
+    adotb = a1.dot(b1)
+    print(idx_a, idx_b, adotb)
+    #result = 1 - a1.dot(b1)*one_an*one_bn
+    result = 1 - spatial.distance.cosine(a.astype(cvt_type), b.astype(cvt_type))
 
     if (denomenator_jac == 0):
         print('There is something wrong. Denominator is Zero! ', idx_a, idx_b, numerator_jac, denomenator_jac)
