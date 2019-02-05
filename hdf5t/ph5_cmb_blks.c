@@ -962,7 +962,7 @@ phdf5readAll(char *filename)
         rp.sarika = allocate_dynamic_2d_array_real(space_dim_a0, space_dim_b0);
         rp.cosine = allocate_dynamic_2d_array_real(space_dim_a0, space_dim_b0);
 
-        calc_coeffs_block(data_array_a, space_dim_a0, space_dim_a1, 
+        calc_coeffs_off_diagnol_block(data_array_a, space_dim_a0, space_dim_a1, 
                           data_array_b, space_dim_b0, space_dim_b1,
                           &rp);
         if (debug_info)
