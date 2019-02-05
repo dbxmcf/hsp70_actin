@@ -71,4 +71,13 @@ void print_matrix_real(real** array_dynamic, int nrows, int ncols, char* fmt_str
     }
 }
 
+void print_matrix_1d_real(real* array_dynamic, int dim, char* fmt_string) {
+    int i;
+    printf("\n");
+    for (i = 0; i < dim; i++){
+        printf(fmt_string, array_dynamic[i]);
+    }
+    printf("\n");
+}
+
 #endif // #ifndef _DYNAMIC_2D_ARRAY_H_
