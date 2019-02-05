@@ -974,6 +974,7 @@ phdf5readAll(char *filename)
             }
 
         /* writes to hdf5 collectively*/
+        
 
         free_dynamic_2d_array_real(rp.normal);
         free_dynamic_2d_array_real(rp.generalised);
