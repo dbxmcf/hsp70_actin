@@ -961,6 +961,9 @@ phdf5readAll(char *filename)
                           &rp);
         if (debug_info)
             if (mpi_rank == debug_mpi_rank) {
+                // we can treat as 1D array as well
+                //print_matrix_1d_real(rp.normal[0], space_dim_a0*space_dim_b0, "%7.3f ");
+
                 printf("normal");
                 print_matrix_real(rp.normal,space_dim_a0, space_dim_b0, "%7.3f ");
                 printf("generalised");
@@ -974,7 +977,7 @@ phdf5readAll(char *filename)
             }
 
         /* writes to hdf5 collectively*/
-        
+
 
         free_dynamic_2d_array_real(rp.normal);
         free_dynamic_2d_array_real(rp.generalised);
@@ -1009,11 +1012,7 @@ phdf5readAll(char *filename)
                 print_matrix_1d_real(rpd_part_a.cosine, num_cmbs, "%7.3f ");
             }
 
-        free(rpd_part_a.normal);
-        free(rpd_part_a.generalised);
-        free(rpd_part_a.wu);
-        free(rpd_part_a.sarika);
-        free(rpd_part_a.cosine);
+
 
         result_pointers_diagnol rpd_part_b;
         num_cmbs = space_dim_b0*(space_dim_b0-1)/2;
@@ -1038,6 +1037,15 @@ phdf5readAll(char *filename)
                 printf("mpi_rank[%d]:cosine_part_b",mpi_rank);
                 print_matrix_1d_real(rpd_part_b.cosine, num_cmbs, "%7.3f ");
             }
+
+
+        // free memory before quit
+        free(rpd_part_a.normal);
+        free(rpd_part_a.generalised);
+        free(rpd_part_a.wu);
+        free(rpd_part_a.sarika);
+        free(rpd_part_a.cosine);
+
         free(rpd_part_b.normal);
         free(rpd_part_b.generalised);
         free(rpd_part_b.wu);
