@@ -37,6 +37,18 @@ real sum_minimum_vec(tint *a, tint *b, tint vec_dim)
         //printf("%d, %d, %d\n", a[i],b[i],c);
         sum += c;
   }
+  if (sum < 0) {
+      for (i=0;i<vec_dim;i++) {
+          printf("a[%d]=%d,",i,a[i]);
+      }
+      printf("\n");
+      for (i=0;i<vec_dim;i++) {
+          printf("b[%d]=%d,",i,b[i]);
+      }
+      printf("\n");
+      printf("sum=%f\n",sum);
+  }
+
   return sum;
 }
 
@@ -174,6 +186,7 @@ int calc_coeffs_block(tint **data_part_a, tint part_a_dim0, tint part_a_dim1,
     for (i=0;i<part_a_dim0;i++) {
         data_sum_a[i] = 0;
         for (j=0;j<part_a_dim1;j++) {
+            data_jac_a[i][j]=0;
             if (data_part_a[i][j]>0) 
                 data_jac_a[i][j]=1;
             data_sum_a[i] += data_part_a[i][j];
@@ -185,6 +198,7 @@ int calc_coeffs_block(tint **data_part_a, tint part_a_dim0, tint part_a_dim1,
     for (i=0;i<part_b_dim0;i++) {
         data_sum_b[i] = 0;
         for (j=0;j<part_b_dim1;j++) {
+            data_jac_b[i][j]=0;
             if (data_part_b[i][j]>0) 
                 data_jac_b[i][j]=1;
             data_sum_b[i] += data_part_b[i][j];
