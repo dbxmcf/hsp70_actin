@@ -402,11 +402,11 @@ int calc_coeffs_diagnol_triangle(tint **data, tint dim0, tint dim1,
     }
 
     free_dynamic_2d_array_integer(cmbs);
-
+    free_dynamic_2d_array_integer(data_jac);
     free(data_sum);
     free(one_data_norm);
 
-    free_dynamic_2d_array_integer(data_jac);
+
 }
 
 #endif

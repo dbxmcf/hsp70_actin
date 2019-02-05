@@ -948,12 +948,6 @@ phdf5readAll(char *filename)
     if (mpi_rank < num_cmbs){
         //real **block_cmbs;
         /* process off-diagnol blocks*/
-        //block_cmbs = allocate_dynamic_2d_array_real(space_dim_a0,space_dim_b0);
-        //real **normal = allocate_dynamic_2d_array_real(part_a_dim0, part_b_dim0);
-        //real **generalised = allocate_dynamic_2d_array_real(part_a_dim0, part_b_dim0);
-        //real **wu = allocate_dynamic_2d_array_real(part_a_dim0, part_b_dim0);
-        //real **sarika = allocate_dynamic_2d_array_real(part_a_dim0, part_b_dim0);
-        //real **cosine = allocate_dynamic_2d_array_real(part_a_dim0, part_b_dim0);
 
         result_pointers rp;
         rp.normal = allocate_dynamic_2d_array_real(space_dim_a0, space_dim_b0);
@@ -979,6 +973,7 @@ phdf5readAll(char *filename)
                 print_matrix_real(rp.cosine,space_dim_a0, space_dim_b0, "%7.3f ");
             }
 
+        /* writes to hdf5 collectively*/
 
         free_dynamic_2d_array_real(rp.normal);
         free_dynamic_2d_array_real(rp.generalised);
