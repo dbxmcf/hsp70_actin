@@ -989,10 +989,36 @@ phdf5readAll(char *filename)
     }
     else {
         /* process two diagnol triangles*/
-        result_arrays_diagnol rpd_part_a;
+        result_pointers_diagnol rpd_part_a;
         int num_cmbs = space_dim_a0*(space_dim_a0-1)/2;
         rpd_part_a.normal = (real*)malloc(num_cmbs*sizeof(real));
-        free(rpd_part_a.normal)
+        rpd_part_a.generalised = (real*)malloc(num_cmbs*sizeof(real));
+        rpd_part_a.wu = (real*)malloc(num_cmbs*sizeof(real));
+        rpd_part_a.sarika = (real*)malloc(num_cmbs*sizeof(real));
+        rpd_part_a.cosine = (real*)malloc(num_cmbs*sizeof(real));
+
+        free(rpd_part_a.normal);
+        free(rpd_part_a.generalised);
+        free(rpd_part_a.wu);
+        free(rpd_part_a.sarika);
+        free(rpd_part_a.cosine);
+
+
+        result_pointers_diagnol rpd_part_b;
+        num_cmbs = space_dim_b0*(space_dim_b0-1)/2;
+        rpd_part_b.normal = (real*)malloc(num_cmbs*sizeof(real));
+        rpd_part_b.generalised = (real*)malloc(num_cmbs*sizeof(real));
+        rpd_part_b.wu = (real*)malloc(num_cmbs*sizeof(real));
+        rpd_part_b.sarika = (real*)malloc(num_cmbs*sizeof(real));
+        rpd_part_b.cosine = (real*)malloc(num_cmbs*sizeof(real));
+
+        free(rpd_part_b.normal);
+        free(rpd_part_b.generalised);
+        free(rpd_part_b.wu);
+        free(rpd_part_b.sarika);
+        free(rpd_part_b.cosine);
+
+
     }
 
     /* now starting to work on the writing */
