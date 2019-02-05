@@ -989,6 +989,7 @@ phdf5readAll(char *filename)
     }
     else {
         /* process two diagnol triangles*/
+        
     }
 
     /* now starting to work on the writing */

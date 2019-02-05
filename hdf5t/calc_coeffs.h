@@ -274,12 +274,61 @@ int calc_coeffs_off_diagnol_block(tint **data_part_a, tint part_a_dim0, tint par
     return 0;
 }
 
+
+
 int calc_coeffs_diagnol_triangle(tint **data_part_a, tint part_a_dim0, tint part_a_dim1,
                       tint **data_part_b, tint part_b_dim0, tint part_b_dim1,
                       result_pointers *rp)
 {
-    int i, j, idx_a, idx_b;
-    
+    tint i, j, idx_a, idx_b;
+    tint *a, *b, *a_jac, *b_jac;
+    real dist_gen_jac, dist_jac, denomenator_wu, dist_wu; 
+    real numerator_sarika, denomenator_sarika, dist_sarika;
+    real num_sim, numerator_jac, denomenator_jac, numerator_gen_jac, denomenator_gen_jac;
+
+   // calculate some preparation values
+    real *data_sum_a = (real*)malloc(part_a_dim0*sizeof(real));
+    real *data_sum_b = (real*)malloc(part_b_dim0*sizeof(real));
+    real *one_data_norm_a = (real*)malloc(part_a_dim0*sizeof(real));
+    real *one_data_norm_b = (real*)malloc(part_b_dim0*sizeof(real));
+    real a_sum, b_sum, one_an, one_bn, result;
+
+    tint **data_jac_a = allocate_dynamic_2d_array_integer(part_a_dim0, part_a_dim1);
+    tint **data_jac_b = allocate_dynamic_2d_array_integer(part_b_dim0, part_b_dim1);
+
+    // part_a values
+    for (i=0;i<part_a_dim0;i++) {
+        data_sum_a[i] = 0;
+        for (j=0;j<part_a_dim1;j++) {
+            data_jac_a[i][j]=0;
+            if (data_part_a[i][j]>0) 
+                data_jac_a[i][j]=1;
+            data_sum_a[i] += data_part_a[i][j];
+        }
+        one_data_norm_a[i] = 1.0/vec_norm(data_part_a[i], part_a_dim1);
+    }
+
+    // part_b values
+    for (i=0;i<part_b_dim0;i++) {
+        data_sum_b[i] = 0;
+        for (j=0;j<part_b_dim1;j++) {
+            data_jac_b[i][j]=0;
+            if (data_part_b[i][j]>0) 
+                data_jac_b[i][j]=1;
+            data_sum_b[i] += data_part_b[i][j];
+        }
+        one_data_norm_b[i] = 1.0/vec_norm(data_part_b[i], part_b_dim1);
+    }
+
+    /* note that part a and part b are really independent*/
+
+    free(data_sum_a);
+    free(data_sum_b);
+    free(one_data_norm_a);
+    free(one_data_norm_b);
+
+    free_dynamic_2d_array_integer(data_jac_a);
+    free_dynamic_2d_array_integer(data_jac_b);
 }
 
 #endif
