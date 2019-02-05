@@ -23,6 +23,13 @@ typedef struct result_arrays {
     real **cosine;
 } result_pointers;
 
+typedef struct result_arrays_diagnol {
+    real *normal;
+    real *generalised;
+    real *wu;
+    real *sarika;
+    real *cosine;
+} result_pointers_diagnol;
 
 // https://www.geeksforgeeks.org/compute-the-minimum-or-maximum-max-of-two-integers-without-branching/
 // https://stackoverflow.com/questions/24529504/find-out-max-min-of-two-number-without-using-if-else

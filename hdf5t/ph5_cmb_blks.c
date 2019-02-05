@@ -989,7 +989,10 @@ phdf5readAll(char *filename)
     }
     else {
         /* process two diagnol triangles*/
-        
+        result_arrays_diagnol rpd_part_a;
+        int num_cmbs = space_dim_a0*(space_dim_a0-1)/2;
+        rpd_part_a.normal = (real*)malloc(num_cmbs*sizeof(real));
+        free(rpd_part_a.normal)
     }
 
     /* now starting to work on the writing */
