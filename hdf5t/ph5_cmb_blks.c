@@ -506,8 +506,14 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     MPI_Comm comm = MPI_COMM_WORLD;
     MPI_Info info = MPI_INFO_NULL;
 
-    if (debug_info)
-        printf("mpi_rk[%d],result_data->vec_dim=%d\n",mpi_rank,result_data->vec_dim);
+    if (debug_info) {
+        if ( debug_mpi_rank == mpi_rank) {
+            printf("mpi_rk[%d],result_data->vec_dim=%d\n",mpi_rank,result_data->vec_dim);
+            printf("mpi_rk[%d]:\n",mpi_rank);
+            print_matrix_1d_real(result_data->wu,result_data->vec_dim, "%7.3f");
+        }
+    }
+
 
     if (verbose)
 	printf("Collective write test on file %s\n", filename);
