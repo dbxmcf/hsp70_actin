@@ -954,12 +954,19 @@ phdf5readAll(char *filename)
         //real **block_cmbs;
         /* process off-diagnol blocks*/
 
-        result_pointers rp;
-        rp.normal = allocate_dynamic_2d_array_real(space_dim_a0, space_dim_b0);
-        rp.generalised = allocate_dynamic_2d_array_real(space_dim_a0, space_dim_b0);
-        rp.wu = allocate_dynamic_2d_array_real(space_dim_a0, space_dim_b0);
-        rp.sarika = allocate_dynamic_2d_array_real(space_dim_a0, space_dim_b0);
-        rp.cosine = allocate_dynamic_2d_array_real(space_dim_a0, space_dim_b0);
+        int num_cmbs_ab = space_dim_a0*space_dim_b0;
+        part_ab_normal = (real*)malloc(num_cmbs_ab*sizeof(real));
+        part_ab_generalised = (real*)malloc(num_cmbs_ab*sizeof(real));
+        part_ab_wu = (real*)malloc(num_cmbs_ab*sizeof(real));
+        part_ab_sarika = (real*)malloc(num_cmbs_ab*sizeof(real));
+        part_ab_cosine = (real*)malloc(num_cmbs_ab*sizeof(real));
+
+        result_pointers_diagnol rp;
+        rp.normal = part_ab_normal;
+        rp.generalised = part_ab_generalised;
+        rp.wu = part_ab_wu;
+        rp.sarika = part_ab_sarika;
+        rp.cosine = part_ab_cosine;
 
         calc_coeffs_off_diagnol_block(data_array_a, space_dim_a0, space_dim_a1, 
                           data_array_b, space_dim_b0, space_dim_b1,
@@ -968,27 +975,36 @@ phdf5readAll(char *filename)
             if (mpi_rank == debug_mpi_rank) {
                 // we can treat as 1D array as well
                 //print_matrix_1d_real(rp.normal[0], space_dim_a0*space_dim_b0, "%7.3f ");
-
-                printf("normal");
-                print_matrix_real(rp.normal,space_dim_a0, space_dim_b0, "%7.3f ");
-                printf("generalised");
-                print_matrix_real(rp.generalised,space_dim_a0, space_dim_b0, "%7.3f ");
-                printf("wu");
-                print_matrix_real(rp.wu,space_dim_a0, space_dim_b0, "%7.3f ");
-                printf("sarika");
-                print_matrix_real(rp.sarika,space_dim_a0, space_dim_b0, "%7.3f ");
-                printf("cosine");
-                print_matrix_real(rp.cosine,space_dim_a0, space_dim_b0, "%7.3f ");
+                printf("mpi_rank[%d]:normal",mpi_rank);
+                print_matrix_1d_real(rp.normal, num_cmbs_ab, "%7.3f ");
+                printf("mpi_rank[%d]:generalised",mpi_rank);
+                print_matrix_1d_real(rp.generalised, num_cmbs_ab, "%7.3f ");
+                printf("mpi_rank[%d]:wu",mpi_rank);
+                print_matrix_1d_real(rp.wu, num_cmbs_ab, "%7.3f ");
+                printf("mpi_rank[%d]:sarika",mpi_rank);
+                print_matrix_1d_real(rp.sarika, num_cmbs_ab, "%7.3f ");
+                printf("mpi_rank[%d]:cosine",mpi_rank);
+                print_matrix_1d_real(rp.cosine, num_cmbs_ab, "%7.3f ");
+                //printf("normal");
+                //print_matrix_real(&rp.normal,space_dim_a0, space_dim_b0, "%7.3f ");
+                //printf("generalised");
+                //print_matrix_real(&rp.generalised,space_dim_a0, space_dim_b0, "%7.3f ");
+                //printf("wu");
+                //print_matrix_real(&rp.wu,space_dim_a0, space_dim_b0, "%7.3f ");
+                //printf("sarika");
+                //print_matrix_real(&rp.sarika,space_dim_a0, space_dim_b0, "%7.3f ");
+                //printf("cosine");
+                //print_matrix_real(&rp.cosine,space_dim_a0, space_dim_b0, "%7.3f ");
             }
 
         /* writes to hdf5 collectively*/
 
 
-        free_dynamic_2d_array_real(rp.normal);
-        free_dynamic_2d_array_real(rp.generalised);
-        free_dynamic_2d_array_real(rp.wu);
-        free_dynamic_2d_array_real(rp.sarika);
-        free_dynamic_2d_array_real(rp.cosine);
+        //free_dynamic_2d_array_real(rp.normal);
+        //free_dynamic_2d_array_real(rp.generalised);
+        //free_dynamic_2d_array_real(rp.wu);
+        //free_dynamic_2d_array_real(rp.sarika);
+        //free_dynamic_2d_array_real(rp.cosine);
 
     }
     else {
@@ -997,13 +1013,13 @@ phdf5readAll(char *filename)
         result_pointers_diagnol rpd_part_a;
         int num_cmbs_a = space_dim_a0*(space_dim_a0-1)/2;
         int num_cmbs_b = space_dim_b0*(space_dim_b0-1)/2;
-        int num_cmbs = num_cmbs_a + num_cmbs_b;
+        int num_cmbs_ab = num_cmbs_a + num_cmbs_b;
 
-        part_ab_normal = (real*)malloc(num_cmbs*sizeof(real)); 
-        part_ab_generalised = (real*)malloc(num_cmbs*sizeof(real)); 
-        part_ab_wu = (real*)malloc(num_cmbs*sizeof(real));
-        part_ab_sarika = (real*)malloc(num_cmbs*sizeof(real)); 
-        part_ab_cosine = (real*)malloc(num_cmbs*sizeof(real)); 
+        part_ab_normal = (real*)malloc(num_cmbs_ab*sizeof(real)); 
+        part_ab_generalised = (real*)malloc(num_cmbs_ab*sizeof(real)); 
+        part_ab_wu = (real*)malloc(num_cmbs_ab*sizeof(real));
+        part_ab_sarika = (real*)malloc(num_cmbs_ab*sizeof(real)); 
+        part_ab_cosine = (real*)malloc(num_cmbs_ab*sizeof(real)); 
 
         rpd_part_a.normal = part_ab_normal;
         rpd_part_a.generalised = part_ab_generalised;

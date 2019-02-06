@@ -149,7 +149,7 @@ void read_h5()
 
 int calc_coeffs_off_diagnol_block(tint **data_part_a, tint part_a_dim0, tint part_a_dim1,
                       tint **data_part_b, tint part_b_dim0, tint part_b_dim1,
-                      result_pointers *rp)
+                      result_pointers_diagnol *rp)
 {
     //int i, j, idx_a, idx_b;
     tint i, j, idx_a, idx_b;
@@ -188,7 +188,6 @@ int calc_coeffs_off_diagnol_block(tint **data_part_a, tint part_a_dim0, tint par
     //cosine[idx_b,idx_a] = result*100
 
 
-
     // part_a values
     for (i=0;i<part_a_dim0;i++) {
         data_sum_a[i] = 0;
@@ -213,6 +212,7 @@ int calc_coeffs_off_diagnol_block(tint **data_part_a, tint part_a_dim0, tint par
         one_data_norm_b[i] = 1.0/vec_norm(data_part_b[i], dim1);
     }
 
+    int idx_out = 0;
     // the large loop that calculates the matrix
     for (idx_a=0;idx_a<part_a_dim0;idx_a++) {
         for (idx_b=0;idx_b<part_b_dim0;idx_b++){
@@ -262,11 +262,12 @@ int calc_coeffs_off_diagnol_block(tint **data_part_a, tint part_a_dim0, tint par
             denomenator_sarika = a_sum+b_sum;
             dist_sarika = 1.0-numerator_sarika/denomenator_sarika;
 
-            rp->normal[idx_a][idx_b] = dist_jac;
-            rp->generalised[idx_a][idx_b] = dist_gen_jac;
-            rp->sarika[idx_a][idx_b] = dist_sarika;
-            rp->wu[idx_a][idx_b] = dist_wu;
-            rp->cosine[idx_a][idx_b] = result*100;
+            rp->normal[idx_out] = dist_jac;
+            rp->generalised[idx_out] = dist_gen_jac;
+            rp->sarika[idx_out] = dist_sarika;
+            rp->wu[idx_out] = dist_wu;
+            rp->cosine[idx_out] = result*100;
+            idx_out++;
         }
     }
 
