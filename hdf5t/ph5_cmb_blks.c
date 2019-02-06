@@ -660,6 +660,7 @@ if (verbose)
     H5Pclose(xfer_plist);
 
 
+
     /*
      * All writes completed.  Close datasets collectively
      */
@@ -1034,7 +1035,7 @@ phdf5readAll(char *filename)
             }
 
         result_pointers_diagnol rpd_part_b;
-        //num_cmbs = space_dim_b0*(space_dim_b0-1)/2;
+        // second section of the triangle results
         rpd_part_b.normal = part_ab_normal + num_cmbs_a;
         rpd_part_b.generalised = part_ab_generalised + num_cmbs_a;
         rpd_part_b.wu = part_ab_wu + num_cmbs_a;
@@ -1056,13 +1057,10 @@ phdf5readAll(char *filename)
                 printf("mpi_rank[%d]:cosine_part_b",mpi_rank);
                 print_matrix_1d_real(rpd_part_b.cosine, num_cmbs_b, "%7.3f ");
             }
-
-
-
     }
 
-
     /* now starting to work on the writing */
+    //write_hdf5(result_pointers_diagnol,num_cmbs,mpi_size,mpi_rank);
 
     free(part_ab_normal);
     free(part_ab_generalised);
