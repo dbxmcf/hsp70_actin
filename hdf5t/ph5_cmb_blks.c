@@ -985,16 +985,6 @@ phdf5readAll(char *filename)
                 print_matrix_1d_real(rp.sarika, num_cmbs_ab, "%7.3f ");
                 printf("mpi_rank[%d]:cosine",mpi_rank);
                 print_matrix_1d_real(rp.cosine, num_cmbs_ab, "%7.3f ");
-                //printf("normal");
-                //print_matrix_real(&rp.normal,space_dim_a0, space_dim_b0, "%7.3f ");
-                //printf("generalised");
-                //print_matrix_real(&rp.generalised,space_dim_a0, space_dim_b0, "%7.3f ");
-                //printf("wu");
-                //print_matrix_real(&rp.wu,space_dim_a0, space_dim_b0, "%7.3f ");
-                //printf("sarika");
-                //print_matrix_real(&rp.sarika,space_dim_a0, space_dim_b0, "%7.3f ");
-                //printf("cosine");
-                //print_matrix_real(&rp.cosine,space_dim_a0, space_dim_b0, "%7.3f ");
             }
 
         /* writes to hdf5 collectively*/
@@ -1068,18 +1058,7 @@ phdf5readAll(char *filename)
             }
 
 
-        // free memory before quit
-        //free(rpd_part_a.normal);
-        //free(rpd_part_a.generalised);
-        //free(rpd_part_a.wu);
-        //free(rpd_part_a.sarika);
-        //free(rpd_part_a.cosine);
-//
-        //free(rpd_part_b.normal);
-        //free(rpd_part_b.generalised);
-        //free(rpd_part_b.wu);
-        //free(rpd_part_b.sarika);
-        //free(rpd_part_b.cosine);
+
     }
 
 
@@ -1090,8 +1069,6 @@ phdf5readAll(char *filename)
     free(part_ab_wu);
     free(part_ab_sarika);
     free(part_ab_cosine);
-
-
 
     free_dynamic_2d_array_integer(data_array_a);
     free_dynamic_2d_array_integer(data_array_b);
