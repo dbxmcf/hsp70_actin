@@ -552,7 +552,7 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
 
 
     /* create a dataset collectively */
-    dataset1 = H5Dcreate2(fid1, DATASETNAME1, H5T_NATIVE_INT, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
+    dataset1 = H5Dcreate2(fid1, result_data->wu_name, H5T_NATIVE_INT, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
     assert(dataset1 != FAIL);
     MESG("H5Dcreate2 succeed");
 
