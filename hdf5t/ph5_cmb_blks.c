@@ -106,7 +106,7 @@ void dataset_print(hsize_t start[], hsize_t count[], hsize_t stride[], DATATYPE 
 int dataset_vrfy(hsize_t start[], hsize_t count[], hsize_t stride[], DATATYPE *dataset, DATATYPE *original);
 void phdf5writeInd(char *filename);
 void phdf5readInd(char *filename);
-void phdf5writeAll(char *filename);
+void phdf5writeAll(char *filename, result_pointers_diagnol* result_data);
 void phdf5readAll(char *filename);
 void test_split_comm_access(char filenames[][PATH_MAX]);
 int parse_options(int argc, char **argv);
@@ -485,7 +485,7 @@ if (verbose)
  */
 
 void
-phdf5writeAll(char *filename)
+phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
 {
     hid_t fid1;			/* HDF5 file IDs */
     hid_t acc_tpl1;		/* File access templates */
@@ -505,6 +505,9 @@ phdf5writeAll(char *filename)
 
     MPI_Comm comm = MPI_COMM_WORLD;
     MPI_Info info = MPI_INFO_NULL;
+
+    if (debug_info)
+        printf("mpi_rk[%d],result_data->vec_dim=%d\n",mpi_rank,result_data->vec_dim);
 
     if (verbose)
 	printf("Collective write test on file %s\n", filename);
@@ -950,12 +953,13 @@ phdf5readAll(char *filename)
     real *part_ab_wu = NULL; 
     real *part_ab_sarika = NULL; 
     real *part_ab_cosine = NULL; 
+    int num_cmbs_ab;
 
     if (mpi_rank < num_cmbs){
         //real **block_cmbs;
         /* process off-diagnol blocks*/
 
-        int num_cmbs_ab = space_dim_a0*space_dim_b0;
+        num_cmbs_ab = space_dim_a0*space_dim_b0;
         part_ab_normal = (real*)malloc(num_cmbs_ab*sizeof(real));
         part_ab_generalised = (real*)malloc(num_cmbs_ab*sizeof(real));
         part_ab_wu = (real*)malloc(num_cmbs_ab*sizeof(real));
@@ -1004,7 +1008,7 @@ phdf5readAll(char *filename)
         result_pointers_diagnol rpd_part_a;
         int num_cmbs_a = space_dim_a0*(space_dim_a0-1)/2;
         int num_cmbs_b = space_dim_b0*(space_dim_b0-1)/2;
-        int num_cmbs_ab = num_cmbs_a + num_cmbs_b;
+        num_cmbs_ab = num_cmbs_a + num_cmbs_b;
 
         part_ab_normal = (real*)malloc(num_cmbs_ab*sizeof(real)); 
         part_ab_generalised = (real*)malloc(num_cmbs_ab*sizeof(real)); 
@@ -1060,7 +1064,16 @@ phdf5readAll(char *filename)
     }
 
     /* now starting to work on the writing */
-    //write_hdf5(result_pointers_diagnol,num_cmbs,mpi_size,mpi_rank);
+    //write_hdf5(result_pointers_diagnol,num_cmbs_ab,mpi_size,mpi_rank);
+    result_pointers_diagnol rpd_h5;
+    rpd_h5.normal = part_ab_normal;
+    rpd_h5.generalised = part_ab_generalised;
+    rpd_h5.wu = part_ab_wu;
+    rpd_h5.sarika = part_ab_sarika;
+    rpd_h5.cosine = part_ab_cosine;
+    rpd_h5.vec_dim = num_cmbs_ab;
+    
+    phdf5writeAll("res_all.h5",&rpd_h5);
 
     free(part_ab_normal);
     free(part_ab_generalised);
@@ -1309,7 +1322,7 @@ main(int argc, char **argv)
 	MPI_BANNER("testing PHDF5 dataset independent write...");
 	phdf5writeInd(testfiles[0]);
 	MPI_BANNER("testing PHDF5 dataset collective write...");
-	phdf5writeAll(testfiles[1]);
+	phdf5writeAll(testfiles[1],NULL);
     }
     if (doread){
 	//MPI_BANNER("testing PHDF5 dataset independent read...");
