@@ -509,7 +509,8 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     if (debug_info) {
         if ( debug_mpi_rank == mpi_rank) {
             printf("mpi_rk[%d],result_data->vec_dim=%d\n",mpi_rank,result_data->vec_dim);
-            printf("mpi_rk[%d]:\n",mpi_rank);
+            //printf("mpi_rk[%d]:\n",mpi_rank);
+            printf("mpi_rk[%d]:%s\n",mpi_rank,result_data->wu_name);
             print_matrix_1d_real(result_data->wu,result_data->vec_dim, "%7.3f");
         }
     }
@@ -1073,10 +1074,15 @@ phdf5readAll(char *filename)
     //write_hdf5(result_pointers_diagnol,num_cmbs_ab,mpi_size,mpi_rank);
     result_pointers_diagnol rpd_h5;
     rpd_h5.normal = part_ab_normal;
+    rpd_h5.normal_name = "normal";
     rpd_h5.generalised = part_ab_generalised;
+    rpd_h5.generalised_name = "generalised";
     rpd_h5.wu = part_ab_wu;
+    rpd_h5.wu_name = "wu";
     rpd_h5.sarika = part_ab_sarika;
+    rpd_h5.sarika_name = "sarika";
     rpd_h5.cosine = part_ab_cosine;
+    rpd_h5.cosine_name = "cosine";
     rpd_h5.vec_dim = num_cmbs_ab;
     
     phdf5writeAll("res_all.h5",&rpd_h5);

@@ -30,6 +30,11 @@ typedef struct result_arrays_diagnol {
     real *sarika;
     real *cosine;
     tint vec_dim;
+    char *normal_name;
+    char *generalised_name;
+    char *wu_name;
+    char *sarika_name;
+    char *cosine_name;
 } result_pointers_diagnol;
 
 // https://www.geeksforgeeks.org/compute-the-minimum-or-maximum-max-of-two-integers-without-branching/
