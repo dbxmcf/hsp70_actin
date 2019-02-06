@@ -346,6 +346,8 @@ int calc_coeffs_diagnol_triangle(tint **data, tint dim0, tint dim1,
         //printf("%d %d %.3e\n", idx_a, idx_b, adotb);
         //result = 1.0 - adotb*one_an*one_bn;
         result = adotb*one_an*one_bn;
+
+
         
         dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
         dist_jac = 1.0-numerator_jac/denomenator_jac;
@@ -362,6 +364,9 @@ int calc_coeffs_diagnol_triangle(tint **data, tint dim0, tint dim1,
         rpd->sarika[idx_rpd] = dist_sarika;
         rpd->wu[idx_rpd] = dist_wu;
         rpd->cosine[idx_rpd] = result*100;
+        if (result >100 || result <0) {
+            printf("adotb=%7.3e,one_an=%7.3e,one_bn=%7.3e\n",adotb,one_an,one_bn);
+        }
         idx_rpd++;
         //normal[idx_a][idx_b] = dist_jac;
         //normal[idx_b][idx_a] = dist_jac;
