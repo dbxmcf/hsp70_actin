@@ -493,7 +493,7 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     hid_t sid1;   		/* Dataspace ID */
     hid_t file_dataspace;	/* File dataspace ID */
     hid_t mem_dataspace;	/* memory dataspace ID */
-    hid_t dataset1, dataset2;	/* Dataset ID */
+    hid_t dataset_wu, dataset_normal, dataset_sarika, dataset_generalised, dataset_cosine;	/* Dataset ID */
     //hsize_t dims1[SPACE1_RANK] ={SPACE1_DIM1,SPACE1_DIM2};	/* dataspace dim sizes */
     hsize_t dims1[SPACE1_RANK] ={0};	/* dataspace dim sizes */
     DATATYPE data_array1[SPACE1_DIM1][SPACE1_DIM2];	/* data buffer */
@@ -554,14 +554,9 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
 
 
     /* create a dataset collectively */
-    dataset1 = H5Dcreate2(fid1, result_data->wu_name, H5T_NATIVE_FLOAT, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
-    assert(dataset1 != FAIL);
+    dataset_wu = H5Dcreate2(fid1, result_data->wu_name, H5T_NATIVE_FLOAT, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
+    assert(dataset_wu != FAIL);
     MESG("H5Dcreate2 succeed");
-
-    /* create another dataset collectively */
-    //dataset2 = H5Dcreate2(fid1, DATASETNAME2, H5T_NATIVE_INT, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
-    //assert(dataset2 != FAIL);
-    //MESG("H5Dcreate2 2 succeed");
 
     /*
      * Set up dimensions of the slab this process accesses.
@@ -575,14 +570,14 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     count[0] = 1;
     count[1] = result_data->vec_dim;
     //slab_set(start, count, stride, BYROW);
-if (verbose)
-    printf("start[]=(%lu,%lu), count[]=(%lu,%lu), total datapoints=%lu\n",
-	(unsigned long)start[0], (unsigned long)start[1],
-        (unsigned long)count[0], (unsigned long)count[1],
-        (unsigned long)(count[0]*count[1]));
+    if (verbose)
+        printf("start[]=(%lu,%lu), count[]=(%lu,%lu), total datapoints=%lu\n",
+        (unsigned long)start[0], (unsigned long)start[1],
+            (unsigned long)count[0], (unsigned long)count[1],
+            (unsigned long)(count[0]*count[1]));
 
     /* create a file dataspace independently */
-    file_dataspace = H5Dget_space (dataset1);
+    file_dataspace = H5Dget_space (dataset_wu);
     assert(file_dataspace != FAIL);
     MESG("H5Dget_space succeed");
     //ret=H5Sselect_hyperslab(file_dataspace, H5S_SELECT_SET, start, stride,
@@ -612,13 +607,46 @@ if (verbose)
     MESG("H5Pcreate xfer succeed");
 
     /* write data collectively */
-    //ret = H5Dwrite(dataset1, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
+    //ret = H5Dwrite(dataset_wu, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
 	//    xfer_plist, data_array1);
-    ret = H5Dwrite(dataset1, H5T_NATIVE_FLOAT, mem_dataspace, file_dataspace,
+    ret = H5Dwrite(dataset_wu, H5T_NATIVE_FLOAT, mem_dataspace, file_dataspace,
 	    xfer_plist, result_data->wu);
     assert(ret != FAIL);
     MESG("H5Dwrite succeed");
 
+    dataset_normal = H5Dcreate2(fid1, result_data->normal_name, H5T_NATIVE_FLOAT, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
+    assert(dataset_normal != FAIL);
+    MESG("H5Dcreate2 succeed");
+    ret = H5Dwrite(dataset_normal, H5T_NATIVE_FLOAT, mem_dataspace, file_dataspace,
+	    xfer_plist, result_data->normal);
+    assert(ret != FAIL);
+    MESG("H5Dwrite succeed");
+
+    dataset_sarika = H5Dcreate2(fid1, result_data->sarika_name, H5T_NATIVE_FLOAT, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
+    assert(dataset_sarika != FAIL);
+    MESG("H5Dcreate2 succeed");
+    ret = H5Dwrite(dataset_sarika, H5T_NATIVE_FLOAT, mem_dataspace, file_dataspace,
+	    xfer_plist, result_data->sarika);
+    assert(ret != FAIL);
+    MESG("H5Dwrite succeed");
+
+    dataset_generalised = H5Dcreate2(fid1, result_data->generalised_name, H5T_NATIVE_FLOAT, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
+    assert(dataset_generalised != FAIL);
+    MESG("H5Dcreate2 succeed");
+    ret = H5Dwrite(dataset_generalised, H5T_NATIVE_FLOAT, mem_dataspace, file_dataspace,
+	    xfer_plist, result_data->generalised);
+    assert(ret != FAIL);
+    MESG("H5Dwrite succeed");
+
+    dataset_cosine = H5Dcreate2(fid1, result_data->cosine_name, H5T_NATIVE_FLOAT, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
+    assert(dataset_cosine != FAIL);
+    MESG("H5Dcreate2 succeed");
+    ret = H5Dwrite(dataset_cosine, H5T_NATIVE_FLOAT, mem_dataspace, file_dataspace,
+	    xfer_plist, result_data->cosine);
+    assert(ret != FAIL);
+    MESG("H5Dwrite succeed");
+
+ 
     /* release all temporary handles. */
     /* Could have used them for dataset2 but it is cleaner */
     /* to create them again.*/
@@ -626,72 +654,19 @@ if (verbose)
     H5Sclose(mem_dataspace);
     H5Pclose(xfer_plist);
 
-    /* Dataset2: each process takes a block of columns. */
-//    slab_set(start, count, stride, BYCOL);
-//    if (verbose)
-//        printf("start[]=(%lu,%lu), count[]=(%lu,%lu), total datapoints=%lu\n",
-//        (unsigned long)start[0], (unsigned long)start[1],
-//            (unsigned long)count[0], (unsigned long)count[1],
-//            (unsigned long)(count[0]*count[1]));
-//
-//    /* put some trivial data in the data_array */
-//    dataset_fill(start, count, stride, &data_array1[0][0]);
-//    MESG("data_array initialized");
-//    if (verbose){
-//	MESG("data_array created");
-//	dataset_print(start, count, stride, &data_array1[0][0]);
-//    }
-//
-//    /* create a file dataspace independently */
-//    file_dataspace = H5Dget_space (dataset1);
-//    assert(file_dataspace != FAIL);
-//    MESG("H5Dget_space succeed");
-//    ret=H5Sselect_hyperslab(file_dataspace, H5S_SELECT_SET, start, stride,
-//	    count, NULL);
-//    assert(ret != FAIL);
-//    MESG("H5Sset_hyperslab succeed");
-//
-//    /* create a memory dataspace independently */
-//    mem_dataspace = H5Screate_simple (SPACE1_RANK, count, NULL);
-//    assert (mem_dataspace != FAIL);
-//
-//    /* fill the local slab with some trivial data */
-//    dataset_fill(start, count, stride, &data_array1[0][0]);
-//    MESG("data_array initialized");
-//    if (verbose){
-//	MESG("data_array created");
-//	dataset_print(start, count, stride, &data_array1[0][0]);
-//    }
-//
-//    /* set up the collective transfer properties list */
-//    xfer_plist = H5Pcreate (H5P_DATASET_XFER);
-//    assert(xfer_plist != FAIL);
-//    ret=H5Pset_dxpl_mpio(xfer_plist, H5FD_MPIO_COLLECTIVE);
-//    assert(ret != FAIL);
-//    MESG("H5Pcreate xfer succeed");
-//
-//    /* write data independently */
-//    ret = H5Dwrite(dataset2, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
-//	    xfer_plist, data_array1);
-//    assert(ret != FAIL);
-//    MESG("H5Dwrite succeed");
-//
-//    /* release all temporary handles. */
-//    H5Sclose(file_dataspace);
-//    H5Sclose(mem_dataspace);
-//    H5Pclose(xfer_plist);
-//
-//
-//
 //    /*
 //     * All writes completed.  Close datasets collectively
 //     */
-    ret=H5Dclose(dataset1);
+    ret=H5Dclose(dataset_wu);
     assert(ret != FAIL);
-//    MESG("H5Dclose1 succeed");
-//    ret=H5Dclose(dataset2);
-//    assert(ret != FAIL);
-//    MESG("H5Dclose2 succeed");
+    ret=H5Dclose(dataset_normal);
+    assert(ret != FAIL);
+    ret=H5Dclose(dataset_sarika);
+    assert(ret != FAIL);
+    ret=H5Dclose(dataset_generalised);
+    assert(ret != FAIL);
+    ret=H5Dclose(dataset_cosine);
+    assert(ret != FAIL);
 
     /* release all IDs created */
     H5Sclose(sid1);
