@@ -494,7 +494,8 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     hid_t file_dataspace;	/* File dataspace ID */
     hid_t mem_dataspace;	/* memory dataspace ID */
     hid_t dataset1, dataset2;	/* Dataset ID */
-    hsize_t dims1[SPACE1_RANK] ={SPACE1_DIM1,SPACE1_DIM2};	/* dataspace dim sizes */
+    //hsize_t dims1[SPACE1_RANK] ={SPACE1_DIM1,SPACE1_DIM2};	/* dataspace dim sizes */
+    hsize_t dims1[1] ={0};	/* dataspace dim sizes */
     DATATYPE data_array1[SPACE1_DIM1][SPACE1_DIM2];	/* data buffer */
 
     hsize_t start[SPACE1_RANK];			/* for hyperslab setting */
@@ -545,7 +546,8 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
      * and create the dataset
      * ------------------------- */
     /* setup dimensionality object */
-    sid1 = H5Screate_simple (SPACE1_RANK, dims1, NULL);
+    dims1[0] = result_data->vec_dim; /* this is the total size of the overall dataset */
+    sid1 = H5Screate_simple (1, dims1, NULL);
     assert (sid1 != FAIL);
     MESG("H5Screate_simple succeed");
 

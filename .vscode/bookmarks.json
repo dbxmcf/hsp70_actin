@@ -3,12 +3,17 @@
 		"path": "$ROOTPATH$/hdf5t/ph5_cmb_blks.c",
 		"bookmarks": [
 			{
-				"line": 553,
+				"line": 548,
+				"column": 23,
+				"label": ""
+			},
+			{
+				"line": 555,
 				"column": 20,
 				"label": ""
 			},
 			{
-				"line": 624,
+				"line": 626,
 				"column": 21,
 				"label": ""
 			}
