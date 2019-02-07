@@ -566,7 +566,8 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     //stride = NULL;
     start[0] = 0;
     start[1] = result_data->start_loc;
-    printf("rk[%d]:start[1]=%d\n",mpi_rank,result_data->start_loc);
+    if (verbose)
+        printf("rk[%d]:start[1]=%d\n",mpi_rank,result_data->start_loc);
     count[0] = 1;
     count[1] = result_data->vec_dim;
     //slab_set(start, count, stride, BYROW);
