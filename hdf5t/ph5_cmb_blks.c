@@ -494,8 +494,7 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     hid_t file_dataspace;	/* File dataspace ID */
     hid_t mem_dataspace;	/* memory dataspace ID */
     hid_t dataset1, dataset2;	/* Dataset ID */
-    hsize_t dims1[SPACE1_RANK] =
-	{SPACE1_DIM1,SPACE1_DIM2};	/* dataspace dim sizes */
+    hsize_t dims1[SPACE1_RANK] ={SPACE1_DIM1,SPACE1_DIM2};	/* dataspace dim sizes */
     DATATYPE data_array1[SPACE1_DIM1][SPACE1_DIM2];	/* data buffer */
 
     hsize_t start[SPACE1_RANK];			/* for hyperslab setting */
@@ -566,7 +565,12 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
      */
 
     /* Dataset1: each process takes a block of rows. */
-    slab_set(start, count, stride, BYROW);
+    //stride = NULL;
+    start[0] = mpi_rank;
+    start[1] = 0;
+    count[0] = 1;
+    count[1] = result_data->vec_dim;
+    //slab_set(start, count, stride, BYROW);
 if (verbose)
     printf("start[]=(%lu,%lu), count[]=(%lu,%lu), total datapoints=%lu\n",
 	(unsigned long)start[0], (unsigned long)start[1],
@@ -577,7 +581,9 @@ if (verbose)
     file_dataspace = H5Dget_space (dataset1);
     assert(file_dataspace != FAIL);
     MESG("H5Dget_space succeed");
-    ret=H5Sselect_hyperslab(file_dataspace, H5S_SELECT_SET, start, stride,
+    //ret=H5Sselect_hyperslab(file_dataspace, H5S_SELECT_SET, start, stride,
+	//    count, NULL);
+    ret=H5Sselect_hyperslab(file_dataspace, H5S_SELECT_SET, start, NULL,
 	    count, NULL);
     assert(ret != FAIL);
     MESG("H5Sset_hyperslab succeed");
@@ -587,8 +593,8 @@ if (verbose)
     assert (mem_dataspace != FAIL);
 
     /* fill the local slab with some trivial data */
-    dataset_fill(start, count, stride, &data_array1[0][0]);
-    MESG("data_array initialized");
+    //dataset_fill(start, count, stride, &data_array1[0][0]);
+    //MESG("data_array initialized");
     if (verbose){
 	MESG("data_array created");
 	dataset_print(start, count, stride, &data_array1[0][0]);
@@ -602,7 +608,9 @@ if (verbose)
     MESG("H5Pcreate xfer succeed");
 
     /* write data collectively */
-    ret = H5Dwrite(dataset1, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
+    //ret = H5Dwrite(dataset1, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
+	//    xfer_plist, data_array1);
+    ret = H5Dwrite(dataset1, H5T_NATIVE_FLOAT, mem_dataspace, file_dataspace,
 	    xfer_plist, data_array1);
     assert(ret != FAIL);
     MESG("H5Dwrite succeed");
