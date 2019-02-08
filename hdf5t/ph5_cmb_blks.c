@@ -713,8 +713,7 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     start[1] = mpi_rank;
     count[0] = 2;
     count[1] = 1;
-    ret=H5Dclose(dataset_sl_cnt);
-    assert(ret != FAIL);
+
     /* create a file dataspace independently */
     file_dataspace = H5Dget_space (dataset_sl_cnt);
     assert(file_dataspace != FAIL);
