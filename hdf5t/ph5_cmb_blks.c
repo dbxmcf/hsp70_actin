@@ -612,7 +612,7 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
      * Create dataspace for the first attribute.
      */
     int attr_data[]={result_data->total_lines,mpi_size};
-    hsize_t adim[] = sizeof(attr_data)/sizeof(int);
+    hsize_t adim[] = {sizeof(attr_data)/sizeof(int)};
     hid_t aid1 = H5Screate(H5S_SIMPLE);
     ret  = H5Sset_extent_simple(aid1, 1, adim, NULL);
     assert(ret != FAIL);
