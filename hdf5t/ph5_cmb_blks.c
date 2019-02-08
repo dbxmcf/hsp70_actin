@@ -697,6 +697,61 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     ret=H5Dclose(dataset_cosine);
     assert(ret != FAIL);
 
+    /* write the start_loc info
+    /* setup dimensionality object */
+    dims1[0] = 2; /* this is the total size of the overall dataset */
+    dims1[1] = mpi_size;
+    sid1 = H5Screate_simple (SPACE1_RANK, dims1, NULL);
+    assert (sid1 != FAIL);
+    MESG("H5Screate_simple succeed");
+
+    /* create a dataset collectively */
+    hid_t dataset_sl_cnt = H5Dcreate2(fid1, "start_loc", H5T_NATIVE_INT, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
+    assert(dataset_sl_cnt != FAIL);
+    MESG("H5Dcreate2 succeed");
+    start[0] = 0;
+    start[1] = mpi_rank;
+    count[0] = 2;
+    count[1] = 1;
+    ret=H5Dclose(dataset_sl_cnt);
+    assert(ret != FAIL);
+    /* create a file dataspace independently */
+    file_dataspace = H5Dget_space (dataset_sl_cnt);
+    assert(file_dataspace != FAIL);
+    MESG("H5Dget_space succeed");
+    //ret=H5Sselect_hyperslab(file_dataspace, H5S_SELECT_SET, start, stride,
+	//    count, NULL);
+    ret=H5Sselect_hyperslab(file_dataspace, H5S_SELECT_SET, start, NULL,
+	    count, NULL);
+    assert(ret != FAIL);
+    MESG("H5Sset_hyperslab succeed");
+
+    /* create a memory dataspace independently */
+    mem_dataspace = H5Screate_simple (SPACE1_RANK, count, NULL);
+    assert (mem_dataspace != FAIL);
+    /* set up the collective transfer properties list */
+    xfer_plist = H5Pcreate (H5P_DATASET_XFER);
+    assert(xfer_plist != FAIL);
+    ret=H5Pset_dxpl_mpio(xfer_plist, H5FD_MPIO_COLLECTIVE);
+    assert(ret != FAIL);
+    MESG("H5Pcreate xfer succeed");
+
+    //dataset_normal = H5Dcreate2(fid1, result_data->normal_name, H5T_NATIVE_FLOAT, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
+    //assert(dataset_normal != FAIL);
+    //MESG("H5Dcreate2 succeed");
+    int sl_cnt[2][1] = {{result_data->start_loc},{result_data->vec_dim}};
+    ret = H5Dwrite(dataset_sl_cnt, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
+	    xfer_plist, sl_cnt);
+    assert(ret != FAIL);
+    MESG("H5Dwrite succeed");
+
+    ret=H5Dclose(dataset_sl_cnt);
+    assert(ret != FAIL);
+
+    H5Sclose(file_dataspace);
+    H5Sclose(mem_dataspace);
+    H5Pclose(xfer_plist);
+
     /* release all IDs created */
     H5Sclose(sid1);
 
