@@ -607,6 +607,32 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     assert(ret != FAIL);
     MESG("H5Pcreate xfer succeed");
 
+    /* Create a dataset attribute. */
+    /*
+     * Create dataspace for the first attribute.
+     */
+    int attr_data[]={result_data->total_lines,mpi_size};
+    hsize_t adim[] = sizeof(attr_data)/sizeof(int);
+    hid_t aid1 = H5Screate(H5S_SIMPLE);
+    ret  = H5Sset_extent_simple(aid1, 1, adim, NULL);
+    assert(ret != FAIL);
+    /*
+     * Create array attribute.
+     */
+    //attr1 = H5Acreate2(dataset, ANAME, H5T_NATIVE_FLOAT, aid1, H5P_DEFAULT, H5P_DEFAULT);
+    hid_t root_grp = H5Gopen1(fid1,"/");
+    hid_t attribute_id = H5Acreate2 (root_grp, "MatrixInfo", H5T_STD_I32BE, aid1, 
+                              H5P_DEFAULT, H5P_DEFAULT);
+    /* Write the attribute data. */
+    ret = H5Awrite(attribute_id, H5T_NATIVE_INT, attr_data);
+    assert(ret != FAIL);
+    MESG("H5Awrite succeed");
+    /* Close the attribute. */
+    ret = H5Aclose(attribute_id);
+    assert(ret != FAIL);
+    H5Gclose(root_grp);
+
+
     /* write data collectively */
     //ret = H5Dwrite(dataset_wu, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
 	//    xfer_plist, data_array1);
@@ -623,30 +649,7 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     assert(ret != FAIL);
     MESG("H5Dwrite succeed");
 
-    int attr_data[2]={100,200};
-    /* Create a dataset attribute. */
-    /*
-     * Create dataspace for the first attribute.
-     */
-    hsize_t adim[] = {2};
-    hid_t aid1 = H5Screate(H5S_SIMPLE);
-    ret  = H5Sset_extent_simple(aid1, 1, adim, NULL);
-    assert(ret != FAIL);
-    /*
-     * Create array attribute.
-     */
-    //attr1 = H5Acreate2(dataset, ANAME, H5T_NATIVE_FLOAT, aid1, H5P_DEFAULT, H5P_DEFAULT);
-    hid_t root_grp = H5Gopen1(fid1,"/");
-    hid_t attribute_id = H5Acreate2 (root_grp, "Units", H5T_STD_I32BE, aid1, 
-                              H5P_DEFAULT, H5P_DEFAULT);
-    /* Write the attribute data. */
-    ret = H5Awrite(attribute_id, H5T_NATIVE_INT, attr_data);
-    assert(ret != FAIL);
-    MESG("H5Awrite succeed");
-    /* Close the attribute. */
-    ret = H5Aclose(attribute_id);
-    assert(ret != FAIL);
-    H5Gclose(root_grp);
+
 
     dataset_sarika = H5Dcreate2(fid1, result_data->sarika_name, H5T_NATIVE_FLOAT, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
     assert(dataset_sarika != FAIL);
