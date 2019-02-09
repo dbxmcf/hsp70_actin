@@ -699,7 +699,7 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
 
     /* write the start_loc info
     /* setup dimensionality object */
-    dims1[0] = 2; /* this is the total size of the overall dataset */
+    dims1[0] = 6; /* this is the total size of the overall dataset */
     dims1[1] = mpi_size;
     sid1 = H5Screate_simple (SPACE1_RANK, dims1, NULL);
     assert (sid1 != FAIL);
@@ -711,7 +711,7 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     MESG("H5Dcreate2 succeed");
     start[0] = 0;
     start[1] = mpi_rank;
-    count[0] = 2;
+    count[0] = 6;
     count[1] = 1;
 
     /* create a file dataspace independently */
@@ -738,7 +738,9 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     //dataset_normal = H5Dcreate2(fid1, result_data->normal_name, H5T_NATIVE_FLOAT, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
     //assert(dataset_normal != FAIL);
     //MESG("H5Dcreate2 succeed");
-    int sl_cnt[2][1] = {{result_data->start_loc},{result_data->vec_dim}};
+    int sl_cnt[6][1] = {{result_data->start_loc},{result_data->vec_dim},
+                        {result_data->chunk_start_a},{result_data->chunk_count_a},
+                        {result_data->chunk_start_b},{result_data->chunk_count_b}};
     ret = H5Dwrite(dataset_sl_cnt, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
 	    xfer_plist, sl_cnt);
     assert(ret != FAIL);
@@ -1167,6 +1169,12 @@ phdf5readAll(char *filename)
         cur_loc += rk_vec_dim_all[i];
     }
     rpd_h5.start_loc = rk_start[mpi_rank];
+    rpd_h5.chunk_start_a = start_part_a[0];
+    rpd_h5.chunk_start_b = start_part_b[0];
+    rpd_h5.chunk_count_a = count_part_a[0];
+    rpd_h5.chunk_count_b = count_part_b[0];
+
+
     phdf5writeAll("res_all.h5",&rpd_h5);
     free(rk_vec_dim_all);
     free(rk_start);

@@ -8,17 +8,22 @@
 				"label": ""
 			},
 			{
-				"line": 793,
+				"line": 795,
 				"column": 4,
 				"label": ""
 			},
 			{
-				"line": 1243,
+				"line": 1171,
+				"column": 12,
+				"label": "chunk_starts"
+			},
+			{
+				"line": 1248,
 				"column": 14,
 				"label": "calc_start_location"
 			},
 			{
-				"line": 1244,
+				"line": 1249,
 				"column": 4,
 				"label": ""
 			}

@@ -37,6 +37,10 @@ typedef struct result_arrays_diagnol {
     tint vec_dim;
     tint total_lines;
     tint start_loc;
+    tint chunk_start_a;
+    tint chunk_start_b;
+    tint chunk_count_a;
+    tint chunk_count_b;
 
 } result_pointers_diagnol;
 

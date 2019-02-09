@@ -16,6 +16,10 @@ def rebuild_triangle(arr, st_loc, mtx_info):
     mat_wu = np.zeros((total_lines,total_lines))
     num_whole_blocks = int(num_chunks*(num_chunks-1)/2)
     print(num_whole_blocks)
+    #for ():
+    #    mat_wu[][] = 5
+
+
 
 f = h5py.File('res_all.h5', 'r')
 keys = list(f.keys())
