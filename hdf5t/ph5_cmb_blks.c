@@ -739,8 +739,10 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     //assert(dataset_normal != FAIL);
     //MESG("H5Dcreate2 succeed");
     int sl_cnt[6][1] = {{result_data->start_loc},{result_data->vec_dim},
-                        {result_data->chunk_start_a},{result_data->chunk_count_a},
-                        {result_data->chunk_start_b},{result_data->chunk_count_b}};
+                        {result_data->chunk_start_a},
+                        {result_data->chunk_start_b},
+                        {result_data->chunk_count_a},
+                        {result_data->chunk_count_b}};
     ret = H5Dwrite(dataset_sl_cnt, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
 	    xfer_plist, sl_cnt);
     assert(ret != FAIL);
