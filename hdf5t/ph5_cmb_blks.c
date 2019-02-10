@@ -1435,7 +1435,8 @@ main(int argc, char **argv)
 	//phdf5readInd(testfiles[0]);
 	MPI_BANNER("testing PHDF5 dataset collective read...");
 	//phdf5readAll(testfiles[1]);
-    phdf5readAll("ta.h5");
+    //phdf5readAll("ta.h5");
+    phdf5readAll("sample_hsp70_actin.h5");
     }
 
     if (!(dowrite || doread)){
