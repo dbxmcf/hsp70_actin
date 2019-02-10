@@ -81,11 +81,50 @@ root_grp = f['/']
 mtx_info = np.array(root_grp.attrs['MatrixInfo'])
 
 
-mat_normal = rebuild_triangle(normal,start_loc,mtx_info)
-mat_wu = rebuild_triangle(wu,start_loc,mtx_info)
-mat_generalised = rebuild_triangle(generalised,start_loc,mtx_info)
-mat_sarika = rebuild_triangle(sarika,start_loc,mtx_info)
-mat_cosine = rebuild_triangle(cosine,start_loc,mtx_info)
+mat_normal_h5 = rebuild_triangle(normal,start_loc,mtx_info)
+mat_wu_h5 = rebuild_triangle(wu,start_loc,mtx_info)
+mat_generalised_h5 = rebuild_triangle(generalised,start_loc,mtx_info)
+mat_sarika_h5 = rebuild_triangle(sarika,start_loc,mtx_info)
+mat_cosine_h5 = rebuild_triangle(cosine,start_loc,mtx_info)
 
+py_path_name = "../hdf5t_csv_uint16/"
+# for key in keys:
+mat_normal_py = np.loadtxt(py_path_name + "normal.csv",delimiter=",")
+mat_tol = 0.001
+ret = np.isclose(mat_normal_h5, mat_normal_py, atol=mat_tol).any()
+if (ret):
+    print("normal is ok!")
+else:
+    print("normal is not ok!")
+
+# for key in keys:
+mat_sarika_py = np.loadtxt(py_path_name + "sarika.csv",delimiter=",")
+ret = np.isclose(mat_sarika_h5, mat_sarika_py, atol=mat_tol).any()
+if (ret):
+    print("sarika is ok!")
+else:
+    print("sarika is not ok!")
+
+mat_generalised_py = np.loadtxt(py_path_name + "generalised.csv",delimiter=",")
+ret = np.isclose(mat_generalised_h5, mat_generalised_py, atol=mat_tol).any()
+if (ret):
+    print("generalised is ok!")
+else:
+    print("generalised is not ok!")
+
+mat_wu_py = np.loadtxt(py_path_name + "wu.csv",delimiter=",")
+ret = np.isclose(mat_wu_h5, mat_wu_py, atol=mat_tol).any()
+if (ret):
+    print("wu is ok!")
+else:
+    print("wu is not ok!")
+
+mat_cosine_py = np.loadtxt(py_path_name + "cosine.csv",delimiter=",")
+ret = np.isclose(mat_cosine_h5, mat_cosine_py, atol=mat_tol).any()
+if (ret):
+    print("cosine is ok!")
+else:
+    print("cosine is not ok!")
+#print(mat_normal_py)
 #np.set_printoptions(edgeitems=30, linewidth=100000, formatter=dict(float=lambda x: "%7.3f" % x))
 #print(mat_cosine)
