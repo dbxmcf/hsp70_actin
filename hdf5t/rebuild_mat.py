@@ -5,18 +5,13 @@ import h5py
 
 def rebuild_triangle(arr, st_loc, mtx_info):
     st = st_loc[0]
-    loc = st_loc[1]
+    #loc = st_loc[1]
     chunk_st_a = st_loc[2]
     #print(chunk_st)
     chunk_st_b = st_loc[3]
     chunk_ct_a = st_loc[4]
     #print(chunk_ct)
     chunk_ct_b = st_loc[5]
-    #print(st_loc)
-    #print(st)
-    #print(loc)
-    #print(chunk_st_a)
-    #print(chunk_st_b)
     total_lines = mtx_info[0]
     mpi_size = mtx_info[1]
     num_chunks = np.sqrt(2*mpi_size)
@@ -41,13 +36,13 @@ def rebuild_triangle(arr, st_loc, mtx_info):
     for a,csta,cstb,ccta,cctb in zip(arr_list[slc_ntri],
                                      chunk_st_a[slc_ntri],chunk_st_b[slc_ntri],
                                      chunk_ct_a[slc_ntri],chunk_ct_b[slc_ntri]):
-        print(a,a.shape)
-        print(csta,cstb,ccta,cctb)
+        #print(a,a.shape)
+        #print(csta,cstb,ccta,cctb)
         sub_mat_a = mat_wu[csta:csta+ccta,csta:csta+ccta]
 
         segment_a = int(ccta*(ccta-1)/2)
         sub_mat_a[np.triu_indices(ccta,1)] = a[:segment_a]
-        print(sub_mat_a)
+        #print(sub_mat_a)
         #print(segment_a)
         #print(sub_mat_a[np.triu_indices(ccta,1)])
         #print(a[:segment_a+1])
@@ -55,9 +50,10 @@ def rebuild_triangle(arr, st_loc, mtx_info):
 
         #segment_b = int(cctb*(cctb-1)/2)
         sub_mat_b[np.triu_indices(cctb,1)] = a[segment_a:]
-        print(sub_mat_b)
+        #print(sub_mat_b)
 
-
+    i_lower = np.tril_indices(total_lines, -1)
+    mat_wu[i_lower] = mat_wu.T[i_lower]
     print(mat_wu)
     #print(num_whole_blocks)
     #for ():
