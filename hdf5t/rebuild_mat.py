@@ -7,8 +7,12 @@ def rebuild_triangle(arr, st_loc, mtx_info):
     st = st_loc[0]
     loc = st_loc[1]
     chunk_st_a = st_loc[2]
+    #print(chunk_st)
     chunk_st_b = st_loc[3]
-    print(st_loc)
+    chunk_ct_a = st_loc[4]
+    #print(chunk_ct)
+    chunk_ct_b = st_loc[5]
+    #print(st_loc)
     #print(st)
     #print(loc)
     #print(chunk_st_a)
@@ -19,7 +23,35 @@ def rebuild_triangle(arr, st_loc, mtx_info):
     if not num_chunks.is_integer:
         print("num_chunks is not integer")
     mat_wu = np.zeros((total_lines,total_lines))
+    print(mat_wu.shape)
     num_whole_blocks = int(num_chunks*(num_chunks-1)/2)
+
+    arr_list = np.split(arr, st[1:])
+    slc_nwb = slice(0,num_whole_blocks)
+    #print(chunk_st_a[slc_nwb])
+    for a,csta,cstb,ccta,cctb in zip(arr_list[slc_nwb],chunk_st_a[slc_nwb],chunk_st_b[slc_nwb],chunk_ct_a[slc_nwb],chunk_ct_b[slc_nwb]):
+        #print(a.shape)
+        #print(csta,cstb,ccta,cctb)
+        #a_blk = a.reshape(ccta,-1)
+        #print(mat_wu[csta:csta+ccta+1,cstb:cstb+cctb+1])
+        mat_wu[csta:csta+ccta,cstb:cstb+cctb] = a.reshape(ccta,cctb)
+        #print(mat_wu[csta:6,cstb:6])
+        #print(mat_wu[0:6,0:6])
+        #print(a.reshape(ccta,cctb).shape)
+
+        #print(b)
+    #for idx in num_whole_blocks:
+    #np.set_printoptions(formatter={'float': '{: 0.3f}'.format})
+    #np.set_printoptions(edgeitems=10)
+    #np.core.arrayprint._line_width = 180
+    np.set_printoptions(edgeitems=30, linewidth=100000, formatter=dict(float=lambda x: "%.3f" % x))
+    print(mat_wu)
+
+    #print("------")
+    #for a,ccta,cctb in zip(arr_list[num_whole_blocks:],chunk_ct_a[num_whole_blocks:],chunk_ct_b[num_whole_blocks:]):
+    #    print(a.shape)
+    #    print(ccta,cctb)
+
     #print(num_whole_blocks)
     #for ():
     #    mat_wu[][] = 5
@@ -39,7 +71,7 @@ generalised = np.array(f['generalised'])
 #print("generalised=",generalised)
 cosine = np.array(f['cosine'])
 #print("cosine=",cosine)
-wu = np.array(f['wu'])
+wu = np.array(f['wu'])[0]
 #print("wu=",wu)
 root_grp = f['/']
 mtx_info = np.array(root_grp.attrs['MatrixInfo'])
