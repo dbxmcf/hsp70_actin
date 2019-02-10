@@ -118,7 +118,7 @@ for i, c in enumerate(lst_cmb):
     one_bn1 = one_bn.astype(np.float64)
     a1dotb1 = a1.dot(b1)
     res1 = 1 - a1.dot(b1)*one_an1*one_bn1
-    print(idx_a, idx_b, one_an1, one_bn1, a1dotb1, res1)
+    #print(idx_a, idx_b, one_an1, one_bn1, a1dotb1, res1)
     #result = 1 - a1.dot(b1)*one_an1*one_bn1
     result = a1.dot(b1)*one_an1*one_bn1
     #result = 1 - spatial.distance.cosine(a.astype(cvt_type), b.astype(cvt_type))
