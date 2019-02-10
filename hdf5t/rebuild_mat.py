@@ -23,7 +23,7 @@ def rebuild_triangle(arr, st_loc, mtx_info):
     if not num_chunks.is_integer:
         print("num_chunks is not integer")
     mat_wu = np.zeros((total_lines,total_lines))
-    print(mat_wu.shape)
+    #print(mat_wu.shape)
     num_whole_blocks = int(num_chunks*(num_chunks-1)/2)
 
     arr_list = np.split(arr, st[1:])
@@ -36,10 +36,29 @@ def rebuild_triangle(arr, st_loc, mtx_info):
     #print(mat_wu)
 
     #print("------")
-    for a,ccta,cctb in zip(arr_list[num_whole_blocks:],chunk_ct_a[num_whole_blocks:],chunk_ct_b[num_whole_blocks:]):
-        print(a.shape)
-        print(ccta,cctb)
+    slc_ntri = slice(num_whole_blocks,mpi_size)
+    #print(slc_ntri)
+    for a,csta,cstb,ccta,cctb in zip(arr_list[slc_ntri],
+                                     chunk_st_a[slc_ntri],chunk_st_b[slc_ntri],
+                                     chunk_ct_a[slc_ntri],chunk_ct_b[slc_ntri]):
+        print(a,a.shape)
+        print(csta,cstb,ccta,cctb)
+        sub_mat_a = mat_wu[csta:csta+ccta,csta:csta+ccta]
 
+        segment_a = int(ccta*(ccta-1)/2)
+        sub_mat_a[np.triu_indices(ccta,1)] = a[:segment_a]
+        print(sub_mat_a)
+        #print(segment_a)
+        #print(sub_mat_a[np.triu_indices(ccta,1)])
+        #print(a[:segment_a+1])
+        sub_mat_b = mat_wu[cstb:cstb+cctb,cstb:cstb+cctb]
+
+        #segment_b = int(cctb*(cctb-1)/2)
+        sub_mat_b[np.triu_indices(cctb,1)] = a[segment_a:]
+        print(sub_mat_b)
+
+
+    print(mat_wu)
     #print(num_whole_blocks)
     #for ():
     #    mat_wu[][] = 5
