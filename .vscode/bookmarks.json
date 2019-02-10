@@ -1,0 +1,37 @@
+[
+	{
+		"path": "$ROOTPATH$/hdf5t/ph5_cmb_blks.c",
+		"bookmarks": [
+			{
+				"line": 560,
+				"column": 20,
+				"label": ""
+			},
+			{
+				"line": 797,
+				"column": 4,
+				"label": ""
+			},
+			{
+				"line": 1173,
+				"column": 12,
+				"label": "chunk_starts"
+			},
+			{
+				"line": 1250,
+				"column": 14,
+				"label": "calc_start_location"
+			},
+			{
+				"line": 1251,
+				"column": 4,
+				"label": ""
+			},
+			{
+				"line": 1438,
+				"column": 11,
+				"label": ""
+			}
+		]
+	}
+]

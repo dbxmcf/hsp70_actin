@@ -13,6 +13,7 @@ from scipy import spatial
 #import cartesian
 from cartesian import *
 from itertools import combinations
+import h5py
 
 #orig_stdout = sys.stdout
 #f = open('log.txt', 'w')
@@ -23,13 +24,13 @@ from itertools import combinations
 #fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 #fname = "sample_protease_mix_1/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
-#sample_name = "sample_hsp70_actin"
+sample_name = "sample_hsp70_actin"
 #sample_name = "sample_a-b_mix_2"
 #sample_name = "sample_protease_mix_1"
-#fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
+fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
-sample_name = "hdf5t"
-fname = sample_name + "/ta.csv"
+#sample_name = "hdf5t"
+#fname = sample_name + "/ta.csv"
 
 start_time=time.time()
 
@@ -45,7 +46,7 @@ with open(fname) as fcsv:
         l_arr = np.asarray(l[:],dtype=m_datatype)
         arrs.append(l_arr)
 data = np.array(arrs,dtype=m_datatype)
-print(data)
+#print(data)
 print(data.shape)
 print(data.dtype)
 
@@ -53,6 +54,11 @@ end_time=time.time()
 total_time=((end_time)-(start_time))
 print("Time taken for making matrix: {}".format(total_time))
 
+h5_filename = "hdf5t/" + sample_name + ".h5"
+h5f = h5py.File(h5_filename, 'w')
+h5f.create_dataset('Data1', data=data)
+h5f.close()
+print(h5_filename + " file created")
 #exit()
 
 start_time=time.time()
@@ -81,7 +87,7 @@ print("itvl=",itvl)
 data1=data.astype(np.float64)
 one_data_norm = 1.0/LA.norm(data1,axis=1)
 
-print("one_data_norm:",one_data_norm)
+#print("one_data_norm:",one_data_norm)
 for i, c in enumerate(lst_cmb):
     idx_a, idx_b = c
     a = data[idx_a]
