@@ -30,27 +30,15 @@ def rebuild_triangle(arr, st_loc, mtx_info):
     slc_nwb = slice(0,num_whole_blocks)
     #print(chunk_st_a[slc_nwb])
     for a,csta,cstb,ccta,cctb in zip(arr_list[slc_nwb],chunk_st_a[slc_nwb],chunk_st_b[slc_nwb],chunk_ct_a[slc_nwb],chunk_ct_b[slc_nwb]):
-        #print(a.shape)
-        #print(csta,cstb,ccta,cctb)
-        #a_blk = a.reshape(ccta,-1)
-        #print(mat_wu[csta:csta+ccta+1,cstb:cstb+cctb+1])
-        mat_wu[csta:csta+ccta,cstb:cstb+cctb] = a.reshape(ccta,cctb)
-        #print(mat_wu[csta:6,cstb:6])
-        #print(mat_wu[0:6,0:6])
-        #print(a.reshape(ccta,cctb).shape)
+         mat_wu[csta:csta+ccta,cstb:cstb+cctb] = a.reshape(ccta,cctb)
 
-        #print(b)
-    #for idx in num_whole_blocks:
-    #np.set_printoptions(formatter={'float': '{: 0.3f}'.format})
-    #np.set_printoptions(edgeitems=10)
-    #np.core.arrayprint._line_width = 180
     np.set_printoptions(edgeitems=30, linewidth=100000, formatter=dict(float=lambda x: "%.3f" % x))
-    print(mat_wu)
+    #print(mat_wu)
 
     #print("------")
-    #for a,ccta,cctb in zip(arr_list[num_whole_blocks:],chunk_ct_a[num_whole_blocks:],chunk_ct_b[num_whole_blocks:]):
-    #    print(a.shape)
-    #    print(ccta,cctb)
+    for a,ccta,cctb in zip(arr_list[num_whole_blocks:],chunk_ct_a[num_whole_blocks:],chunk_ct_b[num_whole_blocks:]):
+        print(a.shape)
+        print(ccta,cctb)
 
     #print(num_whole_blocks)
     #for ():
