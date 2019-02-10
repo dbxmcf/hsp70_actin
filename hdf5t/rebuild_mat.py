@@ -91,7 +91,7 @@ py_path_name = "../hdf5t_csv_uint16/"
 # for key in keys:
 mat_normal_py = np.loadtxt(py_path_name + "normal.csv",delimiter=",")
 mat_tol = 0.001
-ret = np.isclose(mat_normal_h5, mat_normal_py, atol=mat_tol).any()
+ret = np.allclose(mat_normal_h5, mat_normal_py, atol=mat_tol)
 if (ret):
     print("normal is ok!")
 else:
@@ -99,28 +99,28 @@ else:
 
 # for key in keys:
 mat_sarika_py = np.loadtxt(py_path_name + "sarika.csv",delimiter=",")
-ret = np.isclose(mat_sarika_h5, mat_sarika_py, atol=mat_tol).any()
+ret = np.allclose(mat_sarika_h5, mat_sarika_py, atol=mat_tol)
 if (ret):
     print("sarika is ok!")
 else:
     print("sarika is not ok!")
 
 mat_generalised_py = np.loadtxt(py_path_name + "generalised.csv",delimiter=",")
-ret = np.isclose(mat_generalised_h5, mat_generalised_py, atol=mat_tol).any()
+ret = np.allclose(mat_generalised_h5, mat_generalised_py, atol=mat_tol)
 if (ret):
     print("generalised is ok!")
 else:
     print("generalised is not ok!")
 
 mat_wu_py = np.loadtxt(py_path_name + "wu.csv",delimiter=",")
-ret = np.isclose(mat_wu_h5, mat_wu_py, atol=mat_tol).any()
+ret = np.allclose(mat_wu_h5, mat_wu_py, atol=mat_tol)
 if (ret):
     print("wu is ok!")
 else:
     print("wu is not ok!")
 
 mat_cosine_py = np.loadtxt(py_path_name + "cosine.csv",delimiter=",")
-ret = np.isclose(mat_cosine_h5, mat_cosine_py, atol=mat_tol).any()
+ret = np.allclose(mat_cosine_h5, mat_cosine_py, atol=mat_tol)
 if (ret):
     print("cosine is ok!")
 else:
