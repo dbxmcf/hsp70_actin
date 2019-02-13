@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import h5py
 
-def rebuild_triangle(arr, st_loc, mtx_info):
+def rebuild_triangle(arr, st_loc, mtx_info, init_vals=0):
     st = st_loc[0]
     #loc = st_loc[1]
     chunk_st_a = st_loc[2]
@@ -18,6 +18,8 @@ def rebuild_triangle(arr, st_loc, mtx_info):
     if not num_chunks.is_integer:
         print("num_chunks is not integer")
     mat_ret = np.zeros((total_lines,total_lines))
+    if (init_vals == 1):
+        mat_ret.fill(1.0)
     #print(mat_ret.shape)
     num_whole_blocks = int(num_chunks*(num_chunks-1)/2)
 
@@ -85,7 +87,9 @@ mat_normal_h5 = rebuild_triangle(normal,start_loc,mtx_info)
 mat_wu_h5 = rebuild_triangle(wu,start_loc,mtx_info)
 mat_generalised_h5 = rebuild_triangle(generalised,start_loc,mtx_info)
 mat_sarika_h5 = rebuild_triangle(sarika,start_loc,mtx_info)
-mat_cosine_h5 = rebuild_triangle(cosine,start_loc,mtx_info)
+mat_cosine_h5 = rebuild_triangle(cosine,start_loc,mtx_info,init_vals=1)
+
+print(mat_cosine_h5)
 
 #py_path_name = "../hdf5t_csv_uint16/"
 py_path_name = "../sample_hsp70_actin_csv_uint16/"

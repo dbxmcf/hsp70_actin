@@ -35,7 +35,8 @@ fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeature
 start_time=time.time()
 
 arrs = []
-m_datatype = np.uint16
+m_datatype = np.int
+#m_datatype = np.uint16
 
 with open(fname) as fcsv:
     lines=fcsv.readlines()
@@ -84,8 +85,9 @@ nitvl = min(total_cmb, 20)
 itvl = total_cmb/nitvl
 print("itvl=",itvl)
 
-data1=data.astype(np.float64)
+data1=data.astype(np.float32)
 one_data_norm = 1.0/LA.norm(data1,axis=1)
+la_norm = LA.norm(data1,axis=1)
 
 #print("one_data_norm:",one_data_norm)
 for i, c in enumerate(lst_cmb):
@@ -120,8 +122,8 @@ for i, c in enumerate(lst_cmb):
     b1 = b.astype(np.int)
     adotb = a1.dot(b1)
     #print(idx_a, idx_b, adotb)
-    one_an1 = one_an.astype(np.float64)
-    one_bn1 = one_bn.astype(np.float64)
+    one_an1 = one_an.astype(np.float32)
+    one_bn1 = one_bn.astype(np.float32)
     a1dotb1 = a1.dot(b1)
     res1 = 1 - a1.dot(b1)*one_an1*one_bn1
     #print(idx_a, idx_b, one_an1, one_bn1, a1dotb1, res1)
@@ -170,6 +172,8 @@ np.savetxt(csv_folder_name+"/generalised.csv", generalised, delimiter=",",fmt=cs
 np.savetxt(csv_folder_name+"/sarika.csv", sarika, delimiter=",",fmt=csv_fmt)
 np.savetxt(csv_folder_name+"/wu.csv", wu, delimiter=",",fmt=csv_fmt)
 np.savetxt(csv_folder_name+"/cosine.csv", cosine, delimiter=",",fmt=csv_fmt)
+np.savetxt(csv_folder_name+"/one_data_norm.csv", one_data_norm, delimiter=",",fmt='%7.3e')
+np.savetxt(csv_folder_name+"/la_norm.csv", la_norm, delimiter=",",fmt='%7.3e')
 #pd.DataFrame(normal).to_csv(csv_folder_name+"/normal.csv")
 #pd.DataFrame(generalised).to_csv(csv_folder_name+"/generalised.csv")
 #pd.DataFrame(sarika).to_csv(csv_folder_name+"/sarika1.csv")

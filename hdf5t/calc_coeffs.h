@@ -211,6 +211,11 @@ int calc_coeffs_off_diagnol_block(tint **data_part_a, tint part_a_dim0, tint par
             data_sum_a[i] += data_part_a[i][j];
         }
         one_data_norm_a[i] = 1.0/vec_norm(data_part_a[i], dim1);
+        //printf("%7.3e\n",rk->one_data_norm_a[i]);
+        //printf("%7.3e\n",rk->one_data_norm_a[i]);
+        printf("dim1=%d\n",dim1);
+        printf("%7.3e\n",vec_norm(data_part_b[i], dim1));
+
     }
 
     // part_b values
@@ -223,6 +228,9 @@ int calc_coeffs_off_diagnol_block(tint **data_part_a, tint part_a_dim0, tint par
             data_sum_b[i] += data_part_b[i][j];
         }
         one_data_norm_b[i] = 1.0/vec_norm(data_part_b[i], dim1);
+        printf("%7.3e\n",vec_norm(data_part_b[i], dim1));
+        //printf("%7.3e\n",rk->one_data_norm_a[i]);
+
     }
 
     int idx_out = 0;
