@@ -88,10 +88,12 @@ mat_sarika_h5 = rebuild_triangle(sarika,start_loc,mtx_info)
 mat_cosine_h5 = rebuild_triangle(cosine,start_loc,mtx_info)
 
 #py_path_name = "../hdf5t_csv_uint16/"
-py_path_name = "../sample_hsp70_actin_csv_uint16/"
+#py_path_name = "../sample_hsp70_actin_csv_uint16/"
+#py_path_name = "../sample_a-b_mix_2_csv_uint16/"
+py_path_name = "../sample_protease_mix_1_csv_uint16/"
 # for key in keys:
 mat_normal_py = np.loadtxt(py_path_name + "normal.csv",delimiter=",")
-mat_tol = 0.001
+mat_tol = 0.002
 ret = np.allclose(mat_normal_h5, mat_normal_py, atol=mat_tol)
 if (ret):
     print("normal is ok!")
@@ -105,6 +107,8 @@ if (ret):
     print("sarika is ok!")
 else:
     print("sarika is not ok!")
+    #np.savetxt('sarika.csv',fmt="%7.3f")
+    np.savetxt("sarika.csv", mat_sarika_h5, delimiter=",",fmt="%7.3f")
 
 mat_generalised_py = np.loadtxt(py_path_name + "generalised.csv",delimiter=",")
 ret = np.allclose(mat_generalised_h5, mat_generalised_py, atol=mat_tol)

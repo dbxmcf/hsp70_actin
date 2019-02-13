@@ -1403,12 +1403,12 @@ main(int argc, char **argv)
     MPI_Comm_rank(MPI_COMM_WORLD,&mpi_rank);
     MPI_Get_processor_name(mpi_name,&mpi_namelen);
     /* Make sure datasets can be divided into equal chunks by the processes */
-    if ((SPACE1_DIM1 % mpi_size) || (SPACE1_DIM2 % mpi_size)){
-	printf("DIM1(%d) and DIM2(%d) must be multiples of processes (%d)\n",
-	    SPACE1_DIM1, SPACE1_DIM2, mpi_size);
-	nerrors++;
-	goto finish;
-    }
+    //if ((SPACE1_DIM1 % mpi_size) || (SPACE1_DIM2 % mpi_size)){
+	//printf("DIM1(%d) and DIM2(%d) must be multiples of processes (%d)\n",
+	//    SPACE1_DIM1, SPACE1_DIM2, mpi_size);
+	//nerrors++;
+	//goto finish;
+    //}
 
     if (parse_options(argc, argv) != 0)
 	goto finish;
@@ -1436,7 +1436,9 @@ main(int argc, char **argv)
 	MPI_BANNER("testing PHDF5 dataset collective read...");
 	//phdf5readAll(testfiles[1]);
     //phdf5readAll("ta.h5");
-    phdf5readAll("sample_hsp70_actin.h5");
+    //phdf5readAll("sample_hsp70_actin.h5");
+    //phdf5readAll("sample_a-b_mix_2.h5");
+    phdf5readAll("sample_protease_mix_1.h5");
     }
 
     if (!(dowrite || doread)){

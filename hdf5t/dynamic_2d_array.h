@@ -7,6 +7,7 @@
 //typedef double integer;
 typedef int integer;
 typedef float real;
+//typedef double real;
 #define MPI_REALNUM MPI_FLOAT
 
 integer **allocate_dynamic_2d_array_integer(int nrows, int ncols);
