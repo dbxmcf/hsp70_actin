@@ -4,7 +4,7 @@
 #PBS -q workq
 #PBS -N jcd_mpi_omp
 #PBS -j oe
-#PBS -A loni_loniadmin1
+#PBS -A hpc_hpcadmin5
 
 cd $PBS_O_WORKDIR
 #python lf_csv2h5.py #2>&1 > $PBS_JOBID.log
@@ -19,7 +19,7 @@ cd $PBS_O_WORKDIR
 #mpirun -np 8 -ppn 2 ./a.out
 #echo "thread=$OMP_NUM_THREADS used $SECONDS secs"
 
-export MV2_ENABLE_AFFINITY=0
+#export MV2_ENABLE_AFFINITY=0
 
 arr=( 1 2 5 10 20 )
 for i in "${arr[@]}";
@@ -27,7 +27,7 @@ do
     export OMP_NUM_THREADS="$i"
     SECONDS=0
     #time ./a.out
-    mpirun -np 8 -ppn 1 ./a.out
+    mpirun -np 8 -f $PBS_NODEFILE -ppn 1 ./a.out
     echo "threads=$OMP_NUM_THREADS, $SECONDS sec"
 done
 
