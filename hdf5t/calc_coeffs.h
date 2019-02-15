@@ -2,6 +2,7 @@
 #define _CALC_COEFFS_H_
 #include <stdio.h>
 #include <math.h>
+#include <omp.h>
 
 //#define N 3
 //#define D 5
@@ -51,23 +52,24 @@ real sum_minimum_vec(tint *a, tint *b, tint vec_dim)
 {
   tint i, c;  
   real sum=0;
+  #pragma omp parallel for private(c,i) reduction(+:sum)
   for (i=0;i<vec_dim;i++) {
         // c = b[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // min(x, y)
         c = ((a[i])<(b[i]))?(a[i]):(b[i]);
         //printf("%d, %d, %d\n", a[i],b[i],c);
         sum += c;
   }
-  if (sum < 0) {
-      for (i=0;i<vec_dim;i++) {
-          printf("a[%d]=%d,",i,a[i]);
-      }
-      printf("\n");
-      for (i=0;i<vec_dim;i++) {
-          printf("b[%d]=%d,",i,b[i]);
-      }
-      printf("\n");
-      printf("sum=%f\n",sum);
-  }
+  //if (sum < 0) {
+  //    for (i=0;i<vec_dim;i++) {
+  //        printf("a[%d]=%d,",i,a[i]);
+  //    }
+  //    printf("\n");
+  //    for (i=0;i<vec_dim;i++) {
+  //        printf("b[%d]=%d,",i,b[i]);
+  //    }
+  //    printf("\n");
+  //    printf("sum=%f\n",sum);
+  //}
 
   return sum;
 }
@@ -76,6 +78,7 @@ real sum_maximum_vec(tint *a, tint *b, tint vec_dim)
 {
   tint i, c;  
   real sum=0;  
+  #pragma omp parallel for private(c,i) reduction(+:sum)
   for (i=0;i<vec_dim;i++) {
         //c = a[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // max(x, y)
         c = ((a[i])>(b[i]))?(a[i]):(b[i]);
@@ -88,6 +91,7 @@ real get_non_zeros_pair(tint *a, tint *b, tint vec_dim)
 {
     real sum = 0;
     tint i;
+    #pragma omp parallel for private(i) reduction(+:sum)
     for (i=0;i<vec_dim;i++) {
         if (a[i]>0 && b[i]>0)
             sum += a[i]+b[i];
@@ -138,6 +142,7 @@ real vec_norm(tint *a, tint vec_dim)
 {
     tint i;
     real norm=0;
+    #pragma omp parallel for private(i) reduction(+:norm)
     for(i=0;i<vec_dim; i++) {
         norm += a[i]*a[i];
     }
@@ -147,7 +152,8 @@ real vec_norm(tint *a, tint vec_dim)
 real vec_dot(tint *a, tint *b, tint vec_dim)
 {
     tint i;
-    real sum=0;
+    real sum=0; 
+    #pragma omp parallel for private(i) reduction(+:sum)
     for(i=0;i<vec_dim; i++) {
         sum += a[i]*b[i];
     }

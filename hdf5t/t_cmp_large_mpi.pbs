@@ -1,12 +1,13 @@
 #!/bin/bash
 #PBS -l nodes=4:ppn=20
-#PBS -l walltime=00:20:00
+#PBS -l walltime=01:20:00
 #PBS -q checkpt
-#PBS -N jcd_mpi
+#PBS -N jcd_mpi_omp
 #PBS -j oe
 #PBS -A loni_loniadmin1
 
 cd $PBS_O_WORKDIR
 #python lf_csv2h5.py #2>&1 > $PBS_JOBID.log
+export OMP_NUM_THREADS=2
 mpirun -np 32 -ppn 8 ./a.out
 

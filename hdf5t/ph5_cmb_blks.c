@@ -1437,8 +1437,8 @@ main(int argc, char **argv)
 	//phdf5readAll(testfiles[1]);
     //phdf5readAll("ta.h5");
     //phdf5readAll("sample_hsp70_actin.h5");
-    //phdf5readAll("sample_a-b_mix_2.h5");
-    phdf5readAll("sample_protease_mix_1.h5");
+    phdf5readAll("sample_a-b_mix_2.h5");
+    //phdf5readAll("sample_protease_mix_1.h5");
     }
 
     if (!(dowrite || doread)){

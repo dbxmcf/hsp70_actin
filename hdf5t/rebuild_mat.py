@@ -89,8 +89,8 @@ mat_cosine_h5 = rebuild_triangle(cosine,start_loc,mtx_info)
 
 #py_path_name = "../hdf5t_csv_uint16/"
 #py_path_name = "../sample_hsp70_actin_csv_uint16/"
-#py_path_name = "../sample_a-b_mix_2_csv_uint16/"
-py_path_name = "../sample_protease_mix_1_csv_uint16/"
+py_path_name = "../sample_a-b_mix_2_csv_uint16/"
+#py_path_name = "../sample_protease_mix_1_csv_uint16/"
 # for key in keys:
 mat_normal_py = np.loadtxt(py_path_name + "normal.csv",delimiter=",")
 mat_tol = 0.002
@@ -124,12 +124,12 @@ if (ret):
 else:
     print("wu is not ok!")
 
-mat_cosine_py = np.loadtxt(py_path_name + "cosine.csv",delimiter=",")
-ret = np.allclose(mat_cosine_h5, mat_cosine_py, atol=mat_tol)
-if (ret):
-    print("cosine is ok!")
-else:
-    print("cosine is not ok!")
+#mat_cosine_py = np.loadtxt(py_path_name + "cosine.csv",delimiter=",")
+#ret = np.allclose(mat_cosine_h5, mat_cosine_py, atol=mat_tol)
+#if (ret):
+#    print("cosine is ok!")
+#else:
+#    print("cosine is not ok!")
 #print(mat_normal_py)
 #np.set_printoptions(edgeitems=30, linewidth=100000, formatter=dict(float=lambda x: "%7.3f" % x))
 #print(mat_cosine)
