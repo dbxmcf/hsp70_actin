@@ -19,7 +19,7 @@ cd $PBS_O_WORKDIR
 #mpirun -np 8 -ppn 2 ./a.out
 #echo "thread=$OMP_NUM_THREADS used $SECONDS secs"
 
-#export MV2_ENABLE_AFFINITY=0
+export MV2_ENABLE_AFFINITY=0
 
 arr=( 1 2 5 10 20 )
 for i in "${arr[@]}";
