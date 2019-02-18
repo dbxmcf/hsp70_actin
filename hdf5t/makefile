@@ -5,9 +5,9 @@ INTEL_H5CC=$(INTEL_HDF5_BIN)/h5pcc
 PGI_H5CC=$(PGI_HDF5_BIN)/h5pcc
 #CFLAGS=-acc -Minfo=accel -ta=nvidia,time $(INC)
 CFLAGS_INTEL_OMP=-openmp
-CFLAGS_PGI_OMP=-mp -fast -Minfo=all
-CFLAGS_INTEL_OMP=-mp -fast -Minfo=all
+CFLAGS_PGI_OMP=-mp -fast -Mipa=fast,inline -Minfo=all
 CFLAGS_ACC=-acc -fast -Minfo=all -ta=nvidia,time
+BIN=pgi.mpi.omp intel.mpi.omp
 
 PCB_MPI_OMP=ph5_cmb_blks.c
 
@@ -30,5 +30,6 @@ intel.mpi.omp: $(PCB_MPI_OMP)
 #	$(CC) $(CFLAGS_SER) $(LAP_ACC_V0) -o $@.out
 
 all: $(BIN)
-	clean:
-	rm -rf pgi.omp.out intel.omp.out
+
+clean:
+	rm -rf pgi.mpi.omp.out intel.mpi.omp.out
