@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import numpy as np
-import pandas as pd
+#import pandas as pd
 import h5py
 
 def rebuild_triangle(arr, st_loc, mtx_info):
@@ -89,8 +89,8 @@ mat_cosine_h5 = rebuild_triangle(cosine,start_loc,mtx_info)
 
 #py_path_name = "../hdf5t_csv_uint16/"
 #py_path_name = "../sample_hsp70_actin_csv_uint16/"
-py_path_name = "../sample_a-b_mix_2_csv_uint16/"
-#py_path_name = "../sample_protease_mix_1_csv_uint16/"
+#py_path_name = "../sample_a-b_mix_2_csv_uint16/"
+py_path_name = "../sample_protease_mix_1_csv_uint16/"
 # for key in keys:
 mat_normal_py = np.loadtxt(py_path_name + "normal.csv",delimiter=",")
 mat_tol = 0.002
