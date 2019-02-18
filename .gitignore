@@ -3,6 +3,7 @@ lib/*.pyc
 jcd.o*
 sample_*
 *.o
+*.oo
 a.out
 coords.hdf5
 data.dat.npy
