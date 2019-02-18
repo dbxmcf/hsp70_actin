@@ -1,0 +1,65 @@
+#!/bin/bash
+#PBS -l nodes=4:ppn=20
+#PBS -l walltime=6:00:00
+#PBS -q checkpt
+#PBS -N jcd_mpi_omp
+#PBS -j oe
+#PBS -A hpc_hpcadmin5
+# -A loni_loniadmin1
+
+cd $PBS_O_WORKDIR
+#python lf_csv2h5.py #2>&1 > $PBS_JOBID.log
+#export OMP_NUM_THREADS=1
+#SECONDS=0
+#mpirun -np 8 -ppn 4 ./a.out
+#echo "thread=$OMP_NUM_THREADS used $SECONDS secs"
+
+#export OMP_NUM_THREADS=20
+#export OMP_NUM_THREADS=1
+#SECONDS=0
+#mpirun -np 8 -ppn 2 ./a.out
+#echo "thread=$OMP_NUM_THREADS used $SECONDS secs"
+module purge
+#module load hdf5/mvapich2.3-pgi-18.7
+module load hdf5/1.8.12/INTEL-140-MVAPICH2-2.0
+
+export MV2_ENABLE_AFFINITY=0
+
+EXEC=./intel.mpi.omp.out
+
+unset KMP_AFFINITY
+arr=( 1 2 5 10 )
+for i in "${arr[@]}";
+do
+    export OMP_NUM_THREADS="$i"
+    SECONDS=0
+    #time ./a.out
+    #mpirun -np 8 -f $PBS_NODEFILE -ppn 2 ./a.pgi.omp.fast.out
+    mpirun -np 8 -f $PBS_NODEFILE -ppn 2 $EXEC -f sample_a-b_mix_2.h5
+    echo "threads=$OMP_NUM_THREADS, $SECONDS sec"
+done
+
+KMP_AFFINITY=warnings,compact
+arr=( 1 2 5 10 )
+for i in "${arr[@]}";
+do
+    export OMP_NUM_THREADS="$i"
+    SECONDS=0
+    #time ./a.out
+    #mpirun -np 8 -f $PBS_NODEFILE -ppn 2 ./a.pgi.omp.fast.out
+    mpirun -np 8 -f $PBS_NODEFILE -ppn 2 $EXEC -f sample_a-b_mix_2.h5
+    echo "threads=$OMP_NUM_THREADS, $SECONDS sec"
+done
+
+KMP_AFFINITY=warnings,scatter
+arr=( 1 2 5 10 )
+for i in "${arr[@]}";
+do
+    export OMP_NUM_THREADS="$i"
+    SECONDS=0
+    #time ./a.out
+    #mpirun -np 8 -f $PBS_NODEFILE -ppn 2 ./a.pgi.omp.fast.out
+    mpirun -np 8 -f $PBS_NODEFILE -ppn 2 $EXEC -f sample_a-b_mix_2.h5
+    echo "threads=$OMP_NUM_THREADS, $SECONDS sec"
+done
+
