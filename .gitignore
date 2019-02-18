@@ -4,7 +4,7 @@ jcd.o*
 sample_*
 *.o
 *.oo
-a.out
+*.out
 coords.hdf5
 data.dat.npy
 data.h5
