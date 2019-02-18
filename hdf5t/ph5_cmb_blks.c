@@ -1304,7 +1304,7 @@ mkfilenames(char *prefix)
     }
     for (i=0; i<n; i++){
         /*sprintf(testfiles[i], "%s/ParaEg%d.h5", prefix, i);*/
-        sprintf(testfiles[i], "%s", prefix, i);
+        sprintf(testfiles[i], "%s", prefix);
     }
     return(0);
 
