@@ -58,3 +58,4 @@ hdf5t/sds.h5
 ioexample.txt
 output.dat.npy
 res_all.h5
+jcd_mpi_omp.*
