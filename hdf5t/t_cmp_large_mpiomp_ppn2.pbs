@@ -1,6 +1,6 @@
 #!/bin/bash
-#PBS -l nodes=98:ppn=20
-#PBS -l walltime=10:00:00
+#PBS -l nodes=25:ppn=20
+#PBS -l walltime=1:00:00
 #PBS -q workq
 #PBS -N jcd_mpi_omp
 #PBS -j oe
@@ -21,13 +21,26 @@ cd $PBS_O_WORKDIR
 
 export MV2_ENABLE_AFFINITY=0
 
-arr=( 1 2 5 10 20 )
+unset KMP_AFFINITY
+export KMP_AFFINITY=warnings,scatter
+arr=( 1 2 5 10 )
 for i in "${arr[@]}";
 do
     export OMP_NUM_THREADS="$i"
     SECONDS=0
     #time ./a.out
-    mpirun -np 98 -f $PBS_NODEFILE -ppn 1 ./a.out
-    echo "threads=$OMP_NUM_THREADS, $SECONDS sec"
+    mpirun -np 50 -f $PBS_NODEFILE  -ppn 2 ./a.out
+    echo "threads_with_kmp_scatter=$OMP_NUM_THREADS, $SECONDS sec"
+done
+
+export KMP_AFFINITY=warnings,compact
+arr=( 1 2 5 10 )
+for i in "${arr[@]}";
+do
+    export OMP_NUM_THREADS="$i"
+    SECONDS=0
+    #time ./a.out
+    mpirun -np 50 -f $PBS_NODEFILE  -ppn 2 ./a.out
+    echo "threads_with_kmp_compact=$OMP_NUM_THREADS, $SECONDS sec"
 done
 
