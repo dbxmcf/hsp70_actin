@@ -339,13 +339,12 @@ int calc_coeffs_diagnol_triangle(tint **data, tint dim0, tint dim1,
     real dist_gen_jac, dist_jac, denomenator_wu, dist_wu; 
     real numerator_sarika, denomenator_sarika, dist_sarika;
     real num_sim, numerator_jac, denomenator_jac, numerator_gen_jac, denomenator_gen_jac;
-
-   // calculate some preparation values
-    real *data_sum = (real*)malloc(dim0*sizeof(real));
-    real *one_data_norm = (real*)malloc(dim0*sizeof(real));
     real a_sum, b_sum, one_an, one_bn, result;
 
-    tint **data_jac = allocate_dynamic_2d_array_integer(dim0, dim1);
+   // calculate some preparation values
+    real *restrict data_sum = (real*)malloc(dim0*sizeof(real));
+    real *restrict one_data_norm = (real*)malloc(dim0*sizeof(real));
+    tint **restrict data_jac = allocate_dynamic_2d_array_integer(dim0, dim1);
 
     // preparation values
     for (i=0;i<dim0;i++) {
@@ -359,9 +358,15 @@ int calc_coeffs_diagnol_triangle(tint **data, tint dim0, tint dim1,
         one_data_norm[i] = 1.0/vec_norm(data[i], dim1);
     }
 
-    int **cmbs=NULL;
+    int **restrict cmbs=NULL;
     int num_cmbs = 0, idx_rpd = 0;
 	cmbs = combination_util(dim0,&num_cmbs); 
+
+    real *restrict normal = (real*)malloc(num_cmbs*sizeof(real));
+    real *restrict generalised = (real*)malloc(num_cmbs*sizeof(real));
+    real *restrict sarika = (real*)malloc(num_cmbs*sizeof(real));
+    real *restrict wu = (real*)malloc(num_cmbs*sizeof(real));
+    real *restrict cosine = (real*)malloc(num_cmbs*sizeof(real));
 
     for (i=0;i< num_cmbs;i++) {
         idx_a = cmbs[i][0], idx_b = cmbs[i][1];
@@ -394,8 +399,6 @@ int calc_coeffs_diagnol_triangle(tint **data, tint dim0, tint dim1,
         //printf("%d %d %.3e\n", idx_a, idx_b, adotb);
         //result = 1.0 - adotb*one_an*one_bn;
         result = adotb*one_an*one_bn;
-
-
         
         dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
         dist_jac = 1.0-numerator_jac/denomenator_jac;
@@ -412,9 +415,9 @@ int calc_coeffs_diagnol_triangle(tint **data, tint dim0, tint dim1,
         rpd->sarika[idx_rpd] = dist_sarika;
         rpd->wu[idx_rpd] = dist_wu;
         rpd->cosine[idx_rpd] = result*100;
-        if (result >100 || result <0) {
-            printf("adotb=%7.3e,one_an=%7.3e,one_bn=%7.3e\n",adotb,one_an,one_bn);
-        }
+        //if (result >100 || result <0) {
+        //    printf("adotb=%7.3e,one_an=%7.3e,one_bn=%7.3e\n",adotb,one_an,one_bn);
+        //}
         idx_rpd++;
         //normal[idx_a][idx_b] = dist_jac;
         //normal[idx_b][idx_a] = dist_jac;
