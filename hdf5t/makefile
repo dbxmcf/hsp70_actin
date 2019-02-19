@@ -6,16 +6,19 @@ PGI_H5CC=$(PGI_HDF5_BIN)/h5pcc
 #CFLAGS=-acc -Minfo=accel -ta=nvidia,time $(INC)
 CFLAGS_INTEL_OMP=-openmp -O3
 CFLAGS_PGI_OMP=-mp -fast -Mipa=fast,inline #-Minfo=all
-CFLAGS_ACC=-acc -fast -Minfo=all -ta=nvidia,time
+CFLAGS_PGI_ACC=-acc -fast -Mipa=fast,inline -Minfo=all -ta=nvidia,time
 BIN=pgi.mpi.omp intel.mpi.omp
 
-PCB_MPI_OMP=ph5_cmb_blks.c
+PCB_MPI_SRC=ph5_cmb_blks.c
 
-pgi: $(PCB_MPI_OMP)
-	$(PGI_H5CC) $(CFLAGS_PGI_OMP) $(PCB_MPI_OMP) -o $@.mpi.omp.out
+pgi: $(PCB_MPI_SRC)
+	$(PGI_H5CC) $(CFLAGS_PGI_OMP) $(PCB_MPI_SRC) -o $@.mpi.omp.out
 
-intel: $(PCB_MPI_OMP)
-	$(INTEL_H5CC) $(CFLAGS_INTEL_OMP) $(PCB_MPI_OMP) -o $@.mpi.omp.out
+pgiacc: $(PCB_MPI_SRC)
+	$(PGI_H5CC) $(CFLAGS_PGI_ACC) $(PCB_MPI_SRC) -o $@.mpi.acc.out
+
+intel: $(PCB_MPI_SRC)
+	$(INTEL_H5CC) $(CFLAGS_INTEL_OMP) $(PCB_MPI_SRC) -o $@.mpi.omp.out
 
 #lap_acc_v0_dr: $(LAP_ACC)
 #	$(CC) $(CFLAGS_ACC) $(LAP_ACC_V0_DR) -o $@.out
