@@ -3,7 +3,8 @@ lib/*.pyc
 jcd.o*
 sample_*
 *.o
-a.out
+*.oo
+*.out
 coords.hdf5
 data.dat.npy
 data.h5
@@ -59,3 +60,4 @@ ioexample.txt
 output.dat.npy
 res_all.h5
 hdf5t/jcd_mpi_omp.o*
+jcd_mpi_omp.*
