@@ -34,6 +34,9 @@
  * for more detail.
  */
 
+#ifdef _OPENACC
+#include <accel.h>              // OpenACC
+#endif
 #include <assert.h>
 #include "hdf5.h"
 #include <string.h>
@@ -90,6 +93,7 @@ char    testfiles[2][PATH_MAX];
 
 
 int mpi_size, mpi_rank;				/* mpi variables */
+int gpunum=0,ngpus=0;
 
 /* option flags */
 int verbose = 0;			/* verbose, default as no. */
@@ -1410,6 +1414,28 @@ main(int argc, char **argv)
     //nerrors++;
     //goto finish;
     //}
+
+//#ifdef _OPENACC
+//    acc_init(acc_device_nvidia);                                 // OpenACC call
+//    ngpus = acc_get_num_devices(acc_device_nvidia);  // #GPUs
+//    int dev_id = myrank % num_dev;         
+//    acc_set_device_num(dev_id,acc_device_nvidia); // assign GPU to one MPI process
+//
+//    cout << "MPI process " << myrank << "  is assigned to GPU " << dev_id << "\n";
+//#endif
+
+#ifdef _OPENACC
+    acc_init(acc_device_nvidia);                                 // OpenACC call
+    ngpus = acc_get_num_devices( acc_device_nvidia ); 
+    if( ngpus ){
+        gpunum = mpi_rank % ngpus;
+        acc_set_device_num( gpunum, acc_device_nvidia ); 
+    }
+    else {
+        acc_set_device_type( acc_device_host ); 
+    }
+    printf("MPI process %d is on GPU %d\n", mpi_rank, gpunum);
+#endif
 
     if (parse_options(argc, argv) != 0)
         goto finish;

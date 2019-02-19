@@ -48,7 +48,7 @@ typedef struct result_arrays_diagnol {
 // https://www.geeksforgeeks.org/compute-the-minimum-or-maximum-max-of-two-integers-without-branching/
 // https://stackoverflow.com/questions/24529504/find-out-max-min-of-two-number-without-using-if-else
 // http://graphics.stanford.edu/~seander/bithacks.html#IntegerMinOrMax
-real sum_minimum_vec(tint *a, tint *b, tint vec_dim)
+real sum_minimum_vec(tint *restrict a, tint *restrict b, tint vec_dim)
 {
   tint i, c;  
   real sum=0;
@@ -63,7 +63,7 @@ real sum_minimum_vec(tint *a, tint *b, tint vec_dim)
   return sum;
 }
 
-real sum_maximum_vec(tint *a, tint *b, tint vec_dim)
+real sum_maximum_vec(tint *restrict a, tint *restrict b, tint vec_dim)
 {
   tint i, c;  
   real sum=0;  
@@ -77,7 +77,7 @@ real sum_maximum_vec(tint *a, tint *b, tint vec_dim)
   return sum;
 }
 
-real get_non_zeros_pair(tint *a, tint *b, tint vec_dim)
+real get_non_zeros_pair(tint *restrict a, tint *restrict b, tint vec_dim)
 {
     real sum = 0;
     tint i;
@@ -129,7 +129,7 @@ void vec_or(tint *a, tint *b, tint *c,tint vec_dim)
         c[i] = a[i] | b[i];
 }
 
-real vec_norm(tint *a, tint vec_dim)
+real vec_norm(tint *restrict a, tint vec_dim)
 {
     tint i;
     real norm=0;
@@ -141,7 +141,7 @@ real vec_norm(tint *a, tint vec_dim)
     return sqrt(norm);
 }
 
-real vec_dot(tint *a, tint *b, tint vec_dim)
+real vec_dot(tint *restrict a, tint *restrict b, tint vec_dim)
 {
     tint i;
     real sum=0; 
@@ -331,7 +331,7 @@ int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0,
 
 
 
-int calc_coeffs_diagnol_triangle(tint **data, tint dim0, tint dim1,
+int calc_coeffs_diagnol_triangle(tint **restrict data, tint dim0, tint dim1,
                       result_pointers_diagnol *rpd)
 {
     tint i, j, idx_a, idx_b;
@@ -368,6 +368,17 @@ int calc_coeffs_diagnol_triangle(tint **data, tint dim0, tint dim1,
     real *restrict wu = (real*)malloc(num_cmbs*sizeof(real));
     real *restrict cosine = (real*)malloc(num_cmbs*sizeof(real));
 
+    #pragma acc data \
+     copyin(data[0:dim0][0:dim1],\
+            data_sum[0:dim0],\
+            data_jac[0:dim0],\
+            one_data_norm[0:dim0],\
+            cmbs[0:2][0:num_cmbs])\
+     copyout(normal[0:num_cmbs],\
+             generalised[0:num_cmbs],\
+             sarika[0:num_cmbs],\
+             wu[0:num_cmbs],\
+             cosine[0:num_cmbs])
     for (i=0;i< num_cmbs;i++) {
         idx_a = cmbs[i][0], idx_b = cmbs[i][1];
 
@@ -410,52 +421,31 @@ int calc_coeffs_diagnol_triangle(tint **data, tint dim0, tint dim1,
         denomenator_sarika = a_sum+b_sum;
         dist_sarika = 1.0-numerator_sarika/denomenator_sarika;
 
-        rpd->normal[idx_rpd] = dist_jac;
-        rpd->generalised[idx_rpd] = dist_gen_jac;
-        rpd->sarika[idx_rpd] = dist_sarika;
-        rpd->wu[idx_rpd] = dist_wu;
-        rpd->cosine[idx_rpd] = result*100;
+        normal[idx_rpd] = dist_jac;
+        generalised[idx_rpd] = dist_gen_jac;
+        sarika[idx_rpd] = dist_sarika;
+        wu[idx_rpd] = dist_wu;
+        cosine[idx_rpd] = result*100;
         //if (result >100 || result <0) {
         //    printf("adotb=%7.3e,one_an=%7.3e,one_bn=%7.3e\n",adotb,one_an,one_bn);
         //}
         idx_rpd++;
-        //normal[idx_a][idx_b] = dist_jac;
-        //normal[idx_b][idx_a] = dist_jac;
-        //generalised[idx_a][idx_b] = dist_gen_jac;
-        //generalised[idx_b][idx_a] = dist_gen_jac;
-        //sarika[idx_a][idx_b] = dist_sarika;
-        //sarika[idx_b][idx_a] = dist_sarika;
-        //wu[idx_a][idx_b] = dist_wu;
-        //wu[idx_b][idx_a] = dist_wu;
-        //cosine[idx_a][idx_b] = result*100;
-        //cosine[idx_b][idx_a] = result*100;       
-        
-        //printf("normal = %f\n", dist_jac);
-        //printf("generalised =%f\n", dist_gen_jac);
-        //printf("sarika =%f\n", dist_sarika);
-        //printf("wu =%f\n", dist_wu);
-        //printf("result = %f\n", result*100);
-        
-        //non_zeros = (a >0) & (b > 0)
-        //summed_array = a + b
-        //
-        //numerator_jac = np.sum(np.minimum(a_jac,b_jac))
-        //denomenator_jac = np.sum(np.maximum(a_jac,b_jac))
-        //numerator_gen_jac =np.sum(np.minimum(a,b))
-        //denomenator_gen_jac =np.sum(np.maximum(a,b))
-        //num_sim = np.sum(summed_array[non_zeros])
-        //result = 1 - spatial.distance.cosine(a, b)
-        
-        //dist_gen_jac=1.0-(float(numerator_gen_jac)/float(denomenator_gen_jac))                    
-        //dist_jac=1.0-(float(numerator_jac)/float(denomenator_jac))
-        //
-        //denomenator_wu = min(denomenator_gen_jac,max(a_sum,b_sum) )
-        //dist_wu = 1.0-(float(numerator_gen_jac)/float(denomenator_wu))
-        //
-        //numerator_sarika = num_sim
-        //denomenator_sarika = a_sum+b_sum
-        //dist_sarika = 1.0-(float(numerator_sarika)/float(denomenator_sarika))
     }
+
+    /* pass out the data */
+    for (i=0;i<idx_rpd;i++) {
+        rpd->normal[i] = normal[i];
+        rpd->generalised[i] = generalised[i];
+        rpd->sarika[i] = sarika[i];
+        rpd->wu[i] = wu[i];
+        rpd->cosine[i] = cosine[i];
+    }
+   
+    free(normal);
+    free(generalised);
+    free(sarika);
+    free(wu);
+    free(cosine);
 
     free_dynamic_2d_array_integer(cmbs);
     free_dynamic_2d_array_integer(data_jac);
