@@ -24,13 +24,38 @@ module load hdf5/mvapich2.3-pgi-18.7
 
 export MV2_ENABLE_AFFINITY=0
 
+unset KMP_AFFINITY
 arr=( 1 2 5 10 )
 for i in "${arr[@]}";
 do
     export OMP_NUM_THREADS="$i"
     SECONDS=0
     #time ./a.out
-    mpirun -np 8 -f $PBS_NODEFILE -ppn 2 ./a.pgi.omp.fast.out
+    #mpirun -np 8 -f $PBS_NODEFILE -ppn 2 ./a.pgi.omp.fast.out
+    mpirun -np 8 -f $PBS_NODEFILE -ppn 2 ./pgi.mpi.omp.out
     echo "threads=$OMP_NUM_THREADS, $SECONDS sec"
 done
 
+KMP_AFFINITY=warnings,compact
+arr=( 1 2 5 10 )
+for i in "${arr[@]}";
+do
+    export OMP_NUM_THREADS="$i"
+    SECONDS=0
+    #time ./a.out
+    #mpirun -np 8 -f $PBS_NODEFILE -ppn 2 ./a.pgi.omp.fast.out
+    mpirun -np 8 -f $PBS_NODEFILE -ppn 2 ./pgi.mpi.omp.out
+    echo "threads=$OMP_NUM_THREADS, $SECONDS sec"
+done
+
+KMP_AFFINITY=warnings,scatter
+arr=( 1 2 5 10 )
+for i in "${arr[@]}";
+do
+    export OMP_NUM_THREADS="$i"
+    SECONDS=0
+    #time ./a.out
+    #mpirun -np 8 -f $PBS_NODEFILE -ppn 2 ./a.pgi.omp.fast.out
+    mpirun -np 8 -f $PBS_NODEFILE -ppn 2 ./pgi.mpi.omp.out
+    echo "threads=$OMP_NUM_THREADS, $SECONDS sec"
+done
