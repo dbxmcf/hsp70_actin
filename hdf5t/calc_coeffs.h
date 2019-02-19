@@ -248,11 +248,11 @@ int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0,
             data_jac_b[0:part_b_dim0],\
             one_data_norm_a[0:part_a_dim0],\
             one_data_norm_b[0:part_b_dim0]) \
-    copyout(normal[0:part_a_dim0*part_b_dim0])
-    //        general[0:part_a_dim0*part_b_dim0])
-    //        sarika[0:part_a_dim0*part_b_dim0],\
-    //        wu[0:part_a_dim0*part_b_dim0],\
-    //        cosine[0:part_a_dim0*part_b_dim0])
+    copyout(normal[0:part_a_dim0*part_b_dim0],\
+            generalised[0:part_a_dim0*part_b_dim0],\
+            sarika[0:part_a_dim0*part_b_dim0],\
+            wu[0:part_a_dim0*part_b_dim0],\
+            cosine[0:part_a_dim0*part_b_dim0])
     for (idx_a=0;idx_a<part_a_dim0;idx_a++) {
         for (idx_b=0;idx_b<part_b_dim0;idx_b++){
             // 
@@ -301,20 +301,23 @@ int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0,
             denomenator_sarika = a_sum+b_sum;
             dist_sarika = 1.0-numerator_sarika/denomenator_sarika;
 
-            rp->normal[idx_out] = dist_jac;
-            rp->generalised[idx_out] = dist_gen_jac;
-            rp->sarika[idx_out] = dist_sarika;
-            rp->wu[idx_out] = dist_wu;
-            rp->cosine[idx_out] = result*100;
+            normal[idx_out] = dist_jac;
+            generalised[idx_out] = dist_gen_jac;
+            sarika[idx_out] = dist_sarika;
+            wu[idx_out] = dist_wu;
+            cosine[idx_out] = result*100;
             idx_out++;
         }
     }
 
-    //rp->normal[idx_out] = dist_jac;
-    //rp->generalised[idx_out] = dist_gen_jac;
-    //rp->sarika[idx_out] = dist_sarika;
-    //rp->wu[idx_out] = dist_wu;
-    //rp->cosine[idx_out] = result*100;
+    /* pass out the data */
+    for (i=0;i<idx_out;i++) {
+        rp->normal[i] = normal[i];
+        rp->generalised[i] = generalised[i];
+        rp->sarika[i] = sarika[i];
+        rp->wu[i] = wu[i];
+        rp->cosine[i] = cosine[i];
+    }
    
     free(normal);
     free(generalised);
