@@ -52,6 +52,7 @@ real sum_minimum_vec(tint *a, tint *b, tint vec_dim)
 {
   tint i, c;  
   real sum=0;
+  #pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
   #pragma omp parallel for private(c,i) reduction(+:sum)
   for (i=0;i<vec_dim;i++) {
         // c = b[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // min(x, y)
@@ -59,18 +60,6 @@ real sum_minimum_vec(tint *a, tint *b, tint vec_dim)
         //printf("%d, %d, %d\n", a[i],b[i],c);
         sum += c;
   }
-  //if (sum < 0) {
-  //    for (i=0;i<vec_dim;i++) {
-  //        printf("a[%d]=%d,",i,a[i]);
-  //    }
-  //    printf("\n");
-  //    for (i=0;i<vec_dim;i++) {
-  //        printf("b[%d]=%d,",i,b[i]);
-  //    }
-  //    printf("\n");
-  //    printf("sum=%f\n",sum);
-  //}
-
   return sum;
 }
 
@@ -78,6 +67,7 @@ real sum_maximum_vec(tint *a, tint *b, tint vec_dim)
 {
   tint i, c;  
   real sum=0;  
+  #pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
   #pragma omp parallel for private(c,i) reduction(+:sum)
   for (i=0;i<vec_dim;i++) {
         //c = a[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // max(x, y)
@@ -91,6 +81,7 @@ real get_non_zeros_pair(tint *a, tint *b, tint vec_dim)
 {
     real sum = 0;
     tint i;
+    #pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
     #pragma omp parallel for private(i) reduction(+:sum)
     for (i=0;i<vec_dim;i++) {
         if (a[i]>0 && b[i]>0)
@@ -142,6 +133,7 @@ real vec_norm(tint *a, tint vec_dim)
 {
     tint i;
     real norm=0;
+    #pragma acc parallel loop present(a[0:vec_dim])
     #pragma omp parallel for private(i) reduction(+:norm)
     for(i=0;i<vec_dim; i++) {
         norm += a[i]*a[i];
@@ -153,6 +145,7 @@ real vec_dot(tint *a, tint *b, tint vec_dim)
 {
     tint i;
     real sum=0; 
+    #pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
     #pragma omp parallel for private(i) reduction(+:sum)
     for(i=0;i<vec_dim; i++) {
         sum += a[i]*b[i];
@@ -176,6 +169,7 @@ int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0,
     real dist_gen_jac, dist_jac, denomenator_wu, dist_wu; 
     real numerator_sarika, denomenator_sarika, dist_sarika;
     real num_sim, numerator_jac, denomenator_jac, numerator_gen_jac, denomenator_gen_jac;
+    real a_sum, b_sum, one_an, one_bn, result;
 
     // perform full permutation of all pairs of part a and part b
     if (part_a_dim1 != part_b_dim1) {
@@ -189,10 +183,9 @@ int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0,
     real *restrict data_sum_b = (real*)malloc(part_b_dim0*sizeof(real));
     real *restrict one_data_norm_a = (real*)malloc(part_a_dim0*sizeof(real));
     real *restrict one_data_norm_b = (real*)malloc(part_b_dim0*sizeof(real));
-    real a_sum, b_sum, one_an, one_bn, result;
 
-    tint **data_jac_a = allocate_dynamic_2d_array_integer(part_a_dim0, dim1);
-    tint **data_jac_b = allocate_dynamic_2d_array_integer(part_b_dim0, dim1);
+    tint **restrict data_jac_a = allocate_dynamic_2d_array_integer(part_a_dim0, dim1);
+    tint **restrict data_jac_b = allocate_dynamic_2d_array_integer(part_b_dim0, dim1);
 
     real *restrict normal = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
     real *restrict generalised = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
@@ -285,12 +278,12 @@ int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0,
             
             dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
             //if (numerator_jac < 0 || denomenator_jac > 100) {
-            if (numerator_jac < 0 ) {
-                printf("a[0]=%d\n",a[0]);
-                printf("b[0]=%d\n",b[0]);
-                printf("numerator_jac:%lf \n",numerator_jac);
-                printf("denomenator_jac:%lf \n",denomenator_jac);
-            }
+            //if (numerator_jac < 0 ) {
+            //    printf("a[0]=%d\n",a[0]);
+            //    printf("b[0]=%d\n",b[0]);
+            //    printf("numerator_jac:%lf \n",numerator_jac);
+            //    printf("denomenator_jac:%lf \n",denomenator_jac);
+            //}
 
             dist_jac = 1.0-numerator_jac/denomenator_jac;
             
