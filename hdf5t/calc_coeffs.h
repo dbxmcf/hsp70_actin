@@ -166,8 +166,8 @@ void read_h5()
     
 }
 
-int calc_coeffs_off_diagnol_block(tint **data_part_a, tint part_a_dim0, tint part_a_dim1,
-                      tint **data_part_b, tint part_b_dim0, tint part_b_dim1,
+int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0, tint part_a_dim1,
+                      tint **restrict data_part_b, tint part_b_dim0, tint part_b_dim1,
                       result_pointers_diagnol *rp)
 {
     //int i, j, idx_a, idx_b;
@@ -185,14 +185,20 @@ int calc_coeffs_off_diagnol_block(tint **data_part_a, tint part_a_dim0, tint par
 
     tint dim1 = part_a_dim1;
     // calculate some preparation values
-    real *data_sum_a = (real*)malloc(part_a_dim0*sizeof(real));
-    real *data_sum_b = (real*)malloc(part_b_dim0*sizeof(real));
-    real *one_data_norm_a = (real*)malloc(part_a_dim0*sizeof(real));
-    real *one_data_norm_b = (real*)malloc(part_b_dim0*sizeof(real));
+    real *restrict data_sum_a = (real*)malloc(part_a_dim0*sizeof(real));
+    real *restrict data_sum_b = (real*)malloc(part_b_dim0*sizeof(real));
+    real *restrict one_data_norm_a = (real*)malloc(part_a_dim0*sizeof(real));
+    real *restrict one_data_norm_b = (real*)malloc(part_b_dim0*sizeof(real));
     real a_sum, b_sum, one_an, one_bn, result;
 
     tint **data_jac_a = allocate_dynamic_2d_array_integer(part_a_dim0, dim1);
     tint **data_jac_b = allocate_dynamic_2d_array_integer(part_b_dim0, dim1);
+
+    real *restrict normal = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
+    real *restrict generalised = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
+    real *restrict sarika = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
+    real *restrict wu = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
+    real *restrict cosine = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
 
     //tint **cmb_ab = allocate_dynamic_2d_array_integer(part_a_dim0, part_b_dim0);
     //normal[idx_a,idx_b] = dist_jac
@@ -233,18 +239,17 @@ int calc_coeffs_off_diagnol_block(tint **data_part_a, tint part_a_dim0, tint par
 
     int idx_out = 0;
     // the large loop that calculates the matrix
-    //#pragma acc \
-    // data \
-    // copyin(data_part_a[0:part_a_dim0][0:part_a_dim1],\
-    //      data_part_b[0:part_b_dim0][0:part_b_dim1],\
-    //      data_sum_a[0:part_a_dim0],\
-    //      data_sum_b[0:part_b_dim0],\
-    //      data_jac_a[0:part_a_dim0],\
-    //      data_jac_b[0:part_b_dim0],\
-    //      one_data_norm_a[0:part_a_dim0],\
-    //      one_data_norm_b[0:part_b_dim0]) \
-    // copyout(normal[0:part_a_dim0*part_b_dim0],\
-    //        general[0:part_a_dim0*part_b_dim0],\
+    #pragma acc data \
+     copyin(data_part_a[0:part_a_dim0][0:part_a_dim1],\
+            data_part_b[0:part_b_dim0][0:part_b_dim1],\
+            data_sum_a[0:part_a_dim0],\
+            data_sum_b[0:part_b_dim0],\
+            data_jac_a[0:part_a_dim0],\
+            data_jac_b[0:part_b_dim0],\
+            one_data_norm_a[0:part_a_dim0],\
+            one_data_norm_b[0:part_b_dim0]) \
+    copyout(normal[0:part_a_dim0*part_b_dim0])
+    //        general[0:part_a_dim0*part_b_dim0])
     //        sarika[0:part_a_dim0*part_b_dim0],\
     //        wu[0:part_a_dim0*part_b_dim0],\
     //        cosine[0:part_a_dim0*part_b_dim0])
@@ -310,7 +315,12 @@ int calc_coeffs_off_diagnol_block(tint **data_part_a, tint part_a_dim0, tint par
     //rp->sarika[idx_out] = dist_sarika;
     //rp->wu[idx_out] = dist_wu;
     //rp->cosine[idx_out] = result*100;
-
+   
+    free(normal);
+    free(generalised);
+    free(sarika);
+    free(wu);
+    free(cosine);
 
     free(data_sum_a);
     free(data_sum_b);

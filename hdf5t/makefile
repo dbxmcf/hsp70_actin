@@ -6,7 +6,8 @@ PGI_H5CC=$(PGI_HDF5_BIN)/h5pcc
 #CFLAGS=-acc -Minfo=accel -ta=nvidia,time $(INC)
 CFLAGS_INTEL_OMP=-openmp -O3
 CFLAGS_PGI_OMP=-mp -fast -Mipa=fast,inline #-Minfo=all
-CFLAGS_PGI_ACC=-acc -fast -Mipa=fast,inline -Minfo=all -ta=nvidia,time
+#CFLAGS_PGI_ACC=-acc -fast -Mipa=fast,inline -Minfo=all -ta=nvidia,time
+CFLAGS_PGI_ACC=-acc -fast -Mipa=fast,inline -ta=nvidia,time
 BIN=pgi.mpi.omp intel.mpi.omp
 
 PCB_MPI_SRC=ph5_cmb_blks.c
