@@ -206,39 +206,16 @@ int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0,
     //cosine[idx_b,idx_a] = result*100
 
 
-    // part_a values
-    for (i=0;i<part_a_dim0;i++) {
-        data_sum_a[i] = 0;
-        for (j=0;j<part_a_dim1;j++) {
-            data_jac_a[i][j]=0;
-            if (data_part_a[i][j]>0) 
-                data_jac_a[i][j]=1;
-            data_sum_a[i] += data_part_a[i][j];
-        }
-        one_data_norm_a[i] = 1.0/vec_norm(data_part_a[i], dim1);
-    }
-
-    // part_b values
-    for (i=0;i<part_b_dim0;i++) {
-        data_sum_b[i] = 0;
-        for (j=0;j<part_b_dim1;j++) {
-            data_jac_b[i][j]=0;
-            if (data_part_b[i][j]>0) 
-                data_jac_b[i][j]=1;
-            data_sum_b[i] += data_part_b[i][j];
-        }
-        one_data_norm_b[i] = 1.0/vec_norm(data_part_b[i], dim1);
-    }
 
     int idx_out = 0;
     // the large loop that calculates the matrix
-    #pragma acc data \
-     copyin(data_part_a[0:part_a_dim0][0:part_a_dim1],\
+#pragma acc data \
+    copyin(data_part_a[0:part_a_dim0][0:part_a_dim1],\
             data_part_b[0:part_b_dim0][0:part_b_dim1],\
             data_sum_a[0:part_a_dim0],\
             data_sum_b[0:part_b_dim0],\
-            data_jac_a[0:part_a_dim0],\
-            data_jac_b[0:part_b_dim0],\
+            data_jac_a[0:part_a_dim0][0:part_a_dim1],\
+            data_jac_b[0:part_b_dim0][0:part_b_dim1],\
             one_data_norm_a[0:part_a_dim0],\
             one_data_norm_b[0:part_b_dim0]) \
     copyout(normal[0:part_a_dim0*part_b_dim0],\
@@ -246,62 +223,88 @@ int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0,
             sarika[0:part_a_dim0*part_b_dim0],\
             wu[0:part_a_dim0*part_b_dim0],\
             cosine[0:part_a_dim0*part_b_dim0])
-    for (idx_a=0;idx_a<part_a_dim0;idx_a++) {
-        for (idx_b=0;idx_b<part_b_dim0;idx_b++){
-            // 
-            a = data_part_a[idx_a];
-            a_sum = data_sum_a[idx_a];
-            a_jac = data_jac_a[idx_a];
-            b = data_part_b[idx_b];
-            b_sum = data_sum_b[idx_b];
-            b_jac = data_jac_b[idx_b];
-
-            //vec_add(a, b, summed_array, dim1);
-            numerator_jac = sum_minimum_vec(a_jac, b_jac, dim1);
-
-            denomenator_jac = sum_maximum_vec(a_jac, b_jac, dim1);
-            //printf("numerator_jac=%f\n",numerator_jac);
-            //printf("denomenator_jac=%f\n",denomenator_jac);
-            numerator_gen_jac = sum_minimum_vec(a, b, dim1);
-            denomenator_gen_jac = sum_maximum_vec(a, b, dim1);
-            
-            //printf("numerator_gen_jac=%f\n",numerator_gen_jac);
-            //printf("denomenator_gen_jac=%f\n",denomenator_gen_jac);
-            
-            num_sim = get_non_zeros_pair(a, b, dim1);
-            //printf("num_sim=%f\n",num_sim);
-            
-            one_an = one_data_norm_a[idx_a];
-            one_bn = one_data_norm_b[idx_b];
-            //result = 1.0 - vec_dot(a,b,dim1)*one_an*one_bn;
-            result = vec_dot(a,b,dim1)*one_an*one_bn;
-            
-            dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
-            //if (numerator_jac < 0 || denomenator_jac > 100) {
-            //if (numerator_jac < 0 ) {
-            //    printf("a[0]=%d\n",a[0]);
-            //    printf("b[0]=%d\n",b[0]);
-            //    printf("numerator_jac:%lf \n",numerator_jac);
-            //    printf("denomenator_jac:%lf \n",denomenator_jac);
-            //}
-
-            dist_jac = 1.0-numerator_jac/denomenator_jac;
-            
-            denomenator_wu = MIN(denomenator_gen_jac,MAX(a_sum,b_sum));
-            dist_wu = 1.0-numerator_gen_jac/denomenator_wu;
-            
-            numerator_sarika = num_sim;
-            denomenator_sarika = a_sum+b_sum;
-            dist_sarika = 1.0-numerator_sarika/denomenator_sarika;
-
-            normal[idx_out] = dist_jac;
-            generalised[idx_out] = dist_gen_jac;
-            sarika[idx_out] = dist_sarika;
-            wu[idx_out] = dist_wu;
-            cosine[idx_out] = result*100;
-            idx_out++;
+    {
+        // part_a values
+        for (i=0;i<part_a_dim0;i++) {
+            data_sum_a[i] = 0;
+            for (j=0;j<part_a_dim1;j++) {
+                data_jac_a[i][j]=0;
+                if (data_part_a[i][j]>0) 
+                    data_jac_a[i][j]=1;
+                data_sum_a[i] += data_part_a[i][j];
+            }
+            one_data_norm_a[i] = 1.0/vec_norm(data_part_a[i], dim1);
         }
-    }
+
+        // part_b values
+        for (i=0;i<part_b_dim0;i++) {
+            data_sum_b[i] = 0;
+            for (j=0;j<part_b_dim1;j++) {
+                data_jac_b[i][j]=0;
+                if (data_part_b[i][j]>0) 
+                    data_jac_b[i][j]=1;
+                data_sum_b[i] += data_part_b[i][j];
+            }
+            one_data_norm_b[i] = 1.0/vec_norm(data_part_b[i], dim1);
+        }
+
+        for (idx_a=0;idx_a<part_a_dim0;idx_a++) {
+            for (idx_b=0;idx_b<part_b_dim0;idx_b++){
+                // 
+                a = data_part_a[idx_a];
+                a_sum = data_sum_a[idx_a];
+                a_jac = data_jac_a[idx_a];
+                b = data_part_b[idx_b];
+                b_sum = data_sum_b[idx_b];
+                b_jac = data_jac_b[idx_b];
+
+                //vec_add(a, b, summed_array, dim1);
+                numerator_jac = sum_minimum_vec(a_jac, b_jac, dim1);
+
+                denomenator_jac = sum_maximum_vec(a_jac, b_jac, dim1);
+                //printf("numerator_jac=%f\n",numerator_jac);
+                //printf("denomenator_jac=%f\n",denomenator_jac);
+                numerator_gen_jac = sum_minimum_vec(a, b, dim1);
+                denomenator_gen_jac = sum_maximum_vec(a, b, dim1);
+
+                //printf("numerator_gen_jac=%f\n",numerator_gen_jac);
+                //printf("denomenator_gen_jac=%f\n",denomenator_gen_jac);
+
+                num_sim = get_non_zeros_pair(a, b, dim1);
+                //printf("num_sim=%f\n",num_sim);
+
+                one_an = one_data_norm_a[idx_a];
+                one_bn = one_data_norm_b[idx_b];
+                //result = 1.0 - vec_dot(a,b,dim1)*one_an*one_bn;
+                result = vec_dot(a,b,dim1)*one_an*one_bn;
+
+                dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
+                //if (numerator_jac < 0 || denomenator_jac > 100) {
+                //if (numerator_jac < 0 ) {
+                //    printf("a[0]=%d\n",a[0]);
+                //    printf("b[0]=%d\n",b[0]);
+                //    printf("numerator_jac:%lf \n",numerator_jac);
+                //    printf("denomenator_jac:%lf \n",denomenator_jac);
+                //}
+
+                dist_jac = 1.0-numerator_jac/denomenator_jac;
+
+                denomenator_wu = MIN(denomenator_gen_jac,MAX(a_sum,b_sum));
+                dist_wu = 1.0-numerator_gen_jac/denomenator_wu;
+
+                numerator_sarika = num_sim;
+                denomenator_sarika = a_sum+b_sum;
+                dist_sarika = 1.0-numerator_sarika/denomenator_sarika;
+
+                normal[idx_out] = dist_jac;
+                generalised[idx_out] = dist_gen_jac;
+                sarika[idx_out] = dist_sarika;
+                wu[idx_out] = dist_wu;
+                cosine[idx_out] = result*100;
+                idx_out++;
+            }
+            }
+        }
 
     /* pass out the data */
     for (i=0;i<idx_out;i++) {
@@ -344,23 +347,10 @@ int calc_coeffs_diagnol_triangle(tint **restrict data, tint dim0, tint dim1,
    // calculate some preparation values
     real *restrict data_sum = (real*)malloc(dim0*sizeof(real));
     real *restrict one_data_norm = (real*)malloc(dim0*sizeof(real));
-    tint **restrict data_jac = allocate_dynamic_2d_array_integer(dim0, dim1);
-
-    // preparation values
-    for (i=0;i<dim0;i++) {
-        data_sum[i] = 0;
-        for (j=0;j<dim1;j++) {
-            data_jac[i][j]=0;
-            if (data[i][j]>0) 
-                data_jac[i][j]=1;
-            data_sum[i] += data[i][j];
-        }
-        one_data_norm[i] = 1.0/vec_norm(data[i], dim1);
-    }
-
     int **restrict cmbs=NULL;
+
     int num_cmbs = 0, idx_rpd = 0;
-	cmbs = combination_util(dim0,&num_cmbs); 
+    cmbs = combination_util(dim0,&num_cmbs); 
 
     real *restrict normal = (real*)malloc(num_cmbs*sizeof(real));
     real *restrict generalised = (real*)malloc(num_cmbs*sizeof(real));
@@ -368,69 +358,86 @@ int calc_coeffs_diagnol_triangle(tint **restrict data, tint dim0, tint dim1,
     real *restrict wu = (real*)malloc(num_cmbs*sizeof(real));
     real *restrict cosine = (real*)malloc(num_cmbs*sizeof(real));
 
+    tint **restrict data_jac = allocate_dynamic_2d_array_integer(dim0, dim1);
+
+
     #pragma acc data \
      copyin(data[0:dim0][0:dim1],\
             data_sum[0:dim0],\
-            data_jac[0:dim0],\
-            one_data_norm[0:dim0],\
-            cmbs[0:2][0:num_cmbs])\
+            data_jac[0:dim0][0:dim1],\
+            one_data_norm[0:dim0]) \
      copyout(normal[0:num_cmbs],\
              generalised[0:num_cmbs],\
              sarika[0:num_cmbs],\
              wu[0:num_cmbs],\
              cosine[0:num_cmbs])
-    for (i=0;i< num_cmbs;i++) {
-        idx_a = cmbs[i][0], idx_b = cmbs[i][1];
+   {
+       // preparation values
+       //#pragma acc kernels
+       for (i=0;i<dim0;i++) {
+           data_sum[i] = 0;
+           for (j=0;j<dim1;j++) {
+               data_jac[i][j]=0;
+               if (data[i][j]>0) 
+                   data_jac[i][j]=1;
+               data_sum[i] += data[i][j];
+           }
+           one_data_norm[i] = 1.0/vec_norm(data[i], dim1);
+       }
 
-        a = data[idx_a];
-        a_sum = data_sum[idx_a];
-        a_jac = data_jac[idx_a];
-        b = data[idx_b];
-        b_sum = data_sum[idx_b];
-        b_jac = data_jac[idx_b];
+       for (i=0;i< num_cmbs;i++) {
+           idx_a = cmbs[i][0], idx_b = cmbs[i][1];
 
-        //vec_add(a, b, summed_array, dim1);
-        numerator_jac = sum_minimum_vec(a_jac, b_jac, dim1);
+           a = data[idx_a];
+           a_sum = data_sum[idx_a];
+           a_jac = data_jac[idx_a];
+           b = data[idx_b];
+           b_sum = data_sum[idx_b];
+           b_jac = data_jac[idx_b];
 
-        denomenator_jac = sum_maximum_vec(a_jac, b_jac, dim1);
-        //printf("numerator_jac=%f\n",numerator_jac);
-        //printf("denomenator_jac=%f\n",denomenator_jac);
-        numerator_gen_jac = sum_minimum_vec(a, b, dim1);
-        denomenator_gen_jac = sum_maximum_vec(a, b, dim1);
-        
-        //printf("numerator_gen_jac=%f\n",numerator_gen_jac);
-        //printf("denomenator_gen_jac=%f\n",denomenator_gen_jac);
-        
-        num_sim = get_non_zeros_pair(a, b, dim1);
-        //printf("num_sim=%f\n",num_sim);
-        
-        one_an = one_data_norm[idx_a];
-        one_bn = one_data_norm[idx_b];
-        real adotb = vec_dot(a,b,dim1);
-        //printf("%d %d %.3e\n", idx_a, idx_b, adotb);
-        //result = 1.0 - adotb*one_an*one_bn;
-        result = adotb*one_an*one_bn;
-        
-        dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
-        dist_jac = 1.0-numerator_jac/denomenator_jac;
-        
-        denomenator_wu = MIN(denomenator_gen_jac,MAX(a_sum,b_sum));
-        dist_wu = 1.0-numerator_gen_jac/denomenator_wu;
-        
-        numerator_sarika = num_sim;
-        denomenator_sarika = a_sum+b_sum;
-        dist_sarika = 1.0-numerator_sarika/denomenator_sarika;
+           //vec_add(a, b, summed_array, dim1);
+           numerator_jac = sum_minimum_vec(a_jac, b_jac, dim1);
 
-        normal[idx_rpd] = dist_jac;
-        generalised[idx_rpd] = dist_gen_jac;
-        sarika[idx_rpd] = dist_sarika;
-        wu[idx_rpd] = dist_wu;
-        cosine[idx_rpd] = result*100;
-        //if (result >100 || result <0) {
-        //    printf("adotb=%7.3e,one_an=%7.3e,one_bn=%7.3e\n",adotb,one_an,one_bn);
-        //}
-        idx_rpd++;
-    }
+           denomenator_jac = sum_maximum_vec(a_jac, b_jac, dim1);
+           //printf("numerator_jac=%f\n",numerator_jac);
+           //printf("denomenator_jac=%f\n",denomenator_jac);
+           numerator_gen_jac = sum_minimum_vec(a, b, dim1);
+           denomenator_gen_jac = sum_maximum_vec(a, b, dim1);
+
+           //printf("numerator_gen_jac=%f\n",numerator_gen_jac);
+           //printf("denomenator_gen_jac=%f\n",denomenator_gen_jac);
+
+           num_sim = get_non_zeros_pair(a, b, dim1);
+           //printf("num_sim=%f\n",num_sim);
+
+           one_an = one_data_norm[idx_a];
+           one_bn = one_data_norm[idx_b];
+           real adotb = vec_dot(a,b,dim1);
+           //printf("%d %d %.3e\n", idx_a, idx_b, adotb);
+           //result = 1.0 - adotb*one_an*one_bn;
+           result = adotb*one_an*one_bn;
+
+           dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
+           dist_jac = 1.0-numerator_jac/denomenator_jac;
+
+           denomenator_wu = MIN(denomenator_gen_jac,MAX(a_sum,b_sum));
+           dist_wu = 1.0-numerator_gen_jac/denomenator_wu;
+
+           numerator_sarika = num_sim;
+           denomenator_sarika = a_sum+b_sum;
+           dist_sarika = 1.0-numerator_sarika/denomenator_sarika;
+
+           normal[idx_rpd] = dist_jac;
+           generalised[idx_rpd] = dist_gen_jac;
+           sarika[idx_rpd] = dist_sarika;
+           wu[idx_rpd] = dist_wu;
+           cosine[idx_rpd] = result*100;
+           //if (result >100 || result <0) {
+           //    printf("adotb=%7.3e,one_an=%7.3e,one_bn=%7.3e\n",adotb,one_an,one_bn);
+           //}
+           idx_rpd++;
+       }
+   }
 
     /* pass out the data */
     for (i=0;i<idx_rpd;i++) {
