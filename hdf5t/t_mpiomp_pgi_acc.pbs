@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -l nodes=4:ppn=20
-#PBS -l walltime=1:00:00
+#PBS -l walltime=00:10:00
 #PBS -q checkpt
 #PBS -N jcd_mpi_omp
 #PBS -j oe
@@ -27,10 +27,18 @@ export MV2_ENABLE_AFFINITY=0
 #arr=( 1 2 5 10 )
 #for i in "${arr[@]}";
 #do
+
+export OMP_NUM_THREADS=10
+SECONDS=0
+mpirun -np 8 -f $PBS_NODEFILE -ppn 2 ./pgi.mpi.omp.out -f sample_a-b_mix_2.h5
+echo "threads=$OMP_NUM_THREADS, $SECONDS sec"
+#done
+
 export OMP_NUM_THREADS=1
 SECONDS=0
 #time ./a.out
+#mpirun -np 8 -f $PBS_NODEFILE -ppn 2 ./pgiacc.mpi.acc.out -f sample_hsp70_actin.h5
 mpirun -np 8 -f $PBS_NODEFILE -ppn 2 ./pgiacc.mpi.acc.out -f sample_a-b_mix_2.h5
-#echo "threads=$OMP_NUM_THREADS, $SECONDS sec"
-#done
-
+#mpirun -np 32 -f $PBS_NODEFILE -ppn 2 ./pgiacc.mpi.acc.out -f sample_protease_mix_1.h5
+#mpirun -np 32 -f $PBS_NODEFILE -ppn 2 ./pgiacc.mpi.acc.out -f sample_protease_mix_1.h5
+echo "GPU, $SECONDS sec"

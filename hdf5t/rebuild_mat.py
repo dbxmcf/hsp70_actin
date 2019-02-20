@@ -101,6 +101,7 @@ if (ret):
     print("normal is ok!")
 else:
     print("normal is not ok!")
+    np.savetxt("normal.csv", mat_normal_h5, delimiter=",",fmt="%7.3f")
 
 # for key in keys:
 mat_sarika_py = np.loadtxt(py_path_name + "sarika.csv",delimiter=",")
@@ -118,6 +119,7 @@ if (ret):
     print("generalised is ok!")
 else:
     print("generalised is not ok!")
+    np.savetxt("generalised.csv", mat_generalised_h5, delimiter=",",fmt="%7.3f")
 
 mat_wu_py = np.loadtxt(py_path_name + "wu.csv",delimiter=",")
 ret = np.allclose(mat_wu_h5, mat_wu_py, atol=mat_tol)
@@ -125,6 +127,7 @@ if (ret):
     print("wu is ok!")
 else:
     print("wu is not ok!")
+    np.savetxt("wu.csv", mat_wu_h5, delimiter=",",fmt="%7.3f")
 
 #mat_cosine_py = np.loadtxt(py_path_name + "cosine.csv",delimiter=",")
 #ret = np.allclose(mat_cosine_h5, mat_cosine_py, atol=mat_tol)
