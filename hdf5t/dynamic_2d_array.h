@@ -8,7 +8,7 @@
 typedef int integer;
 //typedef short sint;
 typedef int sint;
-typedef int cint;
+typedef char cint;
 typedef float real;
 //typedef double real;
 #define MPI_REALNUM MPI_FLOAT
