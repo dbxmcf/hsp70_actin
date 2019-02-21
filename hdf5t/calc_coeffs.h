@@ -186,8 +186,10 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     real *restrict one_data_norm_a = (real*)malloc(part_a_dim0*sizeof(real));
     real *restrict one_data_norm_b = (real*)malloc(part_b_dim0*sizeof(real));
 
-    tint **restrict data_jac_a = allocate_dynamic_2d_array_integer(part_a_dim0, dim1);
-    tint **restrict data_jac_b = allocate_dynamic_2d_array_integer(part_b_dim0, dim1);
+    //tint **restrict data_jac_a = allocate_dynamic_2d_array_integer(part_a_dim0, dim1);
+    //tint **restrict data_jac_b = allocate_dynamic_2d_array_integer(part_b_dim0, dim1);
+    cint **restrict data_jac_a = allocate_dynamic_2d_array_cint(part_a_dim0, dim1);
+    cint **restrict data_jac_b = allocate_dynamic_2d_array_cint(part_b_dim0, dim1);
 
     //real *restrict normal = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
     //real *restrict generalised = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
@@ -330,8 +332,8 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         free(one_data_norm_a);
         free(one_data_norm_b);
 
-        free_dynamic_2d_array_integer(data_jac_a);
-        free_dynamic_2d_array_integer(data_jac_b);
+        free_dynamic_2d_array_cint(data_jac_a);
+        free_dynamic_2d_array_cint(data_jac_b);
 
         return 0;
     }
@@ -362,7 +364,8 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         //real *restrict wu = (real*)malloc(num_cmbs*sizeof(real));
         //real *restrict cosine = (real*)malloc(num_cmbs*sizeof(real));
 
-        tint **restrict data_jac = allocate_dynamic_2d_array_integer(dim0, dim1);
+        //tint **restrict data_jac = allocate_dynamic_2d_array_integer(dim0, dim1);
+        cint **restrict data_jac = allocate_dynamic_2d_array_cint(dim0, dim1);
 
         // preparation values
         //#pragma acc kernels
@@ -455,7 +458,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         //free(cosine);
 
         free_dynamic_2d_array_integer(cmbs);
-        free_dynamic_2d_array_integer(data_jac);
+        free_dynamic_2d_array_cint(data_jac);
         free(data_sum);
         free(one_data_norm);
 
