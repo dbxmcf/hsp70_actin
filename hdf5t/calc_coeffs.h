@@ -188,11 +188,11 @@ int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0,
     tint **restrict data_jac_a = allocate_dynamic_2d_array_integer(part_a_dim0, dim1);
     tint **restrict data_jac_b = allocate_dynamic_2d_array_integer(part_b_dim0, dim1);
 
-    real *restrict normal = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
-    real *restrict generalised = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
-    real *restrict sarika = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
-    real *restrict wu = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
-    real *restrict cosine = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
+    //real *restrict normal = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
+    //real *restrict generalised = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
+    //real *restrict sarika = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
+    //real *restrict wu = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
+    //real *restrict cosine = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
 
     //tint **cmb_ab = allocate_dynamic_2d_array_integer(part_a_dim0, part_b_dim0);
     //normal[idx_a,idx_b] = dist_jac
@@ -206,48 +206,47 @@ int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0,
     //cosine[idx_a,idx_b] = result*100
     //cosine[idx_b,idx_a] = result*100
 
+    // part_a values
+    //#pragma acc kernels
+    for (i=0;i<part_a_dim0;i++) {
+        data_sum_a[i] = 0;
+        for (j=0;j<part_a_dim1;j++) {
+            data_jac_a[i][j]=0;
+            if (data_part_a[i][j]>0) 
+                data_jac_a[i][j]=1;
+            data_sum_a[i] += data_part_a[i][j];
+        }
+        //one_data_norm_a[i] = 1.0/vec_norm(data_part_a[i], dim1);
+        one_data_norm_a[i] = 0.0;
+    }
+
+    // part_b values
+    //#pragma acc kernels
+    for (i=0;i<part_b_dim0;i++) {
+        data_sum_b[i] = 0;
+        for (j=0;j<part_b_dim1;j++) {
+            data_jac_b[i][j]=0;
+            if (data_part_b[i][j]>0) 
+                data_jac_b[i][j]=1;
+            data_sum_b[i] += data_part_b[i][j];
+        }
+        //one_data_norm_b[i] = 1.0/vec_norm(data_part_b[i], dim1);
+        one_data_norm_b[i] = 0.0;
+    }
 
 
     int idx_out = 0;
     // the large loop that calculates the matrix
 #pragma acc data \
-    copyin(data_part_a[0:part_a_dim0][0:part_a_dim1],\
+    copy(data_part_a[0:part_a_dim0][0:part_a_dim1],\
             data_part_b[0:part_b_dim0][0:part_b_dim1],\
             data_sum_a[0:part_a_dim0],\
             data_sum_b[0:part_b_dim0],\
             data_jac_a[0:part_a_dim0][0:part_a_dim1],\
             data_jac_b[0:part_b_dim0][0:part_b_dim1],\
             one_data_norm_a[0:part_a_dim0],\
-            one_data_norm_b[0:part_b_dim0]) \
-    copyout(normal[0:part_a_dim0*part_b_dim0],\
-            generalised[0:part_a_dim0*part_b_dim0],\
-            sarika[0:part_a_dim0*part_b_dim0],\
-            wu[0:part_a_dim0*part_b_dim0],\
-            cosine[0:part_a_dim0*part_b_dim0])
+            one_data_norm_b[0:part_b_dim0])
     {
-        // part_a values
-        for (i=0;i<part_a_dim0;i++) {
-            data_sum_a[i] = 0;
-            for (j=0;j<part_a_dim1;j++) {
-                data_jac_a[i][j]=0;
-                if (data_part_a[i][j]>0) 
-                    data_jac_a[i][j]=1;
-                data_sum_a[i] += data_part_a[i][j];
-            }
-            one_data_norm_a[i] = 1.0/vec_norm(data_part_a[i], dim1);
-        }
-
-        // part_b values
-        for (i=0;i<part_b_dim0;i++) {
-            data_sum_b[i] = 0;
-            for (j=0;j<part_b_dim1;j++) {
-                data_jac_b[i][j]=0;
-                if (data_part_b[i][j]>0) 
-                    data_jac_b[i][j]=1;
-                data_sum_b[i] += data_part_b[i][j];
-            }
-            one_data_norm_b[i] = 1.0/vec_norm(data_part_b[i], dim1);
-        }
 
         for (idx_a=0;idx_a<part_a_dim0;idx_a++) {
             for (idx_b=0;idx_b<part_b_dim0;idx_b++){
@@ -289,6 +288,9 @@ int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0,
                 //}
 
                 dist_jac = 1.0-numerator_jac/denomenator_jac;
+                //printf("numerator_jac:%lf \n",numerator_jac);
+                //printf("denomenator_jac:%lf \n",denomenator_jac);
+                //printf("dist_jac:%lf \n",dist_jac);
 
                 denomenator_wu = MIN(denomenator_gen_jac,MAX(a_sum,b_sum));
                 dist_wu = 1.0-numerator_gen_jac/denomenator_wu;
@@ -316,11 +318,11 @@ int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0,
         //    rp->cosine[i] = cosine[i];
         //}
 
-        free(normal);
-        free(generalised);
-        free(sarika);
-        free(wu);
-        free(cosine);
+        //free(normal);
+        //free(generalised);
+        //free(sarika);
+        //free(wu);
+        //free(cosine);
 
         free(data_sum_a);
         free(data_sum_b);
@@ -353,38 +355,33 @@ int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0,
         int num_cmbs = 0, idx_rpd = 0;
         cmbs = combination_util(dim0,&num_cmbs); 
 
-        real *restrict normal = (real*)malloc(num_cmbs*sizeof(real));
-        real *restrict generalised = (real*)malloc(num_cmbs*sizeof(real));
-        real *restrict sarika = (real*)malloc(num_cmbs*sizeof(real));
-        real *restrict wu = (real*)malloc(num_cmbs*sizeof(real));
-        real *restrict cosine = (real*)malloc(num_cmbs*sizeof(real));
+        //real *restrict normal = (real*)malloc(num_cmbs*sizeof(real));
+        //real *restrict generalised = (real*)malloc(num_cmbs*sizeof(real));
+        //real *restrict sarika = (real*)malloc(num_cmbs*sizeof(real));
+        //real *restrict wu = (real*)malloc(num_cmbs*sizeof(real));
+        //real *restrict cosine = (real*)malloc(num_cmbs*sizeof(real));
 
         tint **restrict data_jac = allocate_dynamic_2d_array_integer(dim0, dim1);
 
+        // preparation values
+        //#pragma acc kernels
+        for (i=0;i<dim0;i++) {
+            data_sum[i] = 0;
+            for (j=0;j<dim1;j++) {
+                data_jac[i][j]=0;
+                if (data[i][j]>0) 
+                    data_jac[i][j]=1;
+                data_sum[i] += data[i][j];
+            }
+            //one_data_norm[i] = 1.0/vec_norm(data[i], dim1);
+        }
 
 #pragma acc data \
-        copyin(data[0:dim0][0:dim1],\
+        copy(data[0:dim0][0:dim1],\
                 data_sum[0:dim0],\
                 data_jac[0:dim0][0:dim1],\
-                one_data_norm[0:dim0]) \
-        copyout(normal[0:num_cmbs],\
-                generalised[0:num_cmbs],\
-                sarika[0:num_cmbs],\
-                wu[0:num_cmbs],\
-                cosine[0:num_cmbs])
+                one_data_norm[0:dim0])
         {
-            // preparation values
-            //#pragma acc kernels
-            for (i=0;i<dim0;i++) {
-                data_sum[i] = 0;
-                for (j=0;j<dim1;j++) {
-                    data_jac[i][j]=0;
-                    if (data[i][j]>0) 
-                        data_jac[i][j]=1;
-                    data_sum[i] += data[i][j];
-                }
-                one_data_norm[i] = 1.0/vec_norm(data[i], dim1);
-            }
 
             for (i=0;i< num_cmbs;i++) {
                 idx_a = cmbs[i][0], idx_b = cmbs[i][1];
@@ -450,11 +447,11 @@ int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0,
         //    rpd->cosine[i] = cosine[i];
         //}
 
-        free(normal);
-        free(generalised);
-        free(sarika);
-        free(wu);
-        free(cosine);
+        //free(normal);
+        //free(generalised);
+        //free(sarika);
+        //free(wu);
+        //free(cosine);
 
         free_dynamic_2d_array_integer(cmbs);
         free_dynamic_2d_array_integer(data_jac);
