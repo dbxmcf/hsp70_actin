@@ -160,7 +160,7 @@ void vec_or(tint *a, tint *b, tint *c,tint vec_dim)
         c[i] = a[i] | b[i];
 }
 
-real vec_norm(tint *restrict a, tint vec_dim)
+real vec_norm(sint *restrict a, sint vec_dim)
 {
     tint i;
     real norm=0;
@@ -172,7 +172,7 @@ real vec_norm(tint *restrict a, tint vec_dim)
     return sqrt(norm);
 }
 
-real vec_dot(tint *restrict a, tint *restrict b, tint vec_dim)
+real vec_dot(sint *restrict a, sint *restrict b, tint vec_dim)
 {
     tint i;
     real sum=0; 
