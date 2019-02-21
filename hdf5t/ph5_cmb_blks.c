@@ -960,7 +960,7 @@ phdf5readAll(char *filename)
     }
 
     data_array_a = allocate_dynamic_2d_array_integer(space_dim_a0,space_dim_a1);
-    data_array_b = allocate_dynamic_2d_array_integer(space_dim_a0,space_dim_a1);
+    data_array_b = allocate_dynamic_2d_array_integer(space_dim_b0,space_dim_b1);
 
     ///* set up the collective transfer properties list */
     xfer_plist = H5Pcreate (H5P_DATASET_XFER);
