@@ -975,7 +975,7 @@ phdf5readAll(char *filename)
     MESG("H5Pcreate xfer succeed");
     //
     ///* read data collectively */
-    ret = H5Dread(dataset1, H5T_NATIVE_SHORT, mem_dataspace, file_dataspace,
+    ret = H5Dread(dataset1, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
             xfer_plist, &data_array_a[0][0]);
     assert(ret != FAIL);
     MESG("H5Dread data_array_a succeed");
@@ -993,7 +993,7 @@ phdf5readAll(char *filename)
     mem_dataspace = H5Screate_simple (SPACE1_RANK, count_part_b, NULL);
     assert (mem_dataspace != FAIL);
 
-    ret = H5Dread(dataset1, H5T_NATIVE_SHORT, mem_dataspace, file_dataspace,
+    ret = H5Dread(dataset1, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
             xfer_plist, &data_array_b[0][0]);
     assert(ret != FAIL);
     MESG("H5Dread data_array_b succeed");
