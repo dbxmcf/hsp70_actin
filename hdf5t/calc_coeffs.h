@@ -48,7 +48,7 @@ typedef struct result_arrays_diagnol {
 // https://www.geeksforgeeks.org/compute-the-minimum-or-maximum-max-of-two-integers-without-branching/
 // https://stackoverflow.com/questions/24529504/find-out-max-min-of-two-number-without-using-if-else
 // http://graphics.stanford.edu/~seander/bithacks.html#IntegerMinOrMax
-real sum_minimum_vec(tint *restrict a, tint *restrict b, tint vec_dim)
+real sum_minimum_vec(sint *restrict a, sint *restrict b, tint vec_dim)
 {
     tint i, c;  
     real sum=0;
@@ -64,7 +64,7 @@ real sum_minimum_vec(tint *restrict a, tint *restrict b, tint vec_dim)
     return sum;
 }
 
-real sum_maximum_vec(tint *restrict a, tint *restrict b, tint vec_dim)
+real sum_maximum_vec(sint *restrict a, sint *restrict b, tint vec_dim)
 {
     tint i, c;  
     real sum=0;  
@@ -108,7 +108,7 @@ real sum_maximum_vec_cint(cint *restrict a, cint *restrict b, tint vec_dim)
     return sum;
 }
 
-real get_non_zeros_pair(tint *restrict a, tint *restrict b, tint vec_dim)
+real get_non_zeros_pair(sint *restrict a, sint *restrict b, tint vec_dim)
 {
     real sum = 0;
     tint i;
@@ -374,7 +374,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
             result_pointers_diagnol *rpd)
     {
         tint i, j, idx_a, idx_b;
-        tint *a, *b;
+        sint *a, *b;
         cint *a_jac, *b_jac;
         real dist_gen_jac, dist_jac, denomenator_wu, dist_wu; 
         real numerator_sarika, denomenator_sarika, dist_sarika;
