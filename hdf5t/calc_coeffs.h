@@ -160,13 +160,14 @@ void read_h5()
 
 }
 
-int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0, tint part_a_dim1,
-        tint **restrict data_part_b, tint part_b_dim0, tint part_b_dim1,
+int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0, tint part_a_dim1,
+        sint **restrict data_part_b, tint part_b_dim0, tint part_b_dim1,
         result_pointers_diagnol *rp)
 {
     //int i, j, idx_a, idx_b;
     tint i, j, idx_a, idx_b;
-    tint *a, *b, *a_jac, *b_jac;
+    sint *a, *b;
+    tint *a_jac, *b_jac;
     real dist_gen_jac, dist_jac, denomenator_wu, dist_wu; 
     real numerator_sarika, denomenator_sarika, dist_sarika;
     real num_sim, numerator_jac, denomenator_jac, numerator_gen_jac, denomenator_gen_jac;
@@ -337,7 +338,7 @@ int calc_coeffs_off_diagnol_block(tint **restrict data_part_a, tint part_a_dim0,
 
 
 
-    int calc_coeffs_diagnol_triangle(tint **restrict data, tint dim0, tint dim1,
+    int calc_coeffs_diagnol_triangle(sint **restrict data, tint dim0, tint dim1,
             result_pointers_diagnol *rpd)
     {
         tint i, j, idx_a, idx_b;

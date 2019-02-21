@@ -83,6 +83,7 @@
 
 /* dataset data type.  Int's can be easily octo dumped. */
 typedef int DATATYPE;
+//typedef short DATATYPE;
 
 /* global variables */
 int nerrors = 0;				/* errors count */
@@ -947,8 +948,10 @@ phdf5readAll(char *filename)
     mem_dataspace = H5Screate_simple (SPACE1_RANK, count_part_a, NULL);
     assert (mem_dataspace != FAIL);
     //
-    DATATYPE **data_array_a=NULL;	/* data buffer */
-    DATATYPE **data_array_b=NULL;
+    //DATATYPE **data_array_a=NULL;	/* data buffer */
+    //DATATYPE **data_array_b=NULL;
+    sint **data_array_a=NULL;	/* data buffer */
+    sint **data_array_b=NULL;
     space_dim_a0 = (unsigned long)count_part_a[0];
     space_dim_a1 = (unsigned long)count_part_a[1];
     space_dim_b0 = (unsigned long)count_part_b[0];
@@ -959,8 +962,10 @@ phdf5readAll(char *filename)
         printf("space_dim_b0=%lu,space_dim_b1=%lu\n",space_dim_b0,space_dim_b1);
     }
 
-    data_array_a = allocate_dynamic_2d_array_integer(space_dim_a0,space_dim_a1);
-    data_array_b = allocate_dynamic_2d_array_integer(space_dim_a0,space_dim_a1);
+    //data_array_a = allocate_dynamic_2d_array_integer(space_dim_a0,space_dim_a1);
+    //data_array_b = allocate_dynamic_2d_array_integer(space_dim_a0,space_dim_a1);
+    data_array_a = allocate_dynamic_2d_array_sint(space_dim_a0,space_dim_a1);
+    data_array_b = allocate_dynamic_2d_array_sint(space_dim_b0,space_dim_b1);
 
     ///* set up the collective transfer properties list */
     xfer_plist = H5Pcreate (H5P_DATASET_XFER);
@@ -970,7 +975,7 @@ phdf5readAll(char *filename)
     MESG("H5Pcreate xfer succeed");
     //
     ///* read data collectively */
-    ret = H5Dread(dataset1, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
+    ret = H5Dread(dataset1, H5T_NATIVE_SHORT, mem_dataspace, file_dataspace,
             xfer_plist, &data_array_a[0][0]);
     assert(ret != FAIL);
     MESG("H5Dread data_array_a succeed");
@@ -988,7 +993,7 @@ phdf5readAll(char *filename)
     mem_dataspace = H5Screate_simple (SPACE1_RANK, count_part_b, NULL);
     assert (mem_dataspace != FAIL);
 
-    ret = H5Dread(dataset1, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
+    ret = H5Dread(dataset1, H5T_NATIVE_SHORT, mem_dataspace, file_dataspace,
             xfer_plist, &data_array_b[0][0]);
     assert(ret != FAIL);
     MESG("H5Dread data_array_b succeed");
@@ -1191,8 +1196,10 @@ phdf5readAll(char *filename)
     free(part_ab_sarika);
     free(part_ab_cosine);
 
-    free_dynamic_2d_array_integer(data_array_a);
-    free_dynamic_2d_array_integer(data_array_b);
+    //free_dynamic_2d_array_integer(data_array_a);
+    //free_dynamic_2d_array_integer(data_array_b);
+    free_dynamic_2d_array_sint(data_array_a);
+    free_dynamic_2d_array_sint(data_array_b);
     free_dynamic_2d_array_integer(chunk_start);
     free_dynamic_2d_array_integer(chunk_count);
 
