@@ -60,9 +60,9 @@ def rebuild_triangle(arr, st_loc, mtx_info):
     #for ():
     #    mat_wu[][] = 5
 
+sample_result_file = sys.argv[1]
 
-
-f = h5py.File('res_all.h5', 'r')
+f = h5py.File(sample_result_file + '.res_all.h5', 'r')
 keys = list(f.keys())
 print("keys=",keys)
 start_loc = np.array(f['start_loc'])
@@ -80,15 +80,16 @@ wu = np.array(f['wu'])[0]
 root_grp = f['/']
 mtx_info = np.array(root_grp.attrs['MatrixInfo'])
 
-
 mat_normal_h5 = rebuild_triangle(normal,start_loc,mtx_info)
 mat_wu_h5 = rebuild_triangle(wu,start_loc,mtx_info)
 mat_generalised_h5 = rebuild_triangle(generalised,start_loc,mtx_info)
 mat_sarika_h5 = rebuild_triangle(sarika,start_loc,mtx_info)
 mat_cosine_h5 = rebuild_triangle(cosine,start_loc,mtx_info)
 
-sample_name = sys.argv[1]
+sample_name = sample_result_file.split(".")[0]
+
 py_path_name = "../" + sample_name +"_csv_uint16/"
+print("py_path_name=",py_path_name)
 #py_path_name = "../hdf5t_csv_uint16/"
 #py_path_name = "../sample_hsp70_actin_csv_uint16/"
 #py_path_name = "../sample_a-b_mix_2_csv_uint16/"
