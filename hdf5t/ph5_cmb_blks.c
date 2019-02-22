@@ -1186,7 +1186,8 @@ phdf5readAll(char *filename)
     rpd_h5.chunk_count_b = count_part_b[0];
 
 
-    phdf5writeAll("res_all.h5",&rpd_h5);
+    //phdf5writeAll("res_all.h5",&rpd_h5);
+    phdf5writeAll(testfiles[1],&rpd_h5);
     free(rk_vec_dim_all);
     free(rk_start);
 
@@ -1313,10 +1314,12 @@ mkfilenames(char *prefix)
         printf("Warning: Too many entries in testfiles. "
                 "Need to adjust the code to accommodate the large size.\n");
     }
-    for (i=0; i<n; i++){
-        /*sprintf(testfiles[i], "%s/ParaEg%d.h5", prefix, i);*/
-        sprintf(testfiles[i], "%s", prefix);
-    }
+    //for (i=0; i<n; i++){
+    //    /*sprintf(testfiles[i], "%s/ParaEg%d.h5", prefix, i);*/
+    //    sprintf(testfiles[i], "%s", prefix);
+    //}
+    sprintf(testfiles[0], "%s", prefix);
+    sprintf(testfiles[1], "%s.res_all.h5", prefix);
     return(0);
 
 }
@@ -1450,10 +1453,12 @@ main(int argc, char **argv)
     /* show test file names */
     if (mpi_rank == 0){
         n = sizeof(testfiles)/sizeof(testfiles[0]);
-        printf("Parallel test files are:\n");
-        for (i=0; i<n; i++){
-            printf("   %s\n", testfiles[i]);
-        }
+        //printf("Parallel test files are:\n");
+        //for (i=0; i<n; i++){
+        //    printf("   %s\n", testfiles[i]);
+        //}
+        printf("Input file is: %s\n", testfiles[0]);
+        printf("Output file is: %s\n", testfiles[1]);
     }
 
     if (dowrite){
