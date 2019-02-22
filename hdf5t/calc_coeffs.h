@@ -14,7 +14,6 @@
 
 //typedef float real;
 //typedef unsigned short tint;
-typedef int tint;
 
 typedef struct result_arrays {
     real **normal;
