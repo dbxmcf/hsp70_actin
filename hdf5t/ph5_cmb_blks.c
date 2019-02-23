@@ -1036,6 +1036,8 @@ phdf5readAll(char *filename)
 
     /* close the file collectively */
     H5Fclose(fid1);
+    double t1, t2; 
+    t1 = MPI_Wtime(); 
 
     /* now starting on the processing */
     real *part_ab_normal = NULL; 
@@ -1184,6 +1186,10 @@ phdf5readAll(char *filename)
     rpd_h5.chunk_start_b = start_part_b[0];
     rpd_h5.chunk_count_a = count_part_a[0];
     rpd_h5.chunk_count_b = count_part_b[0];
+
+    t2 = MPI_Wtime(); 
+    if (0==mpi_rank)
+        printf( "Elapsed time is %.3f\n", t2 - t1 ); 
 
 
     //phdf5writeAll("res_all.h5",&rpd_h5);
