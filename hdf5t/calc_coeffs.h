@@ -86,6 +86,7 @@ real sum_minimum_vec_jac(sint *restrict a, sint *restrict b, tint vec_dim)
     for (i=0;i<vec_dim;i++) {
         // c = b[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // min(x, y)
         c = (a[i] && b[i]);
+        //c = (a[i]>0 && b[i]>0)?1:0;
         //printf("%d, %d, %d\n", a[i],b[i],c);
         sum += c;
     }
@@ -102,6 +103,7 @@ real sum_maximum_vec_jac(sint *restrict a, sint *restrict b, tint vec_dim)
     for (i=0;i<vec_dim;i++) {
         //c = a[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // max(x, y)
         c = (a[i] || b[i]);
+        //c = (a[i]>0 || b[i]>0)?1:0;
         sum += c;
     }
     return sum;
