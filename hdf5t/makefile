@@ -19,7 +19,7 @@ pomp: $(PCB_MPI_SRC)
 pacc: $(PCB_MPI_SRC)
 	$(PGI_H5CC) $(CFLAGS_PGI_ACC) $(PCB_MPI_SRC) -o pgi.mpi.$@.out
 
-pintel: $(PCB_MPI_SRC)
+intel: $(PCB_MPI_SRC)
 	$(INTEL_H5CC) $(CFLAGS_INTEL_OMP) $(PCB_MPI_SRC) -o $@.mpi.omp.out
 
 #lap_acc_v0_dr: $(LAP_ACC)

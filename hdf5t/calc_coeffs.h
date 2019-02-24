@@ -79,7 +79,8 @@ real sum_maximum_vec(sint *restrict a, sint *restrict b, tint vec_dim)
 
 real sum_minimum_vec_jac(sint *restrict a, sint *restrict b, tint vec_dim)
 {
-    tint i, c;  
+    tint i;
+    cint c;  
     real sum=0;
 #pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
 #pragma omp parallel for private(c,i) reduction(+:sum)
@@ -96,7 +97,8 @@ real sum_minimum_vec_jac(sint *restrict a, sint *restrict b, tint vec_dim)
 
 real sum_maximum_vec_jac(sint *restrict a, sint *restrict b, tint vec_dim)
 {
-    tint i, c;  
+    tint i;
+    cint c;  
     real sum=0;  
 #pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
 #pragma omp parallel for private(c,i) reduction(+:sum)
