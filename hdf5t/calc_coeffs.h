@@ -80,18 +80,27 @@ real sum_maximum_vec(sint *restrict a, sint *restrict b, tint vec_dim)
 real sum_minimum_vec_jac(sint *restrict a, sint *restrict b, tint vec_dim)
 {
     tint i;
-    cint c;  
+    sint c; //,c1;  
     real sum=0;
 #pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
 #pragma omp parallel for private(c,i) reduction(+:sum)
     for (i=0;i<vec_dim;i++) {
         // c = b[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // min(x, y)
         //c = (a[i] && b[i]);
-        c=1;
-        if (!(a[i]>0)) c=0;
-        if (!(b[i]>0)) c=0;
+        //c1 = ((a[i])<(b[i]))?(a[i]):(b[i]);
+        //if (c1>0) c1=1;
+
+        c = ((a[i])<(b[i]))?(a[i]):(b[i]);
+        if (c>0) c=1;
+
+        //c=1;
+        //if (!(a[i]>0)) c=0;
+        //if (!(b[i]>0)) c=0;
         //c = (a[i]>0 && b[i]>0)?1:0;
-        //printf("%d, %d, %d\n", a[i],b[i],c);
+        //if (c1 != c) {
+        //    printf("a=%d, b=%d, c1=%d, c=%d\n", a[i],b[i],c1,c);
+        //    exit(0);
+        //}
         sum += c;
     }
     //printf("%7.3f\n",sum);
@@ -101,7 +110,7 @@ real sum_minimum_vec_jac(sint *restrict a, sint *restrict b, tint vec_dim)
 real sum_maximum_vec_jac(sint *restrict a, sint *restrict b, tint vec_dim)
 {
     tint i;
-    cint c;  
+    sint c;  
     real sum=0;  
 #pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
 #pragma omp parallel for private(c,i) reduction(+:sum)
@@ -109,9 +118,13 @@ real sum_maximum_vec_jac(sint *restrict a, sint *restrict b, tint vec_dim)
         //c = a[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // max(x, y)
         //c = (a[i] || b[i]);
         //c = (a[i]>0 || b[i]>0)?1:0;
-        c=0;
-        if (a[i]>0) c=1;
-        if (b[i]>0) c=1;
+
+        c = ((a[i])>(b[i]))?(a[i]):(b[i]);
+        if (c>0) c=1;
+
+        //c=0;
+        //if (a[i]>0) c=1;
+        //if (b[i]>0) c=1;
         sum += c;
     }
     return sum;
