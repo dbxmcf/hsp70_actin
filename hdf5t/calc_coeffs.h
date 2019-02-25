@@ -123,11 +123,11 @@ real sum_minimum_vec_cint(cint *restrict a, cint *restrict b, tint vec_dim)
 #pragma omp parallel for private(c,i) reduction(+:sum)
     for (i=0;i<vec_dim;i++) {
         // c = b[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // min(x, y)
-        //c = ((a[i])<(b[i]))?(a[i]):(b[i]);
+        c = ((a[i])<(b[i]))?(a[i]):(b[i]);
         //c = (a[i]) && (b[i]);
-        c=1;
-        if (!(a[i]>0)) c=0;
-        if (!(b[i]>0)) c=0;
+        //c=1;
+        //if (!(a[i]>0)) c=0;
+        //if (!(b[i]>0)) c=0;
         //c=(b[i]==0)?0:c;
         //printf("%d, %d, %d\n", a[i],b[i],c);
         sum += c;
@@ -144,11 +144,11 @@ real sum_maximum_vec_cint(cint *restrict a, cint *restrict b, tint vec_dim)
 #pragma omp parallel for private(c,i) reduction(+:sum)
     for (i=0;i<vec_dim;i++) {
         //c = a[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // max(x, y)
-        //c = ((a[i])>(b[i]))?(a[i]):(b[i]);
+        c = ((a[i])>(b[i]))?(a[i]):(b[i]);
         //c = (a[i]) || (b[i]);
-        c=0;
-        if (a[i]>0) c=1; 
-        if (b[i]>0) c=1;
+        //c=0;
+        //if (a[i]>0) c=1; 
+        //if (b[i]>0) c=1;
         //c=(a[i]>0)?1:c;
         //c=(b[i]>0)?1:c;
         sum += c;
