@@ -7,7 +7,7 @@
 //typedef double integer;
 typedef int integer;
 //typedef short sint;
-typedef short sint;
+typedef unsigned short sint;
 typedef char cint;
 typedef unsigned long tint;
 typedef float real;
