@@ -340,11 +340,11 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 b_jac = data_jac_b[idx_b];
 
                 //vec_add(a, b, summed_array, dim1);
-                //numerator_jac = sum_minimum_vec_cint(a_jac, b_jac, dim1);
-                //denomenator_jac = sum_maximum_vec_cint(a_jac, b_jac, dim1);
+                numerator_jac = sum_minimum_vec_cint(a_jac, b_jac, dim1);
+                denomenator_jac = sum_maximum_vec_cint(a_jac, b_jac, dim1);
                 
-                numerator_jac = sum_minimum_vec_jac(a, b, dim1);
-                denomenator_jac = sum_maximum_vec_jac(a, b, dim1);
+                //numerator_jac = sum_minimum_vec_jac(a, b, dim1);
+                //denomenator_jac = sum_maximum_vec_jac(a, b, dim1);
                 //printf("numerator_jac=%f\n",numerator_jac);
                 //printf("denomenator_jac=%f\n",denomenator_jac);
                 numerator_gen_jac = sum_minimum_vec(a, b, dim1);
@@ -481,11 +481,11 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
                 //vec_add(a, b, summed_array, dim1);
         //printf("mpirank---here---%d\n",i);
-                //numerator_jac = sum_minimum_vec_cint(a_jac, b_jac, dim1);
-                //denomenator_jac = sum_maximum_vec_cint(a_jac, b_jac, dim1);
+                numerator_jac = sum_minimum_vec_cint(a_jac, b_jac, dim1);
+                denomenator_jac = sum_maximum_vec_cint(a_jac, b_jac, dim1);
 
-                numerator_jac = sum_minimum_vec_jac(a, b, dim1);
-                denomenator_jac = sum_maximum_vec_jac(a, b, dim1);
+                //numerator_jac = sum_minimum_vec_jac(a, b, dim1);
+                //denomenator_jac = sum_maximum_vec_jac(a, b, dim1);
                 //printf("numerator_jac=%f\n",numerator_jac);
                 //printf("denomenator_jac=%f\n",denomenator_jac);
                 numerator_gen_jac = sum_minimum_vec(a, b, dim1);
