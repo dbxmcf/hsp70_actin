@@ -47,33 +47,41 @@ typedef struct result_arrays_diagnol {
 // https://www.geeksforgeeks.org/compute-the-minimum-or-maximum-max-of-two-integers-without-branching/
 // https://stackoverflow.com/questions/24529504/find-out-max-min-of-two-number-without-using-if-else
 // http://graphics.stanford.edu/~seander/bithacks.html#IntegerMinOrMax
-real sum_minimum_vec(sint *restrict a, sint *restrict b, tint vec_dim)
+real sum_minimum_vec(sint *restrict a, sint *restrict b, tint vec_dim, real *sum_jac)
 {
-    tint i, c;  
-    real sum=0;
+    tint i;
+    sint c,cj;  
+    real sum=0,sum_cj=0;
 #pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
-#pragma omp parallel for private(c,i) reduction(+:sum)
+#pragma omp parallel for private(c,i) reduction(+:sum,sum_cj)
     for (i=0;i<vec_dim;i++) {
         // c = b[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // min(x, y)
         c = ((a[i])<(b[i]))?(a[i]):(b[i]);
+        cj = (c>0)?1:0;
         //printf("%d, %d, %d\n", a[i],b[i],c);
         sum += c;
+        sum_cj +=cj;
     }
+    *sum_jac = sum_cj;
     //printf("%7.3f\n",sum);
     return sum;
 }
 
-real sum_maximum_vec(sint *restrict a, sint *restrict b, tint vec_dim)
+real sum_maximum_vec(sint *restrict a, sint *restrict b, tint vec_dim, real *sum_jac)
 {
-    tint i, c;  
-    real sum=0;  
+    tint i;
+    sint c,cj;  
+    real sum=0,sum_cj=0;  
 #pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
-#pragma omp parallel for private(c,i) reduction(+:sum)
+#pragma omp parallel for private(c,cj,i) reduction(+:sum,sum_cj)
     for (i=0;i<vec_dim;i++) {
         //c = a[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // max(x, y)
         c = ((a[i])>(b[i]))?(a[i]):(b[i]);
+        cj = (c>0)?1:0;
         sum += c;
+        sum_cj +=cj;
     }
+    *sum_jac = sum_cj;
     return sum;
 }
 
@@ -345,12 +353,14 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 //numerator_jac = sum_minimum_vec_cint(a_jac, b_jac, dim1);
                 //denomenator_jac = sum_maximum_vec_cint(a_jac, b_jac, dim1);
                 
-                numerator_jac = sum_minimum_vec_jac(a, b, dim1);
-                denomenator_jac = sum_maximum_vec_jac(a, b, dim1);
+                //numerator_jac = sum_minimum_vec_jac(a, b, dim1);
+                //denomenator_jac = sum_maximum_vec_jac(a, b, dim1);
                 //printf("numerator_jac=%f\n",numerator_jac);
                 //printf("denomenator_jac=%f\n",denomenator_jac);
-                numerator_gen_jac = sum_minimum_vec(a, b, dim1);
-                denomenator_gen_jac = sum_maximum_vec(a, b, dim1);
+                //numerator_gen_jac = sum_minimum_vec(a, b, dim1);
+                //denomenator_gen_jac = sum_maximum_vec(a, b, dim1);
+                numerator_gen_jac = sum_minimum_vec(a, b, dim1, &numerator_jac);
+                denomenator_gen_jac = sum_maximum_vec(a, b, dim1, &denomenator_jac);
 
                 //printf("numerator_gen_jac=%f\n",numerator_gen_jac);
                 //printf("denomenator_gen_jac=%f\n",denomenator_gen_jac);
@@ -485,12 +495,12 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 //numerator_jac = sum_minimum_vec_cint(a_jac, b_jac, dim1);
                 //denomenator_jac = sum_maximum_vec_cint(a_jac, b_jac, dim1);
 
-                numerator_jac = sum_minimum_vec_jac(a, b, dim1);
-                denomenator_jac = sum_maximum_vec_jac(a, b, dim1);
+                //numerator_jac = sum_minimum_vec_jac(a, b, dim1);
+                //denomenator_jac = sum_maximum_vec_jac(a, b, dim1);
                 //printf("numerator_jac=%f\n",numerator_jac);
                 //printf("denomenator_jac=%f\n",denomenator_jac);
-                numerator_gen_jac = sum_minimum_vec(a, b, dim1);
-                denomenator_gen_jac = sum_maximum_vec(a, b, dim1);
+                numerator_gen_jac = sum_minimum_vec(a, b, dim1, &numerator_jac);
+                denomenator_gen_jac = sum_maximum_vec(a, b, dim1, &denomenator_jac);
 
                 //printf("numerator_gen_jac=%f\n",numerator_gen_jac);
                 //printf("denomenator_gen_jac=%f\n",denomenator_gen_jac);
