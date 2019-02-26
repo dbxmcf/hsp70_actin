@@ -38,7 +38,7 @@ do
     SECONDS=0
     #mpirun -np $NPROCS -f $PBS_NODEFILE -ppn 2 ./pgi.mpi.omp.out -f sample_a-b_mix_2.h5
     mpirun -np $NPROCS -f $PBS_NODEFILE -ppn 2 ./pgi.mpi.pomp.out -f $input
-    echo "omp run $i threads=$OMP_NUM_THREADS, $SECONDS sec"
+    echo "omp run $i trd=$OMP_NUM_THREADS, $SECONDS sec"
 done
 
 export OMP_NUM_THREADS=1
