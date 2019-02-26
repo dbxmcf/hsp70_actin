@@ -46,14 +46,14 @@ typedef struct result_arrays_diagnol {
 
 void sum_min_max_vec(sint *restrict a, sint *restrict b, tint vec_dim, 
                      real *sum_min, real *sum_max,
-                     real *sum_min_jac, real *sum_max_jac)
+                     real *sum_min_jac, real *sum_max_jac, real* num_sim)
 {
     tint i;
-    sint c_min,c_max,cj_min,cj_max;  
-    real sum_c_min=0.0,sum_c_max=0.0,sum_cj_min=0.0,sum_cj_max=0.0;
+    sint c_min,c_max,cj_min,cj_max,num_c_sim;  
+    real sum_c_min=0.0,sum_c_max=0.0,sum_cj_min=0.0,sum_cj_max=0.0,sum_num_sim=0.0;
 #pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
 #pragma omp parallel for private(c_min,c_max,cj_min,cj_max,i) \
-            reduction(+:sum_c_min,sum_c_max,sum_cj_min,sum_cj_max)
+            reduction(+:sum_c_min,sum_c_max,sum_cj_min,sum_cj_max,sum_num_sim)
     for (i=0;i<vec_dim;i++) {
         // c = b[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // min(x, y)
         c_min = ((a[i])<(b[i]))?(a[i]):(b[i]);
@@ -61,15 +61,19 @@ void sum_min_max_vec(sint *restrict a, sint *restrict b, tint vec_dim,
         cj_min = (c_min>0)?1:0;
         cj_max = (c_max>0)?1:0;
         //printf("%d, %d, %d\n", a[i],b[i],c);
+        //if (cj_min>0) num_c_sim = a[i]+b[i];
+        num_c_sim = (c_min>0)?(a[i]+b[i]):0;
         sum_c_min += c_min;
         sum_c_max += c_max;
         sum_cj_min += cj_min;
         sum_cj_max += cj_max;
+        sum_num_sim += num_c_sim;
     }
     *sum_min = sum_c_min;
     *sum_max = sum_c_max;
     *sum_min_jac = sum_cj_min;
     *sum_max_jac = sum_cj_max;
+    *num_sim = sum_num_sim;
     //printf("%7.3f\n",sum);
     //return sum;
 }
@@ -206,6 +210,7 @@ real get_non_zeros_pair(sint *restrict a, sint *restrict b, tint vec_dim)
 #pragma omp parallel for private(i) reduction(+:sum)
     for (i=0;i<vec_dim;i++) {
         if (a[i]>0 && b[i]>0)
+        //if (a[i] & b[i])
             sum += a[i]+b[i];
     }
     return sum;
@@ -393,12 +398,13 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 //denomenator_gen_jac = sum_maximum_vec(a, b, dim1, &denomenator_jac);
                 sum_min_max_vec(a, b, dim1, 
                                 &numerator_gen_jac,&denomenator_gen_jac,
-                                &numerator_jac,&denomenator_jac);
+                                &numerator_jac,&denomenator_jac,&num_sim);
 
                 //printf("numerator_gen_jac=%f\n",numerator_gen_jac);
                 //printf("denomenator_gen_jac=%f\n",denomenator_gen_jac);
 
-                num_sim = get_non_zeros_pair(a, b, dim1);
+                //num_sim = get_non_zeros_pair(a, b, dim1);
+                //num_sim = numerator_jac;
                 //printf("num_sim=%f\n",num_sim);
 
                 one_an = one_data_norm_a[idx_a];
@@ -536,13 +542,14 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 //denomenator_gen_jac = sum_maximum_vec(a, b, dim1, &denomenator_jac);
                 sum_min_max_vec(a, b, dim1, 
                                 &numerator_gen_jac,&denomenator_gen_jac,
-                                &numerator_jac,&denomenator_jac);
+                                &numerator_jac,&denomenator_jac,&num_sim);
                 //denomenator_gen_jac = sum_maximum_vec(a, b, dim1, &denomenator_jac);
 
                 //printf("numerator_gen_jac=%f\n",numerator_gen_jac);
                 //printf("denomenator_gen_jac=%f\n",denomenator_gen_jac);
 
-                num_sim = get_non_zeros_pair(a, b, dim1);
+                //num_sim = get_non_zeros_pair(a, b, dim1);
+                ///num_sim = numerator_jac;
                 //printf("num_sim=%f\n",num_sim);
 
                 one_an = one_data_norm[idx_a];
