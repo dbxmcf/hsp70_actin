@@ -804,6 +804,9 @@ phdf5readAll(char *filename)
     herr_t ret;         	/* Generic return value */
     int i,j,status_n, fs_rank;
     int average_lines,remainder_lines, num_data_chunks;
+    double t1, t2; 
+
+    t1 = MPI_Wtime(); 
 
     MPI_Comm comm = MPI_COMM_WORLD;
     MPI_Info info = MPI_INFO_NULL;
@@ -1036,7 +1039,11 @@ phdf5readAll(char *filename)
 
     /* close the file collectively */
     H5Fclose(fid1);
-    double t1, t2; 
+
+    t2 = MPI_Wtime(); 
+    if (0==mpi_rank)
+        printf( "Reading time is %.3f\n", t2 - t1 ); 
+
     t1 = MPI_Wtime(); 
 
     /* now starting on the processing */
@@ -1192,8 +1199,13 @@ phdf5readAll(char *filename)
         printf( "Elapsed time is %.3f\n", t2 - t1 ); 
 
 
+    t1 = MPI_Wtime(); 
+
     //phdf5writeAll("res_all.h5",&rpd_h5);
     phdf5writeAll(testfiles[1],&rpd_h5);
+    if (0==mpi_rank)
+        printf( "Writing time is %.3f\n", t2 - t1 ); 
+
     free(rk_vec_dim_all);
     free(rk_start);
 
