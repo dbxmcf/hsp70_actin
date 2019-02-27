@@ -806,10 +806,12 @@ phdf5readAll(char *filename)
     int average_lines,remainder_lines, num_data_chunks;
     double t1, t2; 
 
-    t1 = MPI_Wtime(); 
 
     MPI_Comm comm = MPI_COMM_WORLD;
     MPI_Info info = MPI_INFO_NULL;
+
+    MPI_Barrier(comm);
+    t1 = MPI_Wtime(); 
 
     if (verbose)
         printf("Collective read test on file %s\n", filename);
@@ -1040,10 +1042,12 @@ phdf5readAll(char *filename)
     /* close the file collectively */
     H5Fclose(fid1);
 
+    MPI_Barrier(comm);
     t2 = MPI_Wtime(); 
     if (0==mpi_rank)
         printf( "Reading time is %.3f\n", t2 - t1 ); 
 
+    MPI_Barrier(comm);
     t1 = MPI_Wtime(); 
 
     /* now starting on the processing */
@@ -1194,15 +1198,19 @@ phdf5readAll(char *filename)
     rpd_h5.chunk_count_a = count_part_a[0];
     rpd_h5.chunk_count_b = count_part_b[0];
 
+    MPI_Barrier(comm);
     t2 = MPI_Wtime(); 
     if (0==mpi_rank)
         printf( "Elapsed time is %.3f\n", t2 - t1 ); 
 
 
+    MPI_Barrier(comm);
     t1 = MPI_Wtime(); 
-
     //phdf5writeAll("res_all.h5",&rpd_h5);
     phdf5writeAll(testfiles[1],&rpd_h5);
+
+    MPI_Barrier(comm);
+    t2 = MPI_Wtime(); 
     if (0==mpi_rank)
         printf( "Writing time is %.3f\n", t2 - t1 ); 
 
