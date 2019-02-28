@@ -27,6 +27,10 @@ Massage Passing Interface (MPI) + Open Multi-Processing (OpenMP)
 
 ## How to run jobs
 
+### Prerequisites
+
+#### Software environment
+
 ### Memory usage consideration
 
 The protein structure file is large and consumes a lot of memory when loaded to the program
@@ -47,7 +51,7 @@ The previous csv file will be converted to an hdf5 file named sample_hsp70_actin
 
 ### How to use output file
 
-As mentioned earlier, the output of the program is also an hdf5 file with all the result information from each MPI process, however the information from each MPI process are not stored according to the original order, a python code will be used to gather information from the result hdf5 file and 
+As mentioned earlier, the output of the program is also an hdf5 file with all the result information from each MPI process, however the information from each MPI process are not stored according to the original order, a python code will be used to gather information from the result hdf5 file and combine them into a numpy readable matrix (2D table)
 
 
 
