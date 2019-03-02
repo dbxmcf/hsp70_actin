@@ -73,7 +73,7 @@ $ mpirun -np 8 ./pomp -f sample_hsp70_actin.h5
 
 ### Distribute the workload to different compute nodes
 
-The primary feature of the code is its capability of distributing the workload (in this case, high memory usage) to different compute nodes so that large size comparison can be made possible. For a fixed given sample size, the more number of processes used, the less memory will be allocated to each process. For a fixed size memory compute node, when more compute nodes are used, the larger the total sample size can be analyzed. 
+The comparison of 3D protein structure is a memory bound problem, which means the limitation to the simulation is the large The primary feature of the code is its capability of distributing the workload (in this case, high memory usage) to different compute nodes so that large size comparison can be made possible. For a fixed given sample size, the more number of processes used, the less memory will be allocated to each process. For a fixed size memory compute node, when more compute nodes are used, the larger the total sample size can be analyzed. 
 
 ### How to use output file
 
