@@ -44,34 +44,129 @@ typedef struct result_arrays_diagnol {
 
 } result_pointers_diagnol;
 
+void sum_min_max_vec(sint *restrict a, sint *restrict b, tint vec_dim, 
+                     real *sum_min, real *sum_max,
+                     real *sum_min_jac, real *sum_max_jac, real* num_sim)
+{
+    tint i;
+    sint c_min,c_max,cj_min,cj_max,num_c_sim;  
+    real sum_c_min=0.0,sum_c_max=0.0,sum_cj_min=0.0,sum_cj_max=0.0,sum_num_sim=0.0;
+#pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
+#pragma omp parallel for private(c_min,c_max,cj_min,cj_max,i) \
+            reduction(+:sum_c_min,sum_c_max,sum_cj_min,sum_cj_max,sum_num_sim)
+    for (i=0;i<vec_dim;i++) {
+        // c = b[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // min(x, y)
+        c_min = ((a[i])<(b[i]))?(a[i]):(b[i]);
+        c_max = ((a[i])>(b[i]))?(a[i]):(b[i]);
+        cj_min = (c_min>0)?1:0;
+        cj_max = (c_max>0)?1:0;
+        //printf("%d, %d, %d\n", a[i],b[i],c);
+        //if (cj_min>0) num_c_sim = a[i]+b[i];
+        num_c_sim = (c_min>0)?(a[i]+b[i]):0;
+        sum_c_min += c_min;
+        sum_c_max += c_max;
+        sum_cj_min += cj_min;
+        sum_cj_max += cj_max;
+        sum_num_sim += num_c_sim;
+    }
+    *sum_min = sum_c_min;
+    *sum_max = sum_c_max;
+    *sum_min_jac = sum_cj_min;
+    *sum_max_jac = sum_cj_max;
+    *num_sim = sum_num_sim;
+    //printf("%7.3f\n",sum);
+    //return sum;
+}
+
 // https://www.geeksforgeeks.org/compute-the-minimum-or-maximum-max-of-two-integers-without-branching/
 // https://stackoverflow.com/questions/24529504/find-out-max-min-of-two-number-without-using-if-else
 // http://graphics.stanford.edu/~seander/bithacks.html#IntegerMinOrMax
-real sum_minimum_vec(sint *restrict a, sint *restrict b, tint vec_dim)
+real sum_minimum_vec(sint *restrict a, sint *restrict b, tint vec_dim, real *sum_jac)
 {
-    tint i, c;  
+    tint i;
+    sint c,cj;  
+    real sum=0,sum_cj=0;
+#pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
+#pragma omp parallel for private(c,i) reduction(+:sum,sum_cj)
+    for (i=0;i<vec_dim;i++) {
+        // c = b[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // min(x, y)
+        c = ((a[i])<(b[i]))?(a[i]):(b[i]);
+        cj = (c>0)?1:0;
+        //printf("%d, %d, %d\n", a[i],b[i],c);
+        sum += c;
+        sum_cj +=cj;
+    }
+    *sum_jac = sum_cj;
+    //printf("%7.3f\n",sum);
+    return sum;
+}
+
+real sum_maximum_vec(sint *restrict a, sint *restrict b, tint vec_dim, real *sum_jac)
+{
+    tint i;
+    sint c,cj;  
+    real sum=0,sum_cj=0;  
+#pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
+#pragma omp parallel for private(c,cj,i) reduction(+:sum,sum_cj)
+    for (i=0;i<vec_dim;i++) {
+        //c = a[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // max(x, y)
+        c = ((a[i])>(b[i]))?(a[i]):(b[i]);
+        cj = (c>0)?1:0;
+        sum += c;
+        sum_cj +=cj;
+    }
+    *sum_jac = sum_cj;
+    return sum;
+}
+
+real sum_minimum_vec_jac(sint *restrict a, sint *restrict b, tint vec_dim)
+{
+    tint i;
+    sint c; //,c1;  
     real sum=0;
 #pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
 #pragma omp parallel for private(c,i) reduction(+:sum)
     for (i=0;i<vec_dim;i++) {
         // c = b[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // min(x, y)
+        //c = (a[i] && b[i]);
+        //c1 = ((a[i])<(b[i]))?(a[i]):(b[i]);
+        //if (c1>0) c1=1;
+
         c = ((a[i])<(b[i]))?(a[i]):(b[i]);
-        //printf("%d, %d, %d\n", a[i],b[i],c);
+        if (c>0) c=1;
+
+        //c=1;
+        //if (!(a[i]>0)) c=0;
+        //if (!(b[i]>0)) c=0;
+        //c = (a[i]>0 && b[i]>0)?1:0;
+        //if (c1 != c) {
+        //    printf("a=%d, b=%d, c1=%d, c=%d\n", a[i],b[i],c1,c);
+        //    exit(0);
+        //}
         sum += c;
     }
     //printf("%7.3f\n",sum);
     return sum;
 }
 
-real sum_maximum_vec(sint *restrict a, sint *restrict b, tint vec_dim)
+real sum_maximum_vec_jac(sint *restrict a, sint *restrict b, tint vec_dim)
 {
-    tint i, c;  
+    tint i;
+    sint c;  
     real sum=0;  
 #pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
 #pragma omp parallel for private(c,i) reduction(+:sum)
     for (i=0;i<vec_dim;i++) {
         //c = a[i] ^ ((a[i] ^ b[i]) & -(a[i] < b[i])); // max(x, y)
+        //c = (a[i] || b[i]);
+        //c = (a[i]>0 || b[i]>0)?1:0;
+
         c = ((a[i])>(b[i]))?(a[i]):(b[i]);
+        if (c>0) c=1;
+
+        //c=0;
+        //if (a[i]>0) c=1;
+        //if (b[i]>0) c=1;
         sum += c;
     }
     return sum;
@@ -115,6 +210,7 @@ real get_non_zeros_pair(sint *restrict a, sint *restrict b, tint vec_dim)
 #pragma omp parallel for private(i) reduction(+:sum)
     for (i=0;i<vec_dim;i++) {
         if (a[i]>0 && b[i]>0)
+        //if (a[i] & b[i])
             sum += a[i]+b[i];
     }
     return sum;
@@ -196,7 +292,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     //int i, j, idx_a, idx_b;
     tint i, j, idx_a, idx_b;
     sint *a, *b;
-    cint *a_jac, *b_jac;
+    //cint *a_jac, *b_jac;
     real dist_gen_jac, dist_jac, denomenator_wu, dist_wu; 
     real numerator_sarika, denomenator_sarika, dist_sarika;
     real num_sim, numerator_jac, denomenator_jac, numerator_gen_jac, denomenator_gen_jac;
@@ -217,8 +313,8 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
     //tint **restrict data_jac_a = allocate_dynamic_2d_array_integer(part_a_dim0, dim1);
     //tint **restrict data_jac_b = allocate_dynamic_2d_array_integer(part_b_dim0, dim1);
-    cint **restrict data_jac_a = allocate_dynamic_2d_array_cint(part_a_dim0, dim1);
-    cint **restrict data_jac_b = allocate_dynamic_2d_array_cint(part_b_dim0, dim1);
+    //cint **restrict data_jac_a = allocate_dynamic_2d_array_cint(part_a_dim0, dim1);
+    //cint **restrict data_jac_b = allocate_dynamic_2d_array_cint(part_b_dim0, dim1);
 
     //real *restrict normal = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
     //real *restrict generalised = (real*)malloc(part_a_dim0*part_b_dim0*sizeof(real));
@@ -243,9 +339,9 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     for (i=0;i<part_a_dim0;i++) {
         data_sum_a[i] = 0;
         for (j=0;j<part_a_dim1;j++) {
-            data_jac_a[i][j]=0;
-            if (data_part_a[i][j]>0) 
-                data_jac_a[i][j]=1;
+            //data_jac_a[i][j]=0;
+            //if (data_part_a[i][j]>0) 
+            //    data_jac_a[i][j]=1;
             data_sum_a[i] += data_part_a[i][j];
         }
         //one_data_norm_a[i] = 1.0/vec_norm(data_part_a[i], dim1);
@@ -257,9 +353,9 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     for (i=0;i<part_b_dim0;i++) {
         data_sum_b[i] = 0;
         for (j=0;j<part_b_dim1;j++) {
-            data_jac_b[i][j]=0;
-            if (data_part_b[i][j]>0) 
-                data_jac_b[i][j]=1;
+            //data_jac_b[i][j]=0;
+            //if (data_part_b[i][j]>0) 
+            //    data_jac_b[i][j]=1;
             data_sum_b[i] += data_part_b[i][j];
         }
         //one_data_norm_b[i] = 1.0/vec_norm(data_part_b[i], dim1);
@@ -274,8 +370,6 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
             data_part_b[0:part_b_dim0][0:part_b_dim1],\
             data_sum_a[0:part_a_dim0],\
             data_sum_b[0:part_b_dim0],\
-            data_jac_a[0:part_a_dim0][0:part_a_dim1],\
-            data_jac_b[0:part_b_dim0][0:part_b_dim1],\
             one_data_norm_a[0:part_a_dim0],\
             one_data_norm_b[0:part_b_dim0])
     {
@@ -285,24 +379,32 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 // 
                 a = data_part_a[idx_a];
                 a_sum = data_sum_a[idx_a];
-                a_jac = data_jac_a[idx_a];
+                //a_jac = data_jac_a[idx_a];
                 b = data_part_b[idx_b];
                 b_sum = data_sum_b[idx_b];
-                b_jac = data_jac_b[idx_b];
+                //b_jac = data_jac_b[idx_b];
 
                 //vec_add(a, b, summed_array, dim1);
-                numerator_jac = sum_minimum_vec_cint(a_jac, b_jac, dim1);
-
-                denomenator_jac = sum_maximum_vec_cint(a_jac, b_jac, dim1);
+                //numerator_jac = sum_minimum_vec_cint(a_jac, b_jac, dim1);
+                //denomenator_jac = sum_maximum_vec_cint(a_jac, b_jac, dim1);
+                
+                //numerator_jac = sum_minimum_vec_jac(a, b, dim1);
+                //denomenator_jac = sum_maximum_vec_jac(a, b, dim1);
                 //printf("numerator_jac=%f\n",numerator_jac);
                 //printf("denomenator_jac=%f\n",denomenator_jac);
-                numerator_gen_jac = sum_minimum_vec(a, b, dim1);
-                denomenator_gen_jac = sum_maximum_vec(a, b, dim1);
+                //numerator_gen_jac = sum_minimum_vec(a, b, dim1);
+                //denomenator_gen_jac = sum_maximum_vec(a, b, dim1);
+                //numerator_gen_jac = sum_minimum_vec(a, b, dim1, &numerator_jac);
+                //denomenator_gen_jac = sum_maximum_vec(a, b, dim1, &denomenator_jac);
+                sum_min_max_vec(a, b, dim1, 
+                                &numerator_gen_jac,&denomenator_gen_jac,
+                                &numerator_jac,&denomenator_jac,&num_sim);
 
                 //printf("numerator_gen_jac=%f\n",numerator_gen_jac);
                 //printf("denomenator_gen_jac=%f\n",denomenator_gen_jac);
 
-                num_sim = get_non_zeros_pair(a, b, dim1);
+                //num_sim = get_non_zeros_pair(a, b, dim1);
+                //num_sim = numerator_jac;
                 //printf("num_sim=%f\n",num_sim);
 
                 one_an = one_data_norm_a[idx_a];
@@ -361,8 +463,8 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         free(one_data_norm_a);
         free(one_data_norm_b);
 
-        free_dynamic_2d_array_cint(data_jac_a);
-        free_dynamic_2d_array_cint(data_jac_b);
+        //free_dynamic_2d_array_cint(data_jac_a);
+        //free_dynamic_2d_array_cint(data_jac_b);
 
         return 0;
     }
@@ -374,7 +476,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     {
         tint i, j, idx_a, idx_b;
         sint *a, *b;
-        cint *a_jac, *b_jac;
+        //cint *a_jac, *b_jac;
         real dist_gen_jac, dist_jac, denomenator_wu, dist_wu; 
         real numerator_sarika, denomenator_sarika, dist_sarika;
         real num_sim, numerator_jac, denomenator_jac, numerator_gen_jac, denomenator_gen_jac;
@@ -395,7 +497,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         //real *restrict cosine = (real*)malloc(num_cmbs*sizeof(real));
 
         //tint **restrict data_jac = allocate_dynamic_2d_array_integer(dim0, dim1);
-        cint **restrict data_jac = allocate_dynamic_2d_array_cint(dim0, dim1);
+        //cint **restrict data_jac = allocate_dynamic_2d_array_cint(dim0, dim1);
         //printf("mpirank---here---%d\n",mpi_rank);
 
         // preparation values
@@ -403,9 +505,9 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         for (i=0;i<dim0;i++) {
             data_sum[i] = 0;
             for (j=0;j<dim1;j++) {
-                data_jac[i][j]=0;
-                if (data[i][j]>0) 
-                    data_jac[i][j]=1;
+                //data_jac[i][j]=0;
+                //if (data[i][j]>0) 
+                //    data_jac[i][j]=1;
                 data_sum[i] += data[i][j];
             }
             //one_data_norm[i] = 1.0/vec_norm(data[i], dim1);
@@ -414,7 +516,6 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 #pragma acc data \
         copy(data[0:dim0][0:dim1],\
                 data_sum[0:dim0],\
-                data_jac[0:dim0][0:dim1],\
                 one_data_norm[0:dim0])
         {
 
@@ -423,25 +524,32 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
                 a = data[idx_a];
                 a_sum = data_sum[idx_a];
-                a_jac = data_jac[idx_a];
+                //a_jac = data_jac[idx_a];
                 b = data[idx_b];
                 b_sum = data_sum[idx_b];
-                b_jac = data_jac[idx_b];
+                //b_jac = data_jac[idx_b];
 
                 //vec_add(a, b, summed_array, dim1);
         //printf("mpirank---here---%d\n",i);
-                numerator_jac = sum_minimum_vec_cint(a_jac, b_jac, dim1);
+                //numerator_jac = sum_minimum_vec_cint(a_jac, b_jac, dim1);
+                //denomenator_jac = sum_maximum_vec_cint(a_jac, b_jac, dim1);
 
-                denomenator_jac = sum_maximum_vec_cint(a_jac, b_jac, dim1);
+                //numerator_jac = sum_minimum_vec_jac(a, b, dim1);
+                //denomenator_jac = sum_maximum_vec_jac(a, b, dim1);
                 //printf("numerator_jac=%f\n",numerator_jac);
                 //printf("denomenator_jac=%f\n",denomenator_jac);
-                numerator_gen_jac = sum_minimum_vec(a, b, dim1);
-                denomenator_gen_jac = sum_maximum_vec(a, b, dim1);
+                //numerator_gen_jac = sum_minimum_vec(a, b, dim1, &numerator_jac);
+                //denomenator_gen_jac = sum_maximum_vec(a, b, dim1, &denomenator_jac);
+                sum_min_max_vec(a, b, dim1, 
+                                &numerator_gen_jac,&denomenator_gen_jac,
+                                &numerator_jac,&denomenator_jac,&num_sim);
+                //denomenator_gen_jac = sum_maximum_vec(a, b, dim1, &denomenator_jac);
 
                 //printf("numerator_gen_jac=%f\n",numerator_gen_jac);
                 //printf("denomenator_gen_jac=%f\n",denomenator_gen_jac);
 
-                num_sim = get_non_zeros_pair(a, b, dim1);
+                //num_sim = get_non_zeros_pair(a, b, dim1);
+                ///num_sim = numerator_jac;
                 //printf("num_sim=%f\n",num_sim);
 
                 one_an = one_data_norm[idx_a];
@@ -490,7 +598,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         //free(cosine);
 
         free_dynamic_2d_array_integer(cmbs);
-        free_dynamic_2d_array_cint(data_jac);
+        //free_dynamic_2d_array_cint(data_jac);
         free(data_sum);
         free(one_data_norm);
 

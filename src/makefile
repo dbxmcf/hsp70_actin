@@ -8,15 +8,16 @@ CFLAGS_INTEL_OMP=-openmp -O3
 CFLAGS_PGI_OMP=-mp -fast -Mipa=fast,inline #-Minfo=all
 #CFLAGS_PGI_ACC=-acc -fast -Mipa=fast,inline -Minfo=all -ta=nvidia,time
 CFLAGS_PGI_ACC=-acc -fast -Mipa=fast,inline -Mcuda -ta=nvidia:cc3+,cuda9.0,fastmath
-BIN=pgi.mpi.omp intel.mpi.omp
+#BIN=pgi.mpi.omp intel.mpi.omp
+BIN=pomp pacc
 
 PCB_MPI_SRC=ph5_cmb_blks.c
 
-pgi: $(PCB_MPI_SRC)
-	$(PGI_H5CC) $(CFLAGS_PGI_OMP) $(PCB_MPI_SRC) -o $@.mpi.omp.out
+pomp: $(PCB_MPI_SRC)
+	$(PGI_H5CC) $(CFLAGS_PGI_OMP) $(PCB_MPI_SRC) -o pgi.mpi.$@.out
 
-pgiacc: $(PCB_MPI_SRC)
-	$(PGI_H5CC) $(CFLAGS_PGI_ACC) $(PCB_MPI_SRC) -o $@.mpi.acc.out
+pacc: $(PCB_MPI_SRC)
+	$(PGI_H5CC) $(CFLAGS_PGI_ACC) $(PCB_MPI_SRC) -o pgi.mpi.$@.out
 
 intel: $(PCB_MPI_SRC)
 	$(INTEL_H5CC) $(CFLAGS_INTEL_OMP) $(PCB_MPI_SRC) -o $@.mpi.omp.out
