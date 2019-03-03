@@ -25,8 +25,8 @@ import h5py
 #fname = "sample_protease_mix_1/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
 #sample_name = "sample_hsp70_actin"
-sample_name = "sample_a-b_mix_2"
-#sample_name = "sample_protease_mix_1"
+#sample_name = "sample_a-b_mix_2"
+sample_name = "sample_protease_mix_1"
 fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
 #sample_name = "hdf5t"
@@ -59,9 +59,12 @@ total_time=((end_time)-(start_time))
 print("Time taken for making matrix: {}".format(total_time))
 
 h5_filename = "hdf5t/" + sample_name + "_dtype.h5"
+#h5_filename = "hdf5t/" + sample_name + ".h5"
 h5f = h5py.File(h5_filename, 'w')
 #h5f.create_dataset('Data1', data=data, dtype='int16')
-h5f.create_dataset('Data1', data=data, dtype='int16')
+#h5f.create_dataset('Data1', data=data, dtype='int16')
+h5f.create_dataset('Data1', data=data, dtype=m_datatype)
 h5f.close()
 print(h5_filename + " file created")
 #exit()
+
