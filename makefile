@@ -11,7 +11,7 @@ CFLAGS_PGI_ACC=-acc -fast -Mipa=fast,inline -Mcuda -ta=nvidia:cc3+,cuda9.0,fastm
 #BIN=pgi.mpi.omp intel.mpi.omp
 BIN=pomp pacc
 
-PCB_MPI_SRC=ph5_cmb_blks.c
+PCB_MPI_SRC=src/c/ph5_cmb_blks.c
 
 pomp: $(PCB_MPI_SRC)
 	$(PGI_H5CC) $(CFLAGS_PGI_OMP) $(PCB_MPI_SRC) -o pgi.mpi.$@.out
