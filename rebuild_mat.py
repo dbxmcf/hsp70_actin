@@ -2,6 +2,17 @@
 import sys
 import numpy as np
 import h5py
+import errno    
+import os
+
+def mkdir_p(path):
+    try:
+        os.makedirs(path)
+    except OSError as exc:  # Python >2.5
+        if exc.errno == errno.EEXIST and os.path.isdir(path):
+            pass
+        else:
+            raise
 
 def rebuild_triangle(arr, st_loc, mtx_info):
     st = st_loc[0]
@@ -24,7 +35,11 @@ def rebuild_triangle(arr, st_loc, mtx_info):
     arr_list = np.split(arr, st[1:])
     slc_nwb = slice(0,num_whole_blocks)
     #print(chunk_st_a[slc_nwb])
-    for a,csta,cstb,ccta,cctb in zip(arr_list[slc_nwb],chunk_st_a[slc_nwb],chunk_st_b[slc_nwb],chunk_ct_a[slc_nwb],chunk_ct_b[slc_nwb]):
+    for a,csta,cstb,ccta,cctb in zip(arr_list[slc_nwb],
+                                     chunk_st_a[slc_nwb],
+                                     chunk_st_b[slc_nwb],
+                                     chunk_ct_a[slc_nwb],
+                                     chunk_ct_b[slc_nwb]):
          mat_ret[csta:csta+ccta,cstb:cstb+cctb] = a.reshape(ccta,cctb)
 
     np.set_printoptions(edgeitems=30, linewidth=100000, formatter=dict(float=lambda x: "%.3f" % x))
@@ -61,6 +76,11 @@ def rebuild_triangle(arr, st_loc, mtx_info):
     #    mat_wu[][] = 5
 
 sample_result_file = sys.argv[1]
+verify_result = False
+if sys.argv[2] == "true":
+    verify_result = True
+if sys.argv[3] == "true":
+    save_csv = True
 
 f = h5py.File(sample_result_file + '.res_all.h5', 'r')
 keys = list(f.keys())
@@ -86,56 +106,63 @@ mat_generalised_h5 = rebuild_triangle(generalised,start_loc,mtx_info)
 mat_sarika_h5 = rebuild_triangle(sarika,start_loc,mtx_info)
 mat_cosine_h5 = rebuild_triangle(cosine,start_loc,mtx_info)
 
-sample_name = sample_result_file.split(".")[0]
+fmt_str="%7.3f"
+if (save_csv):
+    out_dir = sample_result_file + "_res_csv"
+    mkdir_p(out_dir)
+    print("Saving csv in:",out_dir)
+    np.savetxt(out_dir+"/normal.csv", mat_normal_h5, delimiter=",",fmt=fmt_str)
+    np.savetxt(out_dir+"/sarika.csv", mat_sarika_h5, delimiter=",",fmt=fmt_str)
+    np.savetxt(out_dir+"/generalised.csv", mat_generalised_h5, delimiter=",",fmt=fmt_str)
+    np.savetxt(out_dir+"/wu.csv", mat_wu_h5, delimiter=",",fmt=fmt_str)
 
-py_path_name = "../" + sample_name +"_csv_uint16/"
-print("py_path_name=",py_path_name)
-#py_path_name = "../hdf5t_csv_uint16/"
-#py_path_name = "../sample_hsp70_actin_csv_uint16/"
-#py_path_name = "../sample_a-b_mix_2_csv_uint16/"
-#py_path_name = "../sample_protease_mix_1_csv_uint16/"
-# for key in keys:
-mat_normal_py = np.loadtxt(py_path_name + "normal.csv",delimiter=",")
-mat_tol = 0.002
-ret = np.allclose(mat_normal_h5, mat_normal_py, atol=mat_tol)
-if (ret):
-    print("normal is ok!")
-else:
-    print("normal is not ok!")
-    np.savetxt("normal.csv", mat_normal_h5, delimiter=",",fmt="%7.3f")
+if (verify_result):
+    sample_name = sample_result_file.split(".")[0]
+    py_path_name = sample_name +"_csv_uint16/"
+    print("Verifying results from:")
+    print("py_path_name=",py_path_name)
+    # for key in keys:
+    mat_normal_py = np.loadtxt(py_path_name + "normal.csv",delimiter=",")
+    mat_tol = 0.002
+    ret = np.allclose(mat_normal_h5, mat_normal_py, atol=mat_tol)
+    if (ret):
+        print("normal is ok!")
+    else:
+        print("normal is not ok!")
+        np.savetxt("normal.csv", mat_normal_h5, delimiter=",",fmt="%7.3f")
+    
+    # for key in keys:
+    mat_sarika_py = np.loadtxt(py_path_name + "sarika.csv",delimiter=",")
+    ret = np.allclose(mat_sarika_h5, mat_sarika_py, atol=mat_tol)
+    if (ret):
+        print("sarika is ok!")
+    else:
+        print("sarika is not ok!")
+        #np.savetxt('sarika.csv',fmt="%7.3f")
+        np.savetxt("sarika.csv", mat_sarika_h5, delimiter=",",fmt="%7.3f")
+    
+    mat_generalised_py = np.loadtxt(py_path_name + "generalised.csv",delimiter=",")
+    ret = np.allclose(mat_generalised_h5, mat_generalised_py, atol=mat_tol)
+    if (ret):
+        print("generalised is ok!")
+    else:
+        print("generalised is not ok!")
+        np.savetxt("generalised.csv", mat_generalised_h5, delimiter=",",fmt="%7.3f")
+    
+    mat_wu_py = np.loadtxt(py_path_name + "wu.csv",delimiter=",")
+    ret = np.allclose(mat_wu_h5, mat_wu_py, atol=mat_tol)
+    if (ret):
+        print("wu is ok!")
+    else:
+        print("wu is not ok!")
+        np.savetxt("wu.csv", mat_wu_h5, delimiter=",",fmt="%7.3f")
 
-# for key in keys:
-mat_sarika_py = np.loadtxt(py_path_name + "sarika.csv",delimiter=",")
-ret = np.allclose(mat_sarika_h5, mat_sarika_py, atol=mat_tol)
-if (ret):
-    print("sarika is ok!")
-else:
-    print("sarika is not ok!")
-    #np.savetxt('sarika.csv',fmt="%7.3f")
-    np.savetxt("sarika.csv", mat_sarika_h5, delimiter=",",fmt="%7.3f")
-
-mat_generalised_py = np.loadtxt(py_path_name + "generalised.csv",delimiter=",")
-ret = np.allclose(mat_generalised_h5, mat_generalised_py, atol=mat_tol)
-if (ret):
-    print("generalised is ok!")
-else:
-    print("generalised is not ok!")
-    np.savetxt("generalised.csv", mat_generalised_h5, delimiter=",",fmt="%7.3f")
-
-mat_wu_py = np.loadtxt(py_path_name + "wu.csv",delimiter=",")
-ret = np.allclose(mat_wu_h5, mat_wu_py, atol=mat_tol)
-if (ret):
-    print("wu is ok!")
-else:
-    print("wu is not ok!")
-    np.savetxt("wu.csv", mat_wu_h5, delimiter=",",fmt="%7.3f")
-
-#mat_cosine_py = np.loadtxt(py_path_name + "cosine.csv",delimiter=",")
-#ret = np.allclose(mat_cosine_h5, mat_cosine_py, atol=mat_tol)
-#if (ret):
-#    print("cosine is ok!")
-#else:
-#    print("cosine is not ok!")
-#print(mat_normal_py)
-#np.set_printoptions(edgeitems=30, linewidth=100000, formatter=dict(float=lambda x: "%7.3f" % x))
-#print(mat_cosine)
+    #mat_cosine_py = np.loadtxt(py_path_name + "cosine.csv",delimiter=",")
+    #ret = np.allclose(mat_cosine_h5, mat_cosine_py, atol=mat_tol)
+    #if (ret):
+    #    print("cosine is ok!")
+    #else:
+    #    print("cosine is not ok!")
+    #print(mat_normal_py)
+    #np.set_printoptions(edgeitems=30, linewidth=100000, formatter=dict(float=lambda x: "%7.3f" % x))
+    #print(mat_cosine)
