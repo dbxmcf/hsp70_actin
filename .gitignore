@@ -61,3 +61,4 @@ output.dat.npy
 res_all.h5
 hdf5t/jcd_mpi_omp.o*
 jcd_mpi_omp.*
+old.results/csv.protease_mix_1/
