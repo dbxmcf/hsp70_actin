@@ -1,0 +1,168 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    620023.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      11-Feb-2019 10:50
+Node:      qb025 (37831)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb025
+qb026
+qb029
+qb043
+
+A total of 80 processors on 4 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb025 10:50:27 
+Checking node qb026 10:50:28 
+Checking node qb029 10:50:30 
+Checking node qb043 10:50:32 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 11-Feb-2019 10:50:32
+------------------------------------------------------
+Parallel test files are:
+   ./ParaEg0.h5
+   ./ParaEg1.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 18: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 19: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 20: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 21: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 22: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 23: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 24: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 25: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 26: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 27: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 28: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 29: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 30: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 31: *** testing PHDF5 dataset collective read...
+--------------------------------
+=>> PBS: job killed: walltime 1201 exceeded limit 1200
+Killed by signal 15.
+Killed by signal 15.
+Killed by signal 15.
+
+=====================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   EXIT CODE: 15
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+=====================================================================================
+[proxy:0:0@qb025] [mpiexec@qb025] HYDT_bscu_wait_for_completion (./tools/bootstrap/utils/bscu_wait.c:70): one of the processes terminated badly; aborting
+[mpiexec@qb025] HYDT_bsci_wait_for_completion (./tools/bootstrap/src/bsci_wait.c:23): launcher returned error waiting for completion
+[mpiexec@qb025] HYD_pmci_wait_for_completion (./pm/pmiserv/pmiserv_pmci.c:191): launcher returned error waiting for completion
+[mpiexec@qb025] main (./ui/mpich/mpiexec.c:405): process manager error waiting for completion
+------------------------------------------------------
+Running PBS epilogue script    - 11-Feb-2019 11:10:33
+------------------------------------------------------
+Checking node qb025 (MS)
+Checking node qb043 ok
+Checking node qb029 ok
+Checking node qb026 ok
+Checking node qb025 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 11-Feb-2019 11:10:41
+------------------------------------------------------
+Exit Status:     271
+Job ID:          620023.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        jcd_mpi
+Session Id:      37830
+Resource Limits: ncpus=1,neednodes=4:ppn=20,nodes=4:ppn=20,walltime=00:20:00
+Resources Used:  cput=02:38:57,mem=41746164kb,vmem=43671780kb,walltime=00:20:02
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb025
+Process id:      38957
+------------------------------------------------------
