@@ -3,16 +3,15 @@
 from __future__ import print_function
 import sys
 import os
-import pandas as pd
 import time
 import numpy as np
-from numpy import linalg as LA
+#from numpy import linalg as LA
 #import StringIO
-import itertools
-from scipy import spatial
+#import itertools
+#from scipy import spatial
 #import cartesian
 #from cartesian import *
-from itertools import combinations
+#from itertools import combinations
 import h5py
 
 #orig_stdout = sys.stdout
@@ -56,7 +55,7 @@ print("max val=",data.max())
 
 end_time=time.time()
 total_time=((end_time)-(start_time))
-print("Time taken for making matrix: {}".format(total_time))
+print("Time taken for reading csv: {}".format(total_time))
 
 h5_filename = "hdf5t/" + sample_name + "_dtype.h5"
 #h5_filename = "hdf5t/" + sample_name + ".h5"
