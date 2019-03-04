@@ -57,8 +57,8 @@ end_time=time.time()
 total_time=((end_time)-(start_time))
 print("Time taken for reading csv: {}".format(total_time))
 
-h5_filename = "hdf5t/" + sample_name + "_dtype.h5"
-#h5_filename = "hdf5t/" + sample_name + ".h5"
+#h5_filename = "hdf5t/" + sample_name + "_dtype.h5"
+h5_filename = "hdf5t/" + sample_name + ".h5"
 h5f = h5py.File(h5_filename, 'w')
 #h5f.create_dataset('Data1', data=data, dtype='int16')
 #h5f.create_dataset('Data1', data=data, dtype='int16')
