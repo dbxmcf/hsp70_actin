@@ -12,28 +12,29 @@ module purge
 module load python/3.5.2-anaconda-tensorflow
 module load hdf5/mvapich2.3-pgi-18.7
 
-python lf_csv2_dtype_h5.py
+input_folder="sample_protease_mix_1"
+python lf_csv2_dtype_h5.py -f "$input_folder"
 
 export MV2_ENABLE_AFFINITY=0
 
 NPROCS=8
-input="hdf5t/sample_protease_mix_1.h5"
+input_h5="hdf5t/${input_folder}.h5"
 
 export OMP_NUM_THREADS=10
-for i in $(seq 1 5);
-do 
+#for i in $(seq 1 5);
+#do 
     SECONDS=0
-    mpirun -np $NPROCS -f $PBS_NODEFILE -ppn 2 ./pgi.mpi.pomp.out -f $input
+    mpirun -np $NPROCS -f $PBS_NODEFILE -ppn 2 ./pgi.mpi.pomp.out -f $input_h5
     echo "omp run $i trd=$OMP_NUM_THREADS, $SECONDS sec"
-done
+#done
 
 export OMP_NUM_THREADS=1
-for i in $(seq 1 5);
-do
+#for i in $(seq 1 5);
+#do
     SECONDS=0
-    mpirun -np $NPROCS -f $PBS_NODEFILE -ppn 2 ./pgi.mpi.pacc.out -f $input
+    mpirun -np $NPROCS -f $PBS_NODEFILE -ppn 2 ./pgi.mpi.pacc.out -f $input_h5
     echo "gpu run $i GPU, $SECONDS sec"
-done;
+#done;
 
-python rebuild_mat.py -f $input -csv -validate
+python rebuild_mat.py -f $input_h5 -csv -validate
 

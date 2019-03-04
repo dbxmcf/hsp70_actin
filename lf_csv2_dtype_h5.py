@@ -5,6 +5,7 @@ import sys
 import os
 import time
 import numpy as np
+import argparse
 #from numpy import linalg as LA
 #import StringIO
 #import itertools
@@ -14,9 +15,12 @@ import numpy as np
 #from itertools import combinations
 import h5py
 
-#orig_stdout = sys.stdout
-#f = open('log.txt', 'w')
-#sys.stdout = f
+parser = argparse.ArgumentParser(description='Generate hdf5 from csv file:')
+#parser.add_argument('-f', action="store", dest="sample_name", required=True, help='Input folder name')
+parser.add_argument('-f','--folder', action="store", required=True, help='Input folder name')
+#args = parser.parse_args(['-h'])
+args = parser.parse_args()
+
 
 #fname = "test.csv"
 #fname = "sample_hsp70_actin/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
@@ -25,7 +29,9 @@ import h5py
 
 #sample_name = "sample_hsp70_actin"
 #sample_name = "sample_a-b_mix_2"
-sample_name = "sample_protease_mix_1"
+#sample_name = "sample_protease_mix_1"
+sample_name = args.folder
+print("input_folder = ",sample_name)
 fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
 #sample_name = "hdf5t"
