@@ -15,9 +15,20 @@ import argparse
 #from itertools import combinations
 import h5py
 
+def mkdir_p(path):
+    try:
+        os.makedirs(path)
+    except OSError as exc:  # Python >2.5
+        if exc.errno == errno.EEXIST and os.path.isdir(path):
+            pass
+        else:
+            raise
+
 parser = argparse.ArgumentParser(description='Generate hdf5 from csv file:')
 #parser.add_argument('-f', action="store", dest="sample_name", required=True, help='Input folder name')
-parser.add_argument('-f','--folder', action="store", required=True, help='Input folder name')
+parser.add_argument('-f','--input_folder', action="store", required=True, help='Input folder name')
+parser.add_argument('-o','--output_folder', action="store",required=False, 
+                    help='Output folder name', default='hdf5t')
 #args = parser.parse_args(['-h'])
 args = parser.parse_args()
 
@@ -30,7 +41,7 @@ args = parser.parse_args()
 #sample_name = "sample_hsp70_actin"
 #sample_name = "sample_a-b_mix_2"
 #sample_name = "sample_protease_mix_1"
-sample_name = args.folder
+sample_name = args.input_folder
 print("input_folder = ",sample_name)
 fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
@@ -64,7 +75,8 @@ total_time=((end_time)-(start_time))
 print("Time taken for reading csv: {}".format(total_time))
 
 #h5_filename = "hdf5t/" + sample_name + "_dtype.h5"
-h5_filename = "hdf5t/" + sample_name + ".h5"
+mkdir_p(args.output_folder)
+h5_filename = args.output_folder + "/" + sample_name + ".h5"
 h5f = h5py.File(h5_filename, 'w')
 #h5f.create_dataset('Data1', data=data, dtype='int16')
 #h5f.create_dataset('Data1', data=data, dtype='int16')
