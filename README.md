@@ -1,4 +1,6 @@
 
+# Introduction
+
 This README.md provides a brief introduction on how to use the distributed version to run 3D protein structure comparison in parallel. The code uses two modes of parallism by using the distributed memory programming model and shared memory model, namely:
 - Massage Passing Interface (MPI) + Open Multi-Processing (OpenMP)
   - This version runs on regular multi-core nodes (without GPU)
