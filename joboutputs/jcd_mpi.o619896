@@ -1,0 +1,120 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    619896.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      10-Feb-2019 22:07
+Node:      qb097 (99524)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb097
+qb098
+qb101
+qb106
+qb107
+qb183
+
+A total of 120 processors on 6 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb097 22:07:03 
+Checking node qb098 22:07:05 
+Checking node qb101 22:07:07 
+Checking node qb106 22:07:09 
+Checking node qb107 22:07:10 
+Checking node qb183 22:07:12 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 10-Feb-2019 22:07:12
+------------------------------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+Parallel test files are:
+   ./ParaEg0.h5
+   ./ParaEg1.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+===================================
+PHDF5 tests finished with no errors
+===================================
+------------------------------------------------------
+Running PBS epilogue script    - 10-Feb-2019 22:28:22
+------------------------------------------------------
+Checking node qb097 (MS)
+Checking node qb183 ok
+Checking node qb107 ok
+Checking node qb106 ok
+Checking node qb101 ok
+Checking node qb098 ok
+Checking node qb097 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 10-Feb-2019 22:28:32
+------------------------------------------------------
+Exit Status:     0
+Job ID:          619896.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        jcd_mpi
+Session Id:      99523
+Resource Limits: ncpus=1,neednodes=6:ppn=20,nodes=6:ppn=20,walltime=02:00:00
+Resources Used:  cput=01:02:26,mem=20889056kb,vmem=22044120kb,walltime=00:21:09
+Queue Used:      workq
+Account String:  loni_loniadmin1
+Node:            qb097
+Process id:      100729
+------------------------------------------------------

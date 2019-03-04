@@ -75,10 +75,10 @@ $ mpirun -np 8 ./pomp -f sample_hsp70_actin.h5
 
 ### Distribute the workload to different compute nodes
 
-The 
+The comparison of 3D protein structure is a memory bound problem, which means the limitation to the simulation is the large The primary feature of the code is its capability of distributing the workload (in this case, high memory usage) to different compute nodes so that large size comparison can be made possible. For a fixed given sample size, the more number of processes used, the less memory will be allocated to each process. For a fixed size memory compute node, when more compute nodes are used, the larger the total sample size can be analyzed. 
 
 ### How to use output file
 
-As mentioned earlier, the output of the program is also an hdf5 file with all the result information from each MPI process, however the information from each MPI process are not stored according to the original order of the matrix, a python code will be used to gather information from the result hdf5 file and combine them into a numpy readable matrix (2D table) and can be used for subsequent analysis. 
+As mentioned earlier, the output of the program is also an hdf5 file with all the result information from each MPI process, however the calculated results from each MPI process are not stored according to the original order of the matrix, a python code will be used to gather information from the result hdf5 file and combine them into a numpy readable matrix (2D table) and can be used for subsequent analysis. 
 
 

@@ -1,0 +1,37 @@
+#!/bin/bash
+#PBS -l nodes=4:ppn=20
+#PBS -l walltime=0:30:00
+#PBS -q checkpt
+#PBS -N jcd_mpi_omp
+#PBS -j oe
+#-A hpc_hpcadmin5
+#PBS -A loni_loniadmin1
+
+cd $PBS_O_WORKDIR
+#python lf_csv2h5.py #2>&1 > $PBS_JOBID.log
+#export OMP_NUM_THREADS=1
+#SECONDS=0
+#mpirun -np 8 -ppn 4 ./a.out
+#echo "thread=$OMP_NUM_THREADS used $SECONDS secs"
+
+#export OMP_NUM_THREADS=20
+#export OMP_NUM_THREADS=1
+#SECONDS=0
+#mpirun -np 8 -ppn 2 ./a.out
+#echo "thread=$OMP_NUM_THREADS used $SECONDS secs"
+module purge
+module load hdf5/mvapich2.3-pgi-18.7
+
+export MV2_ENABLE_AFFINITY=0
+
+#arr=( 1 2 5 10 )
+#for i in "${arr[@]}";
+#do
+export OMP_NUM_THREADS=1
+SECONDS=0
+#time ./a.out
+mpirun -np 8 -f $PBS_NODEFILE -ppn 2 ./pgiacc.mpi.acc.out -f sample_a-b_mix_2.h5
+#mpirun -np 8 -f $PBS_NODEFILE -ppn 2 ./pgiacc.mpi.acc.out -f sample_protease_mix_1.h5
+echo "GPU, $SECONDS sec"
+#done
+

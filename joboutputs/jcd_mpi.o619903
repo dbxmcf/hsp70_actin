@@ -1,0 +1,189 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    619903.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      10-Feb-2019 23:22
+Node:      qb011 (74764)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb011
+qb012
+qb013
+qb014
+
+A total of 80 processors on 4 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb011 23:22:57 
+Checking node qb012 23:23:00 
+Checking node qb013 23:23:02 
+Checking node qb014 23:23:05 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 10-Feb-2019 23:23:05
+------------------------------------------------------
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+libibverbs: Warning: couldn't load driver 'mlx5': /usr/lib64/libmlx5-rdmav2.so: symbol ibv_cmd_create_qp_ex, version IBVERBS_1.1 not defined in file libibverbs.so.1 with link time reference
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 18: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 19: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 20: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 21: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 22: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 23: *** testing PHDF5 dataset collective read...
+--------------------------------
+Parallel test files are:
+   ./ParaEg0.h5
+   ./ParaEg1.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 24: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 25: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 26: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 27: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 28: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 29: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 30: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 31: *** testing PHDF5 dataset collective read...
+--------------------------------
+===================================
+PHDF5 tests finished with no errors
+===================================
+------------------------------------------------------
+Running PBS epilogue script    - 10-Feb-2019 23:37:13
+------------------------------------------------------
+Checking node qb011 (MS)
+Checking node qb014 ok
+Checking node qb013 ok
+Checking node qb012 ok
+-> Killing process of fchen14: -bash
+Checking node qb011 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 10-Feb-2019 23:37:24
+------------------------------------------------------
+Exit Status:     0
+Job ID:          619903.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        jcd_mpi
+Session Id:      74763
+Resource Limits: ncpus=1,neednodes=4:ppn=20,nodes=4:ppn=20,walltime=02:00:00
+Resources Used:  cput=01:50:55,mem=41800496kb,vmem=43652168kb,walltime=00:14:07
+Queue Used:      phi
+Account String:  loni_loniadmin1
+Node:            qb011
+Process id:      75521
+------------------------------------------------------
