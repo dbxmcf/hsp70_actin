@@ -2,6 +2,7 @@
 
 from __future__ import print_function
 import sys
+import errno 
 import os
 import time
 import numpy as np
