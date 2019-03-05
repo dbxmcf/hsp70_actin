@@ -100,10 +100,12 @@ python rebuild_mat.py -f $input_h5 -csv
     ```
     15 input_sample_folder="sample_protease_mix_1"
     ```
+
 3. Change line 16, output_folder to a desired output folder name, if the output folder does not exist, the folder will be created, e.g.:
     ```
     16 output_folder="out"
     ```
+    
 4. Change the allocation name to your allocation:
 
     ```
