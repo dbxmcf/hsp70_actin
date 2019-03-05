@@ -7,9 +7,34 @@ This README.md provides a brief introduction on how to use the distributed versi
 
 The implementation strategy and background will be detailed in the XXX paper, 
 
-## To the impatient
+## Example job script
 
 Jump to the section <a href="Example script">Example script</a>, which should allow running a job without going through all the details
+
+## Example script
+
+1. Copy the template job script to another name:
+
+    ```
+    cp template_large.pbs my_script.pbs
+    ```
+
+1. Change line 15, input_sample_folder to the desired folder name, this sample folder *must* contain the input csv file `"<sample_folder_root>/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"` from the last step, e.g.:
+
+    ```
+    15 input_sample_folder="sample_protease_mix_1"
+    ```
+
+1. Change line 16, output_folder to a desired output folder name, if the output folder does not exist, the folder will be created, e.g.:
+    ```
+    16 output_folder="out"
+    ```
+
+1. Change the allocation name to your allocation:
+
+    ```
+    #PBS -A <your_allocation_name>
+    ```
 
 ## How to compile the executable file
 
@@ -23,7 +48,7 @@ To compile the MPI+OpenMP executable, type the below command:
 $ make pomp
 ```
 
-2. GPU Version
+1. GPU Version
 
 The GPU version is typically about twice as fast as the CPU multi-threaded version.
 
@@ -87,30 +112,7 @@ As mentioned earlier, the output of the program is also an hdf5 file with all th
 python rebuild_mat.py -f $input_h5 -csv
 ```
 
-## Example script
 
-1. Copy the template job script to another name:
-
-    ```
-    cp template_large.pbs my_script.pbs
-    ```
-
-2. Change line 15, input_sample_folder to the desired folder name, this sample folder *must* contain the input csv file `"<sample_folder_root>/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"` from the last step, e.g.:
-
-    ```
-    15 input_sample_folder="sample_protease_mix_1"
-    ```
-
-3. Change line 16, output_folder to a desired output folder name, if the output folder does not exist, the folder will be created, e.g.:
-    ```
-    16 output_folder="out"
-    ```
-
-4. Change the allocation name to your allocation:
-
-    ```
-    \#PBS -A <your_allocation_name>
-    ```
 
 
 
