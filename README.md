@@ -26,6 +26,7 @@ Jump to the section <a href="Example script">Example script</a>, which should al
     ```
 
 1. Change line 16, output_folder to a desired output folder name, if the output folder does not exist, the folder will be created, e.g.:
+
     ```
     16 output_folder="out"
     ```
@@ -33,7 +34,7 @@ Jump to the section <a href="Example script">Example script</a>, which should al
 1. Change the allocation name to your allocation:
 
     ```
-    \#PBS -A <your_allocation_name>
+    PBS -A <your_allocation_name>
     ```
 
 ## How to compile the executable file
