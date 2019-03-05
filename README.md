@@ -105,11 +105,11 @@ python rebuild_mat.py -f $input_h5 -csv
     ```
     16 output_folder="out"
     ```
-    
+
 4. Change the allocation name to your allocation:
 
     ```
-    #PBS -A <your_allocation_name>
+    \#PBS -A <your_allocation_name>
     ```
 
 
