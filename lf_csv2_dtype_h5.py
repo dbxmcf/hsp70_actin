@@ -43,6 +43,7 @@ args = parser.parse_args()
 #sample_name = "sample_a-b_mix_2"
 #sample_name = "sample_protease_mix_1"
 sample_name = args.input_folder
+sample_name = sample_name.rstrip('//')
 print("input_folder = ",sample_name)
 fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
