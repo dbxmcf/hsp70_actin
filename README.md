@@ -33,7 +33,7 @@ Jump to the section <a href="Example script">Example script</a>, which should al
 1. Change the allocation name to your allocation:
 
     ```
-    #PBS -A <your_allocation_name>
+    \#PBS -A <your_allocation_name>
     ```
 
 ## How to compile the executable file
