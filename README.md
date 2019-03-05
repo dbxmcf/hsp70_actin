@@ -7,11 +7,24 @@ This README.md provides a brief introduction on how to use the distributed versi
 
 The implementation strategy and background will be detailed in our later paper.
 
+## Clone the code repository from bitbucket:
+
+From QB2 terminal, clone the code repository (with your bitbucket credential) using the below command:
+
+```
+    [fchen14@qb2 fchen14]$ pwd
+    /work/fchen14
+    [fchen14@qb4 fchen14]$ git clone https://bitbucket.org/dbxmcf/hsp70_actin.git
+    <use your bitbucket username/password>
+```
+Enter the repository folder:
+
+```
+    [fchen14@qb4 fchen14]$ cd hsp70_actin/
+    [fchen14@qb4 hsp70_actin]$
+```
+
 ## Example job script
-
-Jump to the section <a href="Example script">Example script</a>, which should allow running a job without going through all the details
-
-## Example script
 
 1. Copy the template job script to another name:
 
@@ -34,7 +47,7 @@ Jump to the section <a href="Example script">Example script</a>, which should al
 1. Change the allocation name to your allocation:
 
     ```
-    PBS -A <your_allocation_name>
+    #PBS -A <your_allocation_name>
     ```
 
 ## How to compile the executable file
