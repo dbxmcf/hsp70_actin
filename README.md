@@ -165,7 +165,7 @@ Thus to *get the best performance*, 100k lines of csv is about the limit of a si
 Below table summarized the number of data chunks `C`， the needed MPI processes for `C`， number of compute nodes needed based on ppn=2 and corresponding maximum csv lines a job is able to process:
 
 
-| C  | np <br/>(number of<br/> MPI processes) | num_nodes <br/>(based on<br/> ppn=2) | max csv <br/>lines |
+| C  | np (number of MPI processes) | num_nodes (based on -ppn=2) | max csv lines |
 |----|------------------------------|----------------------------|---------------|
 | 2  | 2                            | 1                          | 6400          |
 | 4  | 8                            | 4                          | 12800         |
