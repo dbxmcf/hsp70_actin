@@ -113,9 +113,9 @@ max_csv_line_per_mpiprocess = 3200
 
 ### Number of MPI processes
 
-In order to achieve a good load balancing, the number of line chunks `C` is currently limited to an even number greater than 2 (using two chunks is computationally meaningless), so the possible values for `C` can only be 
+In order to achieve a good load balancing, the number of line chunks `C` is currently limited to even numbers (using two chunks is still acceptable), so the possible values for `C` can only be 
 
-4, 6, 8, 10,..., 
+2, 4, 6, 8, 10,..., 
 
 Correspondingly, the number of MPI processes \<NPROCS> we can use is based on below equation:
 
@@ -123,7 +123,7 @@ np = CxC/2 (details on derivation will be in our paper)
 
 so the number of MPI processes for the above C values are:
 
-8, 18, 32, 50,...,
+2, 8, 18, 32, 50,...,
 
 ### Number of compute nodes needed for a particular job
 
@@ -165,7 +165,7 @@ Thus to *get the best performance*, 100k lines of csv is about the limit of a si
 Below table summarized the number of data chunks `C`， the needed MPI processes for `C`， number of compute nodes needed based on ppn=2 and corresponding maximum csv lines a job is able to process:
 
 
-| C  | np (number of MPI processes) | num_nodes (based on ppn=2) | max csv lines |
+| C  | np <br/>(number of<br/> MPI processes) | num_nodes <br/>(based on<br/> ppn=2) | max csv <br/>lines |
 |----|------------------------------|----------------------------|---------------|
 | 2  | 2                            | 1                          | 6400          |
 | 4  | 8                            | 4                          | 12800         |
