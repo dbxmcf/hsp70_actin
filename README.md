@@ -12,19 +12,19 @@ The implementation strategy and background will be detailed in our later paper.
 From QB2 terminal, clone the code repository (with your bitbucket credential) using the below command:
 
 ```
-    [fchen14@qb2 fchen14]$ pwd
-    /work/fchen14
-    [fchen14@qb4 fchen14]$ git clone https://bitbucket.org/dbxmcf/hsp70_actin.git
+    [<user>@qb2 <user>]$ pwd
+    /work/<user>
+    [<user>@qb4 <user>]$ git clone https://bitbucket.org/dbxmcf/hsp70_actin.git
     <use your bitbucket username/password>
 ```
 Enter the repository folder:
 
 ```
-    [fchen14@qb4 fchen14]$ cd hsp70_actin/
-    [fchen14@qb4 hsp70_actin]$
+    [<user>@qb4 <user>]$ cd hsp70_actin/
+    [<user>@qb4 hsp70_actin]$
 ```
 
-## Example job script
+## Example job scriptv
 
 1. Copy the template job script to another name:
 
@@ -32,7 +32,7 @@ Enter the repository folder:
     cp template_large.pbs my_script.pbs
     ```
 
-1. Change line 15, input_sample_folder to the desired folder name, this sample folder *must* contain the input csv file `<sample_folder_root>/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv` from the last step, e.g.:
+1. Change line 15, input_sample_folder to the desired folder name, this sample folder *must* contain the input csv file ``<sample_folder_root>/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv`` from the last step, e.g.:
 
     ```
     input_sample_folder="sample_protease_mix_1"
@@ -47,7 +47,7 @@ Enter the repository folder:
 1. Change the allocation name to your allocation:
 
     ```
-    \# ##PBS -A <your_allocation_name>
+    # #PBS -A <your_allocation_name>
     ```
 
 ## How to compile the executable file
