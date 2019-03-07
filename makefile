@@ -1,5 +1,5 @@
 INTEL_HDF5_BIN=/usr/local/packages/hdf5/1.8.12/INTEL-140-MVAPICH2-2.0/bin
-PGI_HDF5_BIN=/project/fchen14/packages/hdf5-1.10.4/install/bin
+PGI_HDF5_BIN=/project/fchen14/packages/hdf5-1.10.5/install/bin
 
 INTEL_H5CC=$(INTEL_HDF5_BIN)/h5pcc
 PGI_H5CC=$(PGI_HDF5_BIN)/h5pcc

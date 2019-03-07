@@ -789,8 +789,10 @@ phdf5readAll(char *filename)
 
     hid_t dataset1, dataset2;	/* Dataset ID */
     //DATATYPE data_array_a[SPACE1_DIM1][SPACE1_DIM2];	/* data buffer */
-    unsigned long space_dim_a0=0, space_dim_a1=0;
-    unsigned long space_dim_b0=0, space_dim_b1=0;
+    //unsigned long space_dim_a0=0, space_dim_a1=0;
+    //unsigned long space_dim_b0=0, space_dim_b1=0;
+    hsize_t space_dim_a0=0, space_dim_a1=0;
+    hsize_t space_dim_b0=0, space_dim_b1=0;
     //DATATYPE data_array_a[space_dim_a1][space_dim2];	/* data buffer */
     //DATATYPE **data_array_a=NULL;	/* data buffer */
     DATATYPE data_origin1[SPACE1_DIM1][SPACE1_DIM2];	/* expected data buffer */
@@ -957,10 +959,14 @@ phdf5readAll(char *filename)
     //DATATYPE **data_array_b=NULL;
     sint **data_array_a=NULL;	/* data buffer */
     sint **data_array_b=NULL;
-    space_dim_a0 = (unsigned long)count_part_a[0];
-    space_dim_a1 = (unsigned long)count_part_a[1];
-    space_dim_b0 = (unsigned long)count_part_b[0];
-    space_dim_b1 = (unsigned long)count_part_b[1];
+    //space_dim_a0 = (unsigned long)count_part_a[0];
+    //space_dim_a1 = (unsigned long)count_part_a[1];
+    //space_dim_b0 = (unsigned long)count_part_b[0];
+    //space_dim_b1 = (unsigned long)count_part_b[1];
+    space_dim_a0 = (hsize_t)count_part_a[0];
+    space_dim_a1 = (hsize_t)count_part_a[1];
+    space_dim_b0 = (hsize_t)count_part_b[0];
+    space_dim_b1 = (hsize_t)count_part_b[1];
     if (verbose)
     {
         printf("space_dim_a0=%lu,space_dim_a1=%lu\n",space_dim_a0,space_dim_a1);
