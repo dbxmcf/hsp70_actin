@@ -485,9 +485,9 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         // calculate some preparation values
         real *restrict data_sum = (real*)malloc(dim0*sizeof(real));
         real *restrict one_data_norm = (real*)malloc(dim0*sizeof(real));
-        int **restrict cmbs=NULL;
+        integer **restrict cmbs=NULL;
 
-        int num_cmbs = 0, idx_rpd = 0;
+        integer num_cmbs = 0, idx_rpd = 0;
         cmbs = combination_util(dim0,&num_cmbs); 
 
         //real *restrict normal = (real*)malloc(num_cmbs*sizeof(real));

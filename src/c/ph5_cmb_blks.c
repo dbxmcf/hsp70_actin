@@ -743,7 +743,7 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     //dataset_normal = H5Dcreate2(fid1, result_data->normal_name, H5T_NATIVE_FLOAT, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
     //assert(dataset_normal != FAIL);
     //MESG("H5Dcreate2 succeed");
-    int sl_cnt[6][1] = {{result_data->start_loc},{result_data->vec_dim},
+    integer sl_cnt[6][1] = {{result_data->start_loc},{result_data->vec_dim},
         {result_data->chunk_start_a},
         {result_data->chunk_start_b},
         {result_data->chunk_count_a},
@@ -804,8 +804,8 @@ phdf5readAll(char *filename)
     hsize_t count_part_a[SPACE1_RANK], count_part_b[SPACE1_RANK];
 
     herr_t ret;         	/* Generic return value */
-    int i,j,status_n, fs_rank;
-    int average_lines,remainder_lines, num_data_chunks;
+    integer i,j,status_n, fs_rank;
+    integer average_lines,remainder_lines, num_data_chunks;
     double t1, t2; 
 
 
@@ -877,12 +877,12 @@ phdf5readAll(char *filename)
         printf("mpi_size=%d,ndchunks=%d\n",mpi_size,num_data_chunks);
     // assign chunk combinations to each mpi_rank
     //int n=5,r=2; 
-    int **cmbs=NULL;
-    int num_cmbs = 0;
+    integer **cmbs=NULL;
+    integer num_cmbs = 0;
     cmbs=combination_util(num_data_chunks,&num_cmbs); 
     //printf("num_cmb=%d,num_cmbs1=%d\n",num_cmbs,num_cmbs1);
     //print_matrix(cmbs, num_cmbs, 2, "%3d");
-    int mpi_rk_chunk0, mpi_rk_chunk1;
+    integer mpi_rk_chunk0, mpi_rk_chunk1;
     if (mpi_rank < num_cmbs) { // an off-diagnal full block
         //printf("mpi_rank=%d\n",mpi_rank);
         mpi_rk_chunk0 = cmbs[mpi_rank][0];
@@ -902,7 +902,7 @@ phdf5readAll(char *filename)
     if (verbose)
         printf("average_lines=%d, remainder_lines=%d\n", average_lines,remainder_lines);
 
-    DATATYPE **chunk_start=NULL, **chunk_count=NULL;
+    integer **chunk_start=NULL, **chunk_count=NULL;
     chunk_start = allocate_dynamic_2d_array_integer(num_data_chunks,2);
     chunk_count = allocate_dynamic_2d_array_integer(num_data_chunks,2);
     for (i=0;i<remainder_lines;i++) {
@@ -1062,7 +1062,7 @@ phdf5readAll(char *filename)
     real *part_ab_wu = NULL; 
     real *part_ab_sarika = NULL; 
     real *part_ab_cosine = NULL; 
-    int num_cmbs_ab;
+    integer num_cmbs_ab;
 
     if (mpi_rank < num_cmbs){
         //real **block_cmbs;
@@ -1115,8 +1115,8 @@ phdf5readAll(char *filename)
         /* process two diagnol triangles*/
 
         result_pointers_diagnol rpd_part_a;
-        int num_cmbs_a = space_dim_a0*(space_dim_a0-1)/2;
-        int num_cmbs_b = space_dim_b0*(space_dim_b0-1)/2;
+        integer num_cmbs_a = space_dim_a0*(space_dim_a0-1)/2;
+        integer num_cmbs_b = space_dim_b0*(space_dim_b0-1)/2;
         num_cmbs_ab = num_cmbs_a + num_cmbs_b;
 
         part_ab_normal = (real*)malloc(num_cmbs_ab*sizeof(real)); 
@@ -1190,10 +1190,10 @@ phdf5readAll(char *filename)
     rpd_h5.total_lines = dims_out[0]; // total number of lines
 
     // get the start location of each rank for write
-    int *rk_vec_dim_all=(int *)malloc(sizeof(int)*mpi_size);
-    int *rk_start=(int *)malloc(sizeof(int)*mpi_size);
+    integer *rk_vec_dim_all=(integer *)malloc(sizeof(integer)*mpi_size);
+    integer *rk_start=(integer *)malloc(sizeof(integer)*mpi_size);
     MPI_Allgather(&num_cmbs_ab,1,MPI_INT,rk_vec_dim_all,1,MPI_INT,comm);
-    int cur_loc = 0;
+    integer cur_loc = 0;
     for (i=0;i<mpi_size;i++) {
         rk_start[i] = cur_loc;
         cur_loc += rk_vec_dim_all[i];

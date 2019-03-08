@@ -5,7 +5,7 @@
 #include <stdlib.h>
              
 //typedef double integer;
-typedef unsigned long long integer;
+typedef hsize_t integer;
 //typedef short sint;
 typedef unsigned short sint;
 typedef char cint;
@@ -16,19 +16,19 @@ typedef float real;
 
 integer **allocate_dynamic_2d_array_integer(integer nrows, integer ncols);
 void free_dynamic_2d_array_integer(integer** array_dynamic);
-void print_matrix_integer(integer** array_dynamic, int nrows, int ncols, char* fmt_string);
+void print_matrix_integer(integer** array_dynamic, integer nrows, integer ncols, char* fmt_string);
 
 sint **allocate_dynamic_2d_array_sint(integer nrows, integer ncols);
 void free_dynamic_2d_array_sint(sint** array_dynamic);
-void print_matrix_sint(sint** array_dynamic, int nrows, int ncols, char* fmt_string);
+void print_matrix_sint(sint** array_dynamic, integer nrows, integer ncols, char* fmt_string);
 
-cint **allocate_dynamic_2d_array_cint(int nrows, int ncols);
+cint **allocate_dynamic_2d_array_cint(integer nrows, integer ncols);
 void free_dynamic_2d_array_cint(cint** array_dynamic);
-void print_matrix_cint(cint** array_dynamic, int nrows, int ncols, char* fmt_string);
+void print_matrix_cint(cint** array_dynamic, integer nrows, integer ncols, char* fmt_string);
 
-real **allocate_dynamic_2d_array_real(int nrows, int ncols);
+real **allocate_dynamic_2d_array_real(integer nrows, integer ncols);
 void free_dynamic_2d_array_real(real** array_dynamic);
-void print_matrix_real(real** array_dynamic, int nrows, int ncols, char* fmt_string);
+void print_matrix_real(real** array_dynamic, integer nrows, integer ncols, char* fmt_string);
 
 integer** allocate_dynamic_2d_array_integer(integer nrows, integer ncols) {
     /* here is the method to correct the non-contiguous memory problem */
@@ -46,8 +46,8 @@ void free_dynamic_2d_array_integer(integer** array_dynamic){
     free((void*)array_dynamic);
 }
 
-void print_matrix_integer(integer** array_dynamic, int nrows, int ncols, char* fmt_string) {
-    int i,j;
+void print_matrix_integer(integer** array_dynamic, integer nrows, integer ncols, char* fmt_string) {
+    integer i,j;
     printf("\n");
     for (i = 0; i < nrows; i++){
         for (j = 0; j < ncols; j++){
@@ -73,8 +73,8 @@ void free_dynamic_2d_array_sint(sint** array_dynamic){
     free((void*)array_dynamic);
 }
 
-void print_matrix_sint(sint** array_dynamic, int nrows, int ncols, char* fmt_string) {
-    int i,j;
+void print_matrix_sint(sint** array_dynamic, integer nrows, integer ncols, char* fmt_string) {
+    integer i,j;
     printf("\n");
     for (i = 0; i < nrows; i++){
         for (j = 0; j < ncols; j++){
@@ -84,9 +84,9 @@ void print_matrix_sint(sint** array_dynamic, int nrows, int ncols, char* fmt_str
     }
 }
 
-cint** allocate_dynamic_2d_array_cint(int nrows, int ncols) {
+cint** allocate_dynamic_2d_array_cint(integer nrows, integer ncols) {
     /* here is the method to correct the non-contiguous memory problem */
-    int i;
+    integer i;
     cint** array_dynamic=(cint**)malloc(nrows*sizeof(cint*));
     cint* data=(cint*)malloc(nrows*ncols*sizeof(cint));
     for (i=0; i<nrows; i++){
@@ -100,8 +100,8 @@ void free_dynamic_2d_array_cint(cint** array_dynamic){
     free((void*)array_dynamic);
 }
 
-void print_matrix_cint(cint** array_dynamic, int nrows, int ncols, char* fmt_string) {
-    int i,j;
+void print_matrix_cint(cint** array_dynamic, integer nrows, integer ncols, char* fmt_string) {
+    integer i,j;
     printf("\n");
     for (i = 0; i < nrows; i++){
         for (j = 0; j < ncols; j++){
@@ -111,7 +111,7 @@ void print_matrix_cint(cint** array_dynamic, int nrows, int ncols, char* fmt_str
     }
 }
 
-real** allocate_dynamic_2d_array_real(int nrows, int ncols) {
+real** allocate_dynamic_2d_array_real(integer nrows, integer ncols) {
     /* here is the method to correct the non-contiguous memory problem */
     int i;
     real** array_dynamic=(real**)malloc(nrows*sizeof(real*));
@@ -127,8 +127,8 @@ void free_dynamic_2d_array_real(real** array_dynamic){
     free((void*)array_dynamic);
 }
 
-void print_matrix_real(real** array_dynamic, int nrows, int ncols, char* fmt_string) {
-    int i,j;
+void print_matrix_real(real** array_dynamic, integer nrows, integer ncols, char* fmt_string) {
+    integer i,j;
     printf("\n");
     for (i = 0; i < nrows; i++){
         for (j = 0; j < ncols; j++){
@@ -138,8 +138,8 @@ void print_matrix_real(real** array_dynamic, int nrows, int ncols, char* fmt_str
     }
 }
 
-void print_matrix_1d_real(real* array_dynamic, int dim, char* fmt_string) {
-    int i;
+void print_matrix_1d_real(real* array_dynamic, integer dim, char* fmt_string) {
+    integer i;
     printf("\n");
     for (i = 0; i < dim; i++){
         printf(fmt_string, array_dynamic[i]);
