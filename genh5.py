@@ -4,9 +4,10 @@ import numpy as np
 import h5py
 
 val_range = 16
-n = 4295
-#m = 1417419
-m = 1000000
+#n = 4295
+n = 16000
+m = 1417419
+#m = 1000000
 m_type = np.uint16
 test_arr = np.random.randint(val_range, size=(n, m),dtype=m_type)
 

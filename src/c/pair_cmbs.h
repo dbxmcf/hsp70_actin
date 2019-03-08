@@ -8,11 +8,11 @@ data[] ---> Temporary array to store current combination
 start & end ---> Staring and Ending indexes in arr[] 
 index ---> Current index in data[] 
 r ---> Size of a combination to be printed */
-int **combination_util(int n, int *num_cmbs) //, int **cmbs, int num_cmb) 
+integer **combination_util(integer n, integer *num_cmbs) //, int **cmbs, int num_cmb) 
 { 
-	int i, j, idx=0;
+	integer i, j, idx=0;
 	*num_cmbs = n*(n-1)/2;
-	int **cmbs = allocate_dynamic_2d_array_integer(*num_cmbs,2);
+	integer **cmbs = allocate_dynamic_2d_array_integer(*num_cmbs,2);
 	// Current combination is ready to be printed, print it 
 	for (i=0;i<n;i++)
 	{ 
