@@ -626,10 +626,12 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
      */
     //attr1 = H5Acreate2(dataset, ANAME, H5T_NATIVE_FLOAT, aid1, H5P_DEFAULT, H5P_DEFAULT);
     hid_t root_grp = H5Gopen1(fid1,"/");
-    hid_t attribute_id = H5Acreate2 (root_grp, "MatrixInfo", H5T_STD_I32BE, aid1, 
+    //hid_t attribute_id = H5Acreate2 (root_grp, "MatrixInfo", H5T_STD_I32BE, aid1, 
+    //        H5P_DEFAULT, H5P_DEFAULT);
+    hid_t attribute_id = H5Acreate2 (root_grp, "MatrixInfo", H5T_STD_U64LE, aid1, 
             H5P_DEFAULT, H5P_DEFAULT);
     /* Write the attribute data. */
-    ret = H5Awrite(attribute_id, H5T_NATIVE_INT, attr_data);
+    ret = H5Awrite(attribute_id, H5T_NATIVE_ULLONG, attr_data);
     assert(ret != FAIL);
     MESG("H5Awrite succeed");
     /* Close the attribute. */
@@ -711,7 +713,8 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     MESG("H5Screate_simple succeed");
 
     /* create a dataset collectively */
-    hid_t dataset_sl_cnt = H5Dcreate2(fid1, "start_loc", H5T_NATIVE_INT, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
+    //hid_t dataset_sl_cnt = H5Dcreate2(fid1, "start_loc", H5T_NATIVE_INT, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
+    hid_t dataset_sl_cnt = H5Dcreate2(fid1, "start_loc", H5T_STD_U64LE, sid1, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
     assert(dataset_sl_cnt != FAIL);
     MESG("H5Dcreate2 succeed");
     start[0] = 0;
@@ -748,7 +751,9 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
         {result_data->chunk_start_b},
         {result_data->chunk_count_a},
         {result_data->chunk_count_b}};
-    ret = H5Dwrite(dataset_sl_cnt, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
+    //ret = H5Dwrite(dataset_sl_cnt, H5T_NATIVE_INT, mem_dataspace, file_dataspace,
+    //        xfer_plist, sl_cnt);
+    ret = H5Dwrite(dataset_sl_cnt, H5T_NATIVE_ULLONG, mem_dataspace, file_dataspace,
             xfer_plist, sl_cnt);
     assert(ret != FAIL);
     MESG("H5Dwrite succeed");
