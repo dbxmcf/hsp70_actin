@@ -7,7 +7,7 @@
 #-A hpc_hpcadmin5
 #PBS -A loni_loniadmin1
 
-cd $PBS_O_WORKDIR
+#cd $PBS_O_WORKDIR
 module purge
 module load python/3.5.2-anaconda-tensorflow
 module load hdf5/mvapich2.3-pgi-18.7
@@ -16,7 +16,10 @@ export MV2_ENABLE_AFFINITY=0
 
 NPROCS=$(( $PBS_NUM_NODES*2 )) 
 echo "using $NPROCS processes..."
-input_h5="asdf/ta8000.h5"
+#input_h5="asdf/ta8000.h5"
+#input_h5="asdf/sample_kinase_phosphatase_protease.h5"
+#input_h5="asdf/sample_a-b_mix_2.h5"
+input_h5="asdf/sample_hsp70_actin.h5"
 #input_h5="asdf/ta4292.h5"
 
 export OMP_NUM_THREADS=10
