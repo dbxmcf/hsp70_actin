@@ -1192,7 +1192,8 @@ phdf5readAll(char *filename)
     // get the start location of each rank for write
     integer *rk_vec_dim_all=(integer *)malloc(sizeof(integer)*mpi_size);
     integer *rk_start=(integer *)malloc(sizeof(integer)*mpi_size);
-    MPI_Allgather(&num_cmbs_ab,1,MPI_INT,rk_vec_dim_all,1,MPI_INT,comm);
+    //MPI_Allgather(&num_cmbs_ab,1,MPI_INT,rk_vec_dim_all,1,MPI_INT,comm);
+    MPI_Allgather(&num_cmbs_ab,1,MPI_UNSIGNED_LONG_LONG,rk_vec_dim_all,1,MPI_UNSIGNED_LONG_LONG,comm);
     integer cur_loc = 0;
     for (i=0;i<mpi_size;i++) {
         rk_start[i] = cur_loc;
