@@ -34,13 +34,13 @@ typedef struct result_arrays_diagnol {
     char *wu_name;
     char *sarika_name;
     char *cosine_name;
-    tint vec_dim;
-    tint total_lines;
-    tint start_loc;
-    tint chunk_start_a;
-    tint chunk_start_b;
-    tint chunk_count_a;
-    tint chunk_count_b;
+    integer vec_dim;
+    integer total_lines;
+    integer start_loc;
+    integer chunk_start_a;
+    integer chunk_start_b;
+    integer chunk_count_a;
+    integer chunk_count_b;
 
 } result_pointers_diagnol;
 
@@ -363,7 +363,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     }
 
 
-    int idx_out = 0;
+    tint idx_out = 0;
     // the large loop that calculates the matrix
 #pragma acc data \
     copy(data_part_a[0:part_a_dim0][0:part_a_dim1],\
@@ -602,6 +602,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         free(data_sum);
         free(one_data_norm);
 
+        return 0;
 
     }
 

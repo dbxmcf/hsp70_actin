@@ -616,8 +616,8 @@ phdf5writeAll(char *filename,result_pointers_diagnol* result_data)
     /*
      * Create dataspace for the first attribute.
      */
-    int attr_data[]={result_data->total_lines,mpi_size};
-    hsize_t adim[] = {sizeof(attr_data)/sizeof(int)};
+    hsize_t attr_data[]={result_data->total_lines,mpi_size};
+    hsize_t adim[] = {sizeof(attr_data)/sizeof(hsize_t)};
     hid_t aid1 = H5Screate(H5S_SIMPLE);
     ret  = H5Sset_extent_simple(aid1, 1, adim, NULL);
     assert(ret != FAIL);
@@ -1192,7 +1192,8 @@ phdf5readAll(char *filename)
     // get the start location of each rank for write
     integer *rk_vec_dim_all=(integer *)malloc(sizeof(integer)*mpi_size);
     integer *rk_start=(integer *)malloc(sizeof(integer)*mpi_size);
-    MPI_Allgather(&num_cmbs_ab,1,MPI_INT,rk_vec_dim_all,1,MPI_INT,comm);
+    //MPI_Allgather(&num_cmbs_ab,1,MPI_INT,rk_vec_dim_all,1,MPI_INT,comm);
+    MPI_Allgather(&num_cmbs_ab,1,MPI_UNSIGNED_LONG_LONG,rk_vec_dim_all,1,MPI_UNSIGNED_LONG_LONG,comm);
     integer cur_loc = 0;
     for (i=0;i<mpi_size;i++) {
         rk_start[i] = cur_loc;

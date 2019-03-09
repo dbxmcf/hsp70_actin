@@ -9,7 +9,8 @@ typedef hsize_t integer;
 //typedef short sint;
 typedef unsigned short sint;
 typedef char cint;
-typedef unsigned long tint;
+//typedef unsigned long tint;
+typedef hsize_t tint;
 typedef float real;
 //typedef double real;
 #define MPI_REALNUM MPI_FLOAT
@@ -113,7 +114,7 @@ void print_matrix_cint(cint** array_dynamic, integer nrows, integer ncols, char*
 
 real** allocate_dynamic_2d_array_real(integer nrows, integer ncols) {
     /* here is the method to correct the non-contiguous memory problem */
-    int i;
+    integer i;
     real** array_dynamic=(real**)malloc(nrows*sizeof(real*));
     real* data=(real*)malloc(nrows*ncols*sizeof(real));
     for (i=0; i<nrows; i++){
