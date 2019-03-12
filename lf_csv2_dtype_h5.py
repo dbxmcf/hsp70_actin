@@ -7,6 +7,7 @@ import os
 import time
 import numpy as np
 import argparse
+import json
 #from numpy import linalg as LA
 #import StringIO
 #import itertools
@@ -54,6 +55,7 @@ start_time=time.time()
 
 arrs = []
 m_datatype = np.uint16
+protein_names = []
 #m_datatype = np.int64
 
 with open(fname) as fcsv:
@@ -65,6 +67,9 @@ with open(fname) as fcsv:
         l_arr = np.asarray(l[:-1],dtype=m_datatype)
         #l_arr = np.asarray(l[:],dtype=m_datatype)
         arrs.append(l_arr)
+        protein_names.append(list(line.split(';'))[0])
+
+#print(protein_names)
 data = np.array(arrs,dtype=m_datatype)
 #print(data)
 print(data.shape)
@@ -81,12 +86,19 @@ print("Time taken for reading csv: {}".format(total_time))
 
 #h5_filename = "hdf5t/" + sample_name + "_dtype.h5"
 mkdir_p(args.output_folder)
-h5_filename = args.output_folder + "/" + sample_name + ".h5"
+filename_prefix = args.output_folder + "/" + sample_name
+
+h5_filename = filename_prefix + ".h5"
 h5f = h5py.File(h5_filename, 'w')
-#h5f.create_dataset('Data1', data=data, dtype='int16')
-#h5f.create_dataset('Data1', data=data, dtype='int16')
 h5f.create_dataset('Data1', data=data, dtype=m_datatype)
+ascii_protein_names = [n.encode("ascii", "ignore") for n in protein_names]
+h5f.create_dataset('ProteinNames', (len(ascii_protein_names),1),'S10', ascii_protein_names)
+#h5f.create_dataset('ProteinNames', data=protein_names, dtype=h5py.special_dtype(vlen=str))
 h5f.close()
-print(h5_filename + " file created")
-#exit()
+print(h5_filename + " file created.")
+
+pn_filename = filename_prefix + ".json"
+with open(pn_filename, 'w') as outfile:
+    json.dump(protein_names, outfile)
+print(pn_filename + " file created.")
 
