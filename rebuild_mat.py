@@ -18,7 +18,7 @@ def mkdir_p(path):
 
 def save_mat(arr, fmt, lst_ptn_names, out_csv_fname):
     n_lines = arr.shape[0]
-    with open(out_csv_fname, 'a') as f:
+    with open(out_csv_fname, 'w') as f:
         for i in np.arange(0,n_lines):
             f.write(lst_ptn_names[i] + str(arr[i]) + "\n")
 
@@ -50,7 +50,7 @@ def rebuild_triangle(arr, st_loc, mtx_info):
                                      chunk_ct_b[slc_nwb]):
          mat_ret[csta:csta+ccta,cstb:cstb+cctb] = a.reshape(ccta,cctb)
 
-    np.set_printoptions(edgeitems=30, linewidth=100000, formatter=dict(float=lambda x: "%.3f" % x))
+    np.set_printoptions(edgeitems=30, linewidth=1000000, formatter=dict(float=lambda x: "%.3f" % x))
     #print(mat_ret)
 
     #print("------")
