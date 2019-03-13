@@ -5,6 +5,7 @@ import h5py
 import errno    
 import os
 import argparse
+import json
 
 def mkdir_p(path):
     try:
@@ -112,6 +113,14 @@ mat_wu_h5 = rebuild_triangle(wu,start_loc,mtx_info)
 mat_generalised_h5 = rebuild_triangle(generalised,start_loc,mtx_info)
 mat_sarika_h5 = rebuild_triangle(sarika,start_loc,mtx_info)
 mat_cosine_h5 = rebuild_triangle(cosine,start_loc,mtx_info)
+
+pn_filename = args.sample_result_file
+if pn_filename.endswith('.h5'):
+    pn_filename = pn_filename[:-3] + '.json'
+print("protein_file_name:",pn_filename)
+with open(pn_filename) as json_file:  
+    lst_protein_names = json.load(json_file)
+print(lst_protein_names)
 
 fmt_str="%7.3f"
 if (args.csv):
