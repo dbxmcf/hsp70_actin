@@ -16,6 +16,12 @@ def mkdir_p(path):
         else:
             raise
 
+def save_mat(arr, fmt, lst_ptn_names, out_csv_fname):
+    n_lines = arr.shape[0]
+    with open(out_csv_fname, 'a') as f:
+        for i in np.arange(0,n_lines):
+            f.write(lst_ptn_names[i] + str(arr[i]) + "\n")
+
 def rebuild_triangle(arr, st_loc, mtx_info):
     st = st_loc[0]
     #loc = st_loc[1]
@@ -120,13 +126,15 @@ if pn_filename.endswith('.h5'):
 print("protein_file_name:",pn_filename)
 with open(pn_filename) as json_file:  
     lst_protein_names = json.load(json_file)
-print(lst_protein_names)
+#print(lst_protein_names)
 
 fmt_str="%7.3f"
 if (args.csv):
     out_dir = args.sample_result_file + "_res_csv"
     mkdir_p(out_dir)
     print("Saving csv in:",out_dir)
+    #np.savetxt(out_dir+"/normal.csv", mat_normal_h5, delimiter=",",fmt=fmt_str)
+    save_mat(mat_normal_h5, fmt = fmt_str, lst_ptn_names= lst_protein_names, out_csv_fname = out_dir+"/normalwpn.csv")
     np.savetxt(out_dir+"/normal.csv", mat_normal_h5, delimiter=",",fmt=fmt_str)
     np.savetxt(out_dir+"/sarika.csv", mat_sarika_h5, delimiter=",",fmt=fmt_str)
     np.savetxt(out_dir+"/generalised.csv", mat_generalised_h5, delimiter=",",fmt=fmt_str)
