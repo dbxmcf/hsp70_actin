@@ -20,7 +20,10 @@ def save_mat(arr, fmt, lst_ptn_names, out_csv_fname):
     n_lines = arr.shape[0]
     with open(out_csv_fname, 'w') as f:
         for i in np.arange(0,n_lines):
-            f.write(lst_ptn_names[i] + str(arr[i]) + "\n")
+            #str_arr_i = ','.join(map(str, arr[i]))
+            #str_arr_i = ','.join(map("{:7.3f}".format, arr[i]))
+            str_arr_i = ','.join(map(fmt.format, arr[i]))
+            f.write(lst_ptn_names[i] + ";" + str_arr_i + "\n")
 
 def rebuild_triangle(arr, st_loc, mtx_info):
     st = st_loc[0]
@@ -128,17 +131,21 @@ with open(pn_filename) as json_file:
     lst_protein_names = json.load(json_file)
 #print(lst_protein_names)
 
-fmt_str="%7.3f"
+fmt_str="%7.3f" # "{:7.3f}"
+fmt_str3="{:7.3f}"
 if (args.csv):
     out_dir = args.sample_result_file + "_res_csv"
     mkdir_p(out_dir)
     print("Saving csv in:",out_dir)
     #np.savetxt(out_dir+"/normal.csv", mat_normal_h5, delimiter=",",fmt=fmt_str)
-    save_mat(mat_normal_h5, fmt = fmt_str, lst_ptn_names= lst_protein_names, out_csv_fname = out_dir+"/normalwpn.csv")
-    np.savetxt(out_dir+"/normal.csv", mat_normal_h5, delimiter=",",fmt=fmt_str)
-    np.savetxt(out_dir+"/sarika.csv", mat_sarika_h5, delimiter=",",fmt=fmt_str)
-    np.savetxt(out_dir+"/generalised.csv", mat_generalised_h5, delimiter=",",fmt=fmt_str)
-    np.savetxt(out_dir+"/wu.csv", mat_wu_h5, delimiter=",",fmt=fmt_str)
+    save_mat(mat_normal_h5, fmt = fmt_str3, lst_ptn_names= lst_protein_names, out_csv_fname = out_dir+"/normal.csv")
+    save_mat(mat_sarika_h5, fmt = fmt_str3, lst_ptn_names= lst_protein_names, out_csv_fname = out_dir+"/sarika.csv")
+    save_mat(mat_generalised_h5, fmt = fmt_str3, lst_ptn_names= lst_protein_names, out_csv_fname = out_dir+"/generalised.csv")
+    save_mat(mat_wu_h5, fmt = fmt_str3, lst_ptn_names= lst_protein_names, out_csv_fname = out_dir+"/wu.csv")
+    #np.savetxt(out_dir+"/normal.csv", mat_normal_h5, delimiter=",",fmt=fmt_str)
+    #np.savetxt(out_dir+"/sarika.csv", mat_sarika_h5, delimiter=",",fmt=fmt_str)
+    #np.savetxt(out_dir+"/generalised.csv", mat_generalised_h5, delimiter=",",fmt=fmt_str)
+    #np.savetxt(out_dir+"/wu.csv", mat_wu_h5, delimiter=",",fmt=fmt_str)
 
 if (args.validate):
     sample_name = args.sample_result_file.split(".")[0]
