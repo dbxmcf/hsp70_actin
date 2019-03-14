@@ -3,9 +3,11 @@ import numpy as np
 #import pandas as pd
 import h5py
 
-val_range = 16
+val_range = 1500
 #n = 4295
-n = 16000
+#n = 16000
+#n = 10000
+n = 11000
 m = 1417419
 #m = 1000000
 m_type = np.uint16
