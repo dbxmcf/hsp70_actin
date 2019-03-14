@@ -43,10 +43,12 @@ args = parser.parse_args()
 #sample_name = "sample_hsp70_actin"
 #sample_name = "sample_a-b_mix_2"
 #sample_name = "sample_protease_mix_1"
-sample_name = args.input_folder
-sample_name = sample_name.rstrip('//')
-print("input_folder = ",sample_name)
-fname = sample_name + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
+sample_folder = args.input_folder
+sample_folder = sample_folder.rstrip('//')
+#get the last path as the sample name
+sample_name = os.path.basename(os.path.normpath(sample_folder))
+print("input_folder = ",sample_folder)
+fname = sample_folder + "/theta29_dist35/localFeatureVect_theta29_dist35_NoFeatureSelection_keyCombine0.csv"
 
 #sample_name = "hdf5t"
 #fname = sample_name + "/ta.csv"
