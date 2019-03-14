@@ -131,8 +131,8 @@ with open(pn_filename) as json_file:
     lst_protein_names = json.load(json_file)
 #print(lst_protein_names)
 
-fmt_str="%7.3f" # "{:7.3f}"
-fmt_str3="{:7.3f}"
+fmt_str="%.3f" # "{:7.3f}"
+fmt_str3="{:.3f}"
 if (args.csv):
     out_dir = args.sample_result_file + "_res_csv"
     mkdir_p(out_dir)
@@ -160,7 +160,7 @@ if (args.validate):
         print("normal is OK!")
     else:
         print("normal is not ok!")
-        np.savetxt("normal.csv", mat_normal_h5, delimiter=",",fmt="%7.3f")
+        np.savetxt("normal.csv", mat_normal_h5, delimiter=",",fmt=fmt_str)
     
     # for key in keys:
     mat_sarika_py = np.loadtxt(py_path_name + "sarika.csv",delimiter=",")
@@ -170,7 +170,7 @@ if (args.validate):
     else:
         print("sarika is not ok!")
         #np.savetxt('sarika.csv',fmt="%7.3f")
-        np.savetxt("sarika.csv", mat_sarika_h5, delimiter=",",fmt="%7.3f")
+        np.savetxt("sarika.csv", mat_sarika_h5, delimiter=",",fmt=fmt_str)
     
     mat_generalised_py = np.loadtxt(py_path_name + "generalised.csv",delimiter=",")
     ret = np.allclose(mat_generalised_h5, mat_generalised_py, atol=mat_tol)
@@ -178,7 +178,7 @@ if (args.validate):
         print("generalised is OK!")
     else:
         print("generalised is not ok!")
-        np.savetxt("generalised.csv", mat_generalised_h5, delimiter=",",fmt="%7.3f")
+        np.savetxt("generalised.csv", mat_generalised_h5, delimiter=",",fmt=fmt_str)
     
     mat_wu_py = np.loadtxt(py_path_name + "wu.csv",delimiter=",")
     ret = np.allclose(mat_wu_h5, mat_wu_py, atol=mat_tol)
@@ -186,7 +186,7 @@ if (args.validate):
         print("wu is OK!")
     else:
         print("wu is not ok!")
-        np.savetxt("wu.csv", mat_wu_h5, delimiter=",",fmt="%7.3f")
+        np.savetxt("wu.csv", mat_wu_h5, delimiter=",",fmt=fmt_str)
 
     #mat_cosine_py = np.loadtxt(py_path_name + "cosine.csv",delimiter=",")
     #ret = np.allclose(mat_cosine_h5, mat_cosine_py, atol=mat_tol)
