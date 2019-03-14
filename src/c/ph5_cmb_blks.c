@@ -878,6 +878,13 @@ phdf5readAll(char *filename)
 
     // Calculate number of data chunks
     num_data_chunks = (int)sqrt(mpi_size*2);
+    if (num_data_chunks*num_data_chunks != mpi_size*2){
+        if (0 == mpi_rank) {
+            printf("Error: np*2 is not a square number! Exiting...\n");
+        }
+        MPI_Finalize();
+        exit (0);
+    }
     if (verbose)
         printf("mpi_size=%d,ndchunks=%d\n",mpi_size,num_data_chunks);
     // assign chunk combinations to each mpi_rank
