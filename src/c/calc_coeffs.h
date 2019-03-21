@@ -362,20 +362,56 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         one_data_norm_b[i] = 0.0;
     }
 
+    /* divide the large cpu memory data block to small device blocks
+
+     */
+    tint device_block_id, device_block_num;
+    integer **cmbs=NULL;
+    integer num_cmbs = 0;
+    cmbs=combination_util(num_data_chunks,&num_cmbs); 
+    //printf("num_cmb=%d,num_cmbs1=%d\n",num_cmbs,num_cmbs1);
+    //print_matrix(cmbs, num_cmbs, 2, "%3d");
+    integer mpi_rk_chunk0, mpi_rk_chunk1;
+    if (mpi_rank < num_cmbs) { // an off-diagnal full block
+        //printf("mpi_rank=%d\n",mpi_rank);
+        mpi_rk_chunk0 = cmbs[mpi_rank][0];
+        mpi_rk_chunk1 = cmbs[mpi_rank][1];
+    }
+    else { // two diagnal triangles
+        mpi_rk_chunk0 = (mpi_rank-num_cmbs)*2;
+        mpi_rk_chunk1 = mpi_rk_chunk0 + 1;
+    }
+    if (verbose)
+        printf("mrk[%d]:mpi_rk_chunk0=%d, mpi_rk_chunk1=%d\n",mpi_rank,mpi_rk_chunk0, mpi_rk_chunk1);
+    free_dynamic_2d_array_integer(cmbs);
+
 
     tint idx_out = 0;
+
+    tint device_blk_start, device_blk_end;
+    for (device_block_id=0;device_block_id<device_block_num;device_block_id++)
+    {
+        device_blk_start = device_blk_start_array[device_block_id];
+        device_blk_size = device_blk_size_array[device_block_id];
     // the large loop that calculates the matrix
+//#pragma acc data \
+//    copy(data_part_a[0:part_a_dim0][0:part_a_dim1],\
+//            data_part_b[0:part_b_dim0][0:part_b_dim1],\
+//            data_sum_a[0:part_a_dim0],\
+//            data_sum_b[0:part_b_dim0],\
+//            one_data_norm_a[0:part_a_dim0],\
+//            one_data_norm_b[0:part_b_dim0])
 #pragma acc data \
-    copy(data_part_a[0:part_a_dim0][0:part_a_dim1],\
-            data_part_b[0:part_b_dim0][0:part_b_dim1],\
-            data_sum_a[0:part_a_dim0],\
-            data_sum_b[0:part_b_dim0],\
-            one_data_norm_a[0:part_a_dim0],\
-            one_data_norm_b[0:part_b_dim0])
+    copy(data_part_a[device_blk_start:device_blk_size][0:part_a_dim1],\
+            data_part_b[device_blk_start:device_blk_size][0:part_b_dim1],\
+            data_sum_a[device_blk_start:device_blk_size],\
+            data_sum_b[device_blk_start:device_blk_size],\
+            one_data_norm_a[device_blk_start:device_blk_size],\
+            one_data_norm_b[device_blk_start:device_blk_size])
     {
 
-        for (idx_a=0;idx_a<part_a_dim0;idx_a++) {
-            for (idx_b=0;idx_b<part_b_dim0;idx_b++){
+        for (idx_a=0;idx_a<device_blk_size;idx_a++) {
+            for (idx_b=0;idx_b<device_blk_size;idx_b++){
                 // 
                 a = data_part_a[idx_a];
                 a_sum = data_sum_a[idx_a];
@@ -442,6 +478,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
             }
             }
         }
+        } // for device_block_id
 
         /* pass out the data */
         //for (i=0;i<idx_out;i++) {

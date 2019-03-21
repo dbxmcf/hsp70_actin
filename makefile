@@ -1,4 +1,5 @@
-PGI_HDF5_BIN=/project/fchen14/packages/hdf5-1.10.4/install/bin
+#PGI_HDF5_BIN=/project/fchen14/packages/hdf5-1.10.4/install/bin
+PGI_HDF5_BIN=/home/fchen14/packages/hdf5-1.10.4/bin
 
 PGI_H5CC=$(PGI_HDF5_BIN)/h5pcc
 CFLAGS_PGI_OMP=-mp -fast -Mipa=fast,inline #-Minfo=all
