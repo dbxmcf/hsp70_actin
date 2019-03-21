@@ -366,12 +366,16 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
      */
     tint device_block_id, device_block_num;
-    integer **cmbs=NULL;
-    integer num_cmbs = 0;
-    cmbs=combination_util(num_data_chunks,&num_cmbs); 
+    tint device_num_data_chunks = 3;
+    integer **device_cmbs=NULL;
+    integer device_num_cmbs = 0;
+    device_cmbs=combination_util(device_num_data_chunks,&device_num_cmbs); 
     //printf("num_cmb=%d,num_cmbs1=%d\n",num_cmbs,num_cmbs1);
     //print_matrix(cmbs, num_cmbs, 2, "%3d");
-    integer mpi_rk_chunk0, mpi_rk_chunk1;
+    integer device_chunk0, device_chunk1;
+
+
+
     if (mpi_rank < num_cmbs) { // an off-diagnal full block
         //printf("mpi_rank=%d\n",mpi_rank);
         mpi_rk_chunk0 = cmbs[mpi_rank][0];
@@ -402,65 +406,34 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 //            one_data_norm_a[0:part_a_dim0],\
 //            one_data_norm_b[0:part_b_dim0])
 #pragma acc data \
-    copy(data_part_a[device_blk_start:device_blk_size][0:part_a_dim1],\
-            data_part_b[device_blk_start:device_blk_size][0:part_b_dim1],\
-            data_sum_a[device_blk_start:device_blk_size],\
-            data_sum_b[device_blk_start:device_blk_size],\
-            one_data_norm_a[device_blk_start:device_blk_size],\
-            one_data_norm_b[device_blk_start:device_blk_size])
+    copy(data_part_a[0:device_blk_size][0:part_a_dim1],\
+            data_part_b[0:device_blk_size][0:part_b_dim1],\
+            data_sum_a[0:device_blk_size],\
+            data_sum_b[0:device_blk_size],\
+            one_data_norm_a[0:device_blk_size],\
+            one_data_norm_b[0:device_blk_size])
     {
 
-        for (idx_a=0;idx_a<device_blk_size;idx_a++) {
-            for (idx_b=0;idx_b<device_blk_size;idx_b++){
+        for (idx_a=0;idx_a<device_blk_size_part_a;idx_a++) {
+            for (idx_b=0;idx_b<device_blk_size_part_b;idx_b++){
                 // 
-                a = data_part_a[idx_a];
-                a_sum = data_sum_a[idx_a];
-                //a_jac = data_jac_a[idx_a];
-                b = data_part_b[idx_b];
-                b_sum = data_sum_b[idx_b];
-                //b_jac = data_jac_b[idx_b];
+                a = device_data_part_a[idx_a];
+                a_sum = device_data_sum_a[idx_a];
+                b = device_data_part_b[idx_b];
+                b_sum = device_data_sum_b[idx_b];
 
-                //vec_add(a, b, summed_array, dim1);
-                //numerator_jac = sum_minimum_vec_cint(a_jac, b_jac, dim1);
-                //denomenator_jac = sum_maximum_vec_cint(a_jac, b_jac, dim1);
-                
-                //numerator_jac = sum_minimum_vec_jac(a, b, dim1);
-                //denomenator_jac = sum_maximum_vec_jac(a, b, dim1);
-                //printf("numerator_jac=%f\n",numerator_jac);
-                //printf("denomenator_jac=%f\n",denomenator_jac);
-                //numerator_gen_jac = sum_minimum_vec(a, b, dim1);
-                //denomenator_gen_jac = sum_maximum_vec(a, b, dim1);
-                //numerator_gen_jac = sum_minimum_vec(a, b, dim1, &numerator_jac);
-                //denomenator_gen_jac = sum_maximum_vec(a, b, dim1, &denomenator_jac);
                 sum_min_max_vec(a, b, dim1, 
                                 &numerator_gen_jac,&denomenator_gen_jac,
                                 &numerator_jac,&denomenator_jac,&num_sim);
 
-                //printf("numerator_gen_jac=%f\n",numerator_gen_jac);
-                //printf("denomenator_gen_jac=%f\n",denomenator_gen_jac);
-
-                //num_sim = get_non_zeros_pair(a, b, dim1);
-                //num_sim = numerator_jac;
-                //printf("num_sim=%f\n",num_sim);
-
-                one_an = one_data_norm_a[idx_a];
-                one_bn = one_data_norm_b[idx_b];
+                //one_an = one_data_norm_a[idx_a];
+                //one_bn = one_data_norm_b[idx_b];
                 //result = 1.0 - vec_dot(a,b,dim1)*one_an*one_bn;
-                result = vec_dot(a,b,dim1)*one_an*one_bn;
+                //result = vec_dot(a,b,dim1)*one_an*one_bn;
 
                 dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
-                //if (numerator_jac < 0 || denomenator_jac > 100) {
-                //if (numerator_jac < 0 ) {
-                //    printf("a[0]=%d\n",a[0]);
-                //    printf("b[0]=%d\n",b[0]);
-                //    printf("numerator_jac:%lf \n",numerator_jac);
-                //    printf("denomenator_jac:%lf \n",denomenator_jac);
-                //}
 
                 dist_jac = 1.0-numerator_jac/denomenator_jac;
-                //printf("numerator_jac:%lf \n",numerator_jac);
-                //printf("denomenator_jac:%lf \n",denomenator_jac);
-                //printf("dist_jac:%lf \n",dist_jac);
 
                 denomenator_wu = MIN(denomenator_gen_jac,MAX(a_sum,b_sum));
                 dist_wu = 1.0-numerator_gen_jac/denomenator_wu;
@@ -473,35 +446,17 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 rp->generalised[idx_out] = dist_gen_jac;
                 rp->sarika[idx_out] = dist_sarika;
                 rp->wu[idx_out] = dist_wu;
-                rp->cosine[idx_out] = result*100;
+                rp->cosine[idx_out] = 0.0; //result*100;
                 idx_out++;
             }
             }
         }
         } // for device_block_id
 
-        /* pass out the data */
-        //for (i=0;i<idx_out;i++) {
-        //    rp->normal[i] = normal[i];
-        //    rp->generalised[i] = generalised[i];
-        //    rp->sarika[i] = sarika[i];
-        //    rp->wu[i] = wu[i];
-        //    rp->cosine[i] = cosine[i];
-        //}
-
-        //free(normal);
-        //free(generalised);
-        //free(sarika);
-        //free(wu);
-        //free(cosine);
-
         free(data_sum_a);
         free(data_sum_b);
         free(one_data_norm_a);
         free(one_data_norm_b);
-
-        //free_dynamic_2d_array_cint(data_jac_a);
-        //free_dynamic_2d_array_cint(data_jac_b);
 
         return 0;
     }
@@ -513,7 +468,6 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     {
         tint i, j, idx_a, idx_b;
         sint *a, *b;
-        //cint *a_jac, *b_jac;
         real dist_gen_jac, dist_jac, denomenator_wu, dist_wu; 
         real numerator_sarika, denomenator_sarika, dist_sarika;
         real num_sim, numerator_jac, denomenator_jac, numerator_gen_jac, denomenator_gen_jac;
@@ -527,24 +481,11 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         integer num_cmbs = 0, idx_rpd = 0;
         cmbs = combination_util(dim0,&num_cmbs); 
 
-        //real *restrict normal = (real*)malloc(num_cmbs*sizeof(real));
-        //real *restrict generalised = (real*)malloc(num_cmbs*sizeof(real));
-        //real *restrict sarika = (real*)malloc(num_cmbs*sizeof(real));
-        //real *restrict wu = (real*)malloc(num_cmbs*sizeof(real));
-        //real *restrict cosine = (real*)malloc(num_cmbs*sizeof(real));
-
-        //tint **restrict data_jac = allocate_dynamic_2d_array_integer(dim0, dim1);
-        //cint **restrict data_jac = allocate_dynamic_2d_array_cint(dim0, dim1);
-        //printf("mpirank---here---%d\n",mpi_rank);
-
         // preparation values
         //#pragma acc kernels
         for (i=0;i<dim0;i++) {
             data_sum[i] = 0;
             for (j=0;j<dim1;j++) {
-                //data_jac[i][j]=0;
-                //if (data[i][j]>0) 
-                //    data_jac[i][j]=1;
                 data_sum[i] += data[i][j];
             }
             //one_data_norm[i] = 1.0/vec_norm(data[i], dim1);
@@ -561,40 +502,19 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
                 a = data[idx_a];
                 a_sum = data_sum[idx_a];
-                //a_jac = data_jac[idx_a];
                 b = data[idx_b];
                 b_sum = data_sum[idx_b];
-                //b_jac = data_jac[idx_b];
 
-                //vec_add(a, b, summed_array, dim1);
-        //printf("mpirank---here---%d\n",i);
-                //numerator_jac = sum_minimum_vec_cint(a_jac, b_jac, dim1);
-                //denomenator_jac = sum_maximum_vec_cint(a_jac, b_jac, dim1);
-
-                //numerator_jac = sum_minimum_vec_jac(a, b, dim1);
-                //denomenator_jac = sum_maximum_vec_jac(a, b, dim1);
-                //printf("numerator_jac=%f\n",numerator_jac);
-                //printf("denomenator_jac=%f\n",denomenator_jac);
-                //numerator_gen_jac = sum_minimum_vec(a, b, dim1, &numerator_jac);
-                //denomenator_gen_jac = sum_maximum_vec(a, b, dim1, &denomenator_jac);
                 sum_min_max_vec(a, b, dim1, 
                                 &numerator_gen_jac,&denomenator_gen_jac,
                                 &numerator_jac,&denomenator_jac,&num_sim);
-                //denomenator_gen_jac = sum_maximum_vec(a, b, dim1, &denomenator_jac);
 
-                //printf("numerator_gen_jac=%f\n",numerator_gen_jac);
-                //printf("denomenator_gen_jac=%f\n",denomenator_gen_jac);
-
-                //num_sim = get_non_zeros_pair(a, b, dim1);
-                ///num_sim = numerator_jac;
-                //printf("num_sim=%f\n",num_sim);
-
-                one_an = one_data_norm[idx_a];
-                one_bn = one_data_norm[idx_b];
-                real adotb = vec_dot(a,b,dim1);
+                //one_an = one_data_norm[idx_a];
+                //one_bn = one_data_norm[idx_b];
+                //real adotb = vec_dot(a,b,dim1);
                 //printf("%d %d %.3e\n", idx_a, idx_b, adotb);
                 //result = 1.0 - adotb*one_an*one_bn;
-                result = adotb*one_an*one_bn;
+                //result = adotb*one_an*one_bn;
 
                 dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
                 dist_jac = 1.0-numerator_jac/denomenator_jac;
@@ -610,7 +530,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 rpd->generalised[idx_rpd] = dist_gen_jac;
                 rpd->sarika[idx_rpd] = dist_sarika;
                 rpd->wu[idx_rpd] = dist_wu;
-                rpd->cosine[idx_rpd] = result*100;
+                rpd->cosine[idx_rpd] = 0.0; //result*100;
                 //if (result >100 || result <0) {
                 //    printf("adotb=%7.3e,one_an=%7.3e,one_bn=%7.3e\n",adotb,one_an,one_bn);
                 //}
