@@ -366,15 +366,19 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
      */
     tint device_block_id, device_block_num;
-    tint device_num_data_chunks = 3;
+    tint device_num_data_chunks_parts = 3;
+    //tint device_num_data_chunks_part_b = 3;
     integer **device_cmbs=NULL;
     integer device_num_cmbs = 0;
-    device_cmbs=combination_util(device_num_data_chunks,&device_num_cmbs); 
+    tint device_blk_part_a_avg_lines = part_a_dim0/device_num_data_chunks_parts;
+    tint device_blk_part_b_avg_lines = part_b_dim0/device_num_data_chunks_parts;
+    device_block_num = device_num_data_chunks_parts*device_num_data_chunks_parts;
+
+    
+    //device_cmbs=combination_util(device_num_data_chunks,&device_num_cmbs); 
     //printf("num_cmb=%d,num_cmbs1=%d\n",num_cmbs,num_cmbs1);
     //print_matrix(cmbs, num_cmbs, 2, "%3d");
     integer device_chunk0, device_chunk1;
-
-
 
     if (mpi_rank < num_cmbs) { // an off-diagnal full block
         //printf("mpi_rank=%d\n",mpi_rank);
@@ -395,8 +399,10 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     tint device_blk_start, device_blk_end;
     for (device_block_id=0;device_block_id<device_block_num;device_block_id++)
     {
-        device_blk_start = device_blk_start_array[device_block_id];
-        device_blk_size = device_blk_size_array[device_block_id];
+        device_blk_start_part_a = device_blk_start_array_a[device_block_id];
+        device_blk_start_part_b = device_blk_start_array_b[device_block_id];
+        device_blk_size_part_a = device_blk_size_array_a[device_block_id];
+        device_blk_size_part_b = device_blk_size_array_b[device_block_id];
     // the large loop that calculates the matrix
 //#pragma acc data \
 //    copy(data_part_a[0:part_a_dim0][0:part_a_dim1],\
@@ -406,16 +412,16 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 //            one_data_norm_a[0:part_a_dim0],\
 //            one_data_norm_b[0:part_b_dim0])
 #pragma acc data \
-    copy(data_part_a[0:device_blk_size][0:part_a_dim1],\
-            data_part_b[0:device_blk_size][0:part_b_dim1],\
-            data_sum_a[0:device_blk_size],\
-            data_sum_b[0:device_blk_size],\
-            one_data_norm_a[0:device_blk_size],\
-            one_data_norm_b[0:device_blk_size])
+    copy(device_data_part_a[0:device_blk_size_a][0:part_a_dim1],\
+            device_data_part_b[0:device_blk_size_b][0:part_b_dim1],\
+            device_data_sum_a[0:device_blk_size_a],\
+            device_data_sum_b[0:device_blk_size_b],\
+            device_one_data_norm_a[0:device_blk_size_a],\
+            device_one_data_norm_b[0:device_blk_size_b])
     {
 
-        for (idx_a=0;idx_a<device_blk_size_part_a;idx_a++) {
-            for (idx_b=0;idx_b<device_blk_size_part_b;idx_b++){
+        for (idx_a=0;idx_a<device_blk_size_a;idx_a++) {
+            for (idx_b=0;idx_b<device_blk_size_b;idx_b++){
                 // 
                 a = device_data_part_a[idx_a];
                 a_sum = device_data_sum_a[idx_a];
