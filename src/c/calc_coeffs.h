@@ -368,13 +368,13 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     tint device_block_id, device_block_num;
     tint device_num_data_chunks_parts = 3;
     //tint device_num_data_chunks_part_b = 3;
-    integer **device_cmbs=NULL;
-    integer device_num_cmbs = 0;
+    tint **device_cmbs=NULL;
+    tint device_num_cmbs = 0;
     tint device_blk_part_a_avg_lines = part_a_dim0/device_num_data_chunks_parts;
     tint device_blk_part_b_avg_lines = part_b_dim0/device_num_data_chunks_parts;
     device_block_num = device_num_data_chunks_parts*device_num_data_chunks_parts;
 
-    
+
     //device_cmbs=combination_util(device_num_data_chunks,&device_num_cmbs); 
     //printf("num_cmb=%d,num_cmbs1=%d\n",num_cmbs,num_cmbs1);
     //print_matrix(cmbs, num_cmbs, 2, "%3d");
@@ -403,6 +403,8 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         device_blk_start_part_b = device_blk_start_array_b[device_block_id];
         device_blk_size_part_a = device_blk_size_array_a[device_block_id];
         device_blk_size_part_b = device_blk_size_array_b[device_block_id];
+
+        ptr_device_blk_part_a = 
     // the large loop that calculates the matrix
 //#pragma acc data \
 //    copy(data_part_a[0:part_a_dim0][0:part_a_dim1],\
