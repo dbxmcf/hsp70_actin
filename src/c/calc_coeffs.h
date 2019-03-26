@@ -369,9 +369,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     copy(data_part_a[0:part_a_dim0][0:part_a_dim1],\
             data_part_b[0:part_b_dim0][0:part_b_dim1],\
             data_sum_a[0:part_a_dim0],\
-            data_sum_b[0:part_b_dim0],\
-            one_data_norm_a[0:part_a_dim0],\
-            one_data_norm_b[0:part_b_dim0])
+            data_sum_b[0:part_b_dim0])
     {
 
         for (idx_a=0;idx_a<part_a_dim0;idx_a++) {
@@ -515,8 +513,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
 #pragma acc data \
         copy(data[0:dim0][0:dim1],\
-                data_sum[0:dim0],\
-                one_data_norm[0:dim0])
+                data_sum[0:dim0])
         {
 
             for (i=0;i< num_cmbs;i++) {
