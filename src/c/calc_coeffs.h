@@ -407,10 +407,10 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 //num_sim = numerator_jac;
                 //printf("num_sim=%f\n",num_sim);
 
-                one_an = one_data_norm_a[idx_a];
-                one_bn = one_data_norm_b[idx_b];
+                //one_an = one_data_norm_a[idx_a];
+                //one_bn = one_data_norm_b[idx_b];
                 //result = 1.0 - vec_dot(a,b,dim1)*one_an*one_bn;
-                result = vec_dot(a,b,dim1)*one_an*one_bn;
+                result = 1.0; //vec_dot(a,b,dim1)*one_an*one_bn;
 
                 dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
                 //if (numerator_jac < 0 || denomenator_jac > 100) {
@@ -552,12 +552,12 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 ///num_sim = numerator_jac;
                 //printf("num_sim=%f\n",num_sim);
 
-                one_an = one_data_norm[idx_a];
-                one_bn = one_data_norm[idx_b];
-                real adotb = vec_dot(a,b,dim1);
+                //one_an = one_data_norm[idx_a];
+                //one_bn = one_data_norm[idx_b];
+                //real adotb = vec_dot(a,b,dim1);
                 //printf("%d %d %.3e\n", idx_a, idx_b, adotb);
                 //result = 1.0 - adotb*one_an*one_bn;
-                result = adotb*one_an*one_bn;
+                result = 1.0; //adotb*one_an*one_bn;
 
                 dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
                 dist_jac = 1.0-numerator_jac/denomenator_jac;
