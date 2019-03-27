@@ -74,8 +74,23 @@ void sum_min_max_vec(sint *restrict a, sint *restrict b, tint vec_dim,
     *sum_min_jac = sum_cj_min;
     *sum_max_jac = sum_cj_max;
     *num_sim = sum_num_sim;
-    //printf("%7.3f\n",sum);
-    //return sum;
+
+    result = 1.0; //adotb*one_an*one_bn;
+    dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
+    dist_jac = 1.0-numerator_jac/denomenator_jac;
+
+    denomenator_wu = MIN(denomenator_gen_jac,MAX(a_sum,b_sum));
+    dist_wu = 1.0-numerator_gen_jac/denomenator_wu;
+
+    numerator_sarika = num_sim;
+    denomenator_sarika = a_sum+b_sum;
+    dist_sarika = 1.0-numerator_sarika/denomenator_sarika;
+
+    rpd->normal[idx_rpd] = dist_jac;
+    rpd->generalised[idx_rpd] = dist_gen_jac;
+    rpd->sarika[idx_rpd] = dist_sarika;
+    rpd->wu[idx_rpd] = dist_wu;
+    rpd->cosine[idx_rpd] = result*100;
 }
 
 // https://www.geeksforgeeks.org/compute-the-minimum-or-maximum-max-of-two-integers-without-branching/
@@ -316,9 +331,6 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     for (i=0;i<part_a_dim0;i++) {
         data_sum_a[i] = 0;
         for (j=0;j<part_a_dim1;j++) {
-            //data_jac_a[i][j]=0;
-            //if (data_part_a[i][j]>0) 
-            //    data_jac_a[i][j]=1;
             data_sum_a[i] += data_part_a[i][j];
         }
         //one_data_norm_a[i] = 1.0/vec_norm(data_part_a[i], dim1);
@@ -330,9 +342,6 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     for (i=0;i<part_b_dim0;i++) {
         data_sum_b[i] = 0;
         for (j=0;j<part_b_dim1;j++) {
-            //data_jac_b[i][j]=0;
-            //if (data_part_b[i][j]>0) 
-            //    data_jac_b[i][j]=1;
             data_sum_b[i] += data_part_b[i][j];
         }
         //one_data_norm_b[i] = 1.0/vec_norm(data_part_b[i], dim1);
@@ -354,33 +363,11 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 // 
                 a = data_part_a[idx_a];
                 a_sum = data_sum_a[idx_a];
-                //a_jac = data_jac_a[idx_a];
                 b = data_part_b[idx_b];
                 b_sum = data_sum_b[idx_b];
-                //b_jac = data_jac_b[idx_b];
-
-                //vec_add(a, b, summed_array, dim1);
-                //numerator_jac = sum_minimum_vec_cint(a_jac, b_jac, dim1);
-                //denomenator_jac = sum_maximum_vec_cint(a_jac, b_jac, dim1);
-
-                //numerator_jac = sum_minimum_vec_jac(a, b, dim1);
-                //denomenator_jac = sum_maximum_vec_jac(a, b, dim1);
-                //printf("numerator_jac=%f\n",numerator_jac);
-                //printf("denomenator_jac=%f\n",denomenator_jac);
-                //numerator_gen_jac = sum_minimum_vec(a, b, dim1);
-                //denomenator_gen_jac = sum_maximum_vec(a, b, dim1);
-                //numerator_gen_jac = sum_minimum_vec(a, b, dim1, &numerator_jac);
-                //denomenator_gen_jac = sum_maximum_vec(a, b, dim1, &denomenator_jac);
                 sum_min_max_vec(a, b, dim1, 
                         &numerator_gen_jac,&denomenator_gen_jac,
                         &numerator_jac,&denomenator_jac,&num_sim);
-
-                //printf("numerator_gen_jac=%f\n",numerator_gen_jac);
-                //printf("denomenator_gen_jac=%f\n",denomenator_gen_jac);
-
-                //num_sim = get_non_zeros_pair(a, b, dim1);
-                //num_sim = numerator_jac;
-                //printf("num_sim=%f\n",num_sim);
 
                 //one_an = one_data_norm_a[idx_a];
                 //one_bn = one_data_norm_b[idx_b];
@@ -388,18 +375,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 result = 1.0; //vec_dot(a,b,dim1)*one_an*one_bn;
 
                 dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
-                //if (numerator_jac < 0 || denomenator_jac > 100) {
-                //if (numerator_jac < 0 ) {
-                //    printf("a[0]=%d\n",a[0]);
-                //    printf("b[0]=%d\n",b[0]);
-                //    printf("numerator_jac:%lf \n",numerator_jac);
-                //    printf("denomenator_jac:%lf \n",denomenator_jac);
-                //}
-
                 dist_jac = 1.0-numerator_jac/denomenator_jac;
-                //printf("numerator_jac:%lf \n",numerator_jac);
-                //printf("denomenator_jac:%lf \n",denomenator_jac);
-                //printf("dist_jac:%lf \n",dist_jac);
 
                 denomenator_wu = MIN(denomenator_gen_jac,MAX(a_sum,b_sum));
                 dist_wu = 1.0-numerator_gen_jac/denomenator_wu;
@@ -418,28 +394,10 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
             }
         }
 
-        /* pass out the data */
-        //for (i=0;i<idx_out;i++) {
-        //    rp->normal[i] = normal[i];
-        //    rp->generalised[i] = generalised[i];
-        //    rp->sarika[i] = sarika[i];
-        //    rp->wu[i] = wu[i];
-        //    rp->cosine[i] = cosine[i];
-        //}
-
-        //free(normal);
-        //free(generalised);
-        //free(sarika);
-        //free(wu);
-        //free(cosine);
-
         free(data_sum_a);
         free(data_sum_b);
         free(one_data_norm_a);
         free(one_data_norm_b);
-
-        //free_dynamic_2d_array_cint(data_jac_a);
-        //free_dynamic_2d_array_cint(data_jac_b);
 
         return 0;
     }
@@ -464,25 +422,11 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
         integer num_cmbs = 0, idx_rpd = 0;
         cmbs = combination_util(dim0,&num_cmbs); 
-
-        //real *restrict normal = (real*)malloc(num_cmbs*sizeof(real));
-        //real *restrict generalised = (real*)malloc(num_cmbs*sizeof(real));
-        //real *restrict sarika = (real*)malloc(num_cmbs*sizeof(real));
-        //real *restrict wu = (real*)malloc(num_cmbs*sizeof(real));
-        //real *restrict cosine = (real*)malloc(num_cmbs*sizeof(real));
-
-        //tint **restrict data_jac = allocate_dynamic_2d_array_integer(dim0, dim1);
-        //cint **restrict data_jac = allocate_dynamic_2d_array_cint(dim0, dim1);
-        //printf("mpirank---here---%d\n",mpi_rank);
-
         // preparation values
         //#pragma acc kernels
         for (i=0;i<dim0;i++) {
             data_sum[i] = 0;
             for (j=0;j<dim1;j++) {
-                //data_jac[i][j]=0;
-                //if (data[i][j]>0) 
-                //    data_jac[i][j]=1;
                 data_sum[i] += data[i][j];
             }
             //one_data_norm[i] = 1.0/vec_norm(data[i], dim1);
@@ -504,23 +448,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 sum_min_max_vec(a, b, dim1, 
                         &numerator_gen_jac,&denomenator_gen_jac,
                         &numerator_jac,&denomenator_jac,&num_sim);
-                result = 1.0; //adotb*one_an*one_bn;
 
-                dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
-                dist_jac = 1.0-numerator_jac/denomenator_jac;
-
-                denomenator_wu = MIN(denomenator_gen_jac,MAX(a_sum,b_sum));
-                dist_wu = 1.0-numerator_gen_jac/denomenator_wu;
-
-                numerator_sarika = num_sim;
-                denomenator_sarika = a_sum+b_sum;
-                dist_sarika = 1.0-numerator_sarika/denomenator_sarika;
-
-                rpd->normal[idx_rpd] = dist_jac;
-                rpd->generalised[idx_rpd] = dist_gen_jac;
-                rpd->sarika[idx_rpd] = dist_sarika;
-                rpd->wu[idx_rpd] = dist_wu;
-                rpd->cosine[idx_rpd] = result*100;
                 //if (result >100 || result <0) {
                 //    printf("adotb=%7.3e,one_an=%7.3e,one_bn=%7.3e\n",adotb,one_an,one_bn);
                 //}
@@ -529,23 +457,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         }
 
         /* pass out the data */
-        //for (i=0;i<idx_rpd;i++) {
-        //    //printf("%7.3f ",normal[i]);
-        //    rpd->normal[i] = normal[i];
-        //    rpd->generalised[i] = generalised[i];
-        //    rpd->sarika[i] = sarika[i];
-        //    rpd->wu[i] = wu[i];
-        //    rpd->cosine[i] = cosine[i];
-        //}
-
-        //free(normal);
-        //free(generalised);
-        //free(sarika);
-        //free(wu);
-        //free(cosine);
-
         free_dynamic_2d_array_integer(cmbs);
-        //free_dynamic_2d_array_cint(data_jac);
         free(data_sum);
         free(one_data_norm);
 
