@@ -45,12 +45,18 @@ typedef struct result_arrays_diagnol {
 } result_pointers_diagnol;
 
 void sum_min_max_vec(sint *restrict a, sint *restrict b, tint vec_dim, 
-        real *sum_min, real *sum_max,
-        real *sum_min_jac, real *sum_max_jac, real* num_sim)
+                     real a_sum, real b_sum, result_pointers_diagnol *rpd, tint idx_rpd)
+//        real *sum_min, real *sum_max,
+//        real *sum_min_jac, real *sum_max_jac, real* num_sim)
 {
     tint i;
     sint c_min,c_max,cj_min,cj_max,num_c_sim;  
     real sum_c_min=0.0,sum_c_max=0.0,sum_cj_min=0.0,sum_cj_max=0.0,sum_num_sim=0.0;
+    real numerator_gen_jac, denomenator_gen_jac, numerator_jac, denomenator_jac, num_sim;
+    real dist_gen_jac, dist_jac, denomenator_wu, dist_wu; 
+    real numerator_sarika, denomenator_sarika, dist_sarika;
+    real one_an, one_bn, result;
+
 #pragma acc parallel loop present(a[0:vec_dim],b[0:vec_dim])
 #pragma omp parallel for private(c_min,c_max,cj_min,cj_max,i) \
     reduction(+:sum_c_min,sum_c_max,sum_cj_min,sum_cj_max,sum_num_sim)
@@ -69,11 +75,25 @@ void sum_min_max_vec(sint *restrict a, sint *restrict b, tint vec_dim,
         sum_cj_max += cj_max;
         sum_num_sim += num_c_sim;
     }
-    *sum_min = sum_c_min;
-    *sum_max = sum_c_max;
-    *sum_min_jac = sum_cj_min;
-    *sum_max_jac = sum_cj_max;
-    *num_sim = sum_num_sim;
+ //   *sum_min = sum_c_min;
+ //   *sum_max = sum_c_max;
+ //   *sum_min_jac = sum_cj_min;
+ //   *sum_max_jac = sum_cj_max;
+ //   *num_sim = sum_num_sim;
+
+//void sum_min_max_vec(sint *restrict a, sint *restrict b, tint vec_dim, 
+//        real *sum_min, real *sum_max,
+//        real *sum_min_jac, real *sum_max_jac, real* num_sim)
+
+    //sum_min_max_vec(a, b, dim1, 
+    //                    &numerator_gen_jac,&denomenator_gen_jac,
+    //                    &numerator_jac,&denomenator_jac,&num_sim);
+
+    numerator_gen_jac = sum_c_min;
+    denomenator_gen_jac = sum_c_max;
+    numerator_jac = sum_cj_min;
+    denomenator_jac = sum_cj_max;
+    num_sim = sum_num_sim;
 
     result = 1.0; //adotb*one_an*one_bn;
     dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
@@ -365,30 +385,33 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 a_sum = data_sum_a[idx_a];
                 b = data_part_b[idx_b];
                 b_sum = data_sum_b[idx_b];
-                sum_min_max_vec(a, b, dim1, 
-                        &numerator_gen_jac,&denomenator_gen_jac,
-                        &numerator_jac,&denomenator_jac,&num_sim);
 
-                //one_an = one_data_norm_a[idx_a];
-                //one_bn = one_data_norm_b[idx_b];
-                //result = 1.0 - vec_dot(a,b,dim1)*one_an*one_bn;
-                result = 1.0; //vec_dot(a,b,dim1)*one_an*one_bn;
-
-                dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
-                dist_jac = 1.0-numerator_jac/denomenator_jac;
-
-                denomenator_wu = MIN(denomenator_gen_jac,MAX(a_sum,b_sum));
-                dist_wu = 1.0-numerator_gen_jac/denomenator_wu;
-
-                numerator_sarika = num_sim;
-                denomenator_sarika = a_sum+b_sum;
-                dist_sarika = 1.0-numerator_sarika/denomenator_sarika;
-
-                rp->normal[idx_out] = dist_jac;
-                rp->generalised[idx_out] = dist_gen_jac;
-                rp->sarika[idx_out] = dist_sarika;
-                rp->wu[idx_out] = dist_wu;
-                rp->cosine[idx_out] = result*100;
+                sum_min_max_vec(a, b, dim1, a_sum, b_sum, rp, idx_out);
+                
+                //sum_min_max_vec(a, b, dim1, 
+                //        &numerator_gen_jac,&denomenator_gen_jac,
+                //        &numerator_jac,&denomenator_jac,&num_sim);
+//
+                ////one_an = one_data_norm_a[idx_a];
+                ////one_bn = one_data_norm_b[idx_b];
+                ////result = 1.0 - vec_dot(a,b,dim1)*one_an*one_bn;
+                //result = 1.0; //vec_dot(a,b,dim1)*one_an*one_bn;
+//
+                //dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
+                //dist_jac = 1.0-numerator_jac/denomenator_jac;
+//
+                //denomenator_wu = MIN(denomenator_gen_jac,MAX(a_sum,b_sum));
+                //dist_wu = 1.0-numerator_gen_jac/denomenator_wu;
+//
+                //numerator_sarika = num_sim;
+                //denomenator_sarika = a_sum+b_sum;
+                //dist_sarika = 1.0-numerator_sarika/denomenator_sarika;
+//
+                //rp->normal[idx_out] = dist_jac;
+                //rp->generalised[idx_out] = dist_gen_jac;
+                //rp->sarika[idx_out] = dist_sarika;
+                //rp->wu[idx_out] = dist_wu;
+                //rp->cosine[idx_out] = result*100;
                 idx_out++;
             }
             }
@@ -410,9 +433,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         tint i, j, idx_a, idx_b;
         sint *a, *b;
         //cint *a_jac, *b_jac;
-        real dist_gen_jac, dist_jac, denomenator_wu, dist_wu; 
-        real numerator_sarika, denomenator_sarika, dist_sarika;
-        real num_sim, numerator_jac, denomenator_jac, numerator_gen_jac, denomenator_gen_jac;
+
         real a_sum, b_sum, one_an, one_bn, result;
 
         // calculate some preparation values
@@ -445,9 +466,11 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 b = data[idx_b];
                 b_sum = data_sum[idx_b];
 
-                sum_min_max_vec(a, b, dim1, 
-                        &numerator_gen_jac,&denomenator_gen_jac,
-                        &numerator_jac,&denomenator_jac,&num_sim);
+                sum_min_max_vec(a, b, dim1, a_sum, b_sum, rpd, idx_rpd);
+
+                //sum_min_max_vec(a, b, dim1, 
+                //        &numerator_gen_jac,&denomenator_gen_jac,
+                //        &numerator_jac,&denomenator_jac,&num_sim);
 
                 //if (result >100 || result <0) {
                 //    printf("adotb=%7.3e,one_an=%7.3e,one_bn=%7.3e\n",adotb,one_an,one_bn);
