@@ -1,6 +1,7 @@
-PGI_HDF5_BIN=/project/fchen14/packages/hdf5-1.10.4/install/bin
+#PGI_HDF5_BIN=/project/fchen14/packages/hdf5-1.10.4/install/bin
 
-PGI_H5CC=$(PGI_HDF5_BIN)/h5pcc
+#PGI_H5CC=$(PGI_HDF5_BIN)/h5pcc
+PGI_H5CC=h5pcc
 CFLAGS_PGI_OMP=-mp -fast -Mipa=fast,inline #-Minfo=all
 CFLAGS_PGI_ACC=-acc -fast -Mipa=fast,inline -Mcuda -ta=nvidia:cc3+,cuda9.0,fastmath
 BIN=pomp pacc
