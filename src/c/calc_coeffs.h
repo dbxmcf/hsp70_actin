@@ -45,7 +45,7 @@ typedef struct result_arrays_diagnol {
 } result_pointers_diagnol;
 
 void sum_min_max_vec(sint *restrict a, sint *restrict b, tint vec_dim, 
-                     real a_sum, real b_sum, result_pointers_diagnol *rpd, tint idx_rpd)
+        real a_sum, real b_sum, result_pointers_diagnol *rpd, tint idx_rpd)
 //        real *sum_min, real *sum_max,
 //        real *sum_min_jac, real *sum_max_jac, real* num_sim)
 {
@@ -75,15 +75,15 @@ void sum_min_max_vec(sint *restrict a, sint *restrict b, tint vec_dim,
         sum_cj_max += cj_max;
         sum_num_sim += num_c_sim;
     }
- //   *sum_min = sum_c_min;
- //   *sum_max = sum_c_max;
- //   *sum_min_jac = sum_cj_min;
- //   *sum_max_jac = sum_cj_max;
- //   *num_sim = sum_num_sim;
+    //   *sum_min = sum_c_min;
+    //   *sum_max = sum_c_max;
+    //   *sum_min_jac = sum_cj_min;
+    //   *sum_max_jac = sum_cj_max;
+    //   *num_sim = sum_num_sim;
 
-//void sum_min_max_vec(sint *restrict a, sint *restrict b, tint vec_dim, 
-//        real *sum_min, real *sum_max,
-//        real *sum_min_jac, real *sum_max_jac, real* num_sim)
+    //void sum_min_max_vec(sint *restrict a, sint *restrict b, tint vec_dim, 
+    //        real *sum_min, real *sum_max,
+    //        real *sum_min_jac, real *sum_max_jac, real* num_sim)
 
     //sum_min_max_vec(a, b, dim1, 
     //                    &numerator_gen_jac,&denomenator_gen_jac,
@@ -387,105 +387,74 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 b_sum = data_sum_b[idx_b];
 
                 sum_min_max_vec(a, b, dim1, a_sum, b_sum, rp, idx_out);
-                
-                //sum_min_max_vec(a, b, dim1, 
-                //        &numerator_gen_jac,&denomenator_gen_jac,
-                //        &numerator_jac,&denomenator_jac,&num_sim);
-//
-                ////one_an = one_data_norm_a[idx_a];
-                ////one_bn = one_data_norm_b[idx_b];
-                ////result = 1.0 - vec_dot(a,b,dim1)*one_an*one_bn;
-                //result = 1.0; //vec_dot(a,b,dim1)*one_an*one_bn;
-//
-                //dist_gen_jac = 1.0-numerator_gen_jac/denomenator_gen_jac;
-                //dist_jac = 1.0-numerator_jac/denomenator_jac;
-//
-                //denomenator_wu = MIN(denomenator_gen_jac,MAX(a_sum,b_sum));
-                //dist_wu = 1.0-numerator_gen_jac/denomenator_wu;
-//
-                //numerator_sarika = num_sim;
-                //denomenator_sarika = a_sum+b_sum;
-                //dist_sarika = 1.0-numerator_sarika/denomenator_sarika;
-//
-                //rp->normal[idx_out] = dist_jac;
-                //rp->generalised[idx_out] = dist_gen_jac;
-                //rp->sarika[idx_out] = dist_sarika;
-                //rp->wu[idx_out] = dist_wu;
-                //rp->cosine[idx_out] = result*100;
+
                 idx_out++;
             }
-            }
         }
-
-        free(data_sum_a);
-        free(data_sum_b);
-        free(one_data_norm_a);
-        free(one_data_norm_b);
-
-        return 0;
     }
 
+    free(data_sum_a);
+    free(data_sum_b);
+    free(one_data_norm_a);
+    free(one_data_norm_b);
+
+    return 0;
+}
 
 
-    int calc_coeffs_diagnol_triangle(sint **restrict data, tint dim0, tint dim1,
-            result_pointers_diagnol *rpd)
-    {
-        tint i, j, idx_a, idx_b;
-        sint *a, *b;
-        //cint *a_jac, *b_jac;
 
-        real a_sum, b_sum, one_an, one_bn, result;
+int calc_coeffs_diagnol_triangle(sint **restrict data, tint dim0, tint dim1,
+        result_pointers_diagnol *rpd)
+{
+    tint i, j, idx_a, idx_b;
+    sint *a, *b;
+    //cint *a_jac, *b_jac;
 
-        // calculate some preparation values
-        real *restrict data_sum = (real*)malloc(dim0*sizeof(real));
-        real *restrict one_data_norm = (real*)malloc(dim0*sizeof(real));
-        integer **restrict cmbs=NULL;
+    real a_sum, b_sum, one_an, one_bn, result;
 
-        integer num_cmbs = 0, idx_rpd = 0;
-        cmbs = combination_util(dim0,&num_cmbs); 
-        // preparation values
-        //#pragma acc kernels
-        for (i=0;i<dim0;i++) {
-            data_sum[i] = 0;
-            for (j=0;j<dim1;j++) {
-                data_sum[i] += data[i][j];
-            }
-            //one_data_norm[i] = 1.0/vec_norm(data[i], dim1);
+    // calculate some preparation values
+    real *restrict data_sum = (real*)malloc(dim0*sizeof(real));
+    real *restrict one_data_norm = (real*)malloc(dim0*sizeof(real));
+    integer **restrict cmbs=NULL;
+
+    integer num_cmbs = 0, idx_rpd = 0;
+    cmbs = combination_util(dim0,&num_cmbs); 
+    // preparation values
+    //#pragma acc kernels
+    for (i=0;i<dim0;i++) {
+        data_sum[i] = 0;
+        for (j=0;j<dim1;j++) {
+            data_sum[i] += data[i][j];
         }
+        //one_data_norm[i] = 1.0/vec_norm(data[i], dim1);
+    }
 
 #pragma acc data \
-        copy(data[0:dim0][0:dim1],\
-                data_sum[0:dim0])
-        {
+    copy(data[0:dim0][0:dim1],\
+            data_sum[0:dim0])
+    {
 
-            for (i=0;i< num_cmbs;i++) {
-                idx_a = cmbs[i][0], idx_b = cmbs[i][1];
+        for (i=0;i< num_cmbs;i++) {
+            idx_a = cmbs[i][0], idx_b = cmbs[i][1];
 
-                a = data[idx_a];
-                a_sum = data_sum[idx_a];
-                b = data[idx_b];
-                b_sum = data_sum[idx_b];
+            a = data[idx_a];
+            a_sum = data_sum[idx_a];
+            b = data[idx_b];
+            b_sum = data_sum[idx_b];
 
-                sum_min_max_vec(a, b, dim1, a_sum, b_sum, rpd, idx_rpd);
+            sum_min_max_vec(a, b, dim1, a_sum, b_sum, rpd, idx_rpd);
 
-                //sum_min_max_vec(a, b, dim1, 
-                //        &numerator_gen_jac,&denomenator_gen_jac,
-                //        &numerator_jac,&denomenator_jac,&num_sim);
-
-                //if (result >100 || result <0) {
-                //    printf("adotb=%7.3e,one_an=%7.3e,one_bn=%7.3e\n",adotb,one_an,one_bn);
-                //}
-                idx_rpd++;
-            }
+            idx_rpd++;
         }
-
-        /* pass out the data */
-        free_dynamic_2d_array_integer(cmbs);
-        free(data_sum);
-        free(one_data_norm);
-
-        return 0;
-
     }
+
+    /* pass out the data */
+    free_dynamic_2d_array_integer(cmbs);
+    free(data_sum);
+    free(one_data_norm);
+
+    return 0;
+
+}
 
 #endif
