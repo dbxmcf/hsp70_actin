@@ -370,6 +370,18 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
 
     tint idx_out = 0;
+    /* can they be different*/
+    tint dvc_blk_part_a_num = 3, dvc_blk_part_b_num = dvc_blk_part_a_num;
+
+    tint *dvc_blk_part_a_start = NULL, *dvc_blk_part_a_size  = NULL;
+    tint *dvc_blk_part_b_start = NULL, *dvc_blk_part_b_size  = NULL;
+
+    distribute_parts_start_size(part_a_dim0, dvc_blk_part_a_num, dvc_blk_part_a_start, dvc_blk_part_a_size);
+    distribute_parts_start_size(part_b_dim0, dvc_blk_part_b_num, dvc_blk_part_b_start, dvc_blk_part_b_size);
+
+    sint **restrict dvc_blk_part_a;
+    sint **restrict dvc_blk_part_b;
+
     // the large loop that calculates the matrix
 #pragma acc data \
     copy(data_part_a[0:part_a_dim0][0:part_a_dim1],\
@@ -390,6 +402,11 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
             }
         }
     }
+
+    free(dvc_blk_part_a_start);
+    free(dvc_blk_part_a_size);
+    free(dvc_blk_part_b_start);
+    free(dvc_blk_part_b_size);
 
     free(data_sum_a);
     free(data_sum_b);
