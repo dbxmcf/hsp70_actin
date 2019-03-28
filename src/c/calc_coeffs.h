@@ -373,9 +373,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     // the large loop that calculates the matrix
 #pragma acc data \
     copy(data_part_a[0:part_a_dim0][0:part_a_dim1],\
-            data_part_b[0:part_b_dim0][0:part_b_dim1],\
-            data_sum_a[0:part_a_dim0],\
-            data_sum_b[0:part_b_dim0])
+         data_part_b[0:part_b_dim0][0:part_b_dim1])
     {
 
         for (idx_a=0;idx_a<part_a_dim0;idx_a++) {
@@ -430,8 +428,7 @@ int calc_coeffs_diagnol_triangle(sint **restrict data, tint dim0, tint dim1,
     }
 
 #pragma acc data \
-    copy(data[0:dim0][0:dim1],\
-            data_sum[0:dim0])
+    copy(data[0:dim0][0:dim1])
     {
 
         for (i=0;i< num_cmbs;i++) {
