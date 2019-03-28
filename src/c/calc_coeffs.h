@@ -381,27 +381,64 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
     sint **restrict dvc_blk_part_a;
     sint **restrict dvc_blk_part_b;
+    tint dvc_blk_part_a_dim, dvc_blk_part_b_dim;
+    real *restrict dvc_blk_sum_a; // = (real*)malloc(part_a_dim0*sizeof(real));
+    real *restrict dvc_blk_sum_b;
 
-    // the large loop that calculates the matrix
-#pragma acc data \
-    copy(data_part_a[0:part_a_dim0][0:part_a_dim1],\
-         data_part_b[0:part_b_dim0][0:part_b_dim1])
-    {
+    tint idx_dvc_blk_part_a, idx_dvc_blk_part_b;
+    for (idx_dvc_blk_part_a=0;idx_dvc_blk_part_a<dvc_blk_part_a_num;idx_dvc_blk_part_a++) {
+        for (idx_dvc_blk_part_b=0;idx_dvc_blk_part_b<dvc_blk_part_b_num;idx_dvc_blk_part_b++){
+            /*get the device block start and size*/
+            dvc_blk_part_a = &data_part_a[dvc_blk_part_a_start[idx_dvc_blk_part_a]];
+            dvc_blk_part_a_dim = dvc_blk_part_a_size[idx_dvc_blk_part_a];
+            dvc_blk_part_b = &data_part_b[dvc_blk_part_b_start[idx_dvc_blk_part_b]];
+            dvc_blk_part_b_dim = dvc_blk_part_b_size[idx_dvc_blk_part_b];
 
-        for (idx_a=0;idx_a<part_a_dim0;idx_a++) {
-            for (idx_b=0;idx_b<part_b_dim0;idx_b++){
-                // 
-                a = data_part_a[idx_a];
-                a_sum = data_sum_a[idx_a];
-                b = data_part_b[idx_b];
-                b_sum = data_sum_b[idx_b];
+            dvc_blk_sum_a = &data_sum_a[dvc_blk_part_a_start[idx_dvc_blk_part_a]];
+            dvc_blk_sum_b = &data_sum_b[dvc_blk_part_b_start[idx_dvc_blk_part_b]];
+            #pragma acc data \
+            copy(dvc_blk_part_a[0:dvc_blk_part_a_dim][0:part_a_dim1],\
+                 dvc_blk_part_b[0:dvc_blk_part_b_dim][0:part_b_dim1])
+            {
+                for (idx_a=0;idx_a<dvc_blk_part_a_dim;idx_a++) {
+                    for (idx_b=0;idx_b<dvc_blk_part_b_dim;idx_b++){
+                        // 
+                        a = dvc_blk_part_a[idx_a];
+                        a_sum = dvc_blk_sum_a[idx_a];
+                        b = dvc_blk_part_b[idx_b];
+                        b_sum = dvc_blk_sum_b[idx_b];
 
-                sum_min_max_vec(a, b, dim1, a_sum, b_sum, rp, idx_out);
+                        sum_min_max_vec(a, b, dim1, a_sum, b_sum, rp, idx_out);
 
-                idx_out++;
+                        idx_out++;
+                    }
+                }
             }
+
         }
     }
+
+
+    // the large loop that calculates the matrix
+//#pragma acc data \
+//    copy(data_part_a[0:part_a_dim0][0:part_a_dim1],\
+//         data_part_b[0:part_b_dim0][0:part_b_dim1])
+//    {
+//
+//        for (idx_a=0;idx_a<part_a_dim0;idx_a++) {
+//            for (idx_b=0;idx_b<part_b_dim0;idx_b++){
+//                // 
+//                a = data_part_a[idx_a];
+//                a_sum = data_sum_a[idx_a];
+//                b = data_part_b[idx_b];
+//                b_sum = data_sum_b[idx_b];
+//
+//                sum_min_max_vec(a, b, dim1, a_sum, b_sum, rp, idx_out);
+//
+//                idx_out++;
+//            }
+//        }
+//    }
 
     free(dvc_blk_part_a_start);
     free(dvc_blk_part_a_size);
