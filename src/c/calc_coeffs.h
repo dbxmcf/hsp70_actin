@@ -381,17 +381,22 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
     sint **restrict dvc_blk_part_a;
     sint **restrict dvc_blk_part_b;
+    tint dvc_blk_part_a_start_idx, dvc_blk_part_b_start_idx;
     tint dvc_blk_part_a_dim0, dvc_blk_part_b_dim0;
+    tint global_idx_a,global_idx_b;
     real *restrict dvc_blk_sum_a; // = (real*)malloc(part_a_dim0*sizeof(real));
     real *restrict dvc_blk_sum_b;
 
     tint idx_dvc_blk_part_a, idx_dvc_blk_part_b;
     for (idx_dvc_blk_part_a=0;idx_dvc_blk_part_a<dvc_blk_part_a_num;idx_dvc_blk_part_a++) {
         for (idx_dvc_blk_part_b=0;idx_dvc_blk_part_b<dvc_blk_part_b_num;idx_dvc_blk_part_b++){
-            /*get the device block start and size*/
-            dvc_blk_part_a = &data_part_a[dvc_blk_part_a_start[idx_dvc_blk_part_a]];
+            /* get the device block start and size, part a */
+            dvc_blk_part_a_start_idx = dvc_blk_part_a_start[idx_dvc_blk_part_a]; /* get the index */
+            dvc_blk_part_a = &data_part_a[dvc_blk_part_a_start_idx]; /* get the address */
             dvc_blk_part_a_dim0 = dvc_blk_part_a_size[idx_dvc_blk_part_a];
-            dvc_blk_part_b = &data_part_b[dvc_blk_part_b_start[idx_dvc_blk_part_b]];
+            /* part b */
+            dvc_blk_part_b_start_idx = dvc_blk_part_b_start[idx_dvc_blk_part_b];
+            dvc_blk_part_b = &data_part_b[dvc_blk_part_b_start_idx];
             dvc_blk_part_b_dim0 = dvc_blk_part_b_size[idx_dvc_blk_part_b];
 
             dvc_blk_sum_a = &data_sum_a[dvc_blk_part_a_start[idx_dvc_blk_part_a]];
@@ -408,9 +413,14 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                         b = dvc_blk_part_b[idx_b];
                         b_sum = dvc_blk_sum_b[idx_b];
 
+                        /* map the local idx_a, idx_b to the global index */
+                        global_idx_a = dvc_blk_part_a_start_idx + idx_a;
+                        global_idx_b = dvc_blk_part_b_start_idx + idx_b;
+                        idx_out = global_idx_a*part_a_dim0 + global_idx_b;
+                        
                         sum_min_max_vec(a, b, dim1, a_sum, b_sum, rp, idx_out);
 
-                        idx_out++;
+                        //idx_out++;
                     }
                 }
             }
