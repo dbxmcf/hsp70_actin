@@ -25,11 +25,11 @@ integer **combination_util(integer n, integer *num_cmbs) //, int **cmbs, int num
 	return cmbs;
 } 
 
-void distribute_parts_start_size(integer part_dim, integer num_parts, integer *part_start, integer *part_size)
+void distribute_parts_start_size(integer part_dim, integer num_parts, integer **ptr_part_start, integer **ptr_part_size)
 {
 	integer i;
-	part_start = (integer*)malloc(num_parts*sizeof(integer));
-	part_size  = (integer*)malloc(num_parts*sizeof(integer));
+	integer *part_start = (integer*)malloc(num_parts*sizeof(integer));
+	integer *part_size  = (integer*)malloc(num_parts*sizeof(integer));
 	integer part_avg_lines = part_dim / num_parts;
     integer part_rmd_lines = part_dim % num_parts;
 
@@ -45,6 +45,8 @@ void distribute_parts_start_size(integer part_dim, integer num_parts, integer *p
     for (i=1;i<num_parts;i++) {
 		part_start[i] = part_start[i-1] + part_size[i];
     }
+	*ptr_part_start = part_start;
+	*ptr_part_size = part_size;
     //printf("here---%d\n",mpi_rank);
     //printf("here---\n");
 }
