@@ -27,7 +27,7 @@ output_folder="hdf5t"
 output_folder=${output_folder%/}
 input_sample_folder=${input_sample_folder%/}
 
-python lf_csv2_dtype_h5.py -f "$input_sample_folder" -o "$output_folder"
+#python lf_csv2_dtype_h5.py -f "$input_sample_folder" -o "$output_folder"
 
 input_sample_name=${input_sample_folder##*/}
 echo "input_sample_name=$input_sample_name"

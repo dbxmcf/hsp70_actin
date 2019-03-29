@@ -45,7 +45,8 @@ void distribute_parts_start_size(integer part_dim, integer num_parts, integer *p
     for (i=1;i<num_parts;i++) {
 		part_start[i] = part_start[i-1] + part_size[i];
     }
-
+    //printf("here---%d\n",mpi_rank);
+    //printf("here---\n");
 }
 
 // Driver program to test above functions 
