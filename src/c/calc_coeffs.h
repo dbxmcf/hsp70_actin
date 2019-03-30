@@ -395,12 +395,14 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
             dvc_blk_part_a_start_idx = dvc_blk_part_a_start[idx_dvc_blk_part_a]; /* get the index */
             dvc_blk_part_a = &data_part_a[dvc_blk_part_a_start_idx]; /* get the address */
             dvc_blk_part_a_dim0 = dvc_blk_part_a_size[idx_dvc_blk_part_a];
-            //printf("here--a-%ld\n",dvc_blk_part_a_start_idx);
+            //printf("dvc_blk_part_a_start_idx-%ld\n",dvc_blk_part_a_start_idx);
+            //printf("dvc_blk_part_a_dim0-%ld\n",dvc_blk_part_a_dim0);
             /* part b */
             dvc_blk_part_b_start_idx = dvc_blk_part_b_start[idx_dvc_blk_part_b];
             dvc_blk_part_b = &data_part_b[dvc_blk_part_b_start_idx];
             dvc_blk_part_b_dim0 = dvc_blk_part_b_size[idx_dvc_blk_part_b];
-            //printf("here--b-%ld\n",dvc_blk_part_b_start_idx);
+            //printf("dvc_blk_part_b_start_idx-%ld\n",dvc_blk_part_b_start_idx);
+            //printf("dvc_blk_part_b_dim0-%ld\n",dvc_blk_part_b_dim0);
 
             dvc_blk_sum_a = &data_sum_a[dvc_blk_part_a_start[idx_dvc_blk_part_a]];
             dvc_blk_sum_b = &data_sum_b[dvc_blk_part_b_start[idx_dvc_blk_part_b]];
@@ -422,7 +424,11 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                         /* map the local idx_a, idx_b to the global index */
                         global_idx_a = dvc_blk_part_a_start_idx + idx_a;
                         global_idx_b = dvc_blk_part_b_start_idx + idx_b;
-                        idx_out = global_idx_a*part_a_dim0 + global_idx_b;
+                        idx_out = global_idx_a*part_b_dim0 + global_idx_b;
+
+                        //printf("here--global_idx_a-%ld\n",global_idx_a);
+                        //printf("here--global_idx_b-%ld\n",global_idx_b);
+                        //printf("here--idx_out-%ld\n",idx_out);
 
                         sum_min_max_vec(a, b, dim1, a_sum, b_sum, rp, idx_out);
                         //printf("here--a-%ld\n",idx_out);

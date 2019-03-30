@@ -36,14 +36,17 @@ void distribute_parts_start_size(integer part_dim, integer num_parts, integer **
     //dvc_blk_part_a_start[0] = 0;
     for (i=0;i<part_rmd_lines;i++) {
 		part_size[i] = part_avg_lines + 1;
+		//printf("part_size[%ld]-%ld\n",i,part_size[i]);
     }
     for (i=part_rmd_lines;i<num_parts;i++) {
 		part_size[i] = part_avg_lines;
+		//printf("part_size[%ld]-%ld\n",i,part_size[i]);
     }
 
 	part_start[0] = 0;
     for (i=1;i<num_parts;i++) {
-		part_start[i] = part_start[i-1] + part_size[i];
+		part_start[i] = part_start[i-1] + part_size[i-1];
+		//printf("part_start[%ld]-%ld\n",i,part_start[i]);
     }
 	*ptr_part_start = part_start;
 	*ptr_part_size = part_size;
