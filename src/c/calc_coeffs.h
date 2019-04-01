@@ -343,8 +343,8 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     tint dim1 = part_a_dim1;
     // calculate some preparation values
     real *restrict data_sum_a = (real*)malloc(part_a_dim0*sizeof(real));
-    real *restrict data_sum_b = (real*)malloc(part_b_dim0*sizeof(real));
-    real *restrict one_data_norm_a = NULL;
+    real *restrict one_data_norm_a = (real*)malloc(part_a_dim0*sizeof(real));
+    real *restrict data_sum_b = NULL;
     real *restrict one_data_norm_b = NULL;
 
     // part_a values, for diagnol process only part_a is needed
@@ -360,6 +360,10 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
     // part_b values
     if (is_diagnol) {
+        data_sum_b = data_sum_a;
+        one_data_norm_b = one_data_norm_a;
+    }
+    else {
         data_sum_b = (real*)malloc(part_b_dim0*sizeof(real));
         one_data_norm_b = (real*)malloc(part_b_dim0*sizeof(real));
         //#pragma acc kernels
@@ -371,10 +375,6 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
             //one_data_norm_b[i] = 1.0/vec_norm(data_part_b[i], dim1);
             one_data_norm_b[i] = 0.0;
         }
-    }
-    else {
-        data_sum_b = data_sum_a;
-        one_data_norm_b = one_data_norm_a;
     }
 
     tint idx_out = 0;
@@ -488,9 +488,11 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     free(dvc_blk_part_b_size);
 
     free(data_sum_a);
-    free(data_sum_b);
     free(one_data_norm_a);
-    free(one_data_norm_b);
+    if (data_sum_b != NULL)
+        free(data_sum_b);
+    if (one_data_norm_b != NULL)
+        free(one_data_norm_b);
 
     return 0;
 }
