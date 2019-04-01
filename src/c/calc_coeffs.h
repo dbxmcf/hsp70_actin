@@ -325,6 +325,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         result_pointers_diagnol *rp)
 {
     //int i, j, idx_a, idx_b;
+    tint is_diagnol = 0;
     tint i, j, idx_a, idx_b;
     sint *a, *b;
     //cint *a_jac, *b_jac;
@@ -343,10 +344,10 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     // calculate some preparation values
     real *restrict data_sum_a = (real*)malloc(part_a_dim0*sizeof(real));
     real *restrict data_sum_b = (real*)malloc(part_b_dim0*sizeof(real));
-    real *restrict one_data_norm_a = (real*)malloc(part_a_dim0*sizeof(real));
-    real *restrict one_data_norm_b = (real*)malloc(part_b_dim0*sizeof(real));
+    real *restrict one_data_norm_a = NULL;
+    real *restrict one_data_norm_b = NULL;
 
-    // part_a values
+    // part_a values, for diagnol process only part_a is needed
     //#pragma acc kernels
     for (i=0;i<part_a_dim0;i++) {
         data_sum_a[i] = 0;
@@ -358,16 +359,23 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     }
 
     // part_b values
-    //#pragma acc kernels
-    for (i=0;i<part_b_dim0;i++) {
-        data_sum_b[i] = 0;
-        for (j=0;j<part_b_dim1;j++) {
-            data_sum_b[i] += data_part_b[i][j];
+    if (is_diagnol) {
+        data_sum_b = (real*)malloc(part_b_dim0*sizeof(real));
+        one_data_norm_b = (real*)malloc(part_b_dim0*sizeof(real));
+        //#pragma acc kernels
+        for (i=0;i<part_b_dim0;i++) {
+            data_sum_b[i] = 0;
+            for (j=0;j<part_b_dim1;j++) {
+                data_sum_b[i] += data_part_b[i][j];
+            }
+            //one_data_norm_b[i] = 1.0/vec_norm(data_part_b[i], dim1);
+            one_data_norm_b[i] = 0.0;
         }
-        //one_data_norm_b[i] = 1.0/vec_norm(data_part_b[i], dim1);
-        one_data_norm_b[i] = 0.0;
     }
-
+    else {
+        data_sum_b = data_sum_a;
+        one_data_norm_b = one_data_norm_a;
+    }
 
     tint idx_out = 0;
     /* can they be different*/
@@ -381,6 +389,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
     sint **restrict dvc_blk_part_a;
     sint **restrict dvc_blk_part_b;
+    tint dvc_blk_part_b_loop_begin;
     tint dvc_blk_part_a_start_idx, dvc_blk_part_b_start_idx;
     tint dvc_blk_part_a_dim0, dvc_blk_part_b_dim0;
     tint global_idx_a,global_idx_b;
@@ -388,8 +397,15 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     real *restrict dvc_blk_sum_b;
 
     tint idx_dvc_blk_part_a, idx_dvc_blk_part_b;
+
+    dvc_blk_part_b_loop_begin = 0;
+    /* outer loop for the device blocks*/
     for (idx_dvc_blk_part_a=0;idx_dvc_blk_part_a<dvc_blk_part_a_num;idx_dvc_blk_part_a++) {
-        for (idx_dvc_blk_part_b=0;idx_dvc_blk_part_b<dvc_blk_part_b_num;idx_dvc_blk_part_b++){
+        dvc_blk_part_b_loop_begin = 0;
+        if (is_diagnol) {
+            dvc_blk_part_b_loop_begin = idx_dvc_blk_part_a;
+        }
+        for (idx_dvc_blk_part_b=dvc_blk_part_b_loop_begin;idx_dvc_blk_part_b<dvc_blk_part_b_num;idx_dvc_blk_part_b++){
                             
             /* get the device block start and size, part a */
             dvc_blk_part_a_start_idx = dvc_blk_part_a_start[idx_dvc_blk_part_a]; /* get the index */
@@ -407,6 +423,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
             dvc_blk_sum_a = &data_sum_a[dvc_blk_part_a_start[idx_dvc_blk_part_a]];
             dvc_blk_sum_b = &data_sum_b[dvc_blk_part_b_start[idx_dvc_blk_part_b]];
 
+            /* within block loop */
             #pragma acc data \
             copy(dvc_blk_part_a[0:dvc_blk_part_a_dim0][0:part_a_dim1],\
                  dvc_blk_part_b[0:dvc_blk_part_b_dim0][0:part_b_dim1])
@@ -414,23 +431,26 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
                 for (idx_a=0;idx_a<dvc_blk_part_a_dim0;idx_a++) {
                     for (idx_b=0;idx_b<dvc_blk_part_b_dim0;idx_b++){
-                        // 
 
-                        a = dvc_blk_part_a[idx_a];
-                        a_sum = dvc_blk_sum_a[idx_a];
-                        b = dvc_blk_part_b[idx_b];
-                        b_sum = dvc_blk_sum_b[idx_b];
+                        //a = dvc_blk_part_a[idx_a];
+                        //a_sum = dvc_blk_sum_a[idx_a];
+                        //b = dvc_blk_part_b[idx_b];
+                        //b_sum = dvc_blk_sum_b[idx_b];
 
                         /* map the local idx_a, idx_b to the global index */
                         global_idx_a = dvc_blk_part_a_start_idx + idx_a;
                         global_idx_b = dvc_blk_part_b_start_idx + idx_b;
                         idx_out = global_idx_a*part_b_dim0 + global_idx_b;
 
+                        sum_min_max_vec(dvc_blk_part_a[idx_a], dvc_blk_part_b[idx_b], dim1, 
+                                        dvc_blk_sum_a[idx_a], dvc_blk_sum_b[idx_b], 
+                                        rp, idx_out);
+
                         //printf("here--global_idx_a-%ld\n",global_idx_a);
                         //printf("here--global_idx_b-%ld\n",global_idx_b);
                         //printf("here--idx_out-%ld\n",idx_out);
 
-                        sum_min_max_vec(a, b, dim1, a_sum, b_sum, rp, idx_out);
+                        //sum_min_max_vec(a, b, dim1, a_sum, b_sum, rp, idx_out);
                         //printf("here--a-%ld\n",idx_out);
                         //idx_out++;
                     }
