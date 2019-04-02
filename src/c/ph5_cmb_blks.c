@@ -42,6 +42,10 @@
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
+
+int mpi_size, mpi_rank;				/* mpi variables */
+int gpunum=0,ngpus=0;
+
 #include "dynamic_2d_array.h"
 #include "pair_cmbs.h"
 #include "calc_coeffs.h"
@@ -93,8 +97,6 @@ int nerrors = 0;				/* errors count */
 char    testfiles[2][PATH_MAX];
 
 
-int mpi_size, mpi_rank;				/* mpi variables */
-int gpunum=0,ngpus=0;
 
 /* option flags */
 int verbose = 0;			/* verbose, default as no. */
@@ -1225,8 +1227,8 @@ phdf5readAll(char *filename)
 
     MPI_Barrier(comm);
     t2 = MPI_Wtime(); 
-    if (0==mpi_rank)
-        printf( "Elapsed time is %.3f\n", t2 - t1 ); 
+    //if (0==mpi_rank)
+        printf( "Elapsed time is %.3f at mpi_rank- %ld\n", t2 - t1, mpi_rank ); 
 
 
     MPI_Barrier(comm);

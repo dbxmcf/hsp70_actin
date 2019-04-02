@@ -326,15 +326,17 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 {
     //int i, j, idx_a, idx_b;
     tint is_diagnol = 0;
-    if (data_part_a == data_part_b)
+    if (data_part_a == data_part_b) {
         is_diagnol = 1;
+    }
+    printf("is_diagnol=%ld\n",is_diagnol);
     tint i, j, idx_a, idx_b;
-    sint *a, *b;
+    //sint *a, *b;
     //cint *a_jac, *b_jac;
-    real dist_gen_jac, dist_jac, denomenator_wu, dist_wu; 
-    real numerator_sarika, denomenator_sarika, dist_sarika;
-    real num_sim, numerator_jac, denomenator_jac, numerator_gen_jac, denomenator_gen_jac;
-    real a_sum, b_sum, one_an, one_bn, result;
+    //real dist_gen_jac, dist_jac, denomenator_wu, dist_wu; 
+    //real numerator_sarika, denomenator_sarika, dist_sarika;
+    //real num_sim, numerator_jac, denomenator_jac, numerator_gen_jac, denomenator_gen_jac;
+    //real a_sum, b_sum, one_an, one_bn, result;
 
     // perform full permutation of all pairs of part a and part b
     if (part_a_dim1 != part_b_dim1) {
@@ -434,14 +436,16 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 {
 
                     if (is_diagnol) { /* diagnol process, triangle part */
+                        //printf("diagnol process, triangle part\n");
+                        //break;
                         if (idx_dvc_blk_part_a == idx_dvc_blk_part_b) { /* diagnol process, */
                             for (idx_a=0;idx_a<dvc_blk_part_a_dim0;idx_a++) {
                                 for (idx_b=idx_a+1;idx_b<dvc_blk_part_b_dim0;idx_b++){
-
+//
                                     //global_idx_a = dvc_blk_part_a_start_idx + idx_a;
                                     //global_idx_b = dvc_blk_part_b_start_idx + idx_b;
                                     //idx_out = global_idx_a*part_b_dim0 + global_idx_b;
-
+//
                                     sum_min_max_vec(dvc_blk_part_a[idx_a], dvc_blk_part_b[idx_b], dim1, 
                                                     dvc_blk_sum_a[idx_a], dvc_blk_sum_b[idx_b], 
                                                     rp, idx_out);
@@ -450,13 +454,14 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                             }
                         }
                         else{ /* off-diagnol process, still whole block */
+                            //break;
                             for (idx_a=0;idx_a<dvc_blk_part_a_dim0;idx_a++) {
                                 for (idx_b=0;idx_b<dvc_blk_part_b_dim0;idx_b++){
-
+//
                                     //global_idx_a = dvc_blk_part_a_start_idx + idx_a;
                                     //global_idx_b = dvc_blk_part_b_start_idx + idx_b;
                                     //idx_out = global_idx_a*part_b_dim0 + global_idx_b;
-
+//
                                     sum_min_max_vec(dvc_blk_part_a[idx_a], dvc_blk_part_b[idx_b], dim1, 
                                                     dvc_blk_sum_a[idx_a], dvc_blk_sum_b[idx_b], 
                                                     rp, idx_out);
@@ -464,6 +469,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                                 }
                             }
                         } 
+                        printf("idx_out=%ld,mrk=%ld\n",idx_out,mpi_rank);
                     }
                     else { /* off-diagnol process, rectangular part */
                         for (idx_a=0;idx_a<dvc_blk_part_a_dim0;idx_a++) {
@@ -580,6 +586,8 @@ int calc_coeffs_diagnol_triangle(sint **restrict data, tint dim0, tint dim1,
             idx_rpd++;
         }
     }
+
+    printf("idx_rpd=%ld\n",idx_rpd);
 
     /* pass out the data */
     free_dynamic_2d_array_integer(cmbs);
