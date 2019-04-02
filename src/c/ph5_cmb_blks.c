@@ -1143,7 +1143,10 @@ phdf5readAll(char *filename)
         rpd_part_a.sarika = part_ab_sarika;
         rpd_part_a.cosine = part_ab_cosine;
 
-        calc_coeffs_diagnol_triangle(data_array_a, space_dim_a0, space_dim_a1,&rpd_part_a);
+        //calc_coeffs_diagnol_triangle(data_array_a, space_dim_a0, space_dim_a1,&rpd_part_a);
+        calc_coeffs_off_diagnol_block(data_array_a, space_dim_a0, space_dim_a1, 
+                data_array_a, space_dim_a0, space_dim_a1,
+                &rpd_part_a);
 
         if (debug_info)
             if (mpi_rank == debug_mpi_rank) {
@@ -1167,7 +1170,10 @@ phdf5readAll(char *filename)
         rpd_part_b.sarika = part_ab_sarika + num_cmbs_a;
         rpd_part_b.cosine = part_ab_cosine + num_cmbs_a;
 
-        calc_coeffs_diagnol_triangle(data_array_b, space_dim_b0, space_dim_b1,&rpd_part_b);
+        //calc_coeffs_diagnol_triangle(data_array_b, space_dim_b0, space_dim_b1,&rpd_part_b);
+        calc_coeffs_off_diagnol_block(data_array_b, space_dim_b0, space_dim_b1, 
+                data_array_b, space_dim_b0, space_dim_b1,
+                &rpd_part_b);
 
         if (debug_info)
             if (mpi_rank == debug_mpi_rank) {
