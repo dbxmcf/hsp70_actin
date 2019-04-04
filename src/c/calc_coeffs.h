@@ -446,11 +446,9 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 {
 
                     for (idx_a=0;idx_a<dvc_blk_part_a_dim0;idx_a++) {
+                        idx_b_loop_start =0;
                         if (is_dvc_blk_diagnol) {
                             idx_b_loop_start = idx_a + 1;
-                        }
-                        else {
-                            idx_b_loop_start =0;
                         }
                         for (idx_b=idx_b_loop_start;idx_b<dvc_blk_part_b_dim0;idx_b++){
 //
