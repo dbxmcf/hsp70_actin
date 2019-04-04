@@ -402,7 +402,9 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
     tint idx_dvc_blk_part_a, idx_dvc_blk_part_b;
 
-    dvc_blk_part_b_loop_begin = 0;
+    //return 0;
+
+    //dvc_blk_part_b_loop_begin = 0;
     /* outer loop for the device blocks*/
     for (idx_dvc_blk_part_a=0;idx_dvc_blk_part_a<dvc_blk_part_a_num;idx_dvc_blk_part_a++) {
         dvc_blk_part_b_loop_begin = 0;
@@ -429,6 +431,8 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
             dvc_blk_sum_a = &data_sum_a[dvc_blk_part_a_start[idx_dvc_blk_part_a]];
             dvc_blk_sum_b = &data_sum_b[dvc_blk_part_b_start[idx_dvc_blk_part_b]];
 
+            //break;
+
                 /* within block loop */
                 #pragma acc data \
                 copy(dvc_blk_part_a[0:dvc_blk_part_a_dim0][0:part_a_dim1],\
@@ -436,9 +440,10 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                 {
 
                     if (is_diagnol) { /* diagnol process, triangle part */
-                        //printf("diagnol process, triangle part\n");
                         //break;
+                        
                         if (idx_dvc_blk_part_a == idx_dvc_blk_part_b) { /* diagnol process, */
+                            printf("I am triangle.\n");
                             for (idx_a=0;idx_a<dvc_blk_part_a_dim0;idx_a++) {
                                 for (idx_b=idx_a+1;idx_b<dvc_blk_part_b_dim0;idx_b++){
 //
@@ -452,9 +457,11 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                                     idx_out++;
                                 }
                             }
+                            //printf("idx_dvc_blk_part_a=%ld,idx_dvc_blk_part_b=%ld,idx_out=%ld\n",idx_dvc_blk_part_a,idx_dvc_blk_part_b,idx_out);
                         }
                         else{ /* off-diagnol process, still whole block */
                             //break;
+                            printf("I am block.\n");
                             for (idx_a=0;idx_a<dvc_blk_part_a_dim0;idx_a++) {
                                 for (idx_b=0;idx_b<dvc_blk_part_b_dim0;idx_b++){
 //
@@ -468,8 +475,13 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                                     idx_out++;
                                 }
                             }
+                            //printf("idx_dvc_blk_part_a=%ld,idx_dvc_blk_part_b=%ld,idx_out=%ld\n",idx_dvc_blk_part_a,idx_dvc_blk_part_b,idx_out);
                         } 
-                        printf("idx_out=%ld,mrk=%ld\n",idx_out,mpi_rank);
+
+                        printf("idx_dvc_blk_part_a=%ld,idx_dvc_blk_part_b=%ld,idx_out=%ld\n",idx_dvc_blk_part_a,idx_dvc_blk_part_b,idx_out);
+
+
+                        //printf("idx_out=%ld,mrk=%ld\n",idx_out,mpi_rank);
                     }
                     else { /* off-diagnol process, rectangular part */
                         for (idx_a=0;idx_a<dvc_blk_part_a_dim0;idx_a++) {
@@ -531,12 +543,28 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     free(dvc_blk_part_b_start);
     free(dvc_blk_part_b_size);
 
+    //printf("data_sum_a=%p, before\n",data_sum_a);
     free(data_sum_a);
+    //printf("data_sum_a=%p, after\n",data_sum_a);
+    data_sum_a = NULL;
+    //printf("data_sum_a=%p, set null\n",data_sum_a);
+    //printf("data_sum_b=%p, set null\n",data_sum_b);
     free(one_data_norm_a);
-    if (data_sum_b != NULL)
+    one_data_norm_a = NULL;
+    if ( !is_diagnol ) { /* only off-diagnol blocks need to free part_b*/
         free(data_sum_b);
-    if (one_data_norm_b != NULL)
         free(one_data_norm_b);
+    }
+    //if (data_sum_b != NULL) {
+    //    printf("free_sum_b\n");
+    //    free(data_sum_b);
+    //}
+////
+    //if (one_data_norm_b != NULL){
+    //    printf("one_data_norm_b\n");
+    //    free(one_data_norm_b);
+    //}
+
 
     return 0;
 }
