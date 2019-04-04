@@ -325,7 +325,9 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         result_pointers_diagnol *rp)
 {
     //int i, j, idx_a, idx_b;
-    tint is_diagnol = 0;
+    int is_diagnol = 0;
+    int is_dvc_blk_diagnol = 0;
+    tint idx_b_loop_start = 0;
     if (data_part_a == data_part_b) {
         is_diagnol = 1;
     }
@@ -433,88 +435,41 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
             //break;
 
+            is_dvc_blk_diagnol = 0;
+            if ( is_diagnol && idx_dvc_blk_part_a == idx_dvc_blk_part_b )
+                is_dvc_blk_diagnol = 1;
+
                 /* within block loop */
                 #pragma acc data \
                 copy(dvc_blk_part_a[0:dvc_blk_part_a_dim0][0:part_a_dim1],\
                      dvc_blk_part_b[0:dvc_blk_part_b_dim0][0:part_b_dim1])
                 {
 
-                    if (is_diagnol) { /* diagnol process, triangle part */
-                        //break;
-                        
-                        if (idx_dvc_blk_part_a == idx_dvc_blk_part_b) { /* diagnol process, */
-                            //printf("I am triangle.\n");
-                            for (idx_a=0;idx_a<dvc_blk_part_a_dim0;idx_a++) {
-                                for (idx_b=idx_a+1;idx_b<dvc_blk_part_b_dim0;idx_b++){
-//
-                                    global_idx_a = dvc_blk_part_a_start_idx + idx_a;
-                                    global_idx_b = dvc_blk_part_b_start_idx + idx_b;
-                                    idx_out = global_idx_a*part_b_dim0 
-                                            - (global_idx_a+1)*(global_idx_a+2)/2
-                                            + global_idx_b;
-//
-                                    sum_min_max_vec(dvc_blk_part_a[idx_a], dvc_blk_part_b[idx_b], dim1, 
-                                                    dvc_blk_sum_a[idx_a], dvc_blk_sum_b[idx_b], 
-                                                    rp, idx_out);
-                                    //printf("idx_out_tri=%ld\n",idx_out);
-                                    //idx_out++;
-                                }
-                            }
-                            //printf("idx_dvc_blk_part_a=%ld,idx_dvc_blk_part_b=%ld,idx_out=%ld\n",idx_dvc_blk_part_a,idx_dvc_blk_part_b,idx_out);
+                    for (idx_a=0;idx_a<dvc_blk_part_a_dim0;idx_a++) {
+                        if (is_dvc_blk_diagnol) {
+                            idx_b_loop_start = idx_a + 1;
                         }
-                        else{ /* off-diagnol process, still whole block */
-                            //break;
-                            //printf("I am block.\n");
-                            for (idx_a=0;idx_a<dvc_blk_part_a_dim0;idx_a++) {
-                                for (idx_b=0;idx_b<dvc_blk_part_b_dim0;idx_b++){
+                        else {
+                            idx_b_loop_start =0;
+                        }
+                        for (idx_b=idx_b_loop_start;idx_b<dvc_blk_part_b_dim0;idx_b++){
 //
-                                    global_idx_a = dvc_blk_part_a_start_idx + idx_a;
-                                    global_idx_b = dvc_blk_part_b_start_idx + idx_b;
-                                    idx_out = global_idx_a*part_b_dim0 
-                                            - (global_idx_a+1)*(global_idx_a+2)/2
-                                            + global_idx_b;
-//
-                                    sum_min_max_vec(dvc_blk_part_a[idx_a], dvc_blk_part_b[idx_b], dim1, 
-                                                    dvc_blk_sum_a[idx_a], dvc_blk_sum_b[idx_b], 
-                                                    rp, idx_out);
-                                    //printf("idx_out_blk=%ld\n",idx_out);
-                                    //idx_out++;
-                                }
+                            global_idx_a = dvc_blk_part_a_start_idx + idx_a;
+                            global_idx_b = dvc_blk_part_b_start_idx + idx_b;
+                            if (is_diagnol) {
+                                idx_out = global_idx_a*part_b_dim0 
+                                        - (global_idx_a+1)*(global_idx_a+2)/2
+                                        + global_idx_b;
                             }
-                            //printf("idx_dvc_blk_part_a=%ld,idx_dvc_blk_part_b=%ld,idx_out=%ld\n",idx_dvc_blk_part_a,idx_dvc_blk_part_b,idx_out);
-                        } 
-
-                        //printf("idx_dvc_blk_part_a=%ld,idx_dvc_blk_part_b=%ld,idx_out=%ld\n",idx_dvc_blk_part_a,idx_dvc_blk_part_b,idx_out);
-
-
-                        //printf("idx_out=%ld,mrk=%ld\n",idx_out,mpi_rank);
-                    }
-                    else { /* off-diagnol process, rectangular part */
-                        for (idx_a=0;idx_a<dvc_blk_part_a_dim0;idx_a++) {
-                            for (idx_b=0;idx_b<dvc_blk_part_b_dim0;idx_b++){
-
-                                //a = dvc_blk_part_a[idx_a];
-                                //a_sum = dvc_blk_sum_a[idx_a];
-                                //b = dvc_blk_part_b[idx_b];
-                                //b_sum = dvc_blk_sum_b[idx_b];
-
-                                /* map the local idx_a, idx_b to the global index */
-                                global_idx_a = dvc_blk_part_a_start_idx + idx_a;
-                                global_idx_b = dvc_blk_part_b_start_idx + idx_b;
+                            else {
                                 idx_out = global_idx_a*part_b_dim0 + global_idx_b;
-
-                                sum_min_max_vec(dvc_blk_part_a[idx_a], dvc_blk_part_b[idx_b], dim1, 
-                                                dvc_blk_sum_a[idx_a], dvc_blk_sum_b[idx_b], 
-                                                rp, idx_out);
-
-                                //printf("here--global_idx_a-%ld\n",global_idx_a);
-                                //printf("here--global_idx_b-%ld\n",global_idx_b);
-                                //printf("here--idx_out-%ld\n",idx_out);
-
-                                //sum_min_max_vec(a, b, dim1, a_sum, b_sum, rp, idx_out);
-                                //printf("here--a-%ld\n",idx_out);
-                                //idx_out++;
                             }
+//
+                            sum_min_max_vec(dvc_blk_part_a[idx_a], dvc_blk_part_b[idx_b], dim1, 
+                                            dvc_blk_sum_a[idx_a], dvc_blk_sum_b[idx_b], 
+                                            rp, idx_out);
+                            //printf("idx_out_tri=%ld\n",idx_out);
+                            //idx_out++;
                         }
                     }
                 }
