@@ -543,28 +543,12 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     free(dvc_blk_part_b_start);
     free(dvc_blk_part_b_size);
 
-    //printf("data_sum_a=%p, before\n",data_sum_a);
     free(data_sum_a);
-    //printf("data_sum_a=%p, after\n",data_sum_a);
-    data_sum_a = NULL;
-    //printf("data_sum_a=%p, set null\n",data_sum_a);
-    //printf("data_sum_b=%p, set null\n",data_sum_b);
     free(one_data_norm_a);
-    one_data_norm_a = NULL;
     if ( !is_diagnol ) { /* only off-diagnol blocks need to free part_b*/
         free(data_sum_b);
         free(one_data_norm_b);
     }
-    //if (data_sum_b != NULL) {
-    //    printf("free_sum_b\n");
-    //    free(data_sum_b);
-    //}
-////
-    //if (one_data_norm_b != NULL){
-    //    printf("one_data_norm_b\n");
-    //    free(one_data_norm_b);
-    //}
-
 
     return 0;
 }
