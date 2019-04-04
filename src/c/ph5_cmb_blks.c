@@ -1223,8 +1223,11 @@ phdf5readAll(char *filename)
 
     MPI_Barrier(comm);
     t2 = MPI_Wtime(); 
-    //if (0==mpi_rank)
-        printf( "Elapsed time is %.3f at mpi_rank- %ld\n", t2 - t1, mpi_rank ); 
+    if (0==mpi_rank) {
+        //printf( "Elapsed time is %.3f at mpi_rank - %ld\n", t2 - t1, mpi_rank ); 
+        printf( "Elapsed time is %.3f\n", t2 - t1); 
+    }
+
 
 
     MPI_Barrier(comm);

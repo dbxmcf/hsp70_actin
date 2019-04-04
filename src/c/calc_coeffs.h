@@ -329,7 +329,7 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
     if (data_part_a == data_part_b) {
         is_diagnol = 1;
     }
-    printf("is_diagnol=%ld\n",is_diagnol);
+    //printf("is_diagnol=%ld\n",is_diagnol);
     tint i, j, idx_a, idx_b;
     //sint *a, *b;
     //cint *a_jac, *b_jac;
@@ -443,42 +443,48 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
                         //break;
                         
                         if (idx_dvc_blk_part_a == idx_dvc_blk_part_b) { /* diagnol process, */
-                            printf("I am triangle.\n");
+                            //printf("I am triangle.\n");
                             for (idx_a=0;idx_a<dvc_blk_part_a_dim0;idx_a++) {
                                 for (idx_b=idx_a+1;idx_b<dvc_blk_part_b_dim0;idx_b++){
 //
-                                    //global_idx_a = dvc_blk_part_a_start_idx + idx_a;
-                                    //global_idx_b = dvc_blk_part_b_start_idx + idx_b;
-                                    //idx_out = global_idx_a*part_b_dim0 + global_idx_b;
+                                    global_idx_a = dvc_blk_part_a_start_idx + idx_a;
+                                    global_idx_b = dvc_blk_part_b_start_idx + idx_b;
+                                    idx_out = global_idx_a*part_b_dim0 
+                                            - (global_idx_a+1)*(global_idx_a+2)/2
+                                            + global_idx_b;
 //
                                     sum_min_max_vec(dvc_blk_part_a[idx_a], dvc_blk_part_b[idx_b], dim1, 
                                                     dvc_blk_sum_a[idx_a], dvc_blk_sum_b[idx_b], 
                                                     rp, idx_out);
-                                    idx_out++;
+                                    //printf("idx_out_tri=%ld\n",idx_out);
+                                    //idx_out++;
                                 }
                             }
                             //printf("idx_dvc_blk_part_a=%ld,idx_dvc_blk_part_b=%ld,idx_out=%ld\n",idx_dvc_blk_part_a,idx_dvc_blk_part_b,idx_out);
                         }
                         else{ /* off-diagnol process, still whole block */
                             //break;
-                            printf("I am block.\n");
+                            //printf("I am block.\n");
                             for (idx_a=0;idx_a<dvc_blk_part_a_dim0;idx_a++) {
                                 for (idx_b=0;idx_b<dvc_blk_part_b_dim0;idx_b++){
 //
-                                    //global_idx_a = dvc_blk_part_a_start_idx + idx_a;
-                                    //global_idx_b = dvc_blk_part_b_start_idx + idx_b;
-                                    //idx_out = global_idx_a*part_b_dim0 + global_idx_b;
+                                    global_idx_a = dvc_blk_part_a_start_idx + idx_a;
+                                    global_idx_b = dvc_blk_part_b_start_idx + idx_b;
+                                    idx_out = global_idx_a*part_b_dim0 
+                                            - (global_idx_a+1)*(global_idx_a+2)/2
+                                            + global_idx_b;
 //
                                     sum_min_max_vec(dvc_blk_part_a[idx_a], dvc_blk_part_b[idx_b], dim1, 
                                                     dvc_blk_sum_a[idx_a], dvc_blk_sum_b[idx_b], 
                                                     rp, idx_out);
-                                    idx_out++;
+                                    //printf("idx_out_blk=%ld\n",idx_out);
+                                    //idx_out++;
                                 }
                             }
                             //printf("idx_dvc_blk_part_a=%ld,idx_dvc_blk_part_b=%ld,idx_out=%ld\n",idx_dvc_blk_part_a,idx_dvc_blk_part_b,idx_out);
                         } 
 
-                        printf("idx_dvc_blk_part_a=%ld,idx_dvc_blk_part_b=%ld,idx_out=%ld\n",idx_dvc_blk_part_a,idx_dvc_blk_part_b,idx_out);
+                        //printf("idx_dvc_blk_part_a=%ld,idx_dvc_blk_part_b=%ld,idx_out=%ld\n",idx_dvc_blk_part_a,idx_dvc_blk_part_b,idx_out);
 
 
                         //printf("idx_out=%ld,mrk=%ld\n",idx_out,mpi_rank);
