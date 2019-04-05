@@ -44,6 +44,9 @@
 #include <math.h>
 
 int mpi_size, mpi_rank;				/* mpi variables */
+int device_block_parts_num = 1;
+int debug_mpi_rank = 0;		/* specify an mpi rank to print */
+int debug_info = 0;          /* enable print mpi infos*/
 int gpunum=0,ngpus=0;
 
 #include "dynamic_2d_array.h"
@@ -100,8 +103,8 @@ char    testfiles[2][PATH_MAX];
 
 /* option flags */
 int verbose = 0;			/* verbose, default as no. */
-int debug_mpi_rank = 0;		/* specify an mpi rank to print */
-int debug_info = 0;          /* enable print mpi infos*/
+
+
 int doread=1;				/* read test */
 int dowrite=0;				/* write test */
 int docleanup=0;			/* cleanup */
@@ -1419,7 +1422,10 @@ parse_options(int argc, char **argv){
                 case 'd':   
                             ++argv,--argc;
                             debug_mpi_rank = atoi(*argv);
-
+                            break;
+                case 'p':   /* device block parts */
+                            ++argv,--argc;
+                            device_block_parts_num = atoi(*argv);
                             break;
                 default:    usage();
                             nerrors++;

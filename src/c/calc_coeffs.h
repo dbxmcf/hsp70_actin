@@ -385,7 +385,9 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
     tint idx_out = 0;
     /* can they be different*/
-    tint dvc_blk_part_a_num = 3, dvc_blk_part_b_num = dvc_blk_part_a_num;
+    tint dvc_blk_part_a_num = device_block_parts_num, dvc_blk_part_b_num = dvc_blk_part_a_num;
+    if (debug_info)
+        printf("number of device blocks=%ld\n",dvc_blk_part_a_num);
 
     tint *dvc_blk_part_a_start = NULL, *dvc_blk_part_a_size  = NULL;
     tint *dvc_blk_part_b_start = NULL, *dvc_blk_part_b_size  = NULL;
