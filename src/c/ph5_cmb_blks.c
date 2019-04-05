@@ -42,6 +42,13 @@
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
+
+int mpi_size, mpi_rank;				/* mpi variables */
+int device_block_parts_num = 1;
+int debug_mpi_rank = 0;		/* specify an mpi rank to print */
+int debug_info = 0;          /* enable print mpi infos*/
+int gpunum=0,ngpus=0;
+
 #include "dynamic_2d_array.h"
 #include "pair_cmbs.h"
 #include "calc_coeffs.h"
@@ -93,13 +100,11 @@ int nerrors = 0;				/* errors count */
 char    testfiles[2][PATH_MAX];
 
 
-int mpi_size, mpi_rank;				/* mpi variables */
-int gpunum=0,ngpus=0;
 
 /* option flags */
 int verbose = 0;			/* verbose, default as no. */
-int debug_mpi_rank = 0;		/* specify an mpi rank to print */
-int debug_info = 0;          /* enable print mpi infos*/
+
+
 int doread=1;				/* read test */
 int dowrite=0;				/* write test */
 int docleanup=0;			/* cleanup */
@@ -1143,7 +1148,8 @@ phdf5readAll(char *filename)
         rpd_part_a.sarika = part_ab_sarika;
         rpd_part_a.cosine = part_ab_cosine;
 
-        calc_coeffs_diagnol_triangle(data_array_a, space_dim_a0, space_dim_a1,&rpd_part_a);
+        //calc_coeffs_diagnol_triangle(data_array_a, space_dim_a0, space_dim_a1,&rpd_part_a);
+        calc_coeffs_off_diagnol_block(data_array_a, space_dim_a0, space_dim_a1,  data_array_a, space_dim_a0, space_dim_a1, &rpd_part_a);
 
         if (debug_info)
             if (mpi_rank == debug_mpi_rank) {
@@ -1167,7 +1173,8 @@ phdf5readAll(char *filename)
         rpd_part_b.sarika = part_ab_sarika + num_cmbs_a;
         rpd_part_b.cosine = part_ab_cosine + num_cmbs_a;
 
-        calc_coeffs_diagnol_triangle(data_array_b, space_dim_b0, space_dim_b1,&rpd_part_b);
+        //calc_coeffs_diagnol_triangle(data_array_b, space_dim_b0, space_dim_b1,&rpd_part_b);
+        calc_coeffs_off_diagnol_block(data_array_b, space_dim_b0, space_dim_b1,data_array_b, space_dim_b0, space_dim_b1,&rpd_part_b);
 
         if (debug_info)
             if (mpi_rank == debug_mpi_rank) {
@@ -1219,8 +1226,11 @@ phdf5readAll(char *filename)
 
     MPI_Barrier(comm);
     t2 = MPI_Wtime(); 
-    if (0==mpi_rank)
-        printf( "Elapsed time is %.3f\n", t2 - t1 ); 
+    if (0==mpi_rank) {
+        //printf( "Elapsed time is %.3f at mpi_rank - %ld\n", t2 - t1, mpi_rank ); 
+        printf( "Elapsed time is %.3f\n", t2 - t1); 
+    }
+
 
 
     MPI_Barrier(comm);
@@ -1412,7 +1422,10 @@ parse_options(int argc, char **argv){
                 case 'd':   
                             ++argv,--argc;
                             debug_mpi_rank = atoi(*argv);
-
+                            break;
+                case 'p':   /* device block parts */
+                            ++argv,--argc;
+                            device_block_parts_num = atoi(*argv);
                             break;
                 default:    usage();
                             nerrors++;
