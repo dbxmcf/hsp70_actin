@@ -441,8 +441,8 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
                 /* within block loop */
                 #pragma acc data \
-                copy(dvc_blk_part_a[0:dvc_blk_part_a_dim0][0:part_a_dim1],\
-                     dvc_blk_part_b[0:dvc_blk_part_b_dim0][0:part_b_dim1])
+                copyin(dvc_blk_part_a[0:dvc_blk_part_a_dim0][0:part_a_dim1],\
+                       dvc_blk_part_b[0:dvc_blk_part_b_dim0][0:part_b_dim1])
                 {
 
                     for (idx_a=0;idx_a<dvc_blk_part_a_dim0;idx_a++) {
