@@ -395,8 +395,8 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 
     sint **restrict dvc_blk_part_a;
     sint **restrict dvc_blk_part_b;
-    tint dvc_blk_part_b_loop_begin;
     tint dvc_blk_part_a_start_idx, dvc_blk_part_b_start_idx;
+    tint dvc_blk_part_b_loop_begin;
     tint dvc_blk_part_a_dim0, dvc_blk_part_b_dim0;
     tint global_idx_a,global_idx_b;
     real *restrict dvc_blk_sum_a; // = (real*)malloc(part_a_dim0*sizeof(real));
@@ -454,13 +454,10 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
 //
                             global_idx_a = dvc_blk_part_a_start_idx + idx_a;
                             global_idx_b = dvc_blk_part_b_start_idx + idx_b;
+
+                            idx_out = global_idx_a*part_b_dim0 + global_idx_b;
                             if (is_diagnol) {
-                                idx_out = global_idx_a*part_b_dim0 
-                                        - (global_idx_a+1)*(global_idx_a+2)/2
-                                        + global_idx_b;
-                            }
-                            else {
-                                idx_out = global_idx_a*part_b_dim0 + global_idx_b;
+                                idx_out -= (global_idx_a+1)*(global_idx_a+2)/2;
                             }
 //
                             sum_min_max_vec(dvc_blk_part_a[idx_a], dvc_blk_part_b[idx_b], dim1, 
