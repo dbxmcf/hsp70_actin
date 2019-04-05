@@ -16,8 +16,8 @@ module load hdf5/mvapich2.3-pgi-18.7
 #input_sample_folder="/work/fchen14/user_errs/wxx6941/code/fchen14test/sample_kinase_phosphatase_protease"
 #input_sample_folder="/work/fchen14/user_errs/wxx6941/code/fchen14test/sample_protease_mix_1"
 #input_sample_folder="hdf5t/sample_protease_mix_1"
-input_sample_folder="sample_kinase_phosphatase_protease"
-#input_sample_folder="sample_protease_mix_1"
+#input_sample_folder="sample_kinase_phosphatase_protease"
+input_sample_folder="sample_protease_mix_1"
 #input_sample_folder="sample_a-b_mix_2"
 #input_sample_folder="sample_hsp70_actin"
 # fill in absolute path here for output
@@ -50,5 +50,5 @@ SECONDS=0
 mpirun -np $NPROCS -f $PBS_NODEFILE -ppn 2 ./pgi.mpi.pacc.out -f $input_h5
 echo "gpu run $i GPU, $SECONDS sec"
 
-python rebuild_mat.py -f $input_h5 -csv #-validate
+python rebuild_mat.py -f $input_h5 -csv -validate
 
