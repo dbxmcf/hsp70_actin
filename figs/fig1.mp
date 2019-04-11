@@ -6,12 +6,25 @@ verbatimtex
 etex
 outputtemplate := "%j.ps";
 beginfig (1);
-  org = (5cm,5cm);
+  pair org;
+  org = (5cm,10cm);
   a=5cm;b=20cm;
-  c=4;
-  z0 = (a,c*a)+(5cm,5cm); z1 = (c*a,c*a)+(5cm,5cm);
-  z2 = (c*a,a)+(5cm,5cm);
+  c=3;
+  z0 = (a,c*a) + org;
+  z1 = (c*a,c*a) + org;
+  z2 = (c*a,a) + org;
   draw z0--z1--z2--cycle;
+  chunks = 4;
+  for i=1 upto chunks:
+    %drawarrow p shifted -(i*A/10) withcolor red;
+    %show i/3;
+    numeric fc;
+    fc=i/chunks;
+    %draw 1./c*i[z0,z2] -- 1./c*i[z1,z2];
+    draw fc[z0,z2] -- fc[z1,z2];
+    draw fc[z0,z1] -- fc[z0,z2];
+  endfor;
+  %draw 1/3[z0,z2] -- 1/3[z1,z2];
   %dotlabel.top("(0,0)", z0);
   %label.bot(btex $\lbrace$ etex rotated 90
   %xscaled 5 yscaled 1.4, 1/2[z0,z1]);
