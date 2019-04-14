@@ -7,8 +7,8 @@ etex
 outputtemplate := "%j.ps";
 beginfig (1);
   pair org;
-  org = (5cm,10cm);
-  a=5cm;b=20cm;
+  org = (0cm,10cm);
+  a=6cm;b=20cm;
   c=3;
   z0 = (a,c*a) + org;
   z1 = (c*a,c*a) + org;
@@ -32,8 +32,10 @@ beginfig (1);
   %yscaled 3, 1/2[z1,z2]);
   %label(btex $\lbrace$ etex xscaled 1.5 yscaled 5.7
   %rotated -60, 1/2[z0,z2] + dir(120)*2mm);
-  %labeloffset:=3.5mm;
-  %label.bot(btex $\sqrt{3}$ etex, 1/2[z0,z1]);
+  labeloffset:=3.5mm;
+  label.top(btex dataN etex, 1/2[z0,z1]);
+  %label.rt((btex $\rbrace$ etex) xscaled 1.3 yscaled 3, 1/2[z1,z2]);
+  label.rt((btex $\rbrace$ etex) xscaled 12 yscaled 30, 1/2[z1,z2]);
   %label.rt(btex 1 etex, 1/2[z1,z2]);
   %label(btex 2 etex, 1/2[z0,z2]+dir(120)*5mm);
 endfig;
