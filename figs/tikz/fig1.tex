@@ -1,30 +1,51 @@
 %\documentclass[tikz,border=10pt]{standalone}
 \documentclass{minimal}
 \usepackage{tikz}
+\usetikzlibrary{calc}
 \begin{document}
 \newcommand{\pythagwidth}{8cm}
 \newcommand{\pythagheight}{8cm}
 \begin{tikzpicture}
-  \coordinate [label={below right:$A$}] (A) at (0, \pythagheight);
+  \coordinate [label={above left:$A$}] (A) at (0, \pythagheight);
   \coordinate [label={above right:$B$}] (B) at (\pythagwidth, \pythagheight);
   \coordinate [label={below left:$C$}] (C) at (\pythagwidth, 0);
 
   \coordinate (D1) at (-\pythagheight, \pythagheight + \pythagwidth);
   \coordinate (D2) at (-\pythagheight - \pythagwidth, \pythagwidth);
 
+  %\draw [very thick] (00) -- (10) -- (20) -- (00);
   \draw [very thick] (A) -- (B) -- (C) -- (A);
 
-  \foreach \x [count=\xxi] in {0,...,9}
-    \foreach \y [count=\yi] in {0,...,8}
-      \draw [dashed] (\xxi,\yi)--(\yi,\x);
+  %\foreach \x [count=\xxi] in {0,...,9}
+    %\foreach \y [count=\yi] in {0,...,8}
+      %\draw [dashed] (\xxi,\yi)--(\yi,\x);
+      %\draw [dashed] (\xxi,\yi)--(\yi,\x);
+\newcommand{\ndiv}{4}
+%\newcommand{\nloop}{\ndiv-1}
+\newcommand{\nloop}{3}
 
-%\foreach \x in {1,...,4}
-%    \foreach \y in {0,...,4}
-%    {
-%       \pgfmathtruncatemacro{\cur}{\x + 5* \y}
-%       \pgfmathtruncatemacro{\next}{\cur + 1}
-%       \draw (\cur) -- (\next);
-%    }
+\foreach \idiv in {1,...,\nloop}
+{
+    %\coordinate (p0) at (\pythagwidth, 0);
+    %\coordinate (p1) at (\pythagwidth, 0);
+    \newcommand{\fracp}{\idiv/\ndiv};
+    \draw[blue,dashed] ($ (A)!\fracp!(C) $) -- ($ (A)!\fracp!(B) $);
+    \draw[blue,dashed] ($ (C)!\fracp!(A) $) -- ($ (C)!\fracp!(B) $);
+    %\draw ($ (a) + (0,1) $) -- ($ (b) + (0,1) $);
+}
+
+\foreach \x in {0,...,\ndiv}
+    \foreach \y in {0,...,\ndiv}
+    {
+       \coordinate (p0) at (\pythagwidth, 0);
+       \coordinate (p1) at (\pythagwidth, 0);
+       %\pgfmathtruncatemacro{\p0}{\x + 5*\y}
+       %\pgfmathtruncatemacro{\p1}{\cur + 1}
+       %\newcommand{\cur}{\x + 5*\y}
+       %\newcommand{\nnext}{\cur + 1}
+       %\draw [dashed] (\cur,\x) -- (\nnext,\y);
+       \draw [dashed] (p0) -- (p1);
+    }
 
 %  \newcommand{\ranglesize}{0.3cm}
 %  \draw (A) -- ++ (0, \ranglesize) -- ++ (-\ranglesize, 0) -- ++ (0, -\ranglesize);
