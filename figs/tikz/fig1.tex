@@ -1,11 +1,12 @@
 %\documentclass[tikz,border=10pt]{standalone}
 \documentclass{minimal}
+\usepackage{ifthen}
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \begin{document}
 \newcommand{\pythagwidth}{10cm}
 \newcommand{\pythagheight}{\pythagwidth}
-\begin{tikzpicture}[darkstyle/.style={circle,draw,fill=white!40,minimum size=10}]
+\begin{tikzpicture}[darkstyle/.style={circle,draw,fill=gray!10,minimum size=10}]
   \coordinate [label={above left:$A$}] (A) at (0, \pythagheight);
   \coordinate [label={above right:$B$}] (B) at (\pythagwidth, \pythagheight);
   \coordinate [label={below left:$C$}] (C) at (\pythagwidth, 0);
@@ -54,7 +55,8 @@
  {
     \pgfmathtruncatemacro{\lbltriangle}{\x / 2 + 6};
     %\newcommand{\lbltriangle}{\x / 2 + 6};
-    \pgfmathtruncatemacro{\lblab}{Mod(\x,2)};
+    \pgfmathtruncatemacro{\lblzeroone}{Mod(\x,2)};
+    \ifthenelse{0 = \lblzeroone}{\def\lblab{a}}{\def\lblab{b}};
     %\prt
     %\pgfmathtruncatemacro\mymacro{round(\i*100/3)}
     \node [darkstyle]  (\x\x) at ($ (trilabelstart) + (\blksize*\x,-\blksize*\x) $) {$p_{\lbltriangle\lblab}$};
