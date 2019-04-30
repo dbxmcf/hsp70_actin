@@ -3,9 +3,9 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \begin{document}
-\newcommand{\pythagwidth}{8cm}
-\newcommand{\pythagheight}{8cm}
-\begin{tikzpicture}
+\newcommand{\pythagwidth}{10cm}
+\newcommand{\pythagheight}{\pythagwidth}
+\begin{tikzpicture}[darkstyle/.style={circle,draw,fill=white!40,minimum size=10}]
   \coordinate [label={above left:$A$}] (A) at (0, \pythagheight);
   \coordinate [label={above right:$B$}] (B) at (\pythagwidth, \pythagheight);
   \coordinate [label={below left:$C$}] (C) at (\pythagwidth, 0);
@@ -34,18 +34,32 @@
     %\draw ($ (a) + (0,1) $) -- ($ (b) + (0,1) $);
 }
 
-\foreach \x in {0,...,\ndiv}
-    \foreach \y in {0,...,\ndiv}
-    {
-       \coordinate (p0) at (\pythagwidth, 0);
-       \coordinate (p1) at (\pythagwidth, 0);
-       %\pgfmathtruncatemacro{\p0}{\x + 5*\y}
-       %\pgfmathtruncatemacro{\p1}{\cur + 1}
-       %\newcommand{\cur}{\x + 5*\y}
-       %\newcommand{\nnext}{\cur + 1}
-       %\draw [dashed] (\cur,\x) -- (\nnext,\y);
-       \draw [dashed] (p0) -- (p1);
-    }
+% process labels on the blocks
+\newcommand{\nrowblocks}{2}
+\newcommand{\blksize}{2.5cm}
+\coordinate (blklabelstart) at (1.5*\blksize, \pythagheight-0.5*\blksize);
+
+\foreach \y in {0,...,\nrowblocks}
+ \foreach \x in {\y,...,\nrowblocks}
+ {
+    \pgfmathtruncatemacro{\lblblock}{\y*\nrowblocks+\x};
+    \node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x,-\blksize*\y) $) {$p_{\lblblock}$};
+    %\node (\x\y) at ($ (blklabelstart) + (\blksize*\x,-\blksize*\y) $) {$p_{\lblblock}$};
+ }
+
+\coordinate (trilabelstart) at (0.6*\blksize, \pythagheight-0.35*\blksize);
+\newcommand{\ntriangles}{4}
+\newcommand{\ntri}{$ \ntriangles -1 $}
+\foreach \x in {0,...,3 }
+ {
+    \pgfmathtruncatemacro{\lbltriangle}{\x / 2 + 6};
+    %\newcommand{\lbltriangle}{\x / 2 + 6};
+    \pgfmathtruncatemacro{\lblab}{Mod(\x,2)};
+    %\prt
+    %\pgfmathtruncatemacro\mymacro{round(\i*100/3)}
+    \node [darkstyle]  (\x\x) at ($ (trilabelstart) + (\blksize*\x,-\blksize*\x) $) {$p_{\lbltriangle\lblab}$};
+    %\node (\x\x) at ($ (trilabelstart) + (\blksize*\x,-\blksize*\x) $) {$p_{\lbltriangle\lblab}$};
+ }
 
 %  \newcommand{\ranglesize}{0.3cm}
 %  \draw (A) -- ++ (0, \ranglesize) -- ++ (-\ranglesize, 0) -- ++ (0, -\ranglesize);
