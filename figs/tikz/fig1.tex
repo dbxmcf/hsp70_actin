@@ -7,7 +7,7 @@
 %\usetikzlibrary{arrows.meta,automata, decorations.pathreplacing}
 \usetikzlibrary{automata, decorations.pathreplacing}
 \usetikzlibrary{decorations,decorations.markings,decorations.text}
-%\usepackage{pgfmath} 
+%\usepackage{pgfmath}
 \usetikzlibrary{calc}
 \tikzset{
     quote/.style={{|[width=2mm]}-{|[width=2mm]}}
@@ -52,7 +52,8 @@
   \coordinate (D2) at (-\pythagheight - \pythagwidth, \pythagwidth);
 
   %\draw [very thick] (00) -- (10) -- (20) -- (00);
-  \draw [very thick] (A) -- (B) -- (C) -- (A);
+  %\draw [very thick] (A) -- (B) -- (C) -- (A);
+  \draw [very thick] (C) -- (A);
 
   %\foreach \x [count=\xxi] in {0,...,9}
     %\foreach \y [count=\yi] in {0,...,8}
@@ -81,23 +82,23 @@
 \def\nrowblocksone{5}
 \newcommand{\blksize}{2.5cm}
 
-\newcommand{\brcshift}{0.2cm};
+\newcommand{\brcshift}{0.6cm};
 \foreach \idiv in {0,...,\nloop}
 {
     %\newcommand{\fracp}{\idiv/\ndiv};
-    %\pgfmathtruncatemacro{\fracpnext}{(\idiv+1)/\ndiv};
+    \pgfmathtruncatemacro{\idivrev}{(\ndiv-\idiv-1};
     \ifthenelse{1 < \idiv}{\def\lblmx{m}}{\def\lblmx{m+1}};
     \ifthenelse{1 < \idiv}{\def\lblmy{m+1}}{\def\lblmy{m}};
-    
+
     \draw [decorate,decoration={brace,amplitude=10pt}, yshift = 0cm]
-    ({\idiv*\blksize}, \pythagheight+\brcshift) -- 
-    ({(\idiv + 1)*\blksize}, \pythagheight+\brcshift) node (curly_bracket) 
-    [black,midway, yshift = 0.6 cm] {$\lblmx$};
+    ({\idiv*\blksize}, \pythagheight+\brcshift) --
+    ({(\idiv + 1)*\blksize}, \pythagheight+\brcshift) node (curly_bracket)
+    [black,midway, yshift = 0.6 cm] {s$_{p\idiv}$=$\lblmx$};
     %    \newcommand{\ypos}{0.2cm};
     \draw [decorate,decoration={brace,amplitude=10pt,mirror}, yshift = 0cm]
     (\pythagheight+\brcshift, {\idiv*\blksize}) --
     (\pythagheight+\brcshift, {(\idiv + 1)*\blksize}) node (curly_bracket)
-    [black,midway, xshift = 1.0 cm] {$\lblmy$};
+    [black,midway, xshift = 1.3 cm] {s$_{p\idivrev}$=$\lblmy$};
 }
 
 %\draw [decorate,decoration={brace,amplitude=10pt}, yshift = 0cm]
@@ -105,25 +106,29 @@
 %    (\pythagheight,\pythagheight+\brcshift*4) node (curly_bracket)
 %    %[black,midway, xshift = 2.0 cm] {\textbf{DDD}};
 %    [black,midway, yshift = 0.6 cm] {protein$_0$ to protein$_{N-1}$};
-    
+
 %\draw[quote] (-4.0,-4.0) -- node[above] {\Large $85$ cm} (4.0,-4.0);
 %\draw[dim={something,10pt}] [|->|] (0,\pythagheight+\brcshift*4) --  (\pythagheight,\pythagheight+\brcshift*4);
 
-%\draw [|->|,>=stealth] 
-%(0,\pythagheight+\brcshift*8) -- 
+%\draw [|->|,>=stealth]
+%(0,\pythagheight+\brcshift*8) --
 %(\pythagheight,\pythagheight+\brcshift*8) node [midway, above]{protein$_0$ to protein$_{N-1}$};
 
-\draw 
-[decoration={markings,mark=at position 1 with
+\draw
+[line width=0.5mm,dotted,decoration={markings,mark=at position 1 with
     {\arrow[scale=2,>=stealth]{>}}},postaction={decorate}]
-(0,\pythagheight+\brcshift*6) --
-(\pythagheight,\pythagheight+\brcshift*6) node [midway, above]{protein$_0$ to protein$_{N-1}$};
+(0,\pythagheight) --
+(\pythagheight,\pythagheight) node [midway, above]{protein$_0$ to protein$_{N-1}$};
 
 \draw
-[decoration={markings,mark=at position 1 with
+[line width=0.5mm,dotted,decoration={markings,mark=at position 1 with
     {\arrow[scale=2,>=stealth]{>}}},postaction={decorate}]
-(\pythagheight+\brcshift*10,\pythagheight) --
-(\pythagheight+\brcshift*10,0) node [midway, right]{protein$_0$ to protein$_{N-1}$};
+(\pythagheight,\pythagheight) --
+(\pythagheight,0) node [midway,right, sloped,xshift=-2cm, yshift=0.3cm] {protein$_0$ to protein$_{N-1}$};
+
+%\node [midway, right][label={[label distance=0.5cm,text depth=-1ex,rotate=-90]right:a long text}]
+
+
 
 \coordinate (blklabelstart) at (1.5*\blksize, \pythagheight-0.5*\blksize);
 
