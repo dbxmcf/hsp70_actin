@@ -44,66 +44,26 @@
 \newcommand{\blksize}{2.5cm}
 \coordinate (blklabelstart) at (1.5*\blksize, \pythagheight-0.5*\blksize);
 
-%\def\yelem{0}
-%\def\yelemlast{0}
 \newcounter{nodenumber}
 \pgfmathsetmacro\yelem{0}
 \pgfmathsetmacro\yelemlast{0}
 \foreach \y [count=\yi] in {0,...,\nrowblocks}
-{
-    \pgfmathtruncatemacro{\yelemlast}{\yelem};
-    \pgfmathtruncatemacro{\yelem}{3-\y};
  \foreach \x [count=\xxi] in {\y,...,\nrowblocks}
- %\foreach \x  in {0,...,\y}
  {
     \stepcounter{nodenumber}
     \pgfmathtruncatemacro{\lblct}{\arabic{nodenumber}-1}
-    %\pgfmathtruncatemacro{\lblblock}{\y*\nrowblocks+ Mod(\x,3)};
-    %\pgfmathtruncatemacro{\lblblock}{\y*\nrowblocks};
-    \pgfmathtruncatemacro{\lblblock}{\y*\nrowblocks+\xxi};
-    %\pgfmathtruncatemacro{\accurow}{3*\yi-\yi*(\yi+1)/2};
-    %\pgfmathtruncatemacro{\yelemlast}{\yelem};
-
-
-    \pgfmathtruncatemacro{\accurow}{3*\y*\y-\y*(\y+1)/2};
-    \pgfmathtruncatemacro{\tx}{\xxi};
-    %\stepcounter{blknumber};
-    %\pgfmathtruncatemacro{\lblblock}{\arabic{nodenumber}};
-    %\pgfmathtruncatemacro{\lblblock}{\idx + 1};
-    %\node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $) {$p_{\yelemlast\tx}$};
-    %\node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $){$p_\arabic{nodenumber}$};
     \node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $){$p_{\lblct}$};
-    %\node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $) {$p_{\accurow}$};
-    %\node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $) {$p_{\lblblock}$};
-    %\node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $) {$p_{\lblblock}$};
-    %\node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x,-\blksize*\y) $) {$p_{\z}$};
-    %\node (\x\y) at ($ (blklabelstart) + (\blksize*\x,-\blksize*\y) $) {$p_{\lblblock}$};
  }
-}
-% \foreach \x [count=\xxi] in {0,...,\nrowblocksone}
-% {
-%    %\pgfmathtruncatemacro{\lblblock}{\y*\nrowblocks+\xxi-1};
-%    \pgfmathtruncatemacro{\xidx}{\x / 3};
-%    \pgfmathtruncatemacro{\yidx}{Mod(\x,3)};
-%    %\pgfmathtruncatemacro{\lblblock}{\idx + 1};
-%    %\node [darkstyle]  (\xidx\yidx) at ($ (blklabelstart) + (\blksize*\xidx,-\blksize*\yidx) $) {$p_{\x}$};
-%    \node [darkstyle]  (\xidx\yidx) at ($ (blklabelstart) + (\xidx,-\yidx) $) {$p_{\x}$};
-%    %\node (\x\y) at ($ (blklabelstart) + (\blksize*\x,-\blksize*\y) $) {$p_{\lblblock}$};
-% }
 
 \coordinate (trilabelstart) at (0.6*\blksize, \pythagheight-0.35*\blksize);
 \newcommand{\ntriangles}{4}
 \newcommand{\ntri}{$ \ntriangles -1 $}
 \foreach \x in {0,...,3 }
  {
-    \pgfmathtruncatemacro{\lbltriangle}{\x / 2 + 6};
-    %\newcommand{\lbltriangle}{\x / 2 + 6};
+    \pgfmathtruncatemacro{\lbltriangle}{\x / 2 + \arabic{nodenumber}};
     \pgfmathtruncatemacro{\lblzeroone}{Mod(\x,2)};
     \ifthenelse{0 = \lblzeroone}{\def\lblab{a}}{\def\lblab{b}};
-    %\prt
-    %\pgfmathtruncatemacro\mymacro{round(\i*100/3)}
     \node [darkstyle]  (\x\x) at ($ (trilabelstart) + (\blksize*\x,-\blksize*\x) $) {$p_{\lbltriangle\lblab}$};
-    %\node (\x\x) at ($ (trilabelstart) + (\blksize*\x,-\blksize*\x) $) {$p_{\lbltriangle\lblab}$};
  }
 
 %  \newcommand{\ranglesize}{0.3cm}
