@@ -3,11 +3,43 @@
 \usepackage{ifthen}
 \usepackage{tikz}
 \usepgflibrary{arrows}
+\usetikzlibrary{arrows}
 %\usetikzlibrary{arrows.meta,automata, decorations.pathreplacing}
 \usetikzlibrary{automata, decorations.pathreplacing}
+\usetikzlibrary{decorations,decorations.markings,decorations.text}
 %\usepackage{pgfmath} 
 \usetikzlibrary{calc}
+\tikzset{
+    quote/.style={{|[width=2mm]}-{|[width=2mm]}}
+}
 \begin{document}
+ \pgfkeys{/pgf/decoration/.cd,
+      distance/.initial=10pt
+}
+
+\pgfdeclaredecoration{add dim}{final}{
+\state{final}{%
+\pgfmathsetmacro{\dist}{5pt*\pgfkeysvalueof{/pgf/decoration/distance}/abs(\pgfkeysvalueof{/pgf/decoration/distance})}
+          \pgfpathmoveto{\pgfpoint{0pt}{0pt}}
+          \pgfpathlineto{\pgfpoint{0pt}{2*\dist}}
+          \pgfpathmoveto{\pgfpoint{\pgfdecoratedpathlength}{0pt}}
+          \pgfpathlineto{\pgfpoint{(\pgfdecoratedpathlength}{2*\dist}}
+          \pgfsetarrowsstart{latex}
+          \pgfsetarrowsend{latex}
+          \pgfpathmoveto{\pgfpoint{0pt}{\dist}}
+          \pgfpathlineto{\pgfpoint{\pgfdecoratedpathlength}{\dist}}
+          \pgfusepath{stroke}
+          \pgfpathmoveto{\pgfpoint{0pt}{0pt}}
+          \pgfpathlineto{\pgfpoint{\pgfdecoratedpathlength}{0pt}}
+}}
+
+\tikzset{dim/.style args={#1,#2}{decoration={add dim,distance=#2},
+                decorate,
+                postaction={decorate,decoration={text along path,
+                                                 raise=#2,
+                                                 text align={align=center},
+                                                 text={#1}}}}}
+
 \newcommand{\pythagwidth}{10cm}
 \newcommand{\pythagheight}{\pythagwidth}
 \newcounter{blknumber}
@@ -68,11 +100,30 @@
     [black,midway, xshift = 1.0 cm] {$\lblmy$};
 }
 
-\draw [decorate,decoration={brace,amplitude=10pt}, yshift = 0cm]
-    (0,\pythagheight+\brcshift*4) --
-    (\pythagheight,\pythagheight+\brcshift*4) node (curly_bracket)
-    %[black,midway, xshift = 2.0 cm] {\textbf{DDD}};
-    [black,midway, yshift = 0.6 cm] {protein$_0$ to protein$_{N-1}$};
+%\draw [decorate,decoration={brace,amplitude=10pt}, yshift = 0cm]
+%    (0,\pythagheight+\brcshift*4) --
+%    (\pythagheight,\pythagheight+\brcshift*4) node (curly_bracket)
+%    %[black,midway, xshift = 2.0 cm] {\textbf{DDD}};
+%    [black,midway, yshift = 0.6 cm] {protein$_0$ to protein$_{N-1}$};
+    
+%\draw[quote] (-4.0,-4.0) -- node[above] {\Large $85$ cm} (4.0,-4.0);
+%\draw[dim={something,10pt}] [|->|] (0,\pythagheight+\brcshift*4) --  (\pythagheight,\pythagheight+\brcshift*4);
+
+%\draw [|->|,>=stealth] 
+%(0,\pythagheight+\brcshift*8) -- 
+%(\pythagheight,\pythagheight+\brcshift*8) node [midway, above]{protein$_0$ to protein$_{N-1}$};
+
+\draw 
+[decoration={markings,mark=at position 1 with
+    {\arrow[scale=2,>=stealth]{>}}},postaction={decorate}]
+(0,\pythagheight+\brcshift*6) --
+(\pythagheight,\pythagheight+\brcshift*6) node [midway, above]{protein$_0$ to protein$_{N-1}$};
+
+\draw
+[decoration={markings,mark=at position 1 with
+    {\arrow[scale=2,>=stealth]{>}}},postaction={decorate}]
+(\pythagheight+\brcshift*10,\pythagheight) --
+(\pythagheight+\brcshift*10,0) node [midway, right]{protein$_0$ to protein$_{N-1}$};
 
 \coordinate (blklabelstart) at (1.5*\blksize, \pythagheight-0.5*\blksize);
 
