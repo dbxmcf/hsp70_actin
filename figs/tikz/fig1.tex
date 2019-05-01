@@ -6,6 +6,7 @@
 \usetikzlibrary{arrows}
 %\usetikzlibrary{arrows.meta,automata, decorations.pathreplacing}
 \usetikzlibrary{automata, decorations.pathreplacing}
+%\usetikzlibrary{decorations.pathreplacing,calligraphy}
 \usetikzlibrary{decorations,decorations.markings,decorations.text}
 %\usepackage{pgfmath}
 \usetikzlibrary{calc}
@@ -90,7 +91,7 @@
     \ifthenelse{1 < \idiv}{\def\lblmx{m}}{\def\lblmx{m+1}};
     \ifthenelse{1 < \idiv}{\def\lblmy{m+1}}{\def\lblmy{m}};
 
-    \draw [decorate,decoration={brace,amplitude=10pt}, yshift = 0cm]
+    \draw [decorate,line width=0.3mm,decoration={brace,amplitude=10pt}, yshift = 0cm]
     ({\idiv*\blksize}, \pythagheight+\brcshift) --
     ({(\idiv + 1)*\blksize}, \pythagheight+\brcshift) node (curly_bracket)
     [black,midway, yshift = 0.6 cm] {s$_{p\idiv}$=$\lblmx$};
