@@ -49,18 +49,30 @@
 \def\nrowblocksone{5}
 \newcommand{\blksize}{2.5cm}
 
+\newcommand{\brcshift}{0.2cm};
 \foreach \idiv in {0,...,\nloop}
 {
     %\newcommand{\fracp}{\idiv/\ndiv};
     %\pgfmathtruncatemacro{\fracpnext}{(\idiv+1)/\ndiv};
-    \newcommand{\ypos}{0.2cm};
+    \ifthenelse{1 < \idiv}{\def\lblmx{m}}{\def\lblmx{m+1}};
+    \ifthenelse{1 < \idiv}{\def\lblmy{m+1}}{\def\lblmy{m}};
+    
     \draw [decorate,decoration={brace,amplitude=10pt}, yshift = 0cm]
-    ({\idiv*\blksize}, \pythagheight+\ypos) -- 
-    ({(\idiv + 1)*\blksize}, \pythagheight+\ypos) node (curly_bracket) 
-    [black,midway, yshift = 0.6 cm] {$m+1$};
+    ({\idiv*\blksize}, \pythagheight+\brcshift) -- 
+    ({(\idiv + 1)*\blksize}, \pythagheight+\brcshift) node (curly_bracket) 
+    [black,midway, yshift = 0.6 cm] {$\lblmx$};
+    %    \newcommand{\ypos}{0.2cm};
+    \draw [decorate,decoration={brace,amplitude=10pt,mirror}, yshift = 0cm]
+    (\pythagheight+\brcshift, {\idiv*\blksize}) --
+    (\pythagheight+\brcshift, {(\idiv + 1)*\blksize}) node (curly_bracket)
+    [black,midway, xshift = 1.0 cm] {$\lblmy$};
 }
 
-
+\draw [decorate,decoration={brace,amplitude=10pt}, yshift = 0cm]
+    (0,\pythagheight+\brcshift*4) --
+    (\pythagheight,\pythagheight+\brcshift*4) node (curly_bracket)
+    %[black,midway, xshift = 2.0 cm] {\textbf{DDD}};
+    [black,midway, yshift = 0.6 cm] {protein$_0$ to protein$_{N-1}$};
 
 \coordinate (blklabelstart) at (1.5*\blksize, \pythagheight-0.5*\blksize);
 
