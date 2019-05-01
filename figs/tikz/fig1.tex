@@ -2,6 +2,9 @@
 \documentclass{minimal}
 \usepackage{ifthen}
 \usepackage{tikz}
+\usepgflibrary{arrows}
+%\usetikzlibrary{arrows.meta,automata, decorations.pathreplacing}
+\usetikzlibrary{automata, decorations.pathreplacing}
 %\usepackage{pgfmath} 
 \usetikzlibrary{calc}
 \begin{document}
@@ -32,9 +35,12 @@
     %\coordinate (p0) at (\pythagwidth, 0);
     %\coordinate (p1) at (\pythagwidth, 0);
     \newcommand{\fracp}{\idiv/\ndiv};
+    %\pgfmathtruncatemacro{\fracpnext}{(\idiv+1)/\ndiv};
     \draw[blue,dashed] ($ (A)!\fracp!(C) $) -- ($ (A)!\fracp!(B) $);
     \draw[blue,dashed] ($ (C)!\fracp!(A) $) -- ($ (C)!\fracp!(B) $);
     %\draw ($ (a) + (0,1) $) -- ($ (b) + (0,1) $);
+    %\draw [decorate,decoration={brace,amplitude=10pt}, yshift = 0cm]
+    %(\fracp*\pythagheight, \pythagheight+1cm) -- (\fracpnext*\pythagheight, \pythagheight+1cm) node (curly_bracket) [black,midway, yshift = 0.5 cm] {$m+1$};
 }
 
 % process labels on the blocks
@@ -42,6 +48,20 @@
 \def\nblocks{6}
 \def\nrowblocksone{5}
 \newcommand{\blksize}{2.5cm}
+
+\foreach \idiv in {0,...,\nloop}
+{
+    %\newcommand{\fracp}{\idiv/\ndiv};
+    %\pgfmathtruncatemacro{\fracpnext}{(\idiv+1)/\ndiv};
+    \newcommand{\ypos}{0.2cm};
+    \draw [decorate,decoration={brace,amplitude=10pt}, yshift = 0cm]
+    ({\idiv*\blksize}, \pythagheight+\ypos) -- 
+    ({(\idiv + 1)*\blksize}, \pythagheight+\ypos) node (curly_bracket) 
+    [black,midway, yshift = 0.6 cm] {$m+1$};
+}
+
+
+
 \coordinate (blklabelstart) at (1.5*\blksize, \pythagheight-0.5*\blksize);
 
 \newcounter{nodenumber}
@@ -65,6 +85,24 @@
     \ifthenelse{0 = \lblzeroone}{\def\lblab{a}}{\def\lblab{b}};
     \node [darkstyle]  (\x\x) at ($ (trilabelstart) + (\blksize*\x,-\blksize*\x) $) {$p_{\lbltriangle\lblab}$};
  }
+
+%\foreach \idiv in {1,...,\nloop}
+%{
+%    %\coordinate (p0) at (\pythagwidth, 0);
+%    %\coordinate (p1) at (\pythagwidth, 0);
+%    \pgfmathtruncatemacro{\fracp}{\idiv/\ndiv};
+%    \pgfmathtruncatemacro{\fracpnext}{(\idiv+1)/\ndiv};
+%    %\draw[blue,dashed] ($ (A)!\fracp!(C) $) -- ($ (A)!\fracp!(B) $);
+%    %\draw[blue,dashed] ($ (C)!\fracp!(A) $) -- ($ (C)!\fracp!(B) $);
+%    \coordinate [label={}] (p0) at (\fracp*\pythagheight, \pythagheight+1);
+%    \coordinate [label={}] (p1) at (\fracpnext*\pythagheight, \pythagheight+1);
+%    \draw [decorate,decoration={brace,amplitude=10pt}, yshift = 0cm]
+%    (\fracp*\pythagheight, \pythagheight+1cm) -- (\fracpnext*\pythagheight, \pythagheight+1cm) node (curly_bracket) [black,midway, yshift = 0.5 cm] {$m+1$};
+%    %{\footnotesize $P_2$};
+%}
+
+
+
 
 %  \newcommand{\ranglesize}{0.3cm}
 %  \draw (A) -- ++ (0, \ranglesize) -- ++ (-\ranglesize, 0) -- ++ (0, -\ranglesize);
