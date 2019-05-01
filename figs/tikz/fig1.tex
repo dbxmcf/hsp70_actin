@@ -2,10 +2,12 @@
 \documentclass{minimal}
 \usepackage{ifthen}
 \usepackage{tikz}
+%\usepackage{pgfmath} 
 \usetikzlibrary{calc}
 \begin{document}
 \newcommand{\pythagwidth}{10cm}
 \newcommand{\pythagheight}{\pythagwidth}
+\newcounter{blknumber}
 \begin{tikzpicture}[darkstyle/.style={circle,draw,fill=gray!10,minimum size=10}]
   \coordinate [label={above left:$A$}] (A) at (0, \pythagheight);
   \coordinate [label={above right:$B$}] (B) at (\pythagwidth, \pythagheight);
@@ -36,17 +38,58 @@
 }
 
 % process labels on the blocks
-\newcommand{\nrowblocks}{2}
+\def\nrowblocks{2}
+\def\nblocks{6}
+\def\nrowblocksone{5}
 \newcommand{\blksize}{2.5cm}
 \coordinate (blklabelstart) at (1.5*\blksize, \pythagheight-0.5*\blksize);
 
-\foreach \y in {0,...,\nrowblocks}
- \foreach \x in {\y,...,\nrowblocks}
+%\def\yelem{0}
+%\def\yelemlast{0}
+\newcounter{nodenumber}
+\pgfmathsetmacro\yelem{0}
+\pgfmathsetmacro\yelemlast{0}
+\foreach \y [count=\yi] in {0,...,\nrowblocks}
+{
+    \pgfmathtruncatemacro{\yelemlast}{\yelem};
+    \pgfmathtruncatemacro{\yelem}{3-\y};
+ \foreach \x [count=\xxi] in {\y,...,\nrowblocks}
+ %\foreach \x  in {0,...,\y}
  {
-    \pgfmathtruncatemacro{\lblblock}{\y*\nrowblocks+\x};
-    \node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x,-\blksize*\y) $) {$p_{\lblblock}$};
+    \stepcounter{nodenumber}
+    \pgfmathtruncatemacro{\lblct}{\arabic{nodenumber}-1}
+    %\pgfmathtruncatemacro{\lblblock}{\y*\nrowblocks+ Mod(\x,3)};
+    %\pgfmathtruncatemacro{\lblblock}{\y*\nrowblocks};
+    \pgfmathtruncatemacro{\lblblock}{\y*\nrowblocks+\xxi};
+    %\pgfmathtruncatemacro{\accurow}{3*\yi-\yi*(\yi+1)/2};
+    %\pgfmathtruncatemacro{\yelemlast}{\yelem};
+
+
+    \pgfmathtruncatemacro{\accurow}{3*\y*\y-\y*(\y+1)/2};
+    \pgfmathtruncatemacro{\tx}{\xxi};
+    %\stepcounter{blknumber};
+    %\pgfmathtruncatemacro{\lblblock}{\arabic{nodenumber}};
+    %\pgfmathtruncatemacro{\lblblock}{\idx + 1};
+    %\node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $) {$p_{\yelemlast\tx}$};
+    %\node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $){$p_\arabic{nodenumber}$};
+    \node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $){$p_{\lblct}$};
+    %\node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $) {$p_{\accurow}$};
+    %\node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $) {$p_{\lblblock}$};
+    %\node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $) {$p_{\lblblock}$};
+    %\node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x,-\blksize*\y) $) {$p_{\z}$};
     %\node (\x\y) at ($ (blklabelstart) + (\blksize*\x,-\blksize*\y) $) {$p_{\lblblock}$};
  }
+}
+% \foreach \x [count=\xxi] in {0,...,\nrowblocksone}
+% {
+%    %\pgfmathtruncatemacro{\lblblock}{\y*\nrowblocks+\xxi-1};
+%    \pgfmathtruncatemacro{\xidx}{\x / 3};
+%    \pgfmathtruncatemacro{\yidx}{Mod(\x,3)};
+%    %\pgfmathtruncatemacro{\lblblock}{\idx + 1};
+%    %\node [darkstyle]  (\xidx\yidx) at ($ (blklabelstart) + (\blksize*\xidx,-\blksize*\yidx) $) {$p_{\x}$};
+%    \node [darkstyle]  (\xidx\yidx) at ($ (blklabelstart) + (\xidx,-\yidx) $) {$p_{\x}$};
+%    %\node (\x\y) at ($ (blklabelstart) + (\blksize*\x,-\blksize*\y) $) {$p_{\lblblock}$};
+% }
 
 \coordinate (trilabelstart) at (0.6*\blksize, \pythagheight-0.35*\blksize);
 \newcommand{\ntriangles}{4}
