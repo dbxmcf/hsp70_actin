@@ -54,7 +54,7 @@
 
   %\draw [very thick] (00) -- (10) -- (20) -- (00);
   %\draw [very thick] (A) -- (B) -- (C) -- (A);
-  \draw [very thick] (C) -- (A);
+  \draw [very thick,dashed] (C) -- (A);
 
   %\foreach \x [count=\xxi] in {0,...,9}
     %\foreach \y [count=\yi] in {0,...,8}
@@ -96,7 +96,7 @@
     ({(\idiv + 1)*\blksize}, \pythagheight+\brcshift) node (curly_bracket)
     [black,midway, yshift = 0.6 cm] {s$_{p\idiv}$=$\lblmx$};
     %    \newcommand{\ypos}{0.2cm};
-    \draw [decorate,decoration={brace,amplitude=10pt,mirror}, yshift = 0cm]
+    \draw [decorate,,line width=0.3mm,decoration={brace,amplitude=10pt,mirror}, yshift = 0cm]
     (\pythagheight+\brcshift, {\idiv*\blksize}) --
     (\pythagheight+\brcshift, {(\idiv + 1)*\blksize}) node (curly_bracket)
     [black,midway, xshift = 1.3 cm] {s$_{p\idivrev}$=$\lblmy$};
@@ -119,17 +119,15 @@
 [line width=0.5mm,dotted,decoration={markings,mark=at position 1 with
     {\arrow[scale=2,>=stealth]{>}}},postaction={decorate}]
 (0,\pythagheight) --
-(\pythagheight,\pythagheight) node [midway, above]{protein$_0$ to protein$_{N-1}$};
+(\pythagheight,\pythagheight) node [midway, above]{\textbf{protein$_0$ to protein$_{N-1}$}};
 
 \draw
 [line width=0.5mm,dotted,decoration={markings,mark=at position 1 with
     {\arrow[scale=2,>=stealth]{>}}},postaction={decorate}]
 (\pythagheight,\pythagheight) --
-(\pythagheight,0) node [midway,right, sloped,xshift=-2cm, yshift=0.3cm] {protein$_0$ to protein$_{N-1}$};
+(\pythagheight,0) node [midway,right, sloped,xshift=-2cm, yshift=0.3cm] {\textbf{protein$_0$ to protein$_{N-1}$}};
 
 %\node [midway, right][label={[label distance=0.5cm,text depth=-1ex,rotate=-90]right:a long text}]
-
-
 
 \coordinate (blklabelstart) at (1.5*\blksize, \pythagheight-0.5*\blksize);
 
