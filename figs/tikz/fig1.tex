@@ -150,24 +150,37 @@
 \coordinate (cornerbl) at ($ (psixbb) + (-0.8*\blksize,-\ratioblksize*\blksize)$);
 \coordinate (rrectsize) at ($ (1.6*\blksize,\ratioblksize*\blksize)$);
 \coordinate (rrectctr) at ($ (cornerbl) + 0.5*(rrectsize)$);
-
-%\draw [black] (psixba) -- (psixbb);
+% callout line
 \draw [black,very thick] (psixba) -- (psixbb);
-%\draw [black] (cornerbl) -- (cornertr);
-%\draw [white] (psixbb) -- (psixbc);
-%\draw [black,very thick] (psixba) -- (psixbc);
-
-%\draw [rounded corners=2ex] (4,0) ++(-.25,-.25) rectangle ++(3,3) node [midway] {\footnotesize\texttt{}};
+% rounded rect
 \draw [rounded corners=1ex] (cornerbl)  rectangle ++(rrectsize) node [midway] {};
-%\draw [->] (0,0) -- (rrectctr);
+% matrix
 \matrix [matrix of math nodes,
-%left delimiter=(,right delimiter=),
 row sep=0.05cm,column sep=0.05cm] (m) at (rrectctr) {
   (\epsilon_i,\epsilon_j) & \cdots & (\epsilon_{i+m},\epsilon_j) \\
   & \ddots & \vdots \\
   & & (\epsilon_{i+m},\epsilon_{j+m}) \\
       };
-%};
+
+\coordinate (blockstart) at (2.4*\blksize, \pythagheight-1.8*\blksize);
+%\newcommand{\ratioblksize}{0.8}
+\coordinate (psixba) at ($ (blockstart) + ( \blksize*0.75,-\blksize*0.75)$);
+\coordinate (psixbb) at ($ (psixba) + (-1.8*\blksize,-\blksize/2)$);
+\coordinate (psixbc) at ($ (psixba) + (-0.8*\blksize,-\blksize/2)$);
+\coordinate (cornerbl) at ($ (psixbb) + (-0.8*\blksize,-\ratioblksize*\blksize)$);
+\coordinate (rrectsize) at ($ (2.25*\blksize,\ratioblksize*\blksize)$);
+\coordinate (rrectctr) at ($ (cornerbl) + 0.5*(rrectsize)$);
+% callout line
+\draw [black,very thick] (psixba) -- (psixbb);
+% rounded rect
+\draw [rounded corners=1ex] (cornerbl)  rectangle ++(rrectsize) node [midway] {};
+% matrix
+\matrix [matrix of math nodes,
+row sep=0.05cm,column sep=0.05cm] (m) at (rrectctr) {
+  (\epsilon_{3m+2},\epsilon_{2m+2}) & \cdots & (\epsilon_{4m+2},\epsilon_{2m+2}) \\
+  \vdots & \ddots & \vdots \\
+  (\epsilon_{3m+2},\epsilon_{3m+2}) & \cdots & (\epsilon_{4m+2},\epsilon_{3m+2}) \\
+      };
 
 \end{tikzpicture}
 \end{document}
