@@ -15,6 +15,8 @@
 \tikzset{
     quote/.style={{|[width=2mm]}-{|[width=2mm]}}
 }
+%\DeclareMathOperator{\Var}{Var}
+%\DeclareMathOperator{\Cov}{Cov}
 \begin{document}
  \pgfkeys{/pgf/decoration/.cd,
       distance/.initial=10pt
@@ -93,29 +95,16 @@
     \ifthenelse{1 < \idiv}{\def\lblmx{m}}{\def\lblmx{m+1}};
     \ifthenelse{1 < \idiv}{\def\lblmy{m+1}}{\def\lblmy{m}};
 
-    \draw [decorate,line width=0.3mm,decoration={calligraphic brace,amplitude=10pt}, yshift = 0cm]
+    \draw [decorate,line width=0.5mm,decoration={calligraphic brace,amplitude=10pt}, yshift = 0cm]
     ({\idiv*\blksize}, \pythagheight+\brcshift) --
     ({(\idiv + 1)*\blksize}, \pythagheight+\brcshift) node (curly_bracket)
     [black,midway, yshift = 0.6 cm] {s$_{p\idiv}$=$\lblmx$};
     %    \newcommand{\ypos}{0.2cm};
-    \draw [decorate,,line width=0.3mm,decoration={calligraphic brace,amplitude=10pt,mirror}, yshift = 0cm]
+    \draw [decorate,,line width=0.5mm,decoration={calligraphic brace,amplitude=10pt,mirror}, yshift = 0cm]
     (\pythagheight+\brcshift, {\idiv*\blksize}) --
     (\pythagheight+\brcshift, {(\idiv + 1)*\blksize}) node (curly_bracket)
     [black,midway, xshift = 1.3 cm] {s$_{p\idivrev}$=$\lblmy$};
 }
-
-%\draw [decorate,decoration={brace,amplitude=10pt}, yshift = 0cm]
-%    (0,\pythagheight+\brcshift*4) --
-%    (\pythagheight,\pythagheight+\brcshift*4) node (curly_bracket)
-%    %[black,midway, xshift = 2.0 cm] {\textbf{DDD}};
-%    [black,midway, yshift = 0.6 cm] {protein$_0$ to protein$_{N-1}$};
-
-%\draw[quote] (-4.0,-4.0) -- node[above] {\Large $85$ cm} (4.0,-4.0);
-%\draw[dim={something,10pt}] [|->|] (0,\pythagheight+\brcshift*4) --  (\pythagheight,\pythagheight+\brcshift*4);
-
-%\draw [|->|,>=stealth]
-%(0,\pythagheight+\brcshift*8) --
-%(\pythagheight,\pythagheight+\brcshift*8) node [midway, above]{protein$_0$ to protein$_{N-1}$};
 
 \draw
 [line width=0.5mm,dotted,decoration={markings,mark=at position 1 with
@@ -128,8 +117,6 @@
     {\arrow[scale=2,>=stealth]{>}}},postaction={decorate}]
 (\pythagheight,\pythagheight) --
 (\pythagheight,0) node [midway,right, sloped,xshift=-2cm, yshift=0.3cm] {\textbf{protein$_0$ to protein$_{N-1}$}};
-
-%\node [midway, right][label={[label distance=0.5cm,text depth=-1ex,rotate=-90]right:a long text}]
 
 \coordinate (blklabelstart) at (1.5*\blksize, \pythagheight-0.5*\blksize);
 
@@ -155,40 +142,19 @@
     \node [darkstyle]  (\x\x) at ($ (trilabelstart) + (\blksize*\x,-\blksize*\x) $) {$p_{\lbltriangle\lblab}$};
  }
 
-%\foreach \idiv in {1,...,\nloop}
-%{
-%    %\coordinate (p0) at (\pythagwidth, 0);
-%    %\coordinate (p1) at (\pythagwidth, 0);
-%    \pgfmathtruncatemacro{\fracp}{\idiv/\ndiv};
-%    \pgfmathtruncatemacro{\fracpnext}{(\idiv+1)/\ndiv};
-%    %\draw[blue,dashed] ($ (A)!\fracp!(C) $) -- ($ (A)!\fracp!(B) $);
-%    %\draw[blue,dashed] ($ (C)!\fracp!(A) $) -- ($ (C)!\fracp!(B) $);
-%    \coordinate [label={}] (p0) at (\fracp*\pythagheight, \pythagheight+1);
-%    \coordinate [label={}] (p1) at (\fracpnext*\pythagheight, \pythagheight+1);
-%    \draw [decorate,decoration={brace,amplitude=10pt}, yshift = 0cm]
-%    (\fracp*\pythagheight, \pythagheight+1cm) -- (\fracpnext*\pythagheight, \pythagheight+1cm) node (curly_bracket) [black,midway, yshift = 0.5 cm] {$m+1$};
-%    %{\footnotesize $P_2$};
-%}
+\coordinate (psixba) at ($ (trilabelstart) + ( \blksize*0.75,-\blksize*0.75)$);
+\coordinate (psixbb) at ($ (psixba) + (-\blksize,-\blksize/2)$);
+\coordinate (psixbc) at ($ (psixba) + (-\blksize/2,-\blksize/2)$);
+\coordinate (cornerbl) at ($ (psixbb) + (-\blksize/4,-1.25*\blksize)$);
+%\coordinate (cornertr) at ($ (cornerbl) + (1.5*\blksize,\blksize)$);
+\coordinate (rrectsize) at ($ (1.5*\blksize,1.25*\blksize)$);
+%\draw [black] (psixba) -- (psixbb);
+\draw [black,very thick] (psixba) -- (psixbc);
+%\draw [black] (cornerbl) -- (cornertr);
+%\draw [white] (psixbb) -- (psixbc);
 
+%\draw [rounded corners=2ex] (4,0) ++(-.25,-.25) rectangle ++(3,3) node [midway] {\footnotesize\texttt{}};
+\draw [rounded corners=1ex] (cornerbl)  rectangle ++(rrectsize) node [midway] {\footnotesize\texttt{}};
 
-
-
-%  \newcommand{\ranglesize}{0.3cm}
-%  \draw (A) -- ++ (0, \ranglesize) -- ++ (-\ranglesize, 0) -- ++ (0, -\ranglesize);
-%
-%  \draw [dashed] (A) -- node [below] {$b$} ++ (-\pythagwidth, 0)
-%            -- node [right] {$b$} ++ (0, -\pythagwidth)
-%            -- node [above] {$b$} ++ (\pythagwidth, 0)
-%            -- node [left]  {$b$} ++ (0, \pythagwidth);
-%
-%  \draw [dashed] (A) -- node [right] {$c$} ++ (0, \pythagheight)
-%            -- node [below] {$c$} ++ (\pythagheight, 0)
-%            -- node [left]  {$c$} ++ (0, -\pythagheight)
-%            -- node [above] {$c$} ++ (-\pythagheight, 0);
-%
-%  \draw [dashed] (C) -- node [above left]  {$a$} (B)
-%                     -- node [below left]  {$a$} (D1)
-%                     -- node [below right] {$a$} (D2)
-%                     -- node [above right] {$a$} (C);
 \end{tikzpicture}
 \end{document}
