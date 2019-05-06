@@ -10,6 +10,7 @@
 \usetikzlibrary{automata, decorations.pathreplacing}
 \usetikzlibrary{decorations.pathreplacing,calligraphy}
 \usetikzlibrary{decorations,decorations.markings,decorations.text}
+\usetikzlibrary{matrix,decorations.pathreplacing, calc, positioning,fit}
 %\usepackage{pgfmath}
 \usetikzlibrary{calc}
 \tikzset{
@@ -146,15 +147,25 @@
 \coordinate (psixbb) at ($ (psixba) + (-\blksize,-\blksize/2)$);
 \coordinate (psixbc) at ($ (psixba) + (-\blksize/2,-\blksize/2)$);
 \coordinate (cornerbl) at ($ (psixbb) + (-\blksize/4,-1.25*\blksize)$);
-%\coordinate (cornertr) at ($ (cornerbl) + (1.5*\blksize,\blksize)$);
-\coordinate (rrectsize) at ($ (1.5*\blksize,1.25*\blksize)$);
+\coordinate (rrectsize) at ($ (1.6*\blksize,1*\blksize)$);
+\coordinate (rrectctr) at ($ (cornerbl) + 0.5*(rrectsize)$);
+
 %\draw [black] (psixba) -- (psixbb);
-\draw [black,very thick] (psixba) -- (psixbc);
+\draw [black,very thick] (psixba) -- (psixbb);
 %\draw [black] (cornerbl) -- (cornertr);
 %\draw [white] (psixbb) -- (psixbc);
 
 %\draw [rounded corners=2ex] (4,0) ++(-.25,-.25) rectangle ++(3,3) node [midway] {\footnotesize\texttt{}};
-\draw [rounded corners=1ex] (cornerbl)  rectangle ++(rrectsize) node [midway] {\footnotesize\texttt{}};
+\draw [rounded corners=1ex] (cornerbl)  rectangle ++(rrectsize) node [midway] {};
+%\draw [->] (0,0) -- (rrectctr);
+\matrix [matrix of math nodes,
+%left delimiter=(,right delimiter=),
+row sep=0.05cm,column sep=0.05cm] (m) at (rrectctr) {
+  (\epsilon_i,\epsilon_j) & \cdots & (\epsilon_{i+m},\epsilon_j) \\
+  & \ddots & \vdots \\
+  & & (\epsilon_{i+m},\epsilon_{j+m}) \\
+      };
+%};
 
 \end{tikzpicture}
 \end{document}
