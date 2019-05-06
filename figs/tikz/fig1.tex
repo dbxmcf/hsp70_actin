@@ -145,10 +145,10 @@
 
 \newcommand{\ratioblksize}{0.8}
 \coordinate (psixba) at ($ (trilabelstart) + ( \blksize*0.75,-\blksize*0.75)$);
-\coordinate (psixbb) at ($ (psixba) + (-\blksize,-\blksize/2)$);
+\coordinate (psixbb) at ($ (psixba) + (-\blksize,-\blksize*.75)$);
 \coordinate (psixbc) at ($ (psixba) + (-0.8*\blksize,-\blksize/2)$);
 \coordinate (cornerbl) at ($ (psixbb) + (-0.8*\blksize,-\ratioblksize*\blksize)$);
-\coordinate (rrectsize) at ($ (1.6*\blksize,\ratioblksize*\blksize)$);
+\coordinate (rrectsize) at ($ (2.1*\blksize,\ratioblksize*\blksize)$);
 \coordinate (rrectctr) at ($ (cornerbl) + 0.5*(rrectsize)$);
 % callout line
 \draw [black,very thick] (psixba) -- (psixbb);
@@ -157,9 +157,9 @@
 % matrix
 \matrix [matrix of math nodes,
 row sep=0.05cm,column sep=0.05cm] (m) at (rrectctr) {
-  (\epsilon_i,\epsilon_j) & \cdots & (\epsilon_{i+m},\epsilon_j) \\
+  (\epsilon_{m+1},\epsilon_{m+1}) & \cdots & (\epsilon_{2m+1},\epsilon_{m+1}) \\
   & \ddots & \vdots \\
-  & & (\epsilon_{i+m},\epsilon_{j+m}) \\
+  & & (\epsilon_{2m+1},\epsilon_{2m+1}) \\
       };
 
 \coordinate (blockstart) at (2.4*\blksize, \pythagheight-1.8*\blksize);
