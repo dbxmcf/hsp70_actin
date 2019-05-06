@@ -143,17 +143,19 @@
     \node [darkstyle]  (\x\x) at ($ (trilabelstart) + (\blksize*\x,-\blksize*\x) $) {$p_{\lbltriangle\lblab}$};
  }
 
+\newcommand{\ratioblksize}{0.8}
 \coordinate (psixba) at ($ (trilabelstart) + ( \blksize*0.75,-\blksize*0.75)$);
 \coordinate (psixbb) at ($ (psixba) + (-\blksize,-\blksize/2)$);
-\coordinate (psixbc) at ($ (psixba) + (-\blksize/2,-\blksize/2)$);
-\coordinate (cornerbl) at ($ (psixbb) + (-\blksize/4,-1.25*\blksize)$);
-\coordinate (rrectsize) at ($ (1.6*\blksize,1*\blksize)$);
+\coordinate (psixbc) at ($ (psixba) + (-0.8*\blksize,-\blksize/2)$);
+\coordinate (cornerbl) at ($ (psixbb) + (-0.8*\blksize,-\ratioblksize*\blksize)$);
+\coordinate (rrectsize) at ($ (1.6*\blksize,\ratioblksize*\blksize)$);
 \coordinate (rrectctr) at ($ (cornerbl) + 0.5*(rrectsize)$);
 
 %\draw [black] (psixba) -- (psixbb);
 \draw [black,very thick] (psixba) -- (psixbb);
 %\draw [black] (cornerbl) -- (cornertr);
 %\draw [white] (psixbb) -- (psixbc);
+%\draw [black,very thick] (psixba) -- (psixbc);
 
 %\draw [rounded corners=2ex] (4,0) ++(-.25,-.25) rectangle ++(3,3) node [midway] {\footnotesize\texttt{}};
 \draw [rounded corners=1ex] (cornerbl)  rectangle ++(rrectsize) node [midway] {};
