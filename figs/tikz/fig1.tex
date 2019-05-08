@@ -50,9 +50,9 @@
 \newcommand{\pythagheight}{\pythagwidth}
 \newcounter{blknumber}
 \begin{tikzpicture}[darkstyle/.style={circle,draw,fill=gray!10,minimum size=10}]
-  \coordinate [label={above left:$A$}] (A) at (0, \pythagheight);
-  \coordinate [label={above right:$B$}] (B) at (\pythagwidth, \pythagheight);
-  \coordinate [label={below left:$C$}] (C) at (\pythagwidth, 0);
+  \coordinate [label={above left:$$}] (A) at (0, \pythagheight);
+  \coordinate [label={above right:$$}] (B) at (\pythagwidth, \pythagheight);
+  \coordinate [label={below left:$$}] (C) at (\pythagwidth, 0);
 
   \coordinate (D1) at (-\pythagheight, \pythagheight + \pythagwidth);
   \coordinate (D2) at (-\pythagheight - \pythagwidth, \pythagwidth);
@@ -160,9 +160,9 @@
 % matrix
 \matrix [matrix of math nodes,
 row sep=0.05cm,column sep=0.05cm] (m) at (rrectctr) {
-  (\epsilon_{m+1},\epsilon_{m+1}) & \cdots & (\epsilon_{2m+1},\epsilon_{m+1}) \\
+  (p_{m+1},p_{m+1}) & \cdots & (p_{2m+1},p_{m+1}) \\
   & \ddots & \vdots \\
-  & & (\epsilon_{2m+1},\epsilon_{2m+1}) \\
+  & & (p_{2m+1},p_{2m+1}) \\
       };
 
 \coordinate (blockstart) at (2.4*\blksize, \pythagheight-1.8*\blksize);
@@ -182,9 +182,9 @@ row sep=0.05cm,column sep=0.05cm] (m) at (rrectctr) {
 % matrix
 \matrix [matrix of math nodes,
 row sep=0.05cm,column sep=0.05cm] (m) at (rrectctr) {
-  (\epsilon_{3m+2},\epsilon_{2m+2}) & \cdots & (\epsilon_{4m+2},\epsilon_{2m+2}) \\
+  (p_{3m+2},p_{2m+2}) & \cdots & (p_{4m+2},p_{2m+2}) \\
   \vdots & \ddots & \vdots \\
-  (\epsilon_{3m+2},\epsilon_{3m+2}) & \cdots & (\epsilon_{4m+2},\epsilon_{3m+2}) \\
+  (p_{3m+2},p_{3m+2}) & \cdots & (p_{4m+2},p_{3m+2}) \\
       };
 
 \end{tikzpicture}
