@@ -129,10 +129,10 @@
  {
     \stepcounter{nodenumber}
     \pgfmathtruncatemacro{\lblct}{\arabic{nodenumber}-1}
-    \node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $){$p_{\lblct}$};
+    \node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $){\footnotesize$proc_{\lblct}$};
  }
 
-\coordinate (trilabelstart) at (0.6*\blksize, \pythagheight-0.35*\blksize);
+\coordinate (trilabelstart) at (0.7*\blksize, \pythagheight-0.35*\blksize);
 \newcommand{\ntriangles}{4}
 \newcommand{\ntri}{$ \ntriangles -1 $}
 \foreach \x in {0,...,3 }
@@ -140,7 +140,7 @@
     \pgfmathtruncatemacro{\lbltriangle}{\x / 2 + \arabic{nodenumber}};
     \pgfmathtruncatemacro{\lblzeroone}{Mod(\x,2)};
     \ifthenelse{0 = \lblzeroone}{\def\lblab{a}}{\def\lblab{b}};
-    \node [darkstyle]  (\x\x) at ($ (trilabelstart) + (\blksize*\x,-\blksize*\x) $) {$p_{\lbltriangle\lblab}$};
+    \node [darkstyle]  (\x\x) at ($ (trilabelstart) + (\blksize*\x,-\blksize*\x) $) {\footnotesize$proc_{\lbltriangle\lblab}$};
  }
 
 \newcommand{\ratioblksize}{0.8}
@@ -151,7 +151,10 @@
 \coordinate (rrectsize) at ($ (2.1*\blksize,\ratioblksize*\blksize)$);
 \coordinate (rrectctr) at ($ (cornerbl) + 0.5*(rrectsize)$);
 % callout line
-\draw [black,very thick] (psixba) -- (psixbb);
+%\draw
+\draw [line width=0.3mm,decoration={markings,mark=at position 1 with
+    {\arrow[scale=2,>=stealth]{>}}},postaction={decorate}]
+(psixba) -- (psixbb);
 % rounded rect
 \draw [rounded corners=1ex] (cornerbl)  rectangle ++(rrectsize) node [midway] {};
 % matrix
@@ -171,7 +174,9 @@ row sep=0.05cm,column sep=0.05cm] (m) at (rrectctr) {
 \coordinate (rrectsize) at ($ (2.25*\blksize,\ratioblksize*\blksize)$);
 \coordinate (rrectctr) at ($ (cornerbl) + 0.5*(rrectsize)$);
 % callout line
-\draw [black,very thick] (psixba) -- (psixbb);
+\draw [line width=0.3 mm,decoration={markings,mark=at position 1 with
+    {\arrow[scale=2,>=stealth]{>}}},postaction={decorate}]
+(psixba) -- (psixbb);
 % rounded rect
 \draw [rounded corners=1ex] (cornerbl)  rectangle ++(rrectsize) node [midway] {};
 % matrix
