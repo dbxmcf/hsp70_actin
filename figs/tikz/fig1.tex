@@ -4,6 +4,7 @@
 %\documentclass[tikz,convert={outfile=\figureone.svg}]{standalone}
 \usepackage{ifthen}
 \usepackage{tikz}
+\usetikzlibrary{patterns}
 \usepgflibrary{arrows}
 \usetikzlibrary{arrows}
 %\usetikzlibrary{arrows.meta,automata, decorations.pathreplacing}
@@ -49,7 +50,7 @@
 \newcommand{\pythagwidth}{10cm}
 \newcommand{\pythagheight}{\pythagwidth}
 \newcounter{blknumber}
-\begin{tikzpicture}[darkstyle/.style={circle,draw,fill=gray!10,minimum size=10}]
+\begin{tikzpicture}[darkstyle/.style={circle,draw,fill=gray!40,minimum size=10}]
   \coordinate [label={above left:$$}] (A) at (0, \pythagheight);
   \coordinate [label={above right:$$}] (B) at (\pythagwidth, \pythagheight);
   \coordinate [label={below left:$$}] (C) at (\pythagwidth, 0);
@@ -87,6 +88,20 @@
 \def\nblocks{6}
 \def\nrowblocksone{5}
 \newcommand{\blksize}{2.5cm}
+
+%hatch the highlighted block
+\coordinate (hlblkstart) at ($ (A) + (3*\blksize,-3*\blksize)$);
+\coordinate (hlblksize) at ($ (\blksize,\blksize)$);
+%\draw (0,0) -- (hlblkstart);
+%\draw[pattern=north east lines, pattern color=blue] (0,0) rectangle (hlblksize);
+%\draw[pattern=north east lines, fill=gray!20, pattern color=blue] (hlblkstart) rectangle ++(hlblksize);
+\draw[pattern=north east lines, pattern color=gray] (hlblkstart) rectangle ++(hlblksize);
+
+%hatch the highlighted triangle
+\coordinate (hltria) at ($ (A) + (\blksize,-\blksize)$);
+\coordinate (hltrib) at ($ (A) + (2*\blksize,-\blksize)$);
+\coordinate (hltric) at ($ (A) + (2*\blksize,-2*\blksize)$);
+\draw [pattern=north east lines, pattern color=gray] (hltria) -- (hltrib) -- (hltric) -- (hltria);
 
 \newcommand{\brcshift}{0.6cm};
 \foreach \idiv in {0,...,\nloop}
@@ -186,6 +201,9 @@ row sep=0.05cm,column sep=0.05cm] (m) at (rrectctr) {
   \vdots & \ddots & \vdots \\
   (p_{3m+2},p_{3m+2}) & \cdots & (p_{4m+2},p_{3m+2}) \\
       };
+
+
+
 
 \end{tikzpicture}
 \end{document}
