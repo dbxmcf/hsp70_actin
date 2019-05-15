@@ -1,0 +1,1337 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    643214.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      29-Apr-2019 14:25
+Node:      qb337 (102346)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb337
+qb338
+qb339
+qb340
+qb341
+qb342
+qb343
+qb344
+qb345
+
+A total of 180 processors on 9 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb337 14:25:46 
+Checking node qb338 14:25:47 
+Checking node qb339 14:25:49 
+Checking node qb340 14:25:51 
+Checking node qb341 14:25:52 
+Checking node qb342 14:25:54 
+Checking node qb343 14:25:56 
+Checking node qb344 14:25:57 
+Checking node qb345 14:25:59 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 29-Apr-2019 14:25:59
+------------------------------------------------------
+using 18 processes...
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+Reading time is 17.649
+Elapsed time is 3043.769
+Writing time is 0.981
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=1, 3063 sec
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+Reading time is 17.759
+Elapsed time is 1568.224
+Writing time is 0.316
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=2, 1588 sec
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+Reading time is 17.315
+Elapsed time is 695.654
+Writing time is 0.630
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=5, 714 sec
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+Reading time is 17.954
+Elapsed time is 399.972
+Writing time is 0.739
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=10, 420 sec
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+Reading time is 17.823
+Elapsed time is 7629.967
+Writing time is 3.397
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=20, 7652 sec
+MPI process 16 is on GPU 0
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 14 is on GPU 0
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 10 is on GPU 0
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 12 is on GPU 0
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 0 is on GPU 0
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 8 is on GPU 0
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 6 is on GPU 0
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 2 is on GPU 0
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 17 is on GPU 1
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 15 is on GPU 1
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 11 is on GPU 1
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 3 is on GPU 1
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 13 is on GPU 1
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 7 is on GPU 1
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 1 is on GPU 1
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 9 is on GPU 1
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 4 is on GPU 0
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 5 is on GPU 1
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+num_data_chunks 6
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 951
+Reading time is 17.685
+Elapsed time is 158.195
+Writing time is 0.505
+===================================
+PHDF5 tests finished with no errors
+===================================
+gpu run , 179 sec
+input_file =  hdf5t/sample_kinase_phosphatase_protease.h5
+save csv =  True
+validate =  False
+keys= ['cosine', 'generalised', 'normal', 'sarika', 'start_loc', 'wu']
+protein_file_name: hdf5t/sample_kinase_phosphatase_protease.json
+Saving csv in: hdf5t/sample_kinase_phosphatase_protease.h5_res_csv
+------------------------------------------------------
+Running PBS epilogue script    - 29-Apr-2019 18:13:57
+------------------------------------------------------
+Checking node qb337 (MS)
+Checking node qb345 ok
+Checking node qb344 ok
+Checking node qb343 ok
+Checking node qb342 ok
+Checking node qb341 ok
+Checking node qb340 ok
+Checking node qb339 ok
+Checking node qb338 ok
+Checking node qb337 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 29-Apr-2019 18:14:16
+------------------------------------------------------
+Exit Status:     0
+Job ID:          643214.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn9_p18.pbs
+Session Id:      102345
+Resource Limits: ncpus=1,neednodes=9:ppn=20,nodes=9:ppn=20,walltime=72:00:00
+Resources Used:  cput=50:06:37,mem=714548kb,vmem=1186188kb,walltime=03:47:59
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb337
+Process id:      105607
+Last status:     29-Apr-2019:18:05 PBS_job=643214.qb3 user=fchen14 allocation=loni_loniadmin1 queue=checkpt total_load=360.16 cpu_hours=213.68 wall_hours=2.78 unused_nodes=0 total_nodes=9 ppn=20 avg_load=40.01 avg_cpu=1975% avg_mem=6768mb avg_vmem=7400mb top_proc=fchen14:pgi:qb339:3.5G:3.3G:12.0hr:1046% toppm=fchen14:pgi.mpi.pomp.out:qb337:3592M:3360M node_processes=4 avg_avail_mem=54617mb min_avail_mem=52736mb reverified_avg_load=39.98
+------------------------------------------------------

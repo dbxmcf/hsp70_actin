@@ -1,0 +1,78 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    646925.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      09-May-2019 21:24
+Node:      qb122 (5320)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb122
+
+A total of 20 processors on 1 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb122 21:24:02 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 09-May-2019 21:24:02
+------------------------------------------------------
+using 2 processes...
+MPI process 0 is on GPU 0
+Input file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 1 is on GPU 1
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 196.732
+Out of memory allocating 4298090940 bytes of device memory
+total/free CUDA memory: 5977800704/1530527744
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x2ba8f619dd90 device:0x1304120000 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2ba8f61a63a0 device:0x1304122e00 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2ba910000010 device:0x1304220000 size:4298090940 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:11776 thread:1
+allocated block device:0x1304122e00 size:11776 thread:1
+allocated block device:0x1304220000 size:4298091008 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+gpu run , 241 sec
+input_file =  hdf5t/sample_kinase_phosphatase_receptor_protease.h5
+save csv =  True
+validate =  False
+keys= ['cosine', 'generalised', 'normal', 'sarika', 'start_loc', 'wu']
+protein_file_name: hdf5t/sample_kinase_phosphatase_receptor_protease.json
+Traceback (most recent call last):
+  File "rebuild_mat.py", line 130, in <module>
+    with open(pn_filename) as json_file:  
+FileNotFoundError: [Errno 2] No such file or directory: 'hdf5t/sample_kinase_phosphatase_receptor_protease.json'
+------------------------------------------------------
+Running PBS epilogue script    - 09-May-2019 21:28:16
+------------------------------------------------------
+Checking node qb122 (MS)
+Checking node qb122 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 09-May-2019 21:28:20
+------------------------------------------------------
+Exit Status:     1
+Job ID:          646925.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        k20.tn1_p2.8k.pbs
+Session Id:      5319
+Resource Limits: ncpus=1,neednodes=1:ppn=20,nodes=1:ppn=20,walltime=72:00:00
+Resources Used:  cput=00:04:16,mem=5648kb,vmem=257880kb,walltime=00:04:15
+Queue Used:      workq
+Account String:  loni_loniadmin1
+Node:            qb122
+Process id:      5936
+------------------------------------------------------

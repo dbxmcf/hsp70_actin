@@ -1,0 +1,299 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    643226.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      29-Apr-2019 15:59
+Node:      qb029 (77184)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb029
+qb132
+qb137
+qb152
+qb205
+qb265
+qb270
+qb317
+qb318
+qb363
+qb364
+qb365
+qb366
+qb367
+qb368
+qb369
+qb370
+qb371
+qb372
+qb373
+qb374
+qb375
+qb376
+qb377
+qb378
+qb379
+qb380
+qb381
+qb382
+qb383
+qb385
+qb386
+qb387
+qb388
+qb389
+qb390
+qb391
+qb392
+qb393
+qb394
+qb395
+qb396
+qb397
+qb398
+qb399
+qb400
+qb401
+qb402
+qb403
+qb404
+qb405
+qb406
+qb407
+qb408
+qb409
+qb410
+qb411
+qb412
+qb413
+qb414
+qb415
+qb416
+qb417
+qb418
+qb419
+qb469
+qb471
+qb472
+qb473
+qb474
+qb475
+qb476
+qb477
+qb478
+qb479
+qb480
+qb481
+qb482
+qb484
+qb485
+qb486
+
+A total of 1620 processors on 81 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb029 15:59:16 
+Checking node qb132 15:59:18 
+Checking node qb137 15:59:20 
+Checking node qb152 15:59:22 
+Checking node qb205 15:59:23 
+Checking node qb265 15:59:25 
+Checking node qb270 15:59:27 
+Checking node qb317 15:59:28 
+Checking node qb318 15:59:30 
+Checking node qb363 15:59:32 
+Checking node qb364 15:59:33 
+Checking node qb365 15:59:35 
+Checking node qb366 15:59:37 
+Checking node qb367 15:59:38 
+Checking node qb368 15:59:40 
+Checking node qb369 15:59:42 
+Checking node qb370 15:59:43 
+Checking node qb371 15:59:45 
+Checking node qb372 15:59:47 
+Checking node qb373 15:59:49 
+Checking node qb374 15:59:50 
+Checking node qb375 15:59:52 
+Checking node qb376 15:59:54 
+Checking node qb377 15:59:55 
+Checking node qb378 15:59:57 
+Checking node qb379 15:59:59 
+Checking node qb380 16:00:00 
+Checking node qb381 16:00:02 
+Checking node qb382 16:00:04 
+Checking node qb383 16:00:06 
+Checking node qb385 16:00:07 
+Checking node qb386 16:00:09 
+Checking node qb387 16:00:11 
+Checking node qb388 16:00:12 
+Checking node qb389 16:00:14 
+Checking node qb390 16:00:16 
+Checking node qb391 16:00:17 
+Checking node qb392 16:00:19 
+Checking node qb393 16:00:21 
+Checking node qb394 16:00:22 
+Checking node qb395 16:00:24 
+Checking node qb396 16:00:26 
+Checking node qb397 16:00:28 
+Checking node qb398 16:00:29 
+Checking node qb399 16:00:31 
+Checking node qb400 16:00:33 
+Checking node qb401 16:00:34 
+Checking node qb402 16:00:36 
+Checking node qb403 16:00:38 
+Checking node qb404 16:00:39 
+Checking node qb405 16:00:41 
+Checking node qb406 16:00:43 
+Checking node qb407 16:00:45 
+Checking node qb408 16:00:46 
+Checking node qb409 16:00:48 
+Checking node qb410 16:00:50 
+Checking node qb411 16:00:51 
+Checking node qb412 16:00:53 
+Checking node qb413 16:00:55 
+Checking node qb414 16:00:57 
+Checking node qb415 16:00:58 
+Checking node qb416 16:01:00 
+Checking node qb417 16:01:02 
+Checking node qb418 16:01:03 
+Checking node qb419 16:01:05 
+Checking node qb469 16:01:07 
+Checking node qb471 16:01:08 
+Checking node qb472 16:01:10 
+Checking node qb473 16:01:12 
+Checking node qb474 16:01:13 
+Checking node qb475 16:01:16 
+Checking node qb476 16:01:18 
+Checking node qb477 16:01:20 
+Checking node qb478 16:01:21 
+Checking node qb479 16:01:23 
+Checking node qb480 16:01:25 
+Checking node qb481 16:01:26 
+Checking node qb482 16:01:28 
+Checking node qb484 16:01:30 
+Checking node qb485 16:01:31 
+Checking node qb486 16:01:33 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 29-Apr-2019 16:01:33
+------------------------------------------------------
+using 162 processes...
+--------------------------------
+Proc 40: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 41: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 46: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 47: *** testing PHDF5 dataset collective read...
+--------------------------------
+=>> PBS: job killed: walltime 3645 exceeded limit 3600
+------------------------------------------------------
+Running PBS epilogue script    - 29-Apr-2019 17:02:20
+------------------------------------------------------
+Checking node qb029 (MS)
+Checking node qb486 ; sshkey update: qb189 ; ok
+Checking node qb485 ; sshkey update: qb189 ; ok
+Checking node qb484 ; sshkey update: qb189 ; ok
+Checking node qb482 ; sshkey update: qb189 ; ok
+Checking node qb481 ; sshkey update: qb189 ; ok
+Checking node qb480 ; sshkey update: qb189 ; ok
+Checking node qb479 ; sshkey update: qb189 ; ok
+Checking node qb478 ; sshkey update: qb189 ; ok
+Checking node qb477 ; sshkey update: qb189 ; ok
+Checking node qb476 ; sshkey update: qb189 ; ok
+Checking node qb475 ; sshkey update: qb189 ; ok
+Checking node qb474 ; sshkey update: qb189 ; ok
+Checking node qb473 ; sshkey update: qb189 ; ok
+Checking node qb472 ; sshkey update: qb189 ; ok
+Checking node qb471 ; sshkey update: qb189 ; ok
+Checking node qb469 ; sshkey update: qb189 ; ok
+Checking node qb419 ; sshkey update: qb189 ; ok
+Checking node qb418 ; sshkey update: qb189 ; ok
+Checking node qb417 ; sshkey update: qb189 ; ok
+Checking node qb416 ; sshkey update: qb189 ; ok
+Checking node qb415 ; sshkey update: qb189 ; ok
+Checking node qb414 ; sshkey update: qb189 ; ok
+Checking node qb413 ; sshkey update: qb189 ; ok
+Checking node qb412 ; sshkey update: qb189 ; ok
+Checking node qb411 ; sshkey update: qb189 ; ok
+Checking node qb410 ; sshkey update: qb189 ; ok
+Checking node qb409 ; sshkey update: qb189 ; ok
+Checking node qb408 ; sshkey update: qb189 ; ok
+Checking node qb407 ; sshkey update: qb189 ; ok
+Checking node qb406 ; sshkey update: qb189 ; ok
+Checking node qb405 ; sshkey update: qb189 ; ok
+Checking node qb404 ; sshkey update: qb189 ; ok
+Checking node qb403 ; sshkey update: qb189 ; ok
+Checking node qb402 ; sshkey update: qb189 ; ok
+Checking node qb401 ; sshkey update: qb189 ; ok
+Checking node qb400 ; sshkey update: qb189 ; ok
+Checking node qb399 ; sshkey update: qb189 ; ok
+Checking node qb398 ; sshkey update: qb189 ; ok
+Checking node qb397 ; sshkey update: qb189 ; ok
+Checking node qb396 ; sshkey update: qb189 ; ok
+Checking node qb395 ; sshkey update: qb189 ; ok
+Checking node qb394 ; sshkey update: qb189 ; ok
+Checking node qb393 ; sshkey update: qb189 ; ok
+Checking node qb392 ; sshkey update: qb189 ; ok
+Checking node qb391 ; sshkey update: qb189 ; ok
+Checking node qb390 ; sshkey update: qb189 ; ok
+Checking node qb389 ; sshkey update: qb189 ; ok
+Checking node qb388 ; sshkey update: qb189 ; ok
+Checking node qb387 ; sshkey update: qb189 ; ok
+Checking node qb386 ; sshkey update: qb189 ; ok
+Checking node qb385 ; sshkey update: qb189 ; ok
+Checking node qb383 ; sshkey update: qb189 ; ok
+Checking node qb382 ; sshkey update: qb189 ; ok
+Checking node qb381 ; sshkey update: qb189 ; ok
+Checking node qb380 ; sshkey update: qb189 ; ok
+Checking node qb379 ; sshkey update: qb189 ; ok
+Checking node qb378 ; sshkey update: qb189 ; ok
+Checking node qb377 ; sshkey update: qb189 ; ok
+Checking node qb376 ; sshkey update: qb189 ; ok
+Checking node qb375 ; sshkey update: qb189 ; ok
+Checking node qb374 ; sshkey update: qb189 ; ok
+Checking node qb373 ; sshkey update: qb189 ; ok
+Checking node qb372 ; sshkey update: qb189 ; ok
+Checking node qb371 ; sshkey update: qb189 ; ok
+Checking node qb370 ; sshkey update: qb189 ; ok
+Checking node qb369 ; sshkey update: qb189 ; ok
+Checking node qb368 ; sshkey update: qb189 ; ok
+Checking node qb367 ; sshkey update: qb189 ; ok
+Checking node qb366 ; sshkey update: qb189 ; ok
+Checking node qb365 ; sshkey update: qb189 ; ok
+Checking node qb364 ; sshkey update: qb189 ; ok
+Checking node qb363 ; sshkey update: qb189 ; ok
+Checking node qb318 ; sshkey update: qb189 ; ok
+Checking node qb317 ; sshkey update: qb189 ; ok
+Checking node qb270 ; sshkey update: qb189 ; ok
+Checking node qb265 ; sshkey update: qb189 ; ok
+Checking node qb205 ; sshkey update: qb189 ; ok
+Checking node qb152 ; sshkey update: qb189 ; ok
+Checking node qb137 ; sshkey update: qb189 ; ok
+Checking node qb132 ; sshkey update: qb189 ; ok
+Checking node qb029 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 29-Apr-2019 17:04:42
+------------------------------------------------------
+Exit Status:     271
+Job ID:          643226.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn81_p162.pbs
+Session Id:      77183
+Resource Limits: ncpus=1,neednodes=81:ppn=20,nodes=81:ppn=20,walltime=01:00:00
+Resources Used:  cput=00:00:02,mem=8468kb,vmem=275984kb,walltime=01:00:46
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb029
+Process id:      80084
+------------------------------------------------------
