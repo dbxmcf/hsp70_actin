@@ -1,0 +1,64 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    648064.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      14-May-2019 16:55
+Node:      qb107 (64318)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb107
+
+A total of 20 processors on 1 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb107 16:55:43 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 14-May-2019 16:55:43
+------------------------------------------------------
+using 2 processes...
+MPI process 0 is on GPU 0
+Input file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 1 is on GPU 1
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 114.897
+Elapsed time is 8229.165
+Writing time is 2.257
+===================================
+PHDF5 tests finished with no errors
+===================================
+gpu run , 8348 sec
+------------------------------------------------------
+Running PBS epilogue script    - 14-May-2019 19:14:53
+------------------------------------------------------
+Checking node qb107 (MS)
+Checking node qb107 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 14-May-2019 19:14:55
+------------------------------------------------------
+Exit Status:     0
+Job ID:          648064.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        k20.tn1_p2.8k.pbs
+Session Id:      64317
+Resource Limits: ncpus=1,neednodes=1:ppn=20,nodes=1:ppn=20,walltime=72:00:00
+Resources Used:  cput=04:36:04,mem=5644kb,vmem=257880kb,walltime=02:19:10
+Queue Used:      workq
+Account String:  loni_loniadmin1
+Node:            qb107
+Process id:      66519
+Last status:     14-May-2019:19:05 PBS_job=648064.qb3 user=fchen14 allocation=loni_loniadmin1 queue=workq total_load=2.00 cpu_hours=2.60 wall_hours=1.31 unused_nodes=0 total_nodes=1 ppn=20 avg_load=2.00 avg_cpu=200% avg_mem=49158mb avg_vmem=221465mb top_proc=fchen14:pgi:qb107:108G:24G:1.3hr:101% toppm=fchen14:pgi.mpi.pacc.out:qb107:111359M:25013M gpupeak=190 node_processes=6 avg_avail_mem=11547mb min_avail_mem=11547mb reverified_avg_load=2.01
+------------------------------------------------------

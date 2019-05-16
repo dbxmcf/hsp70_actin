@@ -1,0 +1,38 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=20
+#PBS -l walltime=72:00:00
+#PBS -q checkpt
+#PBS -N bmk
+#PBS -j oe
+#-A hpc_hpcadmin5
+#PBS -A loni_loniadmin1
+
+cd $PBS_O_WORKDIR/..
+module purge
+module load python/3.5.2-anaconda-tensorflow
+module load hdf5/mvapich2.3-pgi-18.7
+
+export MV2_ENABLE_AFFINITY=0
+
+NPROCS=1
+echo "using $NPROCS processes..."
+#input_h5="asdf/ta8000.h5"
+input_h5="hdf5t/sample_protease_mix_1.h5"
+#input_h5="hdf5t/sample_kinase_phosphatase_protease.h5"
+#input_h5="asdf/sample_a-b_mix_2.h5"
+#input_h5="asdf/sample_hsp70_actin.h5"
+#input_h5="asdf/ta4292.h5"
+
+export OMP_NUM_THREADS=1
+SECONDS=0
+#mpirun -np $NPROCS -f $PBS_NODEFILE -ppn 2 ./pgi.mpi.pomp.out -f $input_h5
+mpirun -np $NPROCS ./pgi.mpi.pomp.out.serial -f $input_h5
+echo "omp run $i trd=$OMP_NUM_THREADS, $SECONDS sec"
+
+#export OMP_NUM_THREADS=1
+#SECONDS=0
+#mpirun -np $NPROCS -f $PBS_NODEFILE -ppn 2 ./pgi.mpi.pacc.out -f $input_h5
+#echo "gpu run $i GPU, $SECONDS sec"
+
+python rebuild_mat.py -f $input_h5 -csv #-validate
+

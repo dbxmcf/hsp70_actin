@@ -1,0 +1,260 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    644220.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      02-May-2019 09:19
+Node:      qb029 (485)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb029
+qb072
+qb136
+qb244
+qb245
+qb246
+qb247
+qb248
+qb250
+qb265
+qb270
+qb303
+qb305
+qb307
+qb308
+qb310
+qb316
+qb317
+qb318
+qb321
+qb325
+qb328
+qb329
+qb330
+qb332
+qb333
+qb334
+qb335
+qb336
+qb337
+qb338
+qb339
+qb341
+qb343
+qb344
+qb345
+qb346
+qb347
+qb348
+qb349
+qb350
+qb351
+qb352
+qb353
+qb354
+qb355
+qb356
+qb357
+qb358
+qb359
+qb360
+qb361
+qb362
+qb363
+qb364
+qb384
+qb388
+qb390
+qb391
+qb392
+qb393
+qb394
+qb395
+qb396
+
+A total of 1280 processors on 64 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb029 09:19:56 
+Checking node qb072 09:19:58 
+Checking node qb136 09:20:00 
+Checking node qb244 09:20:01 
+Checking node qb245 09:20:03 
+Checking node qb246 09:20:05 
+Checking node qb247 09:20:06 
+Checking node qb248 09:20:08 
+Checking node qb250 09:20:10 
+Checking node qb265 09:20:11 
+Checking node qb270 09:20:13 
+Checking node qb303 09:20:15 
+Checking node qb305 09:20:16 
+Checking node qb307 09:20:19 
+Checking node qb308 09:20:20 
+Checking node qb310 09:20:22 
+Checking node qb316 09:20:24 
+Checking node qb317 09:20:25 
+Checking node qb318 09:20:27 
+Checking node qb321 09:20:29 
+Checking node qb325 09:20:31 
+Checking node qb328 09:20:32 
+Checking node qb329 09:20:34 
+Checking node qb330 09:20:36 
+Checking node qb332 09:20:37 
+Checking node qb333 09:20:39 
+Checking node qb334 09:20:41 
+Checking node qb335 09:20:42 
+Checking node qb336 09:20:44 
+Checking node qb337 09:20:46 
+Checking node qb338 09:20:47 
+Checking node qb339 09:20:49 
+Checking node qb341 09:20:51 
+Checking node qb343 09:20:52 
+Checking node qb344 09:20:54 
+Checking node qb345 09:20:56 
+Checking node qb346 09:20:57 
+Checking node qb347 09:20:59 
+Checking node qb348 09:21:01 
+Checking node qb349 09:21:03 
+Checking node qb350 09:21:04 
+Checking node qb351 09:21:06 
+Checking node qb352 09:21:08 
+Checking node qb353 09:21:09 
+Checking node qb354 09:21:11 
+Checking node qb355 09:21:13 
+Checking node qb356 09:21:14 
+Checking node qb357 09:21:16 
+Checking node qb358 09:21:18 
+Checking node qb359 09:21:19 
+Checking node qb360 09:21:21 
+Checking node qb361 09:21:23 
+Checking node qb362 09:21:25 
+Checking node qb363 09:21:26 
+Checking node qb364 09:21:28 
+Checking node qb384 09:21:30 
+Checking node qb388 09:21:31 
+Checking node qb390 09:21:33 
+Checking node qb391 09:21:35 
+Checking node qb392 09:21:36 
+Checking node qb393 09:21:38 
+Checking node qb394 09:21:40 
+Checking node qb395 09:21:41 
+Checking node qb396 09:21:43 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 02-May-2019 09:21:43
+------------------------------------------------------
+using 128 processes...
+--------------------------------
+Proc 106: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 107: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 111: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 110: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+[mpiexec@qb029] HYDU_sock_write (utils/sock/sock.c:294): write error (Bad file descriptor)
+[mpiexec@qb029] HYD_pmcd_pmiserv_send_signal (pm/pmiserv/pmiserv_cb.c:177): unable to write data to proxy
+[mpiexec@qb029] ui_cmd_cb (pm/pmiserv/pmiserv_pmci.c:79): unable to send signal downstream
+[mpiexec@qb029] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[mpiexec@qb029] HYD_pmci_wait_for_completion (pm/pmiserv/pmiserv_pmci.c:198): error waiting for event
+[mpiexec@qb029] main (ui/mpich/mpiexec.c:340): process manager error waiting for completion
+------------------------------------------------------
+Running PBS epilogue script    - 02-May-2019 14:26:01
+------------------------------------------------------
+Checking node qb029 (MS)
+Checking node qb396 ok
+Checking node qb395 ok
+Checking node qb394 ok
+Checking node qb393 ok
+Checking node qb392 ok
+Checking node qb391 ok
+Checking node qb390 ok
+Checking node qb388 ok
+Checking node qb384 ok
+Checking node qb364 ok
+Checking node qb363 ok
+Checking node qb362 ok
+Checking node qb361 ok
+Checking node qb360 ok
+Checking node qb359 ok
+Checking node qb358 ok
+Checking node qb357 ok
+Checking node qb356 ok
+Checking node qb355 ok
+Checking node qb354 ok
+Checking node qb353 ok
+Checking node qb352 ok
+Checking node qb351 ok
+Checking node qb350 ok
+Checking node qb349 ok
+Checking node qb348 ok
+Checking node qb347 ok
+Checking node qb346 ok
+Checking node qb345 ok
+Checking node qb344 ok
+Checking node qb343 ok
+Checking node qb341 ok
+Checking node qb339 ok
+Checking node qb338 ok
+Checking node qb337 ok
+Checking node qb336 ok
+Checking node qb335 ok
+Checking node qb334 ok
+Checking node qb333 ok
+Checking node qb332 ok
+Checking node qb330 ok
+Checking node qb329 ok
+Checking node qb328 ok
+Checking node qb325 ok
+Checking node qb321 ok
+Checking node qb318 ok
+Checking node qb317 ok
+Checking node qb316 ok
+Checking node qb310 ok
+Checking node qb308 ok
+Checking node qb307 ok
+Checking node qb305 ok
+Checking node qb303 ok
+Checking node qb270 ok
+Checking node qb265 ok
+Checking node qb250 ok
+Checking node qb248 ok
+Checking node qb247 ok
+Checking node qb246 ok
+Checking node qb245 ok
+Checking node qb244 ok
+Checking node qb136 ok
+Checking node qb072 ok
+Checking node qb029 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 02-May-2019 14:27:55
+------------------------------------------------------
+Exit Status:     271
+Job ID:          644220.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn64_p128.pbs
+Session Id:      484
+Resource Limits: ncpus=1,neednodes=64:ppn=20,nodes=64:ppn=20,walltime=72:00:00
+Resources Used:  cput=00:00:01,mem=8256kb,vmem=275692kb,walltime=05:04:18
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb029
+Process id:      7791
+Last status:     02-May-2019:14:05 PBS_job=644220.qb3 user=fchen14 allocation=loni_loniadmin1 queue=checkpt total_load=7.73 cpu_hours=26.91 wall_hours=3.83 unused_nodes=0 total_nodes=64 ppn=20 avg_load=0.12 avg_cpu=10% avg_mem=43mb avg_vmem=417mb top_proc=fchen14:pgi:qb364:101M:18M:3.8hr:100% toppm=fchen14:pgi.mpi.pomp.out:qb363:107M:24M node_processes=4 avg_avail_mem=61444mb min_avail_mem=57637mb reverified_avg_load=0.12
+------------------------------------------------------

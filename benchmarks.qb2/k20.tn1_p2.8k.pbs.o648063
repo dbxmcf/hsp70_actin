@@ -1,0 +1,79 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    648063.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      14-May-2019 16:48
+Node:      qb107 (62979)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb107
+
+A total of 20 processors on 1 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb107 16:48:58 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 14-May-2019 16:48:58
+------------------------------------------------------
+using 2 processes...
+MPI process 0 is on GPU 0
+Input file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 1 is on GPU 1
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 152.853
+Out of memory allocating 3225071034 bytes of device memory
+total/free CUDA memory: 5977800704/2603483136
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x33492d0 device:0x1304120000 size:8584 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x33518e0 device:0x1304122200 size:8584 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2b1110000010 device:0x1304220000 size:3225071034 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:8704 thread:1
+allocated block device:0x1304122200 size:8704 thread:1
+allocated block device:0x1304220000 size:3225071104 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+gpu run , 196 sec
+input_file =  hdf5t/sample_kinase_phosphatase_receptor_protease.h5
+save csv =  True
+validate =  False
+keys= ['cosine', 'generalised', 'normal', 'sarika', 'start_loc', 'wu']
+Traceback (most recent call last):
+  File "rebuild_mat.py", line 120, in <module>
+    mat_normal_h5 = rebuild_triangle(normal,start_loc,mtx_info)
+  File "rebuild_mat.py", line 78, in rebuild_triangle
+    sub_mat_b[np.triu_indices(cctb,1)] = a[segment_a:]
+ValueError: shape mismatch: value array of shape (0,) could not be broadcast to indexing result of shape (36786753,)
+------------------------------------------------------
+Running PBS epilogue script    - 14-May-2019 16:52:19
+------------------------------------------------------
+Checking node qb107 (MS)
+Checking node qb107 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 14-May-2019 16:52:23
+------------------------------------------------------
+Exit Status:     1
+Job ID:          648063.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        k20.tn1_p2.8k.pbs
+Session Id:      62978
+Resource Limits: ncpus=1,neednodes=1:ppn=20,nodes=1:ppn=20,walltime=72:00:00
+Resources Used:  cput=00:04:02,mem=5648kb,vmem=257880kb,walltime=00:03:24
+Queue Used:      workq
+Account String:  loni_loniadmin1
+Node:            qb107
+Process id:      63596
+------------------------------------------------------
