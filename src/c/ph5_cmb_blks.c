@@ -920,12 +920,12 @@ phdf5readAll(char *filename)
         printf("average_lines=%d, remainder_lines=%d\n", average_lines,remainder_lines);
 
     integer **chunk_start=NULL, **chunk_count=NULL;
-    printf("num_data_chunks %d\n", num_data_chunks);
+    //printf("num_data_chunks %d\n", num_data_chunks);
 
     chunk_start = allocate_dynamic_2d_array_integer(num_data_chunks,2);
     chunk_count = allocate_dynamic_2d_array_integer(num_data_chunks,2);
     for (i=0;i<remainder_lines;i++) {
-    printf("line here %d\n", __LINE__);
+    //printf("line here %d\n", __LINE__);
 
         chunk_start[i][0] = i*(average_lines+1);
         chunk_start[i][1] = 0;
@@ -934,7 +934,7 @@ phdf5readAll(char *filename)
     }
 
     for (i=remainder_lines;i<num_data_chunks;i++){
-    printf("line here %d\n", __LINE__);
+    //printf("line here %d\n", __LINE__);
 
         chunk_start[i][0] = remainder_lines*(average_lines+1)+(i-remainder_lines)*average_lines;
         chunk_start[i][1] = 0;
@@ -948,7 +948,7 @@ phdf5readAll(char *filename)
             print_matrix_integer(chunk_count,num_data_chunks,2,"%3d ");
         }
 
-    printf("line here %d\n", __LINE__);
+    //printf("line here %d\n", __LINE__);
 
 
     // now starting assign two chunks, part_a and part_b to each mpi rank
