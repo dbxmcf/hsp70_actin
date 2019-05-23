@@ -1,0 +1,193 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    649145.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      16-May-2019 21:02
+Node:      qb025 (86390)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb025
+qb028
+qb036
+qb037
+qb039
+qb040
+qb042
+qb043
+qb044
+qb054
+qb055
+qb056
+qb070
+qb072
+qb073
+qb076
+qb099
+qb105
+qb108
+qb115
+qb133
+qb141
+qb142
+qb143
+qb148
+qb149
+qb150
+qb156
+qb157
+qb158
+qb169
+qb170
+qb173
+qb174
+qb175
+qb176
+qb177
+qb178
+qb181
+qb182
+qb183
+qb184
+qb185
+qb186
+qb190
+qb191
+qb192
+qb193
+qb198
+
+A total of 980 processors on 49 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb025 21:02:08 
+Checking node qb028 21:02:09 
+Checking node qb036 21:02:11 
+Checking node qb037 21:02:13 
+Checking node qb039 21:02:14 
+Checking node qb040 21:02:16 
+Checking node qb042 21:02:18 
+Checking node qb043 21:02:20 
+Checking node qb044 21:02:21 
+Checking node qb054 21:02:23 
+Checking node qb055 21:02:25 
+Checking node qb056 21:02:26 
+Checking node qb070 21:02:28 
+Checking node qb072 21:02:30 
+Checking node qb073 21:02:35 
+Checking node qb076 21:02:42 
+Checking node qb099 21:02:44 
+Checking node qb105 21:02:46 
+Checking node qb108 21:02:50 
+Checking node qb115 21:02:52 
+Checking node qb133 21:02:54 
+Checking node qb141 21:02:55 
+Checking node qb142 21:02:57 
+Checking node qb143 21:02:59 
+Checking node qb148 21:03:01 
+Checking node qb149 21:03:02 
+Checking node qb150 21:03:04 
+Checking node qb156 21:03:06 
+Checking node qb157 21:03:07 
+Checking node qb158 21:03:09 
+Checking node qb169 21:03:11 
+Checking node qb170 21:03:12 
+Checking node qb173 21:03:14 
+Checking node qb174 21:03:16 
+Checking node qb175 21:03:18 
+Checking node qb176 21:03:19 
+Checking node qb177 21:03:21 
+Checking node qb178 21:03:23 
+Checking node qb181 21:03:25 
+Checking node qb182 21:03:27 
+Checking node qb183 21:03:28 
+Checking node qb184 21:03:30 
+Checking node qb185 21:03:32 
+Checking node qb186 21:03:34 
+Checking node qb190 21:03:36 
+Checking node qb191 21:03:37 
+Checking node qb192 21:03:39 
+Checking node qb193 21:03:41 
+Checking node qb198 21:03:43 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 16-May-2019 21:03:43
+------------------------------------------------------
+[mpiexec@qb025] HYD_pmcd_pmi_alloc_pg_scratch (pm/pmiserv/pmiserv_utils.c:527): assert (pg->pg_process_count * sizeof(struct HYD_pmcd_pmi_ecount)) failed
+[mpiexec@qb025] HYD_pmci_launch_procs (pm/pmiserv/pmiserv_pmci.c:108): error allocating pg scratch space
+/var/spool/torque/mom_priv/jobs/649145.qb3.SC: line 27: 87755 Segmentation fault      mpirun -np $NPROCS -f $PBS_NODEFILE -ppn 2 ./a.out
+omp run  trd=1, 0 sec
+------------------------------------------------------
+Running PBS epilogue script    - 16-May-2019 21:03:44
+------------------------------------------------------
+Checking node qb025 (MS)
+Checking node qb198 ok
+Checking node qb193 ok
+Checking node qb192 ok
+Checking node qb191 ok
+Checking node qb190 ok
+Checking node qb186 ok
+Checking node qb185 ok
+Checking node qb184 ok
+Checking node qb183 ok
+Checking node qb182 ok
+Checking node qb181 ok
+Checking node qb178 ok
+Checking node qb177 ok
+Checking node qb176 ok
+Checking node qb175 ok
+Checking node qb174 ok
+Checking node qb173 ok
+Checking node qb170 ok
+Checking node qb169 ok
+Checking node qb158 ok
+Checking node qb157 ok
+Checking node qb156 ok
+Checking node qb150 ok
+Checking node qb149 ok
+Checking node qb148 ok
+Checking node qb143 ok
+Checking node qb142 ok
+Checking node qb141 ok
+Checking node qb133 ok
+Checking node qb115 ok
+Checking node qb108 ok
+Checking node qb105 ok
+Checking node qb099 ok
+Checking node qb076 ok
+Checking node qb073 ok
+Checking node qb072 ok
+Checking node qb070 ok
+Checking node qb056 ok
+Checking node qb055 ok
+Checking node qb054 ok
+Checking node qb044 ok
+Checking node qb043 ok
+Checking node qb042 ok
+Checking node qb040 ok
+Checking node qb039 ok
+Checking node qb037 ok
+Checking node qb036 ok
+Checking node qb028 ok
+Checking node qb025 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 16-May-2019 21:05:19
+------------------------------------------------------
+Exit Status:     0
+Job ID:          649145.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        th.pbs
+Session Id:      86389
+Resource Limits: ncpus=1,neednodes=49:ppn=20,nodes=49:ppn=20,walltime=00:05:00
+Resources Used:  cput=00:00:01,mem=600kb,vmem=13500kb,walltime=00:00:00
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb025
+Process id:      87757
+------------------------------------------------------

@@ -1,0 +1,200 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    649148.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      16-May-2019 21:25
+Node:      qb025 (93409)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb025
+qb028
+qb036
+qb037
+qb039
+qb040
+qb042
+qb043
+qb044
+qb052
+qb054
+qb055
+qb056
+qb070
+qb072
+qb073
+qb076
+qb099
+qb105
+qb108
+qb115
+qb133
+qb141
+qb142
+qb143
+qb148
+qb149
+qb150
+qb156
+qb157
+qb158
+qb169
+qb170
+qb173
+qb174
+qb175
+qb176
+qb177
+qb178
+qb181
+qb182
+qb183
+qb184
+qb185
+qb186
+qb190
+qb191
+qb192
+qb193
+
+A total of 980 processors on 49 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb025 21:25:34 
+Checking node qb028 21:25:36 
+Checking node qb036 21:25:37 
+Checking node qb037 21:25:39 
+Checking node qb039 21:25:41 
+Checking node qb040 21:25:43 
+Checking node qb042 21:25:44 
+Checking node qb043 21:25:46 
+Checking node qb044 21:25:48 
+Checking node qb052 21:25:49 
+Checking node qb054 21:25:51 
+Checking node qb055 21:25:53 
+Checking node qb056 21:25:55 
+Checking node qb070 21:25:56 
+Checking node qb072 21:25:58 
+Checking node qb073 21:26:03 
+Checking node qb076 21:26:10 
+Checking node qb099 21:26:12 
+Checking node qb105 21:26:14 
+Checking node qb108 21:26:18 
+Checking node qb115 21:26:20 
+Checking node qb133 21:26:22 
+Checking node qb141 21:26:24 
+Checking node qb142 21:26:25 
+Checking node qb143 21:26:27 
+Checking node qb148 21:26:29 
+Checking node qb149 21:26:30 
+Checking node qb150 21:26:32 
+Checking node qb156 21:26:34 
+Checking node qb157 21:26:35 
+Checking node qb158 21:26:37 
+Checking node qb169 21:26:39 
+Checking node qb170 21:26:41 
+Checking node qb173 21:26:42 
+Checking node qb174 21:26:44 
+Checking node qb175 21:26:46 
+Checking node qb176 21:26:47 
+Checking node qb177 21:26:49 
+Checking node qb178 21:26:51 
+Checking node qb181 21:26:53 
+Checking node qb182 21:26:54 
+Checking node qb183 21:26:56 
+Checking node qb184 21:26:58 
+Checking node qb185 21:26:59 
+Checking node qb186 21:27:01 
+Checking node qb190 21:27:03 
+Checking node qb191 21:27:04 
+Checking node qb192 21:27:06 
+Checking node qb193 21:27:08 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 16-May-2019 21:27:08
+------------------------------------------------------
+/usr/local/packages/openmpi/1.8.1/INTEL-14.0.2/bin/mpirun
+----------------------------------------------------------------------------
+Open MPI has detected that a parameter given to a command line
+option does not match the expected format:
+
+  Option: np
+  Param:  -f
+
+This is frequently caused by omitting to provide the parameter
+to an option that requires one. Please check the command line and try again.
+----------------------------------------------------------------------------
+------------------------------------------------------
+Running PBS epilogue script    - 16-May-2019 21:27:09
+------------------------------------------------------
+Checking node qb025 (MS)
+Checking node qb193 ok
+Checking node qb192 ok
+Checking node qb191 ok
+Checking node qb190 ok
+Checking node qb186 ok
+Checking node qb185 ok
+Checking node qb184 ok
+Checking node qb183 ok
+Checking node qb182 ok
+Checking node qb181 ok
+Checking node qb178 ok
+Checking node qb177 ok
+Checking node qb176 ok
+Checking node qb175 ok
+Checking node qb174 ok
+Checking node qb173 ok
+Checking node qb170 ok
+Checking node qb169 ok
+Checking node qb158 ok
+Checking node qb157 ok
+Checking node qb156 ok
+Checking node qb150 ok
+Checking node qb149 ok
+Checking node qb148 ok
+Checking node qb143 ok
+Checking node qb142 ok
+Checking node qb141 ok
+Checking node qb133 ok
+Checking node qb115 ok
+Checking node qb108 ok
+Checking node qb105 ok
+Checking node qb099 ok
+Checking node qb076 ok
+Checking node qb073 ok
+Checking node qb072 ok
+Checking node qb070 ok
+Checking node qb056 ok
+Checking node qb055 ok
+Checking node qb054 ok
+Checking node qb052 ok
+Checking node qb044 ok
+Checking node qb043 ok
+Checking node qb042 ok
+Checking node qb040 ok
+Checking node qb039 ok
+Checking node qb037 ok
+Checking node qb036 ok
+Checking node qb028 ok
+Checking node qb025 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 16-May-2019 21:28:44
+------------------------------------------------------
+Exit Status:     213
+Job ID:          649148.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        th.pbs.itl
+Session Id:      93408
+Resource Limits: ncpus=1,neednodes=49:ppn=20,nodes=49:ppn=20,walltime=00:05:00
+Resources Used:  cput=00:00:01,mem=600kb,vmem=13500kb,walltime=00:00:00
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb025
+Process id:      94489
+------------------------------------------------------

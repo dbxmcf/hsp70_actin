@@ -1,0 +1,288 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    649158.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      16-May-2019 23:44
+Node:      qb044 (89590)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb044
+qb046
+qb050
+qb052
+qb053
+qb054
+qb055
+qb056
+qb065
+qb070
+qb072
+qb073
+qb076
+qb089
+qb096
+qb099
+qb105
+qb108
+qb113
+qb115
+qb124
+qb133
+qb141
+qb142
+qb143
+qb145
+qb146
+qb148
+qb149
+qb150
+qb151
+qb153
+qb154
+qb155
+qb156
+qb157
+qb158
+qb159
+qb160
+qb161
+qb164
+qb169
+qb170
+qb173
+qb174
+qb175
+qb176
+qb177
+qb178
+
+A total of 980 processors on 49 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb044 23:44:31 
+Checking node qb046 23:44:33 
+Checking node qb050 23:44:35 
+Checking node qb052 23:44:36 
+Checking node qb053 23:44:41 
+Checking node qb054 23:44:43 
+Checking node qb055 23:44:45 
+Checking node qb056 23:44:46 
+Checking node qb065 23:44:48 
+Checking node qb070 23:44:50 
+Checking node qb072 23:44:52 
+Checking node qb073 23:44:56 
+Checking node qb076 23:45:04 
+Checking node qb089 23:45:06 
+Checking node qb096 23:45:07 
+Checking node qb099 23:45:09 
+Checking node qb105 23:45:11 
+Checking node qb108 23:45:15 
+Checking node qb113 23:45:17 
+Checking node qb115 23:45:19 
+Checking node qb124 23:45:20 
+Checking node qb133 23:45:22 
+Checking node qb141 23:45:24 
+Checking node qb142 23:45:26 
+Checking node qb143 23:45:27 
+Checking node qb145 23:45:29 
+Checking node qb146 23:45:31 
+Checking node qb148 23:45:32 
+Checking node qb149 23:45:34 
+Checking node qb150 23:45:36 
+Checking node qb151 23:45:37 
+Checking node qb153 23:45:39 
+Checking node qb154 23:45:41 
+Checking node qb155 23:45:42 
+Checking node qb156 23:45:44 
+Checking node qb157 23:45:46 
+Checking node qb158 23:45:48 
+Checking node qb159 23:45:49 
+Checking node qb160 23:45:51 
+Checking node qb161 23:45:53 
+Checking node qb164 23:45:54 
+Checking node qb169 23:45:56 
+Checking node qb170 23:45:58 
+Checking node qb173 23:46:00 
+Checking node qb174 23:46:01 
+Checking node qb175 23:46:03 
+Checking node qb176 23:46:05 
+Checking node qb177 23:46:06 
+Checking node qb178 23:46:08 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 16-May-2019 23:46:08
+------------------------------------------------------
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/mpirun
+Hello world from processor qb044, rank 0 out of 98 processors
+Hello world from processor qb044, rank 1 out of 98 processors
+Hello world from processor qb046, rank 2 out of 98 processors
+Hello world from processor qb055, rank 12 out of 98 processors
+Hello world from processor qb046, rank 3 out of 98 processors
+Hello world from processor qb055, rank 13 out of 98 processors
+Hello world from processor qb053, rank 8 out of 98 processors
+Hello world from processor qb053, rank 9 out of 98 processors
+Hello world from processor qb133, rank 42 out of 98 processors
+Hello world from processor qb133, rank 43 out of 98 processors
+Hello world from processor qb108, rank 34 out of 98 processors
+Hello world from processor qb108, rank 35 out of 98 processors
+Hello world from processor qb161, rank 78 out of 98 processors
+Hello world from processor qb161, rank 79 out of 98 processors
+Hello world from processor qb143, rank 48 out of 98 processors
+Hello world from processor qb143, rank 49 out of 98 processors
+Hello world from processor qb070, rank 19 out of 98 processors
+Hello world from processor qb070, rank 18 out of 98 processors
+Hello world from processor qb156, rank 68 out of 98 processors
+Hello world from processor qb156, rank 69 out of 98 processors
+Hello world from processor qb113, rank 36 out of 98 processors
+Hello world from processor qb113, rank 37 out of 98 processors
+Hello world from processor qb073, rank 22 out of 98 processors
+Hello world from processor qb073, rank 23 out of 98 processors
+Hello world from processor qb076, rank 24 out of 98 processors
+Hello world from processor qb076, rank 25 out of 98 processors
+Hello world from processor qb099, rank 30 out of 98 processors
+Hello world from processor qb099, rank 31 out of 98 processors
+Hello world from processor qb065, rank 16 out of 98 processors
+Hello world from processor qb065, rank 17 out of 98 processors
+Hello world from processor qb149, rank 56 out of 98 processors
+Hello world from processor qb149, rank 57 out of 98 processors
+Hello world from processor qb169, rank 82 out of 98 processors
+Hello world from processor qb169, rank 83 out of 98 processors
+Hello world from processor qb146, rank 52 out of 98 processors
+Hello world from processor qb146, rank 53 out of 98 processors
+Hello world from processor qb115, rank 38 out of 98 processors
+Hello world from processor qb115, rank 39 out of 98 processors
+Hello world from processor qb154, rank 64 out of 98 processors
+Hello world from processor qb154, rank 65 out of 98 processors
+Hello world from processor qb175, rank 90 out of 98 processors
+Hello world from processor qb175, rank 91 out of 98 processors
+Hello world from processor qb159, rank 74 out of 98 processors
+Hello world from processor qb159, rank 75 out of 98 processors
+Hello world from processor qb142, rank 46 out of 98 processors
+Hello world from processor qb142, rank 47 out of 98 processors
+Hello world from processor qb170, rank 84 out of 98 processors
+Hello world from processor qb170, rank 85 out of 98 processors
+Hello world from processor qb145, rank 50 out of 98 processors
+Hello world from processor qb145, rank 51 out of 98 processors
+Hello world from processor qb050, rank 4 out of 98 processors
+Hello world from processor qb050, rank 5 out of 98 processors
+Hello world from processor qb089, rank 26 out of 98 processors
+Hello world from processor qb089, rank 27 out of 98 processors
+Hello world from processor qb158, rank 72 out of 98 processors
+Hello world from processor qb158, rank 73 out of 98 processors
+Hello world from processor qb160, rank 76 out of 98 processors
+Hello world from processor qb160, rank 77 out of 98 processors
+Hello world from processor qb141, rank 44 out of 98 processors
+Hello world from processor qb141, rank 45 out of 98 processors
+Hello world from processor qb056, rank 14 out of 98 processors
+Hello world from processor qb056, rank 15 out of 98 processors
+Hello world from processor qb155, rank 66 out of 98 processors
+Hello world from processor qb155, rank 67 out of 98 processors
+Hello world from processor qb096, rank 28 out of 98 processors
+Hello world from processor qb096, rank 29 out of 98 processors
+Hello world from processor qb173, rank 86 out of 98 processors
+Hello world from processor qb173, rank 87 out of 98 processors
+Hello world from processor qb052, rank 6 out of 98 processors
+Hello world from processor qb052, rank 7 out of 98 processors
+Hello world from processor qb105, rank 33 out of 98 processors
+Hello world from processor qb105, rank 32 out of 98 processors
+Hello world from processor qb151, rank 60 out of 98 processors
+Hello world from processor qb151, rank 61 out of 98 processors
+Hello world from processor qb150, rank 58 out of 98 processors
+Hello world from processor qb150, rank 59 out of 98 processors
+Hello world from processor qb177, rank 94 out of 98 processors
+Hello world from processor qb177, rank 95 out of 98 processors
+Hello world from processor qb178, rank 96 out of 98 processors
+Hello world from processor qb178, rank 97 out of 98 processors
+Hello world from processor qb164, rank 81 out of 98 processors
+Hello world from processor qb164, rank 80 out of 98 processors
+Hello world from processor qb176, rank 93 out of 98 processors
+Hello world from processor qb176, rank 92 out of 98 processors
+Hello world from processor qb153, rank 63 out of 98 processors
+Hello world from processor qb153, rank 62 out of 98 processors
+Hello world from processor qb174, rank 89 out of 98 processors
+Hello world from processor qb174, rank 88 out of 98 processors
+Hello world from processor qb054, rank 10 out of 98 processors
+Hello world from processor qb054, rank 11 out of 98 processors
+Hello world from processor qb157, rank 70 out of 98 processors
+Hello world from processor qb157, rank 71 out of 98 processors
+Hello world from processor qb148, rank 55 out of 98 processors
+Hello world from processor qb148, rank 54 out of 98 processors
+Hello world from processor qb072, rank 20 out of 98 processors
+Hello world from processor qb072, rank 21 out of 98 processors
+Hello world from processor qb124, rank 40 out of 98 processors
+Hello world from processor qb124, rank 41 out of 98 processors
+------------------------------------------------------
+Running PBS epilogue script    - 16-May-2019 23:46:11
+------------------------------------------------------
+Checking node qb044 (MS)
+Checking node qb178 ok
+Checking node qb177 ok
+Checking node qb176 ok
+Checking node qb175 ok
+Checking node qb174 ok
+Checking node qb173 ok
+Checking node qb170 ok
+Checking node qb169 ok
+Checking node qb164 ok
+Checking node qb161 ok
+Checking node qb160 ok
+Checking node qb159 ok
+Checking node qb158 ok
+Checking node qb157 ok
+Checking node qb156 ok
+Checking node qb155 ok
+Checking node qb154 ok
+Checking node qb153 ok
+Checking node qb151 ok
+Checking node qb150 ok
+Checking node qb149 ok
+Checking node qb148 ok
+Checking node qb146 ok
+Checking node qb145 ok
+Checking node qb143 ok
+Checking node qb142 ok
+Checking node qb141 ok
+Checking node qb133 ok
+Checking node qb124 ok
+Checking node qb115 ok
+Checking node qb113 ok
+Checking node qb108 ok
+Checking node qb105 ok
+Checking node qb099 ok
+Checking node qb096 ok
+Checking node qb089 ok
+Checking node qb076 ok
+Checking node qb073 ok
+Checking node qb072 ok
+Checking node qb070 ok
+Checking node qb065 ok
+Checking node qb056 ok
+Checking node qb055 ok
+Checking node qb054 ok
+Checking node qb053 ok
+Checking node qb052 ok
+Checking node qb050 ok
+Checking node qb046 ok
+Checking node qb044 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 16-May-2019 23:47:50
+------------------------------------------------------
+Exit Status:     0
+Job ID:          649158.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        test.pbs
+Session Id:      89589
+Resource Limits: ncpus=1,neednodes=49:ppn=20,nodes=49:ppn=20,walltime=00:15:00
+Resources Used:  cput=00:00:02,mem=600kb,vmem=13500kb,walltime=00:00:03
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb044
+Process id:      90725
+------------------------------------------------------

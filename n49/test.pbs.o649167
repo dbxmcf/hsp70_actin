@@ -1,0 +1,202 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    649167.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      17-May-2019 00:37
+Node:      qb159 (4660)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb159
+qb160
+qb161
+qb164
+qb169
+qb170
+qb173
+qb174
+qb175
+qb176
+qb177
+qb180
+qb181
+qb182
+qb183
+qb184
+qb185
+qb186
+qb190
+qb191
+qb192
+qb193
+qb198
+qb199
+qb200
+qb209
+qb210
+qb211
+qb212
+qb213
+qb214
+qb215
+qb241
+qb242
+qb243
+qb244
+qb245
+qb246
+qb247
+qb248
+qb249
+qb250
+qb251
+qb252
+qb253
+qb254
+qb260
+qb263
+qb264
+
+A total of 980 processors on 49 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb159 00:37:15 
+Checking node qb160 00:37:17 
+Checking node qb161 00:37:19 
+Checking node qb164 00:37:21 
+Checking node qb169 00:37:22 
+Checking node qb170 00:37:24 
+Checking node qb173 00:37:26 
+Checking node qb174 00:37:27 
+Checking node qb175 00:37:29 
+Checking node qb176 00:37:31 
+Checking node qb177 00:37:33 
+Checking node qb180 00:37:34 
+Checking node qb181 00:37:36 
+Checking node qb182 00:37:38 
+Checking node qb183 00:37:39 
+Checking node qb184 00:37:41 
+Checking node qb185 00:37:43 
+Checking node qb186 00:37:45 
+Checking node qb190 00:37:46 
+Checking node qb191 00:37:48 
+Checking node qb192 00:37:50 
+Checking node qb193 00:37:51 
+Checking node qb198 00:37:53 
+Checking node qb199 00:37:55 
+Checking node qb200 00:37:56 
+Checking node qb209 00:37:58 
+Checking node qb210 00:38:00 
+Checking node qb211 00:38:02 
+Checking node qb212 00:38:03 
+Checking node qb213 00:38:05 
+Checking node qb214 00:38:07 
+Checking node qb215 00:38:08 
+Checking node qb241 00:38:10 
+Checking node qb242 00:38:12 
+Checking node qb243 00:38:13 
+Checking node qb244 00:38:15 
+Checking node qb245 00:38:17 
+Checking node qb246 00:38:19 
+Checking node qb247 00:38:20 
+Checking node qb248 00:38:22 
+Checking node qb249 00:38:24 
+Checking node qb250 00:38:25 
+Checking node qb251 00:38:27 
+Checking node qb252 00:38:29 
+Checking node qb253 00:38:30 
+Checking node qb254 00:38:32 
+Checking node qb260 00:38:34 
+Checking node qb263 00:38:36 
+Checking node qb264 00:38:37 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 17-May-2019 00:38:37
+------------------------------------------------------
+/project/fchen14/packages/mvapich2-2.3/install/bin/mpirun
+--------------------------------
+Proc 35: *** testing PHDF5 dataset independent write...
+--------------------------------
+--------------------------------
+Proc 34: *** testing PHDF5 dataset independent write...
+--------------------------------
+Independent write test on file ./ParaEg0.h5
+Independent write test on file ./ParaEg0.h5
+H5Pcreate access succeed
+H5Pcreate access succeed
+=>> PBS: job killed: walltime 914 exceeded limit 900
+------------------------------------------------------
+Running PBS epilogue script    - 17-May-2019 00:53:52
+------------------------------------------------------
+Checking node qb159 (MS)
+-> Killing process of fchen14: -bash
+Checking node qb264 ok
+Checking node qb263 ok
+Checking node qb260 ok
+Checking node qb254 ok
+Checking node qb253 ok
+Checking node qb252 ok
+Checking node qb251 ok
+Checking node qb250 ok
+Checking node qb249 ok
+Checking node qb248 ok
+Checking node qb247 ok
+Checking node qb246 ok
+Checking node qb245 ok
+Checking node qb244 ok
+Checking node qb243 ok
+Checking node qb242 ok
+Checking node qb241 ok
+Checking node qb215 ok
+Checking node qb214 ok
+Checking node qb213 ok
+Checking node qb212 ok
+Checking node qb211 ok
+Checking node qb210 ok
+Checking node qb209 ok
+Checking node qb200 ok
+Checking node qb199 ok
+Checking node qb198 ok
+Checking node qb193 ok
+Checking node qb192 ok
+Checking node qb191 ok
+Checking node qb190 ok
+Checking node qb186 ok
+Checking node qb185 ok
+Checking node qb184 ok
+Checking node qb183 ok
+Checking node qb182 ok
+Checking node qb181 ok
+Checking node qb180 ok
+Checking node qb177 ok
+Checking node qb176 ok
+Checking node qb175 ok
+Checking node qb174 ok
+Checking node qb173 ok
+Checking node qb170 ok
+Checking node qb169 ok
+Checking node qb164 ok
+Checking node qb161 ok
+Checking node qb160 ok
+Checking node qb159 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 17-May-2019 00:55:16
+------------------------------------------------------
+Exit Status:     271
+Job ID:          649167.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        test.pbs
+Session Id:      4659
+Resource Limits: ncpus=1,neednodes=49:ppn=20,nodes=49:ppn=20,walltime=00:15:00
+Resources Used:  cput=00:00:01,mem=7920kb,vmem=275388kb,walltime=00:15:15
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb159
+Process id:      5986
+------------------------------------------------------

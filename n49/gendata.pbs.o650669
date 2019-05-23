@@ -1,0 +1,48 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    650669.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      22-May-2019 14:24
+Node:      qb503 (52327)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb503
+
+A total of 48 processors on 1 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb503 14:24:48 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 22-May-2019 14:24:48
+------------------------------------------------------
+------------------------------------------------------
+Running PBS epilogue script    - 22-May-2019 15:02:01
+------------------------------------------------------
+Checking node qb503 (MS)
+-> Killing process of fchen14: -bash
+-> Killing process of fchen14: top
+/usr/local/sbin/node_cleaner: line 133: kill: (53063) - No such process
+Checking node qb503 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 22-May-2019 15:02:03
+------------------------------------------------------
+Exit Status:     0
+Job ID:          650669.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        gendata.pbs
+Session Id:      52326
+Resource Limits: ncpus=1,neednodes=1:ppn=48,nodes=1:ppn=48,walltime=10:15:00
+Resources Used:  cput=00:33:36,mem=468782392kb,vmem=470871732kb,walltime=00:37:15
+Queue Used:      bigmem
+Account String:  loni_loniadmin1
+Node:            qb503
+Process id:      53547
+------------------------------------------------------
