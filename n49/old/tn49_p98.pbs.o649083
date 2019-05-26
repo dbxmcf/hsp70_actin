@@ -1,0 +1,161 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    649083.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      16-May-2019 16:23
+Node:      qb087 (91560)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb087
+qb090
+qb091
+qb092
+qb093
+qb097
+qb098
+qb100
+qb256
+qb257
+qb258
+qb259
+qb261
+qb262
+qb365
+qb368
+qb386
+qb387
+qb388
+qb389
+qb390
+qb391
+qb392
+qb393
+qb394
+qb395
+qb396
+qb397
+qb398
+qb399
+qb400
+qb401
+qb402
+qb403
+qb404
+qb405
+qb406
+qb407
+qb408
+qb409
+qb410
+qb411
+qb412
+qb413
+qb414
+qb415
+qb416
+qb417
+qb418
+
+A total of 980 processors on 49 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+------------------------------------------------------
+Running PBS epilogue script    - 16-May-2019 16:30:18
+------------------------------------------------------
+Checking node qb087 (MS)
+Checking node qb418 ok
+Checking node qb417 ok
+Checking node qb416 ok
+Checking node qb415 ok
+Checking node qb414 ok
+Checking node qb413 ok
+Checking node qb412 ok
+Checking node qb411 ok
+Checking node qb410 ok
+Checking node qb409 ok
+Checking node qb408 ok
+Checking node qb407 ok
+Checking node qb406 ok
+Checking node qb405 ok
+Checking node qb404 ok
+Checking node qb403 ok
+Checking node qb402 ok
+Checking node qb401 ok
+Checking node qb400 ok
+Checking node qb399 ok
+Checking node qb398 ok
+Checking node qb397 ok
+Checking node qb396 ok
+Checking node qb395 ok
+Checking node qb087 16:32:36 
+Checking node qb394 ok
+Checking node qb090 16:32:38 
+Checking node qb393 ok
+Checking node qb091 16:32:39 
+Checking node qb392 ok
+Checking node qb092 16:32:41 
+Checking node qb391 ok
+Checking node qb093 16:32:43 
+Checking node qb390 ok
+Checking node qb097 16:32:45 
+Checking node qb389 ok
+Checking node qb098 16:32:46 
+Checking node qb388 ok
+Checking node qb100 16:32:48 
+Checking node qb387 ok
+Checking node qb256 16:32:50 
+Checking node qb386 ok
+Checking node qb257 16:32:51 
+Checking node qb368 ok
+Checking node qb258 16:32:53 
+Checking node qb365 ok
+Checking node qb259 16:32:55 
+Checking node qb262 ok
+Checking node qb261 16:32:56 
+Checking node qb261 ok
+Checking node qb262 16:32:58 
+Checking node qb259 ok
+Checking node qb365 16:33:00 
+Checking node qb258 ok
+Checking node qb368 16:33:01 
+Checking node qb257 ok
+Checking node qb386 16:33:03 
+Checking node qb256 ok
+Checking node qb387 16:33:05 
+Checking node qb100 ok
+Checking node qb388 16:33:06 
+Checking node qb098 ok
+Checking node qb389 16:33:08 
+Checking node qb097 ok
+Checking node qb390 16:33:10 
+Checking node qb093 ok
+Checking node qb391 16:33:11 
+Checking node qb092 ok
+Checking node qb392 16:33:13 
+Checking node qb091 ok
+Checking node qb393 16:33:15 
+Checking node qb090 ok
+Checking node qb394 16:33:16 
+Checking node qb087 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 16-May-2019 16:33:17
+------------------------------------------------------
+Exit Status:     0
+Job ID:          649083.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn49_p98.pbs
+Session Id:      0
+Resource Limits: ncpus=1,neednodes=49:ppn=20,nodes=49:ppn=20,walltime=05:00:00
+Resources Used:  cput=00:00:00,mem=0kb,vmem=0kb,walltime=00:05:35
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb087
+Process id:      92175
+------------------------------------------------------

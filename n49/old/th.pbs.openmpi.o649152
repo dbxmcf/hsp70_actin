@@ -1,0 +1,245 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    649152.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      16-May-2019 21:56
+Node:      qb050 (17712)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb050
+qb192
+qb193
+qb198
+qb199
+qb200
+qb209
+qb210
+qb211
+qb212
+qb213
+qb214
+qb215
+qb241
+qb242
+qb243
+qb244
+qb245
+qb246
+qb247
+qb248
+qb249
+qb250
+qb251
+qb252
+qb253
+qb254
+qb260
+qb263
+qb264
+qb265
+qb266
+qb267
+qb268
+qb269
+qb270
+qb271
+qb272
+qb273
+qb274
+qb275
+qb276
+qb277
+qb278
+qb279
+qb280
+qb281
+qb282
+qb283
+
+A total of 980 processors on 49 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb050 21:57:00 
+Checking node qb192 21:57:02 
+Checking node qb193 21:57:04 
+Checking node qb198 21:57:06 
+Checking node qb199 21:57:08 
+Checking node qb200 21:57:09 
+Checking node qb209 21:57:11 
+Checking node qb210 21:57:13 
+Checking node qb211 21:57:14 
+Checking node qb212 21:57:16 
+Checking node qb213 21:57:18 
+Checking node qb214 21:57:19 
+Checking node qb215 21:57:21 
+Checking node qb241 21:57:23 
+Checking node qb242 21:57:25 
+Checking node qb243 21:57:26 
+Checking node qb244 21:57:28 
+Checking node qb245 21:57:30 
+Checking node qb246 21:57:31 
+Checking node qb247 21:57:33 
+Checking node qb248 21:57:35 
+Checking node qb249 21:57:37 
+Checking node qb250 21:57:38 
+Checking node qb251 21:57:40 
+Checking node qb252 21:57:42 
+Checking node qb253 21:57:43 
+Checking node qb254 21:57:45 
+Checking node qb260 21:57:47 
+Checking node qb263 21:57:48 
+Checking node qb264 21:57:50 
+Checking node qb265 21:57:52 
+Checking node qb266 21:57:53 
+Checking node qb267 21:57:55 
+Checking node qb268 21:57:57 
+Checking node qb269 21:57:59 
+Checking node qb270 21:58:00 
+Checking node qb271 21:58:02 
+Checking node qb272 21:58:04 
+Checking node qb273 21:58:05 
+Checking node qb274 21:58:07 
+Checking node qb275 21:58:09 
+Checking node qb276 21:58:10 
+Checking node qb277 21:58:12 
+Checking node qb278 21:58:14 
+Checking node qb279 21:58:15 
+Checking node qb280 21:58:17 
+Checking node qb281 21:58:19 
+Checking node qb282 21:58:21 
+Checking node qb283 21:58:22 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 16-May-2019 21:58:22
+------------------------------------------------------
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/mpirun
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+/usr/local/packages/mvapich2/2.0/INTEL-14.0.2/bin/hydra_pmi_proxy: error while loading shared libraries: libmkl_intel_lp64.so: cannot open shared object file: No such file or directory
+=>> PBS: job killed: walltime 944 exceeded limit 900
+[mpiexec@qb050] HYDU_sock_write (utils/sock/sock.c:286): write error (Bad file descriptor)
+[mpiexec@qb050] HYD_pmcd_pmiserv_send_signal (pm/pmiserv/pmiserv_cb.c:169): unable to write data to proxy
+[mpiexec@qb050] ui_cmd_cb (pm/pmiserv/pmiserv_pmci.c:79): unable to send signal downstream
+[mpiexec@qb050] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[mpiexec@qb050] HYD_pmci_wait_for_completion (pm/pmiserv/pmiserv_pmci.c:198): error waiting for event
+[mpiexec@qb050] main (ui/mpich/mpiexec.c:336): process manager error waiting for completion
+------------------------------------------------------
+Running PBS epilogue script    - 16-May-2019 22:14:05
+------------------------------------------------------
+Checking node qb050 (MS)
+Checking node qb283 ok
+Checking node qb282 ok
+Checking node qb281 ok
+Checking node qb280 ok
+Checking node qb279 ok
+Checking node qb278 ok
+Checking node qb277 ok
+Checking node qb276 ok
+Checking node qb275 ok
+Checking node qb274 ok
+Checking node qb273 ok
+Checking node qb272 ok
+Checking node qb271 ok
+Checking node qb270 ok
+Checking node qb269 ok
+Checking node qb268 ok
+Checking node qb267 ok
+Checking node qb266 ok
+Checking node qb265 ok
+Checking node qb264 ok
+Checking node qb263 ok
+Checking node qb260 ok
+Checking node qb254 ok
+Checking node qb253 ok
+Checking node qb252 ok
+Checking node qb251 ok
+Checking node qb250 ok
+Checking node qb249 ok
+Checking node qb248 ok
+Checking node qb247 ok
+Checking node qb246 ok
+Checking node qb245 ok
+Checking node qb244 ok
+Checking node qb243 ok
+Checking node qb242 ok
+Checking node qb241 ok
+Checking node qb215 ok
+Checking node qb214 ok
+Checking node qb213 ok
+Checking node qb212 ok
+Checking node qb211 ok
+Checking node qb210 ok
+Checking node qb209 ok
+Checking node qb200 ok
+Checking node qb199 ok
+Checking node qb198 ok
+Checking node qb193 ok
+Checking node qb192 ok
+Checking node qb050 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 16-May-2019 22:15:31
+------------------------------------------------------
+Exit Status:     271
+Job ID:          649152.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        th.pbs.openmpi
+Session Id:      17711
+Resource Limits: ncpus=1,neednodes=49:ppn=20,nodes=49:ppn=20,walltime=00:15:00
+Resources Used:  cput=00:00:01,mem=10660kb,vmem=336792kb,walltime=00:15:44
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb050
+Process id:      19992
+------------------------------------------------------

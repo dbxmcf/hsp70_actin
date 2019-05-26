@@ -11,6 +11,7 @@ typedef unsigned short sint;
 typedef char cint;
 //typedef unsigned long tint;
 typedef hsize_t tint;
+typedef int boolean;
 typedef float real;
 //typedef double real;
 #define MPI_REALNUM MPI_FLOAT

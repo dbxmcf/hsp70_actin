@@ -883,7 +883,7 @@ phdf5readAll(char *filename)
 
     // Calculate number of data chunks
     num_data_chunks = (int)sqrt(mpi_size*2);
-    if (num_data_chunks*num_data_chunks != mpi_size*2){
+    if (1 != mpi_size && num_data_chunks*num_data_chunks != mpi_size*2){
         if (0 == mpi_rank) {
             printf("Error: np*2 is not a square number! Exiting...\n");
         }
@@ -911,7 +911,8 @@ phdf5readAll(char *filename)
     }
     if (verbose)
         printf("mrk[%d]:mpi_rk_chunk0=%d, mpi_rk_chunk1=%d\n",mpi_rank,mpi_rk_chunk0, mpi_rk_chunk1);
-    free_dynamic_2d_array_integer(cmbs);
+    if (1!=mpi_size)
+        free_dynamic_2d_array_integer(cmbs);
 
     /* now calculate start[0] for each rank*/
     average_lines = dims_out[0] / num_data_chunks;
@@ -920,9 +921,13 @@ phdf5readAll(char *filename)
         printf("average_lines=%d, remainder_lines=%d\n", average_lines,remainder_lines);
 
     integer **chunk_start=NULL, **chunk_count=NULL;
+    //printf("num_data_chunks %d\n", num_data_chunks);
+
     chunk_start = allocate_dynamic_2d_array_integer(num_data_chunks,2);
     chunk_count = allocate_dynamic_2d_array_integer(num_data_chunks,2);
     for (i=0;i<remainder_lines;i++) {
+    //printf("line here %d\n", __LINE__);
+
         chunk_start[i][0] = i*(average_lines+1);
         chunk_start[i][1] = 0;
         chunk_count[i][0] = average_lines+1;
@@ -930,6 +935,8 @@ phdf5readAll(char *filename)
     }
 
     for (i=remainder_lines;i<num_data_chunks;i++){
+    //printf("line here %d\n", __LINE__);
+
         chunk_start[i][0] = remainder_lines*(average_lines+1)+(i-remainder_lines)*average_lines;
         chunk_start[i][1] = 0;
         chunk_count[i][0] = average_lines;
@@ -942,6 +949,9 @@ phdf5readAll(char *filename)
             print_matrix_integer(chunk_count,num_data_chunks,2,"%3d ");
         }
 
+    //printf("line here %d\n", __LINE__);
+
+
     // now starting assign two chunks, part_a and part_b to each mpi rank
     // you might directly use chunk_start[mpi_rk_chunk0] and chunk_start[mpi_rk_chunk1]
     // but I believe this more understandable
@@ -951,6 +961,12 @@ phdf5readAll(char *filename)
     start_part_a[1]=chunk_start[mpi_rk_chunk0][1];
     count_part_a[0]=chunk_count[mpi_rk_chunk0][0];
     count_part_a[1]=chunk_count[mpi_rk_chunk0][1];
+
+    //printf("line here %d\n", __LINE__);
+    //printf("mpi_rk_chunk1 =%d\n", mpi_rk_chunk1);
+
+    if (1==mpi_size)
+        mpi_rk_chunk1 = 0;
 
     // part b
     start_part_b[0]=chunk_start[mpi_rk_chunk1][0];
@@ -1134,7 +1150,9 @@ phdf5readAll(char *filename)
         result_pointers_diagnol rpd_part_a;
         integer num_cmbs_a = space_dim_a0*(space_dim_a0-1)/2;
         integer num_cmbs_b = space_dim_b0*(space_dim_b0-1)/2;
-        num_cmbs_ab = num_cmbs_a + num_cmbs_b;
+        num_cmbs_ab = num_cmbs_a;
+        if (mpi_size>1)
+            num_cmbs_ab += num_cmbs_b;
 
         part_ab_normal = (real*)malloc(num_cmbs_ab*sizeof(real)); 
         part_ab_generalised = (real*)malloc(num_cmbs_ab*sizeof(real)); 
@@ -1151,6 +1169,7 @@ phdf5readAll(char *filename)
         //calc_coeffs_diagnol_triangle(data_array_a, space_dim_a0, space_dim_a1,&rpd_part_a);
         calc_coeffs_off_diagnol_block(data_array_a, space_dim_a0, space_dim_a1,  data_array_a, space_dim_a0, space_dim_a1, &rpd_part_a);
 
+
         if (debug_info)
             if (mpi_rank == debug_mpi_rank) {
                 printf("mpi_rank[%d]:normal_part_a",mpi_rank);
@@ -1165,30 +1184,34 @@ phdf5readAll(char *filename)
                 print_matrix_1d_real(rpd_part_a.cosine, num_cmbs_a, "%7.3f ");
             }
 
-        result_pointers_diagnol rpd_part_b;
-        // second section of the triangle results
-        rpd_part_b.normal = part_ab_normal + num_cmbs_a;
-        rpd_part_b.generalised = part_ab_generalised + num_cmbs_a;
-        rpd_part_b.wu = part_ab_wu + num_cmbs_a;
-        rpd_part_b.sarika = part_ab_sarika + num_cmbs_a;
-        rpd_part_b.cosine = part_ab_cosine + num_cmbs_a;
+        if ( mpi_size>1 ){
+            result_pointers_diagnol rpd_part_b;
+            // second section of the triangle results
+            rpd_part_b.normal = part_ab_normal + num_cmbs_a;
+            rpd_part_b.generalised = part_ab_generalised + num_cmbs_a;
+            rpd_part_b.wu = part_ab_wu + num_cmbs_a;
+            rpd_part_b.sarika = part_ab_sarika + num_cmbs_a;
+            rpd_part_b.cosine = part_ab_cosine + num_cmbs_a;
 
-        //calc_coeffs_diagnol_triangle(data_array_b, space_dim_b0, space_dim_b1,&rpd_part_b);
-        calc_coeffs_off_diagnol_block(data_array_b, space_dim_b0, space_dim_b1,data_array_b, space_dim_b0, space_dim_b1,&rpd_part_b);
+            //calc_coeffs_diagnol_triangle(data_array_b, space_dim_b0, space_dim_b1,&rpd_part_b);
+            calc_coeffs_off_diagnol_block(data_array_b, space_dim_b0, space_dim_b1,data_array_b, space_dim_b0, space_dim_b1,&rpd_part_b);
 
-        if (debug_info)
-            if (mpi_rank == debug_mpi_rank) {
-                printf("mpi_rank[%d]:normal_part_b",mpi_rank);
-                print_matrix_1d_real(rpd_part_b.normal, num_cmbs_b, "%7.3f ");
-                printf("mpi_rank[%d]:generalised_part_b",mpi_rank);
-                print_matrix_1d_real(rpd_part_b.generalised, num_cmbs_b, "%7.3f ");
-                printf("mpi_rank[%d]:wu_part_b",mpi_rank);
-                print_matrix_1d_real(rpd_part_b.wu, num_cmbs_b, "%7.3f ");
-                printf("mpi_rank[%d]:sarika_part_b",mpi_rank);
-                print_matrix_1d_real(rpd_part_b.sarika, num_cmbs_b, "%7.3f ");
-                printf("mpi_rank[%d]:cosine_part_b",mpi_rank);
-                print_matrix_1d_real(rpd_part_b.cosine, num_cmbs_b, "%7.3f ");
-            }
+            if (debug_info)
+                if (mpi_rank == debug_mpi_rank) {
+                    printf("mpi_rank[%d]:normal_part_b",mpi_rank);
+                    print_matrix_1d_real(rpd_part_b.normal, num_cmbs_b, "%7.3f ");
+                    printf("mpi_rank[%d]:generalised_part_b",mpi_rank);
+                    print_matrix_1d_real(rpd_part_b.generalised, num_cmbs_b, "%7.3f ");
+                    printf("mpi_rank[%d]:wu_part_b",mpi_rank);
+                    print_matrix_1d_real(rpd_part_b.wu, num_cmbs_b, "%7.3f ");
+                    printf("mpi_rank[%d]:sarika_part_b",mpi_rank);
+                    print_matrix_1d_real(rpd_part_b.sarika, num_cmbs_b, "%7.3f ");
+                    printf("mpi_rank[%d]:cosine_part_b",mpi_rank);
+                    print_matrix_1d_real(rpd_part_b.cosine, num_cmbs_b, "%7.3f ");
+                }
+        }
+
+
     }
 
     /* now starting to work on the writing */

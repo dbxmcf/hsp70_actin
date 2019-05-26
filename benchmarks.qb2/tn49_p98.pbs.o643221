@@ -1,0 +1,221 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    643221.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      29-Apr-2019 14:28
+Node:      qb420 (88221)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb420
+qb421
+qb422
+qb423
+qb424
+qb425
+qb426
+qb427
+qb428
+qb429
+qb430
+qb431
+qb432
+qb433
+qb434
+qb435
+qb436
+qb437
+qb438
+qb439
+qb440
+qb441
+qb442
+qb443
+qb444
+qb445
+qb446
+qb447
+qb448
+qb449
+qb450
+qb451
+qb452
+qb453
+qb454
+qb455
+qb456
+qb457
+qb458
+qb459
+qb460
+qb461
+qb462
+qb463
+qb464
+qb465
+qb466
+qb467
+qb468
+
+A total of 980 processors on 49 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb420 14:28:57 
+Checking node qb421 14:28:59 
+Checking node qb422 14:29:01 
+Checking node qb423 14:29:02 
+Checking node qb424 14:29:04 
+Checking node qb425 14:29:06 
+Checking node qb426 14:29:07 
+Checking node qb427 14:29:09 
+Checking node qb428 14:29:11 
+Checking node qb429 14:29:13 
+Checking node qb430 14:29:15 
+Checking node qb431 14:29:17 
+Checking node qb432 14:29:20 
+Checking node qb433 14:29:22 
+Checking node qb434 14:29:23 
+Checking node qb435 14:29:25 
+Checking node qb436 14:29:28 
+Checking node qb437 14:29:30 
+Checking node qb438 14:29:32 
+Checking node qb439 14:29:34 
+Checking node qb440 14:29:36 
+Checking node qb441 14:29:38 
+Checking node qb442 14:29:40 
+Checking node qb443 14:29:43 
+Checking node qb444 14:29:45 
+Checking node qb445 14:29:48 
+Checking node qb446 14:29:50 
+Checking node qb447 14:29:52 
+Checking node qb448 14:29:55 
+Checking node qb449 14:29:56 
+Checking node qb450 14:29:59 
+Checking node qb451 14:30:01 
+Checking node qb452 14:30:04 
+Checking node qb453 14:30:06 
+Checking node qb454 14:30:08 
+Checking node qb455 14:30:10 
+Checking node qb456 14:30:12 
+Checking node qb457 14:30:14 
+Checking node qb458 14:30:16 
+Checking node qb459 14:30:19 
+Checking node qb460 14:30:21 
+Checking node qb461 14:30:24 
+Checking node qb462 14:30:26 
+Checking node qb463 14:30:28 
+Checking node qb464 14:30:30 
+Checking node qb465 14:30:33 
+Checking node qb466 14:30:35 
+Checking node qb467 14:30:38 
+Checking node qb468 14:30:40 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 29-Apr-2019 14:30:40
+------------------------------------------------------
+using 98 processes...
+--------------------------------
+Proc 48: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 49: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 76: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 77: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 81: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 80: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 40: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 41: *** testing PHDF5 dataset collective read...
+--------------------------------
+[mpiexec@qb420] HYDU_sock_write (utils/sock/sock.c:294): write error (Bad file descriptor)
+[mpiexec@qb420] HYD_pmcd_pmiserv_send_signal (pm/pmiserv/pmiserv_cb.c:177): unable to write data to proxy
+[mpiexec@qb420] ui_cmd_cb (pm/pmiserv/pmiserv_pmci.c:79): unable to send signal downstream
+[mpiexec@qb420] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[mpiexec@qb420] HYD_pmci_wait_for_completion (pm/pmiserv/pmiserv_pmci.c:198): error waiting for event
+[mpiexec@qb420] main (ui/mpich/mpiexec.c:340): process manager error waiting for completion
+------------------------------------------------------
+Running PBS epilogue script    - 02-May-2019 09:08:25
+------------------------------------------------------
+Checking node qb420 (MS)
+Checking node qb468 ok
+Checking node qb467 ok
+Checking node qb466 ok
+Checking node qb465 ok
+Checking node qb464 ok
+Checking node qb463 ok
+Checking node qb462 ok
+Checking node qb461 ok
+Checking node qb460 ok
+Checking node qb459 ok
+Checking node qb458 ok
+Checking node qb457 ok
+Checking node qb456 ok
+Checking node qb455 ok
+Checking node qb454 ok
+Checking node qb453 ok
+Checking node qb452 ok
+Checking node qb451 ok
+Checking node qb450 ok
+Checking node qb449 ok
+Checking node qb448 ok
+Checking node qb447 ok
+Checking node qb446 ok
+Checking node qb445 ok
+Checking node qb444 ok
+Checking node qb443 ok
+Checking node qb442 ok
+Checking node qb441 ok
+Checking node qb440 ok
+Checking node qb439 ok
+Checking node qb438 ok
+Checking node qb437 ok
+Checking node qb436 ok
+Checking node qb435 ok
+Checking node qb434 ok
+Checking node qb433 ok
+Checking node qb432 ok
+Checking node qb431 ok
+Checking node qb430 ok
+Checking node qb429 ok
+Checking node qb428 ok
+Checking node qb427 ok
+Checking node qb426 ok
+Checking node qb425 ok
+Checking node qb424 ok
+Checking node qb423 ok
+Checking node qb422 ok
+Checking node qb421 ok
+Checking node qb420 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 02-May-2019 09:09:48
+------------------------------------------------------
+Exit Status:     271
+Job ID:          643221.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn49_p98.pbs
+Session Id:      88220
+Resource Limits: ncpus=1,neednodes=49:ppn=20,nodes=49:ppn=20,walltime=72:00:00
+Resources Used:  cput=00:00:01,mem=8056kb,vmem=275440kb,walltime=66:37:45
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb420
+Process id:      36504
+Last status:     02-May-2019:09:05 PBS_job=643221.qb3 user=fchen14 allocation=loni_loniadmin1 queue=checkpt total_load=8.18 cpu_hours=526.45 wall_hours=65.56 unused_nodes=0 total_nodes=49 ppn=20 avg_load=0.16 avg_cpu=16% avg_mem=42mb avg_vmem=414mb top_proc=fchen14:pgi:qb458:105M:23M:65.6hr:100% toppm=fchen14:pgi.mpi.pomp.out:qb458:105M:23M node_processes=4 avg_avail_mem=61553mb min_avail_mem=58458mb reverified_avg_load=0.19
+------------------------------------------------------

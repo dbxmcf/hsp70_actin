@@ -1,0 +1,83 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    644387.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      02-May-2019 14:32
+Node:      qb105 (55320)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb105
+
+A total of 20 processors on 1 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb105 14:32:33 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 02-May-2019 14:32:33
+------------------------------------------------------
+using 2 processes...
+MPI process 0 is on GPU 0
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 1 is on GPU 1
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 2
+line here 937
+line here 937
+line here 951
+num_data_chunks 2
+line here 937
+line here 937
+line here 951
+Reading time is 336.766
+Out of memory allocating 5230106780 bytes of device memory
+total/free CUDA memory: 5977800704/598474752
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x21442e0 device:0x1304120000 size:14416 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2147b40 device:0x1304123a00 size:14416 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2b2cb0000010 device:0x1304220000 size:5230106780 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:14848 thread:1
+allocated block device:0x1304123a00 size:14848 thread:1
+allocated block device:0x1304220000 size:5230107136 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+gpu run , 347 sec
+input_file =  hdf5t/sample_kinase_phosphatase_protease.h5
+save csv =  True
+validate =  False
+keys= ['cosine', 'generalised', 'normal', 'sarika', 'start_loc', 'wu']
+protein_file_name: hdf5t/sample_kinase_phosphatase_protease.json
+Saving csv in: hdf5t/sample_kinase_phosphatase_protease.h5_res_csv
+------------------------------------------------------
+Running PBS epilogue script    - 02-May-2019 14:39:24
+------------------------------------------------------
+Checking node qb105 (MS)
+Checking node qb105 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 02-May-2019 14:39:26
+------------------------------------------------------
+Exit Status:     0
+Job ID:          644387.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn1_p2.pbs
+Session Id:      55319
+Resource Limits: ncpus=1,neednodes=1:ppn=20,nodes=1:ppn=20,walltime=02:00:00
+Resources Used:  cput=00:12:18,mem=713960kb,vmem=1172692kb,walltime=00:06:53
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb105
+Process id:      55939
+------------------------------------------------------

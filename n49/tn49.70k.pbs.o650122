@@ -1,0 +1,880 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    650122.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      20-May-2019 19:41
+Node:      qb063 (122392)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb063
+qb064
+qb065
+qb066
+qb067
+qb068
+qb069
+qb071
+qb072
+qb073
+qb074
+qb075
+qb076
+qb077
+qb078
+qb080
+qb081
+qb082
+qb083
+qb084
+qb085
+qb086
+qb087
+qb088
+qb089
+qb090
+qb092
+qb093
+qb094
+qb095
+qb096
+qb097
+qb098
+qb101
+qb112
+qb113
+qb114
+qb115
+qb116
+qb117
+qb118
+qb119
+qb124
+qb127
+qb132
+qb133
+qb134
+qb135
+qb146
+
+A total of 980 processors on 49 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb063 19:41:16 
+Checking node qb064 19:41:18 
+Checking node qb065 19:41:20 
+Checking node qb066 19:41:21 
+Checking node qb067 19:41:23 
+Checking node qb068 19:41:25 
+Checking node qb069 19:41:26 
+Checking node qb071 19:41:28 
+Checking node qb072 19:41:30 
+Checking node qb073 19:41:31 
+Checking node qb074 19:41:33 
+Checking node qb075 19:41:35 
+Checking node qb076 19:41:36 
+Checking node qb077 19:41:38 
+Checking node qb078 19:41:40 
+Checking node qb080 19:41:42 
+Checking node qb081 19:41:43 
+Checking node qb082 19:41:45 
+Checking node qb083 19:41:47 
+Checking node qb084 19:41:48 
+Checking node qb085 19:41:50 
+Checking node qb086 19:41:52 
+Checking node qb087 19:41:54 
+Checking node qb088 19:41:55 
+Checking node qb089 19:41:57 
+Checking node qb090 19:41:59 
+Checking node qb092 19:42:00 
+Checking node qb093 19:42:02 
+Checking node qb094 19:42:04 
+Checking node qb095 19:42:05 
+Checking node qb096 19:42:07 
+Checking node qb097 19:42:09 
+Checking node qb098 19:42:11 
+Checking node qb101 19:42:12 
+Checking node qb112 19:42:14 
+Checking node qb113 19:42:16 
+Checking node qb114 19:42:18 
+Checking node qb115 19:42:19 
+Checking node qb116 19:42:21 
+Checking node qb117 19:42:23 
+Checking node qb118 19:42:24 
+Checking node qb119 19:42:26 
+Checking node qb124 19:42:28 
+Checking node qb127 19:42:30 
+Checking node qb132 19:42:31 
+Checking node qb133 19:42:33 
+Checking node qb134 19:42:35 
+Checking node qb135 19:42:36 
+Checking node qb146 19:42:38 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 20-May-2019 19:42:38
+------------------------------------------------------
+/project/fchen14/packages/openmpi-4.0.1/install/bin/mpirun
+--------------------------------------------------------------------------
+By default, for Open MPI 4.0 and later, infiniband ports on a device
+are not used by default.  The intent is to use UCX for these devices.
+You can override this policy by setting the btl_openib_allow_ib MCA parameter
+to true.
+
+  Local host:              qb115
+  Local adapter:           mlx4_0
+  Local port:              1
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+WARNING: There was an error initializing an OpenFabrics device.
+
+  Local host:   qb115
+  Local device: mlx4_0
+--------------------------------------------------------------------------
+MPI process 30 is on GPU 0
+--------------------------------
+Proc 30: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 14 is on GPU 0
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 34 is on GPU 0
+--------------------------------
+Proc 34: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 32 is on GPU 0
+--------------------------------
+Proc 32: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 16 is on GPU 0
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 36 is on GPU 0
+--------------------------------
+Proc 36: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 66 is on GPU 0
+--------------------------------
+Proc 66: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 94 is on GPU 0
+--------------------------------
+Proc 94: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 74 is on GPU 0
+--------------------------------
+Proc 74: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 64 is on GPU 0
+--------------------------------
+Proc 64: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 15 is on GPU 1
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 35 is on GPU 1
+--------------------------------
+Proc 35: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 33 is on GPU 1
+--------------------------------
+Proc 33: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 31 is on GPU 1
+--------------------------------
+Proc 31: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 17 is on GPU 1
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 37 is on GPU 1
+--------------------------------
+Proc 37: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 67 is on GPU 1
+--------------------------------
+Proc 67: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 95 is on GPU 1
+--------------------------------
+Proc 95: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 75 is on GPU 1
+--------------------------------
+Proc 75: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 65 is on GPU 1
+--------------------------------
+Proc 65: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 92 is on GPU 0
+--------------------------------
+Proc 92: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 44 is on GPU 0
+--------------------------------
+Proc 44: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 2 is on GPU 0
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 82 is on GPU 0
+--------------------------------
+Proc 82: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 8 is on GPU 0
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 90 is on GPU 0
+--------------------------------
+Proc 90: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 28 is on GPU 0
+--------------------------------
+Proc 28: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 78 is on GPU 0
+--------------------------------
+Proc 78: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 12 is on GPU 0
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 62 is on GPU 0
+--------------------------------
+Proc 62: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 86 is on GPU 0
+--------------------------------
+Proc 86: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 48 is on GPU 0
+--------------------------------
+Proc 48: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 88 is on GPU 0
+--------------------------------
+Proc 88: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 70 is on GPU 0
+--------------------------------
+Proc 70: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 56 is on GPU 0
+--------------------------------
+Proc 56: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 76 is on GPU 0
+--------------------------------
+Proc 76: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 50 is on GPU 0
+--------------------------------
+Proc 50: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 60 is on GPU 0
+--------------------------------
+Proc 60: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 4 is on GPU 0
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 80 is on GPU 0
+--------------------------------
+Proc 80: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 52 is on GPU 0
+--------------------------------
+Proc 52: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 46 is on GPU 0
+--------------------------------
+Proc 46: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 18 is on GPU 0
+--------------------------------
+Proc 18: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 58 is on GPU 0
+--------------------------------
+Proc 58: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 72 is on GPU 0
+--------------------------------
+Proc 72: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 6 is on GPU 0
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 54 is on GPU 0
+--------------------------------
+Proc 54: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 68 is on GPU 0
+--------------------------------
+Proc 68: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 84 is on GPU 0
+--------------------------------
+Proc 84: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 10 is on GPU 0
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 38 is on GPU 0
+--------------------------------
+Proc 38: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 26 is on GPU 0
+--------------------------------
+Proc 26: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 96 is on GPU 0
+--------------------------------
+Proc 96: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 40 is on GPU 0
+--------------------------------
+Proc 40: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 42 is on GPU 0
+--------------------------------
+Proc 42: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 93 is on GPU 1
+--------------------------------
+Proc 93: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 45 is on GPU 1
+--------------------------------
+Proc 45: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 3 is on GPU 1
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 83 is on GPU 1
+--------------------------------
+Proc 83: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 0 is on GPU 0
+Input file is: asdf/ta70000.h5
+Output file is: asdf/ta70000.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 91 is on GPU 1
+--------------------------------
+Proc 91: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 9 is on GPU 1
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 29 is on GPU 1
+--------------------------------
+Proc 29: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 79 is on GPU 1
+--------------------------------
+Proc 79: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 13 is on GPU 1
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 49 is on GPU 1
+--------------------------------
+Proc 49: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 87 is on GPU 1
+--------------------------------
+Proc 87: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 77 is on GPU 1
+--------------------------------
+Proc 77: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 71 is on GPU 1
+--------------------------------
+Proc 71: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 51 is on GPU 1
+--------------------------------
+Proc 51: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 63 is on GPU 1
+--------------------------------
+Proc 63: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 57 is on GPU 1
+--------------------------------
+Proc 57: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 61 is on GPU 1
+--------------------------------
+Proc 61: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 89 is on GPU 1
+--------------------------------
+Proc 89: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 5 is on GPU 1
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 81 is on GPU 1
+--------------------------------
+Proc 81: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 73 is on GPU 1
+--------------------------------
+Proc 73: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 47 is on GPU 1
+--------------------------------
+Proc 47: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 19 is on GPU 1
+--------------------------------
+Proc 19: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 59 is on GPU 1
+--------------------------------
+Proc 59: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 53 is on GPU 1
+--------------------------------
+Proc 53: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 7 is on GPU 1
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 55 is on GPU 1
+--------------------------------
+Proc 55: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 69 is on GPU 1
+--------------------------------
+Proc 69: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 85 is on GPU 1
+--------------------------------
+Proc 85: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 11 is on GPU 1
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 39 is on GPU 1
+--------------------------------
+Proc 39: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 97 is on GPU 1
+--------------------------------
+Proc 97: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 27 is on GPU 1
+--------------------------------
+Proc 27: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 41 is on GPU 1
+--------------------------------
+Proc 41: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 43 is on GPU 1
+--------------------------------
+Proc 43: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 1 is on GPU 1
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 20 is on GPU 0
+--------------------------------
+Proc 20: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 22 is on GPU 0
+--------------------------------
+Proc 22: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 24 is on GPU 0
+--------------------------------
+Proc 24: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 21 is on GPU 1
+--------------------------------
+Proc 21: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 23 is on GPU 1
+--------------------------------
+Proc 23: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 25 is on GPU 1
+--------------------------------
+Proc 25: *** testing PHDF5 dataset collective read...
+--------------------------------
+[qb063:00974] 97 more processes have sent help message help-mpi-btl-openib.txt / ib port not selected
+[qb063:00974] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[qb063:00974] 97 more processes have sent help message help-mpi-btl-openib.txt / error in device init
+Reading time is 1416.513
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2078539776
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2147876864
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x2849470 device:0x1308240000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x28530c0 device:0x1308242800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaacc000010 device:0x1308340000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:10240 thread:1
+allocated block device:0x1308242800 size:10240 thread:1
+allocated block device:0x1308340000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2078539776
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x15520a0 device:0x1304120000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x155bcf0 device:0x1304122800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaac4001010 device:0x1304220000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:10240 thread:1
+allocated block device:0x1304122800 size:10240 thread:1
+allocated block device:0x1304220000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+host:0x1fce050 device:0x1304120000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x1fd7ca0 device:0x1304122800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaac4001010 device:0x1304220000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:10240 thread:1
+allocated block device:0x1304122800 size:10240 thread:1
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2078539776
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x18143f0 device:0x1304120000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x181e040 device:0x1304122800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaac4001010 device:0x1304220000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:10240 thread:1
+allocated block device:0x1304122800 size:10240 thread:1
+allocated block device:0x1304220000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+allocated block device:0x1304220000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2147876864
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x2598520 device:0x1308240000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x25a2170 device:0x1308242800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaacc000010 device:0x1308340000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:10240 thread:1
+allocated block device:0x1308242800 size:10240 thread:1
+allocated block device:0x1308340000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2147876864
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x2958ab0 device:0x1308240000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2962700 device:0x1308242800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaacc000010 device:0x1308340000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:10240 thread:1
+allocated block device:0x1308242800 size:10240 thread:1
+allocated block device:0x1308340000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2078539776
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x2b203b0 device:0x1304120000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2b2a000 device:0x1304122800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaac4001010 device:0x1304220000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:10240 thread:1
+allocated block device:0x1304122800 size:10240 thread:1
+allocated block device:0x1304220000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2147876864
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x19dd830 device:0x1308240000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x19e7480 device:0x1308242800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaacc000010 device:0x1308340000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:10240 thread:1
+allocated block device:0x1308242800 size:10240 thread:1
+allocated block device:0x1308340000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2078736384
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x171c1d0 device:0x1304120000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x1725e20 device:0x1304122800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaac4001010 device:0x1304220000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:10240 thread:1
+allocated block device:0x1304122800 size:10240 thread:1
+allocated block device:0x1304220000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2078539776
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x19d6b90 device:0x1304120000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x19e07e0 device:0x1304122800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaac4001010 device:0x1304220000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:10240 thread:1
+allocated block device:0x1304122800 size:10240 thread:1
+allocated block device:0x1304220000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2147876864
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x3045fa0 device:0x1308240000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x304fbf0 device:0x1308242800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaacc000010 device:0x1308340000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:10240 thread:1
+allocated block device:0x1308242800 size:10240 thread:1
+allocated block device:0x1308340000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2078539776
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x2bcacf0 device:0x1304120000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2bd4940 device:0x1304122800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaac4001010 device:0x1304220000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:10240 thread:1
+allocated block device:0x1304122800 size:10240 thread:1
+allocated block device:0x1304220000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2147876864
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x2ebbc30 device:0x1308240000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2ec5880 device:0x1308242800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaacc000010 device:0x1308340000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:10240 thread:1
+allocated block device:0x1308242800 size:10240 thread:1
+allocated block device:0x1308340000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2078539776
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x2823460 device:0x1304120000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x282d0b0 device:0x1304122800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaac4001010 device:0x1304220000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:10240 thread:1
+allocated block device:0x1304122800 size:10240 thread:1
+allocated block device:0x1304220000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2147876864
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x3186950 device:0x1308240000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x31905a0 device:0x1308242800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaacc000010 device:0x1308340000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:10240 thread:1
+allocated block device:0x1308242800 size:10240 thread:1
+allocated block device:0x1308340000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2078539776
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x21f5030 device:0x1304120000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x21fec80 device:0x1304122800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaac4001010 device:0x1304220000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:10240 thread:1
+allocated block device:0x1304122800 size:10240 thread:1
+allocated block device:0x1304220000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2147876864
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x29b6ba0 device:0x1308240000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x29c07f0 device:0x1308242800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaacc000010 device:0x1308340000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:10240 thread:1
+allocated block device:0x1308242800 size:10240 thread:1
+allocated block device:0x1308340000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2078539776
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x2cc76b0 device:0x1304120000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2cd1300 device:0x1304122800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaac4001010 device:0x1304220000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:10240 thread:1
+allocated block device:0x1304122800 size:10240 thread:1
+allocated block device:0x1304220000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2078539776
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x23d4de0 device:0x1304120000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x23dea30 device:0x1304122800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaac4001010 device:0x1304220000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:10240 thread:1
+allocated block device:0x1304122800 size:10240 thread:1
+allocated block device:0x1304220000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2147876864
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x2dfbfc0 device:0x1308240000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2e05c10 device:0x1308242800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaacc000010 device:0x1308340000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:10240 thread:1
+allocated block device:0x1308242800 size:10240 thread:1
+allocated block device:0x1308340000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2147876864
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x246d620 device:0x1304120000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2477270 device:0x1304122800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaac4001010 device:0x1304220000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:10240 thread:1
+allocated block device:0x1304122800 size:10240 thread:1
+allocated block device:0x1304220000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2147876864
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x1bc3770 device:0x1308240000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x1bcd3c0 device:0x1308242800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaacc000010 device:0x1308340000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:10240 thread:1
+allocated block device:0x1308242800 size:10240 thread:1
+allocated block device:0x1308340000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2147876864
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x223e600 device:0x1308240000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2248250 device:0x1308242800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aaacc000010 device:0x1308340000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:10240 thread:1
+allocated block device:0x1308242800 size:10240 thread:1
+allocated block device:0x1308340000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 3750000000 bytes of device memory
+total/free CUDA memory: 5977800704/2145779712
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x2f57030 device:0x1304120000 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2f60c80 device:0x1304122800 size:10000 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aab746e8010 device:0x1304220000 size:3750000000 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:10240 thread:1
+allocated block device:0x1304122800 size:10240 thread:1
+allocated block device:0x1304220000 size:3750000128 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[62630,1],12]
+  Exit code:    1
+--------------------------------------------------------------------------
+------------------------------------------------------
+Running PBS epilogue script    - 20-May-2019 20:07:03
+------------------------------------------------------
+Checking node qb063 (MS)
+Checking node qb146 ok
+Checking node qb135 ok
+Checking node qb134 ok
+Checking node qb133 ok
+Checking node qb132 ok
+Checking node qb127 ok
+Checking node qb124 ok
+Checking node qb119 ok
+Checking node qb118 ok
+Checking node qb117 ok
+Checking node qb116 ok
+Checking node qb115 ok
+Checking node qb114 ok
+Checking node qb113 ok
+Checking node qb112 ok
+Checking node qb101 ok
+Checking node qb098 ok
+Checking node qb097 ok
+Checking node qb096 ok
+Checking node qb095 ok
+Checking node qb094 ok
+Checking node qb093 ok
+Checking node qb092 ok
+Checking node qb090 ok
+Checking node qb089 ok
+Checking node qb088 ok
+Checking node qb087 ok
+Checking node qb086 ok
+Checking node qb085 ok
+Checking node qb084 ok
+Checking node qb083 ok
+Checking node qb082 ok
+Checking node qb081 ok
+Checking node qb080 ok
+Checking node qb078 ok
+Checking node qb077 ok
+Checking node qb076 ok
+Checking node qb075 ok
+Checking node qb074 ok
+Checking node qb073 ok
+Checking node qb072 ok
+Checking node qb071 ok
+Checking node qb069 ok
+Checking node qb068 ok
+Checking node qb067 ok
+Checking node qb066 ok
+Checking node qb065 ok
+Checking node qb064 ok
+Checking node qb063 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 20-May-2019 20:08:53
+------------------------------------------------------
+Exit Status:     1
+Job ID:          650122.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn49.70k.pbs
+Session Id:      122391
+Resource Limits: ncpus=1,neednodes=49:ppn=20,nodes=49:ppn=20,walltime=72:00:00
+Resources Used:  cput=00:17:16,mem=56937612kb,vmem=241317504kb,walltime=00:24:25
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb063
+Process id:      2344
+------------------------------------------------------

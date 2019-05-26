@@ -1,0 +1,281 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    649165.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      17-May-2019 00:12
+Node:      qb023 (27637)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb023
+qb027
+qb037
+qb039
+qb040
+qb042
+qb043
+qb044
+qb070
+qb072
+qb073
+qb076
+qb099
+qb105
+qb141
+qb148
+qb149
+qb151
+qb153
+qb154
+qb155
+qb157
+qb159
+qb161
+qb169
+qb170
+qb174
+qb175
+qb176
+qb177
+qb180
+qb181
+qb182
+qb183
+qb184
+qb185
+qb186
+qb190
+qb191
+qb192
+qb193
+qb198
+qb199
+qb200
+qb209
+qb210
+qb211
+qb212
+qb213
+
+A total of 980 processors on 49 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb023 00:12:04 
+Checking node qb027 00:12:06 
+Checking node qb037 00:12:07 
+Checking node qb039 00:12:09 
+Checking node qb040 00:12:11 
+Checking node qb042 00:12:12 
+Checking node qb043 00:12:14 
+Checking node qb044 00:12:16 
+Checking node qb070 00:12:17 
+Checking node qb072 00:12:19 
+Checking node qb073 00:12:24 
+Checking node qb076 00:12:31 
+Checking node qb099 00:12:33 
+Checking node qb105 00:12:35 
+Checking node qb141 00:12:36 
+Checking node qb148 00:12:38 
+Checking node qb149 00:12:40 
+Checking node qb151 00:12:42 
+Checking node qb153 00:12:43 
+Checking node qb154 00:12:45 
+Checking node qb155 00:12:47 
+Checking node qb157 00:12:48 
+Checking node qb159 00:12:50 
+Checking node qb161 00:12:52 
+Checking node qb169 00:12:54 
+Checking node qb170 00:12:55 
+Checking node qb174 00:12:57 
+Checking node qb175 00:12:59 
+Checking node qb176 00:13:00 
+Checking node qb177 00:13:02 
+Checking node qb180 00:13:04 
+Checking node qb181 00:13:05 
+Checking node qb182 00:13:07 
+Checking node qb183 00:13:09 
+Checking node qb184 00:13:10 
+Checking node qb185 00:13:12 
+Checking node qb186 00:13:14 
+Checking node qb190 00:13:16 
+Checking node qb191 00:13:17 
+Checking node qb192 00:13:19 
+Checking node qb193 00:13:21 
+Checking node qb198 00:13:22 
+Checking node qb199 00:13:24 
+Checking node qb200 00:13:26 
+Checking node qb209 00:13:27 
+Checking node qb210 00:13:29 
+Checking node qb211 00:13:31 
+Checking node qb212 00:13:32 
+Checking node qb213 00:13:34 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 17-May-2019 00:13:34
+------------------------------------------------------
+/project/fchen14/packages/mvapich2-2.3/install/bin/mpirun
+--------------------------------
+Proc 92: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 93: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 22: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 23: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 32: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 33: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 24: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 25: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 41: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 40: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 38: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 39: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 36: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 37: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 42: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 43: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 44: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 45: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 50: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 51: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 48: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 49: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 56: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 46: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 47: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 58: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 59: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+--------------------------------
+Proc 57: *** testing PHDF5 dataset using split communicators...
+--------------------------------
+[mpiexec@qb023] HYDU_sock_write (utils/sock/sock.c:294): write error (Bad file descriptor)
+[mpiexec@qb023] HYD_pmcd_pmiserv_send_signal (pm/pmiserv/pmiserv_cb.c:177): unable to write data to proxy
+[mpiexec@qb023] ui_cmd_cb (pm/pmiserv/pmiserv_pmci.c:79): unable to send signal downstream
+[mpiexec@qb023] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[mpiexec@qb023] HYD_pmci_wait_for_completion (pm/pmiserv/pmiserv_pmci.c:198): error waiting for event
+[mpiexec@qb023] main (ui/mpich/mpiexec.c:340): process manager error waiting for completion
+------------------------------------------------------
+Running PBS epilogue script    - 17-May-2019 00:25:49
+------------------------------------------------------
+Checking node qb023 (MS)
+-> Killing process of fchen14: -bash
+Checking node qb213 ok
+Checking node qb212 ok
+Checking node qb211 ok
+Checking node qb210 ok
+Checking node qb209 ok
+Checking node qb200 ok
+Checking node qb199 ok
+Checking node qb198 ok
+Checking node qb193 ok
+Checking node qb192 ok
+Checking node qb191 ok
+Checking node qb190 ok
+Checking node qb186 ok
+Checking node qb185 ok
+Checking node qb184 ok
+Checking node qb183 ok
+Checking node qb182 ok
+Checking node qb181 ok
+Checking node qb180 ok
+Checking node qb177 ok
+Checking node qb176 ok
+Checking node qb175 ok
+Checking node qb174 ok
+Checking node qb170 ok
+Checking node qb169 ok
+Checking node qb161 ok
+Checking node qb159 ok
+Checking node qb157 ok
+Checking node qb155 ok
+Checking node qb154 ok
+Checking node qb153 ok
+Checking node qb151 ok
+Checking node qb149 ok
+Checking node qb148 ok
+Checking node qb141 ok
+Checking node qb105 ok
+Checking node qb099 ok
+Checking node qb076 ok
+Checking node qb073 ok
+Checking node qb072 ok
+Checking node qb070 ok
+Checking node qb044 ok
+Checking node qb043 ok
+Checking node qb042 ok
+Checking node qb040 ok
+Checking node qb039 ok
+Checking node qb037 ok
+Checking node qb027 ok
+Checking node qb023 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 17-May-2019 00:27:22
+------------------------------------------------------
+Exit Status:     271
+Job ID:          649165.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        test.pbs
+Session Id:      27636
+Resource Limits: ncpus=1,neednodes=49:ppn=20,nodes=49:ppn=20,walltime=00:15:00
+Resources Used:  cput=00:00:01,mem=7912kb,vmem=275384kb,walltime=00:12:15
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb023
+Process id:      29095
+------------------------------------------------------

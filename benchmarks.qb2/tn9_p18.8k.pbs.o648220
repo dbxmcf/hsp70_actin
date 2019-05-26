@@ -1,0 +1,151 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    648220.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      15-May-2019 08:40
+Node:      qb342 (93234)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb342
+qb343
+qb344
+qb345
+qb346
+qb347
+qb348
+qb349
+qb350
+
+A total of 180 processors on 9 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb342 08:40:53 
+Checking node qb343 08:40:55 
+Checking node qb344 08:40:57 
+Checking node qb345 08:40:58 
+Checking node qb346 08:41:00 
+Checking node qb347 08:41:02 
+Checking node qb348 08:41:04 
+Checking node qb349 08:41:05 
+Checking node qb350 08:41:07 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 15-May-2019 08:41:07
+------------------------------------------------------
+using 18 processes...
+MPI process 4 is on GPU 0
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 12 is on GPU 0
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 6 is on GPU 0
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 14 is on GPU 0
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 0 is on GPU 0
+Input file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 2 is on GPU 0
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 10 is on GPU 0
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 8 is on GPU 0
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 16 is on GPU 0
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 5 is on GPU 1
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 1 is on GPU 1
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 13 is on GPU 1
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 15 is on GPU 1
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 7 is on GPU 1
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 3 is on GPU 1
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 11 is on GPU 1
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 9 is on GPU 1
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 17 is on GPU 1
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 239.801
+Elapsed time is 930.821
+Writing time is 2.157
+===================================
+PHDF5 tests finished with no errors
+===================================
+gpu run , 1175 sec
+------------------------------------------------------
+Running PBS epilogue script    - 15-May-2019 09:00:44
+------------------------------------------------------
+Checking node qb342 (MS)
+Checking node qb350 ok
+Checking node qb349 ok
+Checking node qb348 ok
+Checking node qb347 ok
+Checking node qb346 ok
+Checking node qb345 ok
+Checking node qb344 ok
+Checking node qb343 ok
+Checking node qb342 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 15-May-2019 09:00:59
+------------------------------------------------------
+Exit Status:     0
+Job ID:          648220.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn9_p18.8k.pbs
+Session Id:      93233
+Resource Limits: ncpus=1,neednodes=9:ppn=20,nodes=9:ppn=20,walltime=72:00:00
+Resources Used:  cput=00:37:17,mem=7024kb,vmem=274252kb,walltime=00:19:36
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb342
+Process id:      93974
+------------------------------------------------------
