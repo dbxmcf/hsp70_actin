@@ -1,0 +1,17 @@
+#PGI_HDF5_BIN=/project/fchen14/packages/hdf5-1.10.4/install/bin
+
+#PGI_H5CC=$(PGI_HDF5_BIN)/h5pcc
+PGI_H5CC=h5pcc
+CFLAGS_PGI_OMP=-O3 -std=gnu99 -openmp
+BIN=iomp
+
+#PCB_MPI_SRC=src/c/ph5ex.c
+PCB_MPI_SRC=src/c/ph5_cmb_blks.c
+
+iomp: $(PCB_MPI_SRC)
+	$(PGI_H5CC) $(CFLAGS_PGI_OMP) $(PCB_MPI_SRC) -o intel.mpi.$@.out
+
+all: $(BIN)
+
+clean:
+	rm -rf pgi.mpi.omp.out pgi.mpi.acc.out
