@@ -1,0 +1,188 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    479842.smic3
+Username:  fchen14
+Group:     Admins
+Date:      07-Jun-2019 01:03
+Node:      smic266 (119800)
+--------------------------------------
+PBS has allocated the following nodes:
+
+smic266
+smic267
+smic268
+smic269
+
+A total of 80 processors on 4 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node smic266 01:03:07 
+Checking node smic267 01:03:09 
+Checking node smic268 01:03:11 
+Checking node smic269 01:03:13 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 07-Jun-2019 01:03:13
+------------------------------------------------------
+using 8 processes...
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 25.862
+Elapsed time is 5785.569
+Writing time is 0.668
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=1, 5814 sec
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 24.272
+Elapsed time is 2990.463
+Writing time is 0.252
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=2, 3017 sec
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 23.201
+Elapsed time is 1313.597
+Writing time is 0.345
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=5, 1339 sec
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 24.502
+Elapsed time is 686.419
+Writing time is 0.265
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=10, 713 sec
+------------------------------------------------------
+Running PBS epilogue script    - 07-Jun-2019 04:04:38
+------------------------------------------------------
+Checking node smic266 (MS)
+Checking node smic269 ok
+Checking node smic268 ok
+Checking node smic267 ok
+Checking node smic266 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 07-Jun-2019 04:04:48
+------------------------------------------------------
+Exit Status:     0
+Job ID:          479842.smic3
+Username:        fchen14
+Group:           Admins
+Job Name:        tn4_p8.mvp2.3ke.pbs
+Session Id:      119799
+Resource Limits: ncpus=1,neednodes=4:ppn=20,nodes=4:ppn=20,walltime=48:00:00
+Resources Used:  cput=13:55:04,mem=10324216kb,vmem=11230644kb,walltime=03:01:24
+Queue Used:      checkpt
+Account String:  hpc_hpcadmin5
+Node:            smic266
+Process id:      901
+Last status:     07-Jun-2019:04:01 PBS_job=479842.smic3 user=fchen14 allocation=hpc_hpcadmin5 queue=checkpt total_load=15.99 cpu_hours=6.51 wall_hours=2.01 unused_nodes=0 total_nodes=4 ppn=20 avg_load=3.99 avg_cpu=397% avg_mem=10042mb avg_vmem=10693mb top_proc=fchen14:intel:smic266:5.1G:4.9G:0.8hr:199% toppm=fchen14:intel.mpi.iomp.out:smic266:5157M:5030M node_processes=4 avg_avail_mem=51657mb min_avail_mem=51631mb reverified_avg_load=19.96
+------------------------------------------------------
