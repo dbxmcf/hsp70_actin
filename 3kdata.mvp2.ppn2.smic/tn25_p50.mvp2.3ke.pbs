@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -l nodes=200:ppn=20
+#PBS -l nodes=25:ppn=20
 #PBS -l walltime=24:00:00
 #PBS -q checkpt
 #-N bmk
@@ -15,8 +15,8 @@ cd $PBS_O_WORKDIR/..
 
 export MV2_ENABLE_AFFINITY=0
 
-#NPROCS=$(( $PBS_NUM_NODES*2 ))
-NPROCS=$(( $PBS_NUM_NODES ))
+NPROCS=$(( $PBS_NUM_NODES*2 ))
+#NPROCS=$(( $PBS_NUM_NODES ))
 echo "using $NPROCS processes..."
 #input_h5="asdf/ta8000.h5"
 #input_h5="hdf5t/sample_kinase_phosphatase_protease.h5"
@@ -25,7 +25,7 @@ input_h5="hdf5t/sample_kinase_phosphatase_protease.h5"
 #input_h5="hdf5t/sample_hsp70_actin.h5"
 #input_h5="asdf/ta4292.h5"
 
-export NPERNODE=1
+export NPERNODE=2
 #threads=(1 5 10 20)
 
 export OMP_NUM_THREADS=1
