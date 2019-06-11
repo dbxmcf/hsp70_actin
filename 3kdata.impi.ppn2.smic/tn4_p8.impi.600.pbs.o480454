@@ -1,0 +1,187 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    480454.smic3
+Username:  fchen14
+Group:     Admins
+Date:      11-Jun-2019 10:43
+Node:      smic152 (110588)
+--------------------------------------
+PBS has allocated the following nodes:
+
+smic152
+smic153
+smic154
+smic155
+
+A total of 80 processors on 4 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node smic152 10:43:57 
+Checking node smic153 10:43:59 
+Checking node smic154 10:44:01 
+Checking node smic155 10:44:04 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 11-Jun-2019 10:44:04
+------------------------------------------------------
+using 8 processes...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_a-b_mix_2.h5
+Output file is: hdf5t/sample_a-b_mix_2.h5.res_all.h5
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 4.215
+Elapsed time is 102.438
+Writing time is 0.223
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=1, 108 sec
+Input file is: hdf5t/sample_a-b_mix_2.h5
+Output file is: hdf5t/sample_a-b_mix_2.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 4.243
+Elapsed time is 53.016
+Writing time is 0.153
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=2, 58 sec
+Input file is: hdf5t/sample_a-b_mix_2.h5
+Output file is: hdf5t/sample_a-b_mix_2.h5.res_all.h5
+--------------------------------
+Proc 6: --------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+*** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 3.729
+Elapsed time is 23.179
+Writing time is 0.126
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=5, 28 sec
+Input file is: hdf5t/sample_a-b_mix_2.h5
+Output file is: hdf5t/sample_a-b_mix_2.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 4.160
+Elapsed time is 11.993
+Writing time is 0.196
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=10, 17 sec
+------------------------------------------------------
+Running PBS epilogue script    - 11-Jun-2019 10:47:35
+------------------------------------------------------
+Checking node smic152 (MS)
+Checking node smic155 ok
+Checking node smic154 ok
+Checking node smic153 ok
+Checking node smic152 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 11-Jun-2019 10:47:45
+------------------------------------------------------
+Exit Status:     0
+Job ID:          480454.smic3
+Username:        fchen14
+Group:           Admins
+Job Name:        tn4_p8.impi.600.pbs
+Session Id:      110587
+Resource Limits: ncpus=1,neednodes=4:ppn=20,nodes=4:ppn=20,walltime=48:00:00
+Resources Used:  cput=00:15:06,mem=1506452kb,vmem=3580232kb,walltime=00:03:31
+Queue Used:      checkpt
+Account String:  hpc_hpcadmin5
+Node:            smic152
+Process id:      111316
+------------------------------------------------------
