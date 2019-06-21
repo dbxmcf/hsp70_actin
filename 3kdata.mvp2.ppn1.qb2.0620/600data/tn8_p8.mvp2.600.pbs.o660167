@@ -1,0 +1,1144 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    660167.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      20-Jun-2019 11:48
+Node:      qb021 (57505)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb021
+qb136
+qb137
+qb138
+qb150
+qb151
+qb152
+qb160
+
+A total of 160 processors on 8 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb021 11:48:14 
+Checking node qb136 11:48:16 
+Checking node qb137 11:48:17 
+Checking node qb138 11:48:19 
+Checking node qb150 11:48:21 
+Checking node qb151 11:48:22 
+Checking node qb152 11:48:24 
+Checking node qb160 11:48:26 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 20-Jun-2019 11:48:26
+------------------------------------------------------
+using 8 processes...
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58184 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:5@qb151] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 48979 RUNNING AT qb151
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:3@qb138] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 52454 RUNNING AT qb138
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:2@qb137] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 52554 RUNNING AT qb137
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:6@qb152] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 50312 RUNNING AT qb152
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:1@qb136] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 54941 RUNNING AT qb136
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 51414 RUNNING AT qb150
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:7@qb160] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 43969 RUNNING AT qb160
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+omp run trd=5, 1 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58194 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 51490 RUNNING AT qb150
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:3@qb138] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 52530 RUNNING AT qb138
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:2@qb137] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+[proxy:0:6@qb152] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 52630 RUNNING AT qb137
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:1@qb136] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 55017 RUNNING AT qb136
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:5@qb151] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:5@qb151] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:5@qb151] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:7@qb160] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 44045 RUNNING AT qb160
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+omp run trd=5, 1 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58204 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:7@qb160] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 44121 RUNNING AT qb160
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:2@qb137] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:2@qb137] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:2@qb137] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:4@qb150] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 51566 RUNNING AT qb150
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[mpiexec@qb021] HYDU_sock_read (utils/sock/sock.c:239): read error (Bad file descriptor)
+[mpiexec@qb021] HYD_pmcd_pmiserv_proxy_init_cb (pm/pmiserv/pmiserv_cb.c:506): sock read returned error
+[mpiexec@qb021] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[mpiexec@qb021] HYD_pmci_wait_for_completion (pm/pmiserv/pmiserv_pmci.c:198): error waiting for event
+[mpiexec@qb021] main (ui/mpich/mpiexec.c:336): process manager error waiting for completion
+omp run trd=10, 0 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58214 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:1@qb136] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 55168 RUNNING AT qb136
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 51642 RUNNING AT qb150
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:2@qb137] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:2@qb137] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:2@qb137] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:3@qb138] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:3@qb138] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:3@qb138] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:6@qb152] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 50539 RUNNING AT qb152
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:5@qb151] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 49207 RUNNING AT qb151
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:7@qb160] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:7@qb160] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:7@qb160] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[mpiexec@qb021] HYDT_bscu_wait_for_completion (tools/bootstrap/utils/bscu_wait.c:76): one of the processes terminated badly; aborting
+[mpiexec@qb021] HYDT_bsci_wait_for_completion (tools/bootstrap/src/bsci_wait.c:23): launcher returned error waiting for completion
+[mpiexec@qb021] HYD_pmci_wait_for_completion (pm/pmiserv/pmiserv_pmci.c:218): launcher returned error waiting for completion
+[mpiexec@qb021] main (ui/mpich/mpiexec.c:336): process manager error waiting for completion
+omp run trd=10, 1 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58224 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:2@qb137] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 52859 RUNNING AT qb137
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:1@qb136] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 55245 RUNNING AT qb136
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:4@qb150] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:4@qb150] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:6@qb152] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 50615 RUNNING AT qb152
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:7@qb160] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:7@qb160] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:7@qb160] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:3@qb138] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:3@qb138] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:3@qb138] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[mpiexec@qb021] HYDT_bscu_wait_for_completion (tools/bootstrap/utils/bscu_wait.c:76): one of the processes terminated badly; aborting
+[mpiexec@qb021] HYDT_bsci_wait_for_completion (tools/bootstrap/src/bsci_wait.c:23): launcher returned error waiting for completion
+[mpiexec@qb021] HYD_pmci_wait_for_completion (pm/pmiserv/pmiserv_pmci.c:218): launcher returned error waiting for completion
+[mpiexec@qb021] main (ui/mpich/mpiexec.c:336): process manager error waiting for completion
+omp run trd=20, 1 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58234 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:3@qb138] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 52835 RUNNING AT qb138
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:2@qb137] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 52935 RUNNING AT qb137
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 51794 RUNNING AT qb150
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:7@qb160] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:7@qb160] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:7@qb160] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:6@qb152] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 50691 RUNNING AT qb152
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:5@qb151] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 49359 RUNNING AT qb151
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:1@qb136] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 55321 RUNNING AT qb136
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+omp run trd=20, 0 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58244 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:7@qb160] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 44426 RUNNING AT qb160
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:1@qb136] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 55397 RUNNING AT qb136
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:2@qb137] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:2@qb137] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:2@qb137] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:5@qb151] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:5@qb151] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:5@qb151] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:3@qb138] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 52911 RUNNING AT qb138
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:6@qb152] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 50767 RUNNING AT qb152
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:4@qb150] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:4@qb150] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[mpiexec@qb021] HYDT_bscu_wait_for_completion (tools/bootstrap/utils/bscu_wait.c:76): one of the processes terminated badly; aborting
+[mpiexec@qb021] HYDT_bsci_wait_for_completion (tools/bootstrap/src/bsci_wait.c:23): launcher returned error waiting for completion
+[mpiexec@qb021] HYD_pmci_wait_for_completion (pm/pmiserv/pmiserv_pmci.c:218): launcher returned error waiting for completion
+[mpiexec@qb021] main (ui/mpich/mpiexec.c:336): process manager error waiting for completion
+omp run trd=5, 1 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58254 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 51946 RUNNING AT qb150
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:2@qb137] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 53087 RUNNING AT qb137
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:1@qb136] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 55473 RUNNING AT qb136
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:5@qb151] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:5@qb151] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:5@qb151] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:6@qb152] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 50844 RUNNING AT qb152
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:3@qb138] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:3@qb138] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:3@qb138] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:7@qb160] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 44502 RUNNING AT qb160
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+omp run trd=5, 1 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58264 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:3@qb138] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 53063 RUNNING AT qb138
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:1@qb136] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 55549 RUNNING AT qb136
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:5@qb151] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 49588 RUNNING AT qb151
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:7@qb160] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 44578 RUNNING AT qb160
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:2@qb137] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 53163 RUNNING AT qb137
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 52023 RUNNING AT qb150
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:6@qb152] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 50920 RUNNING AT qb152
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+omp run trd=10, 1 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58274 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:6@qb152] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 50996 RUNNING AT qb152
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:2@qb137] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 53239 RUNNING AT qb137
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:3@qb138] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:3@qb138] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:3@qb138] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:7@qb160] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 44654 RUNNING AT qb160
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:1@qb136] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 55625 RUNNING AT qb136
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:4@qb150] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:4@qb150] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:5@qb151] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 49664 RUNNING AT qb151
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+omp run trd=10, 0 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58284 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:6@qb152] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 51072 RUNNING AT qb152
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:3@qb138] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:3@qb138] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:3@qb138] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:2@qb137] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 53315 RUNNING AT qb137
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:7@qb160] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+[proxy:0:4@qb150] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 44730 RUNNING AT qb160
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:4@qb150] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:4@qb150] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:1@qb136] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:1@qb136] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:1@qb136] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:5@qb151] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 49740 RUNNING AT qb151
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+omp run trd=20, 1 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58294 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:5@qb151] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 49816 RUNNING AT qb151
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:3@qb138] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 53291 RUNNING AT qb138
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 52251 RUNNING AT qb150
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:7@qb160] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:7@qb160] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:7@qb160] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:6@qb152] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 51148 RUNNING AT qb152
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:1@qb136] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 55777 RUNNING AT qb136
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:2@qb137] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 53391 RUNNING AT qb137
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+omp run trd=20, 0 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58304 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:7@qb160] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 44882 RUNNING AT qb160
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:1@qb136] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:1@qb136] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:1@qb136] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:5@qb151] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 49892 RUNNING AT qb151
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:6@qb152] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:6@qb152] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:6@qb152] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:3@qb138] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 53367 RUNNING AT qb138
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:4@qb150] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:4@qb150] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:2@qb137] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:2@qb137] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:2@qb137] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[mpiexec@qb021] HYDT_bscu_wait_for_completion (tools/bootstrap/utils/bscu_wait.c:76): one of the processes terminated badly; aborting
+[mpiexec@qb021] HYDT_bsci_wait_for_completion (tools/bootstrap/src/bsci_wait.c:23): launcher returned error waiting for completion
+[mpiexec@qb021] HYD_pmci_wait_for_completion (pm/pmiserv/pmiserv_pmci.c:218): launcher returned error waiting for completion
+[mpiexec@qb021] main (ui/mpich/mpiexec.c:336): process manager error waiting for completion
+omp run trd=5, 1 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58314 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 52403 RUNNING AT qb150
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:3@qb138] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 53443 RUNNING AT qb138
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:6@qb152] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:6@qb152] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:6@qb152] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:5@qb151] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+[proxy:0:7@qb160] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 49968 RUNNING AT qb151
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:7@qb160] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:7@qb160] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:7@qb160] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:2@qb137] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:2@qb137] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:2@qb137] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:1@qb136] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 55929 RUNNING AT qb136
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+omp run trd=5, 1 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58324 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:1@qb136] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+[proxy:0:5@qb151] HYDU_create_process (utils/launch/launch.c:75): 
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 56005 RUNNING AT qb136
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 52479 RUNNING AT qb150
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:3@qb138] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 53519 RUNNING AT qb138
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:2@qb137] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:2@qb137] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:2@qb137] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:7@qb160] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 45034 RUNNING AT qb160
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:6@qb152] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 51376 RUNNING AT qb152
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+omp run trd=10, 0 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58334 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:6@qb152] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 51452 RUNNING AT qb152
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:2@qb137] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 53695 RUNNING AT qb137
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:4@qb150] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:4@qb150] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:1@qb136] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 56081 RUNNING AT qb136
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:3@qb138] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 53595 RUNNING AT qb138
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:7@qb160] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:7@qb160] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:7@qb160] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:5@qb151] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 50120 RUNNING AT qb151
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+omp run trd=10, 1 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58344 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:6@qb152] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 51528 RUNNING AT qb152
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:1@qb136] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:1@qb136] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:1@qb136] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:5@qb151] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 50196 RUNNING AT qb151
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:7@qb160] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:7@qb160] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:7@qb160] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:2@qb137] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 53771 RUNNING AT qb137
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYD_pmcd_pmip_control_cmd_cb (pm/pmiserv/pmip_cb.c:913): assert (!closed) failed
+[proxy:0:4@qb150] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[proxy:0:4@qb150] main (pm/pmiserv/pmip.c:206): demux engine error waiting for event
+[proxy:0:3@qb138] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 53671 RUNNING AT qb138
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+omp run trd=20, 1 sec
+[proxy:0:0@qb021] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 58354 RUNNING AT qb021
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:3@qb138] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 53747 RUNNING AT qb138
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:5@qb151] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 50272 RUNNING AT qb151
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:6@qb152] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 51604 RUNNING AT qb152
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:7@qb160] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 45262 RUNNING AT qb160
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:1@qb136] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 56233 RUNNING AT qb136
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:2@qb137] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 53847 RUNNING AT qb137
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+[proxy:0:4@qb150] HYDU_create_process (utils/launch/launch.c:75): execvp error on file ./intel.mpi.iomp.out (No such file or directory)
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 52707 RUNNING AT qb150
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+omp run trd=20, 0 sec
+------------------------------------------------------
+Running PBS epilogue script    - 20-Jun-2019 11:48:39
+------------------------------------------------------
+Checking node qb021 (MS)
+Checking node qb160 ok
+Checking node qb152 ok
+Checking node qb151 ok
+Checking node qb150 ok
+Checking node qb138 ok
+Checking node qb137 ok
+Checking node qb136 ok
+Checking node qb021 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 20-Jun-2019 11:48:52
+------------------------------------------------------
+Exit Status:     0
+Job ID:          660167.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn8_p8.mvp2.600.pbs
+Session Id:      57504
+Resource Limits: ncpus=1,neednodes=8:ppn=20,nodes=8:ppn=20,walltime=02:30:00
+Resources Used:  cput=00:00:01,mem=600kb,vmem=13500kb,walltime=00:00:13
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb021
+Process id:      58356
+------------------------------------------------------

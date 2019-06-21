@@ -14,6 +14,7 @@ module purge
 module load hdf5/1.8.12/INTEL-140-MVAPICH2-2.0
 
 export MV2_ENABLE_AFFINITY=0
+export MV2_CPU_BINDING_LEVEL=socket
 
 NPROCS=$(( $PBS_NUM_NODES*2 ))
 #NPROCS=$(( $PBS_NUM_NODES ))
@@ -30,8 +31,8 @@ export NPERNODE=2
 
 export OMP_NUM_THREADS=1
 
-export OMP_PLACES=cores
-export OMP_PROC_BIND=true
+#export OMP_PLACES=cores
+#export OMP_PROC_BIND=true
 #export OMP_PLACES=cores 
 #export OMP_PROC_BIND=spread
 
@@ -50,7 +51,7 @@ export OMP_PROC_BIND=true
 #export MP_BIND=yes
 #export MP_BLIST=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
 
-for trd in 1 2 5 10
+for trd in 1 2 5 10 10 10
 do
     OMP_NUM_THREADS=${trd}
     SECONDS=0
