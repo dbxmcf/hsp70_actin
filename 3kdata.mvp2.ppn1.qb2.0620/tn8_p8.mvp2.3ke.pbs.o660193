@@ -1,0 +1,95 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    660193.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      20-Jun-2019 13:28
+Node:      qb021 (68508)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb021
+qb054
+qb055
+qb056
+qb057
+qb058
+qb060
+qb067
+
+A total of 160 processors on 8 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb021 13:28:59 
+Checking node qb054 13:29:01 
+Checking node qb055 13:29:02 
+Checking node qb056 13:29:04 
+Checking node qb057 13:29:06 
+Checking node qb058 13:29:07 
+Checking node qb060 13:29:09 
+Checking node qb067 13:29:11 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 20-Jun-2019 13:29:11
+------------------------------------------------------
+using 8 processes...
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 28.517
+------------------------------------------------------
+Running PBS epilogue script    - 20-Jun-2019 16:10:03
+------------------------------------------------------
+Checking node qb021 (MS)
+Checking node qb067 ok
+Checking node qb060 ok
+Checking node qb058 ok
+Checking node qb057 ok
+Checking node qb056 ok
+Checking node qb055 ok
+Checking node qb054 ok
+Checking node qb021 ; modules change (ext3 240420 <;jbd 80652 <;) ; ok
+------------------------------------------------------
+Concluding PBS epilogue script - 20-Jun-2019 16:10:16
+------------------------------------------------------
+Exit Status:     271
+Job ID:          660193.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn8_p8.mvp2.3ke.pbs
+Session Id:      68507
+Resource Limits: ncpus=1,neednodes=8:ppn=20,nodes=8:ppn=20,walltime=06:00:00
+Resources Used:  cput=00:00:00,mem=10192kb,vmem=336060kb,walltime=02:40:53
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb021
+Process id:      70938
+Last status:     20-Jun-2019:16:05 PBS_job=660193.qb3 user=fchen14 allocation=loni_loniadmin1 queue=checkpt total_load=8.03 cpu_hours=7.33 wall_hours=1.85 unused_nodes=4 total_nodes=8 ppn=20 avg_load=1.00 avg_cpu=49% avg_mem=5024mb avg_vmem=5382mb top_proc=fchen14:intel:qb021:5.1G:4.9G:0.9hr:51% toppm=fchen14:intel.mpi.iomp.out:qb021:5157M:5030M node_processes=0 avg_avail_mem=56618mb min_avail_mem=49262mb reverified_avg_load=1.02
+------------------------------------------------------

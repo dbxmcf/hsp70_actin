@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -l nodes=256:ppn=20
+#PBS -l nodes=1:ppn=20
 #PBS -l walltime=02:30:00
 #PBS -q checkpt
 #-N bmk
@@ -14,21 +14,23 @@ module purge
 module load hdf5/1.8.12/INTEL-140-MVAPICH2-2.0
 
 export MV2_ENABLE_AFFINITY=0
+export MV2_CPU_BINDING_LEVEL=socket
+export MV2_CPU_BINDING_POLICY=scatter
 
 NPROCS=$(( $PBS_NUM_NODES*2 ))
 #NPROCS=$(( $PBS_NUM_NODES ))
 echo "using $NPROCS processes..."
 #input_h5="asdf/ta8000.h5"
 #input_h5="hdf5t/sample_kinase_phosphatase_protease.h5"
-input_h5="hdf5t/sample_kinase_phosphatase_protease.h5"
-#input_h5="hdf5t/sample_a-b_mix_2.h5"
+#input_h5="hdf5t/sample_kinase_phosphatase_protease.h5"
+input_h5="hdf5t/sample_a-b_mix_2.h5"
 #input_h5="hdf5t/sample_hsp70_actin.h5"
 #input_h5="asdf/ta4292.h5"
 
 export NPERNODE=2
 #threads=(1 5 10 20)
 
-#export OMP_NUM_THREADS=1
+export OMP_NUM_THREADS=1
 
 #export OMP_PLACES=cores
 #export OMP_PROC_BIND=true
@@ -50,7 +52,7 @@ export NPERNODE=2
 #export MP_BIND=yes
 #export MP_BLIST=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
 
-for trd in 1 2 5 10
+for trd in 5 10 10 10
 do
     OMP_NUM_THREADS=${trd}
     SECONDS=0
