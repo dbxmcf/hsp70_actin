@@ -1,0 +1,125 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    482051.smic3
+Username:  fchen14
+Group:     Admins
+Date:      23-Jun-2019 00:43
+Node:      smic384 (71724)
+--------------------------------------
+PBS has allocated the following nodes:
+
+smic384
+smic385
+
+A total of 72 processors on 2 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node smic384 00:43:57 
+Checking node smic385 00:43:59 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 23-Jun-2019 00:43:59
+------------------------------------------------------
+using 2 processes...
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 23.850
+Elapsed time is 12854.003
+Writing time is 0.747
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=1, 12880 sec
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 19.668
+Elapsed time is 6627.670
+Writing time is 2.079
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=2, 6650 sec
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 19.385
+Elapsed time is 1578.238
+Writing time is 0.827
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=9, 1599 sec
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 19.806
+Elapsed time is 816.257
+Writing time is 0.468
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=18, 837 sec
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 19.291
+Elapsed time is 437.695
+Writing time is 0.431
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=36, 458 sec
+------------------------------------------------------
+Running PBS epilogue script    - 23-Jun-2019 06:57:43
+------------------------------------------------------
+Checking node smic384 (MS)
+Checking node smic385 ok
+Checking node smic384 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 23-Jun-2019 06:57:48
+------------------------------------------------------
+Exit Status:     0
+Job ID:          482051.smic3
+Username:        fchen14
+Group:           Admins
+Job Name:        tn2_p2.impi.3k.v100.pbs
+Session Id:      71723
+Resource Limits: ncpus=1,neednodes=2:ppn=36,nodes=2:ppn=36,walltime=72:00:00
+Resources Used:  cput=19:35:02,mem=10369872kb,vmem=13316180kb,walltime=06:13:48
+Queue Used:      v100
+Account String:  hpc_hpcadmin5
+Node:            smic384
+Process id:      105637
+Last status:     23-Jun-2019:06:01 PBS_job=482051.smic3 user=fchen14 allocation=hpc_hpcadmin5 queue=v100 total_load=4.03 cpu_hours=2.85 wall_hours=4.28 unused_nodes=0 total_nodes=2 ppn=36 avg_load=2.01 avg_cpu=198% avg_mem=10043mb avg_vmem=10528mb top_proc=fchen14:intel:smic385:10.0G:9.8G:1.4hr:199% toppm=fchen14:intel.mpi.impiomp.out:smic385:10311M:10001M node_processes=3 avg_avail_mem=371647mb min_avail_mem=371510mb reverified_avg_load=2.01
+------------------------------------------------------

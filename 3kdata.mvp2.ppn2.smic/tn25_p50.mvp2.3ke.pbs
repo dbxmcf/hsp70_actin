@@ -49,8 +49,12 @@ export OMP_PROC_BIND=true
 
 #export MP_BIND=yes
 #export MP_BLIST=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
+export MV2_ENABLE_AFFINITY=1
+export MV2_CPU_BINDING_LEVEL=socket
+export MV2_CPU_BINDING_POLICY=scatter
+export MV2_SHOW_CPU_BINDING=1
 
-for trd in 1 2 5 10 20
+for trd in 1 1 1 2 5 10 20
 do
     OMP_NUM_THREADS=${trd}
     SECONDS=0

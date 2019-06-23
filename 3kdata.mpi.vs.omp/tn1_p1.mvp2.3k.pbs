@@ -4,8 +4,8 @@
 #PBS -q checkpt
 #-N bmk
 #PBS -j oe
-#-A hpc_hpcadmin5
-#PBS -A loni_loniadmin1
+#PBS -A hpc_hpcadmin5
+#-A loni_loniadmin1
 
 cd $PBS_O_WORKDIR/..
 module purge

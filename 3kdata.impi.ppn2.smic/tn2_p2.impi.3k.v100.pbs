@@ -1,7 +1,7 @@
 #!/bin/bash
-#PBS -l nodes=49:ppn=20
-#PBS -l walltime=24:00:00
-#PBS -q checkpt
+#PBS -l nodes=2:ppn=36
+#PBS -l walltime=72:00:00
+#PBS -q v100
 #-N bmk
 #PBS -j oe
 #PBS -A hpc_hpcadmin5
@@ -15,8 +15,8 @@ cd $PBS_O_WORKDIR/..
 
 export MV2_ENABLE_AFFINITY=0
 
-NPROCS=$(( $PBS_NUM_NODES*2 ))
-#NPROCS=$(( $PBS_NUM_NODES ))
+#NPROCS=$(( $PBS_NUM_NODES*2 ))
+NPROCS=$(( $PBS_NUM_NODES ))
 echo "using $NPROCS processes..."
 #input_h5="asdf/ta8000.h5"
 #input_h5="hdf5t/sample_kinase_phosphatase_protease.h5"
@@ -25,7 +25,8 @@ input_h5="hdf5t/sample_kinase_phosphatase_protease.h5"
 #input_h5="hdf5t/sample_hsp70_actin.h5"
 #input_h5="asdf/ta4292.h5"
 
-export NPERNODE=2
+#export NPERNODE=2
+export NPERNODE=1
 #threads=(1 5 10 20)
 
 export OMP_NUM_THREADS=1
@@ -34,11 +35,6 @@ export OMP_PLACES=cores
 export OMP_PROC_BIND=true
 #export OMP_PLACES=cores 
 #export OMP_PROC_BIND=spread
-export MV2_ENABLE_AFFINITY=1
-export MV2_CPU_BINDING_LEVEL=socket
-export MV2_CPU_BINDING_POLICY=scatter
-export MV2_SHOW_CPU_BINDING=1
-
 
 #export OMP_PROC_BIND=true
 #export OMP_PLACES=sockets
@@ -55,7 +51,7 @@ export MV2_SHOW_CPU_BINDING=1
 #export MP_BIND=yes
 #export MP_BLIST=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
 
-for trd in 1 2 5 10
+for trd in 1 2 9 18 36
 do
     OMP_NUM_THREADS=${trd}
     SECONDS=0
@@ -63,7 +59,7 @@ do
     #mpirun --report-bindings -bynode --mca btl_openib_allow_ib true -np $NPROCS -machinefile $PBS_NODEFILE -x OMP_NUM_THREADS -npernode $NPERNODE ./pgi.mpi.pomp.out -f $input_h5 
     mpirun -np $NPROCS -f $PBS_NODEFILE \
     -ppn $NPERNODE \
-    ./intel.mpi.iomp.out -f $input_h5 #2>&1 > log
+    ./intel.mpi.impiomp.out -f $input_h5 #2>&1 > log
     echo "omp run trd=$OMP_NUM_THREADS, $SECONDS sec"
 done
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -l nodes=200:ppn=20
-#PBS -l walltime=24:00:00
+#PBS -l walltime=1:00:00
 #PBS -q checkpt
 #-N bmk
 #PBS -j oe
@@ -34,6 +34,11 @@ export OMP_PLACES=cores
 export OMP_PROC_BIND=true
 #export OMP_PLACES=cores 
 #export OMP_PROC_BIND=spread
+#export MV2_ENABLE_AFFINITY=1
+#export MV2_CPU_BINDING_LEVEL=socket
+#export MV2_CPU_BINDING_POLICY=scatter
+#export MV2_SHOW_CPU_BINDING=1
+
 
 #export OMP_PROC_BIND=true
 #export OMP_PLACES=sockets
