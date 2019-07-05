@@ -95,13 +95,14 @@
 %\draw (0,0) -- (hlblkstart);
 %\draw[pattern=north east lines, pattern color=blue] (0,0) rectangle (hlblksize);
 %\draw[pattern=north east lines, fill=gray!20, pattern color=blue] (hlblkstart) rectangle ++(hlblksize);
-\draw[pattern=north east lines, pattern color=gray] (hlblkstart) rectangle ++(hlblksize);
+%\draw[pattern=north east lines, pattern color=gray] (hlblkstart) rectangle ++(hlblksize);
+\draw[fill=gray!20, pattern color=gray] (hlblkstart) rectangle ++(hlblksize);
 
 %hatch the highlighted triangle
 \coordinate (hltria) at ($ (A) + (\blksize,-\blksize)$);
 \coordinate (hltrib) at ($ (A) + (2*\blksize,-\blksize)$);
 \coordinate (hltric) at ($ (A) + (2*\blksize,-2*\blksize)$);
-\draw [pattern=north east lines, pattern color=gray] (hltria) -- (hltrib) -- (hltric) -- (hltria);
+\draw[fill=gray!20, pattern color=gray] (hltria) -- (hltrib) -- (hltric) -- (hltria);
 
 \newcommand{\brcshift}{0.6cm};
 \foreach \idiv in {0,...,\nloop}
@@ -146,7 +147,7 @@
     \pgfmathtruncatemacro{\lblct}{\arabic{nodenumber}-1}
 %    \node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $){\footnotesize$data partition_{\lblct}$};
     %\node at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $){data \\ partition_${\lblct}$};
-    \node [text width=1cm,align=center] at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $){$matrix$ \\ $block_{\lblct}$};
+    \node [text width=1cm,align=center] at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $){\textbf{$part_{\lblct}$}};
  }
 
 \coordinate (trilabelstart) at (0.7*\blksize, \pythagheight-0.35*\blksize);
@@ -157,7 +158,8 @@
     \pgfmathtruncatemacro{\lbltriangle}{\x / 2 + \arabic{nodenumber}};
     \pgfmathtruncatemacro{\lblzeroone}{Mod(\x,2)};
     \ifthenelse{0 = \lblzeroone}{\def\lblab{a}}{\def\lblab{b}};
-    \node [darkstyle]  (\x\x) at ($ (trilabelstart) + (\blksize*\x,-\blksize*\x) $) {\footnotesize$proc_{\lbltriangle\lblab}$};
+    %\node [darkstyle]  (\x\x) at ($ (trilabelstart) + (\blksize*\x,-\blksize*\x) $) {\footnotesize$proc_{\lbltriangle\lblab}$};
+    \node [text width=1cm,align=center] at ($ (trilabelstart) + (\blksize*\x,-\blksize*\x) $) { $part_{\lbltriangle\lblab}$};
  }
 
 \newcommand{\ratioblksize}{0.8}
