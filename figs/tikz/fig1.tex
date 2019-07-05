@@ -144,7 +144,9 @@
  {
     \stepcounter{nodenumber}
     \pgfmathtruncatemacro{\lblct}{\arabic{nodenumber}-1}
-    \node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $){\footnotesize$proc_{\lblct}$};
+%    \node [darkstyle]  (\x\y) at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $){\footnotesize$data partition_{\lblct}$};
+    %\node at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $){data \\ partition_${\lblct}$};
+    \node [text width=1cm,align=center] at ($ (blklabelstart) + (\blksize*\x ,-\blksize*\y) $){$matrix$ \\ $block_{\lblct}$};
  }
 
 \coordinate (trilabelstart) at (0.7*\blksize, \pythagheight-0.35*\blksize);
@@ -175,9 +177,9 @@
 % matrix
 \matrix [matrix of math nodes,
 row sep=0.05cm,column sep=0.05cm] (m) at (rrectctr) {
-  (J_{m+1},J_{m+1}) & \cdots & (J_{2m+1},J_{m+1}) \\
+  J_{(m+1,m+1)} & \cdots & J_{(2m+1,m+1)} \\
   & \ddots & \vdots \\
-  & & (J_{2m+1},J_{2m+1}) \\
+  & & J_{(2m+1,2m+1)} \\
       };
 
 \coordinate (blockstart) at (2.4*\blksize, \pythagheight-1.8*\blksize);
@@ -197,9 +199,9 @@ row sep=0.05cm,column sep=0.05cm] (m) at (rrectctr) {
 % matrix
 \matrix [matrix of math nodes,
 row sep=0.05cm,column sep=0.05cm] (m) at (rrectctr) {
-  J_{(3m+2,2m+2)} & \cdots & (J_{4m+2},J_{2m+2}) \\
+  J_{(3m+2,2m+2)} & \cdots & J_{(4m+2,2m+2)} \\
   \vdots & \ddots & \vdots \\
-  (J_{3m+2},J_{3m+2}) & \cdots & (J_{4m+2},J_{3m+2}) \\
+  J_{(3m+2,3m+2)} & \cdots & J_{(4m+2,3m+2)} \\
       };
 
 \end{tikzpicture}
