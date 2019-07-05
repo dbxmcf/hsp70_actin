@@ -76,8 +76,8 @@
     %\coordinate (p1) at (\pythagwidth, 0);
     \newcommand{\fracp}{\idiv/\ndiv};
     %\pgfmathtruncatemacro{\fracpnext}{(\idiv+1)/\ndiv};
-    \draw[blue,dashed] ($ (A)!\fracp!(C) $) -- ($ (A)!\fracp!(B) $);
-    \draw[blue,dashed] ($ (C)!\fracp!(A) $) -- ($ (C)!\fracp!(B) $);
+    \draw[black,dashed] ($ (A)!\fracp!(C) $) -- ($ (A)!\fracp!(B) $);
+    \draw[black,dashed] ($ (C)!\fracp!(A) $) -- ($ (C)!\fracp!(B) $);
     %\draw ($ (a) + (0,1) $) -- ($ (b) + (0,1) $);
     %\draw [decorate,decoration={brace,amplitude=10pt}, yshift = 0cm]
     %(\fracp*\pythagheight, \pythagheight+1cm) -- (\fracpnext*\pythagheight, \pythagheight+1cm) node (curly_bracket) [black,midway, yshift = 0.5 cm] {$m+1$};
@@ -175,9 +175,9 @@
 % matrix
 \matrix [matrix of math nodes,
 row sep=0.05cm,column sep=0.05cm] (m) at (rrectctr) {
-  (p_{m+1},p_{m+1}) & \cdots & (p_{2m+1},p_{m+1}) \\
+  (J_{m+1},J_{m+1}) & \cdots & (J_{2m+1},J_{m+1}) \\
   & \ddots & \vdots \\
-  & & (p_{2m+1},p_{2m+1}) \\
+  & & (J_{2m+1},J_{2m+1}) \\
       };
 
 \coordinate (blockstart) at (2.4*\blksize, \pythagheight-1.8*\blksize);
@@ -197,13 +197,10 @@ row sep=0.05cm,column sep=0.05cm] (m) at (rrectctr) {
 % matrix
 \matrix [matrix of math nodes,
 row sep=0.05cm,column sep=0.05cm] (m) at (rrectctr) {
-  (p_{3m+2},p_{2m+2}) & \cdots & (p_{4m+2},p_{2m+2}) \\
+  J_{(3m+2,2m+2)} & \cdots & (J_{4m+2},J_{2m+2}) \\
   \vdots & \ddots & \vdots \\
-  (p_{3m+2},p_{3m+2}) & \cdots & (p_{4m+2},p_{3m+2}) \\
+  (J_{3m+2},J_{3m+2}) & \cdots & (J_{4m+2},J_{3m+2}) \\
       };
-
-
-
 
 \end{tikzpicture}
 \end{document}
