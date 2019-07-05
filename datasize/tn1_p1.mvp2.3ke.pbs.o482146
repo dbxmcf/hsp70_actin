@@ -1,0 +1,59 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    482146.smic3
+Username:  fchen14
+Group:     Admins
+Date:      24-Jun-2019 23:02
+Node:      smic087 (122155)
+--------------------------------------
+PBS has allocated the following nodes:
+
+smic087
+
+A total of 20 processors on 1 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node smic087 23:02:17 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 24-Jun-2019 23:02:17
+------------------------------------------------------
+using 1 processes...
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 29.532
+Elapsed time is 45481.328
+Writing time is 0.247
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=1, 45512 sec
+------------------------------------------------------
+Running PBS epilogue script    - 25-Jun-2019 11:40:49
+------------------------------------------------------
+Checking node smic087 (MS)
+Checking node smic087 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 25-Jun-2019 11:40:52
+------------------------------------------------------
+Exit Status:     0
+Job ID:          482146.smic3
+Username:        fchen14
+Group:           Admins
+Job Name:        tn1_p1.mvp2.3ke.pbs
+Session Id:      122154
+Resource Limits: ncpus=1,neednodes=1:ppn=20,nodes=1:ppn=20,walltime=72:00:00
+Resources Used:  cput=12:38:49,mem=9352kb,vmem=320404kb,walltime=12:38:35
+Queue Used:      checkpt
+Account String:  hpc_hpcadmin5
+Node:            smic087
+Process id:      7600
+Last status:     25-Jun-2019:11:01 PBS_job=482146.smic3 user=fchen14 allocation=hpc_hpcadmin5 queue=checkpt total_load=1.01 cpu_hours=11.00 wall_hours=10.98 unused_nodes=0 total_nodes=1 ppn=20 avg_load=1.01 avg_cpu=99% avg_mem=19472mb avg_vmem=20579mb top_proc=fchen14:intel:smic087:19.7G:19G:11.0hr:99% toppm=fchen14:intel.mpi.iomp.out:smic087:20213M:20078M node_processes=5 avg_avail_mem=42013mb min_avail_mem=42013mb reverified_avg_load=1.00
+------------------------------------------------------

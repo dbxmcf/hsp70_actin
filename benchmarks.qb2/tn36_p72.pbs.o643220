@@ -1,0 +1,7627 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    643220.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      29-Apr-2019 14:28
+Node:      qb384 (55053)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb384
+qb385
+qb386
+qb387
+qb388
+qb389
+qb390
+qb391
+qb392
+qb393
+qb394
+qb395
+qb396
+qb397
+qb398
+qb399
+qb400
+qb401
+qb402
+qb403
+qb404
+qb405
+qb406
+qb407
+qb408
+qb409
+qb410
+qb411
+qb412
+qb413
+qb414
+qb415
+qb416
+qb417
+qb418
+qb419
+
+A total of 720 processors on 36 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb384 14:28:12 
+Checking node qb385 14:28:14 
+Checking node qb386 14:28:15 
+Checking node qb387 14:28:17 
+Checking node qb388 14:28:19 
+Checking node qb389 14:28:20 
+Checking node qb390 14:28:22 
+Checking node qb391 14:28:24 
+Checking node qb392 14:28:25 
+Checking node qb393 14:28:27 
+Checking node qb394 14:28:29 
+Checking node qb395 14:28:30 
+Checking node qb396 14:28:32 
+Checking node qb397 14:28:34 
+Checking node qb398 14:28:35 
+Checking node qb399 14:28:37 
+Checking node qb400 14:28:39 
+Checking node qb401 14:28:40 
+Checking node qb402 14:28:42 
+Checking node qb403 14:28:44 
+Checking node qb404 14:28:45 
+Checking node qb405 14:28:47 
+Checking node qb406 14:28:49 
+Checking node qb407 14:28:50 
+Checking node qb408 14:28:53 
+Checking node qb409 14:28:55 
+Checking node qb410 14:28:56 
+Checking node qb411 14:28:58 
+Checking node qb412 14:28:59 
+Checking node qb413 14:29:01 
+Checking node qb414 14:29:03 
+Checking node qb415 14:29:05 
+Checking node qb416 14:29:06 
+Checking node qb417 14:29:08 
+Checking node qb418 14:29:10 
+Checking node qb419 14:29:11 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 29-Apr-2019 14:29:11
+------------------------------------------------------
+using 72 processes...
+--------------------------------
+Proc 52: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 53: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 28: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 29: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 27: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 34: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 26: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 61: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 60: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 35: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 18: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 19: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 57: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 56: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 20: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 21: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 30: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 31: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 42: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 43: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 50: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 51: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 67: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 66: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 46: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 47: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 64: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 65: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 39: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 38: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 68: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 69: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 24: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 25: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 44: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 45: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 58: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 59: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 48: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 49: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 22: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 23: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 70: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 71: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 32: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 33: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 37: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 36: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 62: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 40: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 63: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 41: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 54: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 55: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+Reading time is 62.809
+Elapsed time is 768.784
+Writing time is 0.443
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=1, 834 sec
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 24: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 18: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 19: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 23: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 22: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 32: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 25: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 33: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 30: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 31: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 50: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 26: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 48: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 27: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 49: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 51: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 29: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 28: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 44: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 45: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 58: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 59: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 60: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 61: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 46: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 47: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 20: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 21: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 71: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 70: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 41: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 40: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 62: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 42: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 63: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 64: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 65: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 66: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 67: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 43: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 38: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 34: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 52: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 35: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 53: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 68: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 39: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 69: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 55: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 54: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 37: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 56: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 36: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 57: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+Reading time is 45.801
+Elapsed time is 398.391
+Writing time is 0.230
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=2, 446 sec
+--------------------------------
+Proc 20: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 21: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 24: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 25: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 30: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 31: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 22: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 23: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 48: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 49: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 54: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 55: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 40: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 41: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 28: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 36: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 29: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 37: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 42: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 43: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 32: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 60: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 18: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 19: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 33: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 61: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 64: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 66: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 65: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 67: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 38: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 52: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 35: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 53: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 58: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 59: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 39: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 27: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 50: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 26: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 34: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 56: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 47: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 57: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 46: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 71: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 70: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 51: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 68: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 69: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 45: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 44: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 62: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 63: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+Reading time is 66.669
+Elapsed time is 176.305
+Writing time is 0.205
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=5, 245 sec
+--------------------------------
+Proc 22: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 23: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 20: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 21: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 28: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 29: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 38: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 46: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 47: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 39: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 19: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 18: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 32: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 33: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 57: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 56: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 50: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 51: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 63: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 62: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 58: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 59: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 41: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 34: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 40: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 35: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 24: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 25: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 26: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 27: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 42: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 43: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 60: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 36: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 54: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 61: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 48: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 49: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 70: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 71: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 37: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 55: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 52: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 30: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 31: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 44: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 53: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 64: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 66: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 67: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 45: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 65: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 68: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 69: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+Reading time is 75.818
+Elapsed time is 128.113
+Writing time is 0.327
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=10, 207 sec
+--------------------------------
+Proc 18: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 19: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 21: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 20: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 24: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 25: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 22: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 23: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 36: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 37: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 34: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 35: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 57: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 56: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 54: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 55: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 44: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 45: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 30: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 31: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 52: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 29: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 28: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 38: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 39: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 53: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 40: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 41: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 26: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 27: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 42: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 43: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 64: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 50: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 51: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 46: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 47: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 70: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 65: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 48: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 71: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 49: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 32: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 69: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 58: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 68: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 60: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 61: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 67: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 33: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 62: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 66: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 59: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 63: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+Reading time is 41.589
+Elapsed time is 1062.046
+Writing time is 2.576
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=20, 1108 sec
+MPI process 0 is on GPU 0
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 16 is on GPU 0
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 14 is on GPU 0
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 50 is on GPU 0
+--------------------------------
+Proc 50: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 46 is on GPU 0
+--------------------------------
+Proc 46: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 52 is on GPU 0
+--------------------------------
+Proc 52: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 12 is on GPU 0
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 10 is on GPU 0
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 30 is on GPU 0
+--------------------------------
+Proc 30: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 24 is on GPU 0
+--------------------------------
+Proc 24: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 8 is on GPU 0
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 48 is on GPU 0
+--------------------------------
+Proc 48: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 70 is on GPU 0
+--------------------------------
+Proc 70: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 62 is on GPU 0
+--------------------------------
+Proc 62: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 60 is on GPU 0
+--------------------------------
+Proc 60: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 64 is on GPU 0
+--------------------------------
+Proc 64: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 56 is on GPU 0
+--------------------------------
+Proc 56: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 28 is on GPU 0
+--------------------------------
+Proc 28: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 32 is on GPU 0
+--------------------------------
+Proc 32: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 40 is on GPU 0
+--------------------------------
+Proc 40: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 44 is on GPU 0
+--------------------------------
+Proc 44: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 54 is on GPU 0
+--------------------------------
+Proc 54: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 18 is on GPU 0
+--------------------------------
+Proc 18: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 34 is on GPU 0
+--------------------------------
+Proc 34: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 2 is on GPU 0
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 68 is on GPU 0
+--------------------------------
+Proc 68: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 42 is on GPU 0
+--------------------------------
+Proc 42: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 17 is on GPU 1
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 15 is on GPU 1
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 1 is on GPU 1
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 51 is on GPU 1
+--------------------------------
+Proc 51: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 47 is on GPU 1
+--------------------------------
+Proc 47: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 11 is on GPU 1
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 13 is on GPU 1
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 53 is on GPU 1
+--------------------------------
+Proc 53: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 71 is on GPU 1
+--------------------------------
+Proc 71: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 69 is on GPU 1
+--------------------------------
+Proc 69: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 49 is on GPU 1
+--------------------------------
+Proc 49: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 41 is on GPU 1
+--------------------------------
+Proc 41: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 31 is on GPU 1
+--------------------------------
+Proc 31: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 65 is on GPU 1
+--------------------------------
+Proc 65: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 61 is on GPU 1
+--------------------------------
+Proc 61: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 25 is on GPU 1
+--------------------------------
+Proc 25: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 57 is on GPU 1
+--------------------------------
+Proc 57: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 63 is on GPU 1
+--------------------------------
+Proc 63: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 19 is on GPU 1
+--------------------------------
+Proc 19: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 35 is on GPU 1
+--------------------------------
+Proc 35: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 29 is on GPU 1
+--------------------------------
+Proc 29: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 33 is on GPU 1
+--------------------------------
+Proc 33: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 45 is on GPU 1
+--------------------------------
+Proc 45: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 3 is on GPU 1
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 9 is on GPU 1
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 55 is on GPU 1
+--------------------------------
+Proc 55: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 20 is on GPU 0
+--------------------------------
+Proc 20: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 22 is on GPU 0
+--------------------------------
+Proc 22: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 38 is on GPU 0
+--------------------------------
+Proc 38: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 6 is on GPU 0
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 43 is on GPU 1
+--------------------------------
+Proc 43: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 58 is on GPU 0
+--------------------------------
+Proc 58: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 4 is on GPU 0
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 66 is on GPU 0
+--------------------------------
+Proc 66: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 26 is on GPU 0
+--------------------------------
+Proc 26: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 21 is on GPU 1
+--------------------------------
+Proc 21: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 23 is on GPU 1
+--------------------------------
+Proc 23: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 39 is on GPU 1
+--------------------------------
+Proc 39: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 7 is on GPU 1
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 59 is on GPU 1
+--------------------------------
+Proc 59: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 5 is on GPU 1
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 67 is on GPU 1
+--------------------------------
+Proc 67: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 27 is on GPU 1
+--------------------------------
+Proc 27: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 36 is on GPU 0
+--------------------------------
+Proc 36: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 37 is on GPU 1
+--------------------------------
+Proc 37: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+num_data_chunks 12
+line here 928
+line here 928
+line here 928
+line here 928
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 937
+line here 951
+Reading time is 47.621
+Elapsed time is 40.382
+Writing time is 0.510
+===================================
+PHDF5 tests finished with no errors
+===================================
+gpu run , 91 sec
+input_file =  hdf5t/sample_kinase_phosphatase_protease.h5
+save csv =  True
+validate =  False
+keys= ['cosine', 'generalised', 'normal', 'sarika', 'start_loc', 'wu']
+protein_file_name: hdf5t/sample_kinase_phosphatase_protease.json
+Saving csv in: hdf5t/sample_kinase_phosphatase_protease.h5_res_csv
+------------------------------------------------------
+Running PBS epilogue script    - 29-Apr-2019 15:19:03
+------------------------------------------------------
+Checking node qb384 (MS)
+Checking node qb419 ok
+Checking node qb418 ok
+Checking node qb417 ok
+Checking node qb416 ok
+Checking node qb415 ok
+Checking node qb414 ok
+Checking node qb413 ok
+Checking node qb412 ok
+Checking node qb411 ok
+Checking node qb410 ok
+Checking node qb409 ok
+Checking node qb408 ok
+Checking node qb407 ok
+Checking node qb406 ok
+Checking node qb405 ok
+Checking node qb404 ok
+Checking node qb403 ok
+Checking node qb402 ; modules change (nvidia_uvm 769973 <;) ; ok
+Checking node qb401 ok
+Checking node qb400 ok
+Checking node qb399 ok
+Checking node qb398 ok
+Checking node qb397 ok
+Checking node qb396 ok
+Checking node qb395 ok
+Checking node qb394 ok
+Checking node qb393 ok
+Checking node qb392 ok
+Checking node qb391 ok
+Checking node qb390 ok
+Checking node qb389 ok
+Checking node qb388 ok
+Checking node qb387 ok
+Checking node qb386 ok
+Checking node qb385 ok
+Checking node qb384 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 29-Apr-2019 15:20:07
+------------------------------------------------------
+Exit Status:     0
+Job ID:          643220.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn36_p72.pbs
+Session Id:      55052
+Resource Limits: ncpus=1,neednodes=36:ppn=20,nodes=36:ppn=20,walltime=72:00:00
+Resources Used:  cput=08:07:57,mem=714672kb,vmem=1186192kb,walltime=00:49:52
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb384
+Process id:      56700
+------------------------------------------------------

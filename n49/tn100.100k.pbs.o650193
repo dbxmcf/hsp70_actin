@@ -1,0 +1,1173 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    650193.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      21-May-2019 07:50
+Node:      qb025 (34417)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb025
+qb043
+qb044
+qb045
+qb046
+qb051
+qb052
+qb054
+qb055
+qb056
+qb057
+qb058
+qb059
+qb060
+qb062
+qb078
+qb079
+qb080
+qb081
+qb082
+qb083
+qb084
+qb085
+qb086
+qb087
+qb088
+qb089
+qb090
+qb092
+qb093
+qb094
+qb095
+qb096
+qb097
+qb098
+qb101
+qb112
+qb113
+qb114
+qb115
+qb116
+qb117
+qb118
+qb119
+qb124
+qb127
+qb132
+qb133
+qb134
+qb135
+qb146
+qb147
+qb148
+qb149
+qb150
+qb151
+qb152
+qb153
+qb154
+qb155
+qb156
+qb157
+qb158
+qb159
+qb160
+qb161
+qb162
+qb163
+qb164
+qb165
+qb166
+qb167
+qb168
+qb169
+qb170
+qb171
+qb172
+qb173
+qb174
+qb175
+qb176
+qb177
+qb178
+qb179
+qb180
+qb184
+qb185
+qb186
+qb187
+qb188
+qb191
+qb192
+qb193
+qb194
+qb198
+qb205
+qb206
+qb207
+qb208
+qb213
+
+A total of 2000 processors on 100 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb025 07:50:57 
+Checking node qb043 07:50:59 
+Checking node qb044 07:51:01 
+Checking node qb045 07:51:02 
+Checking node qb046 07:51:04 
+Checking node qb051 07:51:06 
+Checking node qb052 07:51:08 
+Checking node qb054 07:51:10 
+Checking node qb055 07:51:11 
+Checking node qb056 07:51:13 
+Checking node qb057 07:51:15 
+Checking node qb058 07:51:17 
+Checking node qb059 07:51:18 
+Checking node qb060 07:51:20 
+Checking node qb062 07:51:22 
+Checking node qb078 07:51:24 
+Checking node qb079 07:51:26 
+Checking node qb080 07:51:27 
+Checking node qb081 07:51:29 
+Checking node qb082 07:51:31 
+Checking node qb083 07:51:32 
+Checking node qb084 07:51:34 
+Checking node qb085 07:51:36 
+Checking node qb086 07:51:37 
+Checking node qb087 07:51:39 
+Checking node qb088 07:51:41 
+Checking node qb089 07:51:43 
+Checking node qb090 07:51:44 
+Checking node qb092 07:51:46 
+Checking node qb093 07:51:48 
+Checking node qb094 07:51:49 
+Checking node qb095 07:51:51 
+Checking node qb096 07:51:53 
+Checking node qb097 07:51:55 
+Checking node qb098 07:51:56 
+Checking node qb101 07:51:58 
+Checking node qb112 07:52:00 
+Checking node qb113 07:52:01 
+Checking node qb114 07:52:03 
+Checking node qb115 07:52:05 
+Checking node qb116 07:52:07 
+Checking node qb117 07:52:08 
+Checking node qb118 07:52:10 
+Checking node qb119 07:52:12 
+Checking node qb124 07:52:13 
+Checking node qb127 07:52:15 
+Checking node qb132 07:52:17 
+Checking node qb133 07:52:18 
+Checking node qb134 07:52:20 
+Checking node qb135 07:52:22 
+Checking node qb146 07:52:24 
+Checking node qb147 07:52:25 
+Checking node qb148 07:52:27 
+Checking node qb149 07:52:29 
+Checking node qb150 07:52:30 
+Checking node qb151 07:52:32 
+Checking node qb152 07:52:34 
+Checking node qb153 07:52:35 
+Checking node qb154 07:52:37 
+Checking node qb155 07:52:39 
+Checking node qb156 07:52:40 
+Checking node qb157 07:52:42 
+Checking node qb158 07:52:44 
+Checking node qb159 07:52:46 
+Checking node qb160 07:52:47 
+Checking node qb161 07:52:49 
+Checking node qb162 07:52:51 
+Checking node qb163 07:52:52 
+Checking node qb164 07:52:54 
+Checking node qb165 07:52:56 
+Checking node qb166 07:52:57 
+Checking node qb167 07:52:59 
+Checking node qb168 07:53:01 
+Checking node qb169 07:53:03 
+Checking node qb170 07:53:04 
+Checking node qb171 07:53:06 
+Checking node qb172 07:53:08 
+Checking node qb173 07:53:09 
+Checking node qb174 07:53:11 
+Checking node qb175 07:53:13 
+Checking node qb176 07:53:14 
+Checking node qb177 07:53:16 
+Checking node qb178 07:53:18 
+Checking node qb179 07:53:20 
+Checking node qb180 07:53:21 
+Checking node qb184 07:53:23 
+Checking node qb185 07:53:25 
+Checking node qb186 07:53:26 
+Checking node qb187 07:53:28 
+Checking node qb188 07:53:30 
+Checking node qb191 07:53:31 
+Checking node qb192 07:53:33 
+Checking node qb193 07:53:35 
+Checking node qb194 07:53:36 
+Checking node qb198 07:53:38 
+Checking node qb205 07:53:40 
+Checking node qb206 07:53:41 
+Checking node qb207 07:53:43 
+Checking node qb208 07:53:45 
+Checking node qb213 07:53:47 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 21-May-2019 07:53:47
+------------------------------------------------------
+/project/fchen14/packages/openmpi-4.0.1/install/bin/mpirun
+--------------------------------------------------------------------------
+By default, for Open MPI 4.0 and later, infiniband ports on a device
+are not used by default.  The intent is to use UCX for these devices.
+You can override this policy by setting the btl_openib_allow_ib MCA parameter
+to true.
+
+  Local host:              qb160
+  Local adapter:           mlx4_0
+  Local port:              1
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+WARNING: There was an error initializing an OpenFabrics device.
+
+  Local host:   qb160
+  Local device: mlx4_0
+--------------------------------------------------------------------------
+MPI process 128 is on GPU 0
+--------------------------------
+Proc 128: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 144 is on GPU 0
+--------------------------------
+Proc 144: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 194 is on GPU 0
+--------------------------------
+Proc 194: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 170 is on GPU 0
+--------------------------------
+Proc 170: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 146 is on GPU 0
+--------------------------------
+Proc 146: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 172 is on GPU 0
+--------------------------------
+Proc 172: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 134 is on GPU 0
+--------------------------------
+Proc 134: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 130 is on GPU 0
+--------------------------------
+Proc 130: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 132 is on GPU 0
+--------------------------------
+Proc 132: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 174 is on GPU 0
+--------------------------------
+Proc 174: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 104 is on GPU 0
+--------------------------------
+Proc 104: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 164 is on GPU 0
+--------------------------------
+Proc 164: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 196 is on GPU 0
+--------------------------------
+Proc 196: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 186 is on GPU 0
+--------------------------------
+Proc 186: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 148 is on GPU 0
+--------------------------------
+Proc 148: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 188 is on GPU 0
+--------------------------------
+Proc 188: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 198 is on GPU 0
+--------------------------------
+Proc 198: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 138 is on GPU 0
+--------------------------------
+Proc 138: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 154 is on GPU 0
+--------------------------------
+Proc 154: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 126 is on GPU 0
+--------------------------------
+Proc 126: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 192 is on GPU 0
+--------------------------------
+Proc 192: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 190 is on GPU 0
+--------------------------------
+Proc 190: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 182 is on GPU 0
+--------------------------------
+Proc 182: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 184 is on GPU 0
+--------------------------------
+Proc 184: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 152 is on GPU 0
+--------------------------------
+Proc 152: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 158 is on GPU 0
+--------------------------------
+Proc 158: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 136 is on GPU 0
+--------------------------------
+Proc 136: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 20 is on GPU 0
+--------------------------------
+Proc 20: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 142 is on GPU 0
+--------------------------------
+Proc 142: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 160 is on GPU 0
+--------------------------------
+Proc 160: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 150 is on GPU 0
+--------------------------------
+Proc 150: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 16 is on GPU 0
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 168 is on GPU 0
+--------------------------------
+Proc 168: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 156 is on GPU 0
+--------------------------------
+Proc 156: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 140 is on GPU 0
+--------------------------------
+Proc 140: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 162 is on GPU 0
+--------------------------------
+Proc 162: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 178 is on GPU 0
+--------------------------------
+Proc 178: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 18 is on GPU 0
+--------------------------------
+Proc 18: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 180 is on GPU 0
+--------------------------------
+Proc 180: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 166 is on GPU 0
+--------------------------------
+Proc 166: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 32 is on GPU 0
+--------------------------------
+Proc 32: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 176 is on GPU 0
+--------------------------------
+Proc 176: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 34 is on GPU 0
+--------------------------------
+Proc 34: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 98 is on GPU 0
+--------------------------------
+Proc 98: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 38 is on GPU 0
+--------------------------------
+Proc 38: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 36 is on GPU 0
+--------------------------------
+Proc 36: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 122 is on GPU 0
+--------------------------------
+Proc 122: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 30 is on GPU 0
+--------------------------------
+Proc 30: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 78 is on GPU 0
+--------------------------------
+Proc 78: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 129 is on GPU 1
+--------------------------------
+Proc 129: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 171 is on GPU 1
+--------------------------------
+Proc 171: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 145 is on GPU 1
+--------------------------------
+Proc 145: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 131 is on GPU 1
+--------------------------------
+Proc 131: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 147 is on GPU 1
+--------------------------------
+Proc 147: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 173 is on GPU 1
+--------------------------------
+Proc 173: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 197 is on GPU 1
+--------------------------------
+Proc 197: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 195 is on GPU 1
+--------------------------------
+Proc 195: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 105 is on GPU 1
+--------------------------------
+Proc 105: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 175 is on GPU 1
+--------------------------------
+Proc 175: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 187 is on GPU 1
+--------------------------------
+Proc 187: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 135 is on GPU 1
+--------------------------------
+Proc 135: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 165 is on GPU 1
+--------------------------------
+Proc 165: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 159 is on GPU 1
+--------------------------------
+Proc 159: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 133 is on GPU 1
+--------------------------------
+Proc 133: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 199 is on GPU 1
+--------------------------------
+Proc 199: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 191 is on GPU 1
+--------------------------------
+Proc 191: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 17 is on GPU 1
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 193 is on GPU 1
+--------------------------------
+Proc 193: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 90 is on GPU 0
+--------------------------------
+Proc 90: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 149 is on GPU 1
+--------------------------------
+Proc 149: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 153 is on GPU 1
+--------------------------------
+Proc 153: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 155 is on GPU 1
+--------------------------------
+Proc 155: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 21 is on GPU 1
+--------------------------------
+Proc 21: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 127 is on GPU 1
+--------------------------------
+Proc 127: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 139 is on GPU 1
+--------------------------------
+Proc 139: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 189 is on GPU 1
+--------------------------------
+Proc 189: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 143 is on GPU 1
+--------------------------------
+Proc 143: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 183 is on GPU 1
+--------------------------------
+Proc 183: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 161 is on GPU 1
+--------------------------------
+Proc 161: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 185 is on GPU 1
+--------------------------------
+Proc 185: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 151 is on GPU 1
+--------------------------------
+Proc 151: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 137 is on GPU 1
+--------------------------------
+Proc 137: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 60 is on GPU 0
+--------------------------------
+Proc 60: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 169 is on GPU 1
+--------------------------------
+Proc 169: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 42 is on GPU 0
+--------------------------------
+Proc 42: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 80 is on GPU 0
+--------------------------------
+Proc 80: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 141 is on GPU 1
+--------------------------------
+Proc 141: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 163 is on GPU 1
+--------------------------------
+Proc 163: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 70 is on GPU 0
+--------------------------------
+Proc 70: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 157 is on GPU 1
+--------------------------------
+Proc 157: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 19 is on GPU 1
+--------------------------------
+Proc 19: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 74 is on GPU 0
+--------------------------------
+Proc 74: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 54 is on GPU 0
+--------------------------------
+Proc 54: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 72 is on GPU 0
+--------------------------------
+Proc 72: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 56 is on GPU 0
+--------------------------------
+Proc 56: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 48 is on GPU 0
+--------------------------------
+Proc 48: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 33 is on GPU 1
+--------------------------------
+Proc 33: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 167 is on GPU 1
+--------------------------------
+Proc 167: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 82 is on GPU 0
+--------------------------------
+Proc 82: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 179 is on GPU 1
+--------------------------------
+Proc 179: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 52 is on GPU 0
+--------------------------------
+Proc 52: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 181 is on GPU 1
+--------------------------------
+Proc 181: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 177 is on GPU 1
+--------------------------------
+Proc 177: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 86 is on GPU 0
+--------------------------------
+Proc 86: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 68 is on GPU 0
+--------------------------------
+Proc 68: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 62 is on GPU 0
+--------------------------------
+Proc 62: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 64 is on GPU 0
+--------------------------------
+Proc 64: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 76 is on GPU 0
+--------------------------------
+Proc 76: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 50 is on GPU 0
+--------------------------------
+Proc 50: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 92 is on GPU 0
+--------------------------------
+Proc 92: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 99 is on GPU 1
+--------------------------------
+Proc 99: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 35 is on GPU 1
+--------------------------------
+Proc 35: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 96 is on GPU 0
+--------------------------------
+Proc 96: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 46 is on GPU 0
+--------------------------------
+Proc 46: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 39 is on GPU 1
+--------------------------------
+Proc 39: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 58 is on GPU 0
+--------------------------------
+Proc 58: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 37 is on GPU 1
+--------------------------------
+Proc 37: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 44 is on GPU 0
+--------------------------------
+Proc 44: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 100 is on GPU 0
+--------------------------------
+Proc 100: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 123 is on GPU 1
+--------------------------------
+Proc 123: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 40 is on GPU 0
+--------------------------------
+Proc 40: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 66 is on GPU 0
+--------------------------------
+Proc 66: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 31 is on GPU 1
+--------------------------------
+Proc 31: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 79 is on GPU 1
+--------------------------------
+Proc 79: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 88 is on GPU 0
+--------------------------------
+Proc 88: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 0 is on GPU 0
+Input file is: asdf/ta100000.h5
+Output file is: asdf/ta100000.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 116 is on GPU 0
+--------------------------------
+Proc 116: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 91 is on GPU 1
+--------------------------------
+Proc 91: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 110 is on GPU 0
+--------------------------------
+Proc 110: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 81 is on GPU 1
+--------------------------------
+Proc 81: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 106 is on GPU 0
+--------------------------------
+Proc 106: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 61 is on GPU 1
+--------------------------------
+Proc 61: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 114 is on GPU 0
+--------------------------------
+Proc 114: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 43 is on GPU 1
+--------------------------------
+Proc 43: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 4 is on GPU 0
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 55 is on GPU 1
+--------------------------------
+Proc 55: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 71 is on GPU 1
+--------------------------------
+Proc 71: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 75 is on GPU 1
+--------------------------------
+Proc 75: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 124 is on GPU 0
+--------------------------------
+Proc 124: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 73 is on GPU 1
+--------------------------------
+Proc 73: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 22 is on GPU 0
+--------------------------------
+Proc 22: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 49 is on GPU 1
+--------------------------------
+Proc 49: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 57 is on GPU 1
+--------------------------------
+Proc 57: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 83 is on GPU 1
+--------------------------------
+Proc 83: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 118 is on GPU 0
+--------------------------------
+Proc 118: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 53 is on GPU 1
+--------------------------------
+Proc 53: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 94 is on GPU 0
+--------------------------------
+Proc 94: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 87 is on GPU 1
+--------------------------------
+Proc 87: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 108 is on GPU 0
+--------------------------------
+Proc 108: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 112 is on GPU 0
+--------------------------------
+Proc 112: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 28 is on GPU 0
+--------------------------------
+Proc 28: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 2 is on GPU 0
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 102 is on GPU 0
+--------------------------------
+Proc 102: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 69 is on GPU 1
+--------------------------------
+Proc 69: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 77 is on GPU 1
+--------------------------------
+Proc 77: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 12 is on GPU 0
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 63 is on GPU 1
+--------------------------------
+Proc 63: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 65 is on GPU 1
+--------------------------------
+Proc 65: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 84 is on GPU 0
+--------------------------------
+Proc 84: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 51 is on GPU 1
+--------------------------------
+Proc 51: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 10 is on GPU 0
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 8 is on GPU 0
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 6 is on GPU 0
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 120 is on GPU 0
+--------------------------------
+Proc 120: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 93 is on GPU 1
+--------------------------------
+Proc 93: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 14 is on GPU 0
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 47 is on GPU 1
+--------------------------------
+Proc 47: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 97 is on GPU 1
+--------------------------------
+Proc 97: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 26 is on GPU 0
+--------------------------------
+Proc 26: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 24 is on GPU 0
+--------------------------------
+Proc 24: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 59 is on GPU 1
+--------------------------------
+Proc 59: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 45 is on GPU 1
+--------------------------------
+Proc 45: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 101 is on GPU 1
+--------------------------------
+Proc 101: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 41 is on GPU 1
+--------------------------------
+Proc 41: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 67 is on GPU 1
+--------------------------------
+Proc 67: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 89 is on GPU 1
+--------------------------------
+Proc 89: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 1 is on GPU 1
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 117 is on GPU 1
+--------------------------------
+Proc 117: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 111 is on GPU 1
+--------------------------------
+Proc 111: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 115 is on GPU 1
+--------------------------------
+Proc 115: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 107 is on GPU 1
+--------------------------------
+Proc 107: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 5 is on GPU 1
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 23 is on GPU 1
+--------------------------------
+Proc 23: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 125 is on GPU 1
+--------------------------------
+Proc 125: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 109 is on GPU 1
+--------------------------------
+Proc 109: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 119 is on GPU 1
+--------------------------------
+Proc 119: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 95 is on GPU 1
+--------------------------------
+Proc 95: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 29 is on GPU 1
+--------------------------------
+Proc 29: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 3 is on GPU 1
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 13 is on GPU 1
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 113 is on GPU 1
+--------------------------------
+Proc 113: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 103 is on GPU 1
+--------------------------------
+Proc 103: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 85 is on GPU 1
+--------------------------------
+Proc 85: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 11 is on GPU 1
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 121 is on GPU 1
+--------------------------------
+Proc 121: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 9 is on GPU 1
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 15 is on GPU 1
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 7 is on GPU 1
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 27 is on GPU 1
+--------------------------------
+Proc 27: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 25 is on GPU 1
+--------------------------------
+Proc 25: *** testing PHDF5 dataset collective read...
+--------------------------------
+[qb025:36010] 199 more processes have sent help message help-mpi-btl-openib.txt / ib port not selected
+[qb025:36010] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[qb025:36010] 199 more processes have sent help message help-mpi-btl-openib.txt / error in device init
+Reading time is 2024.988
+Elapsed time is 11245.385
+Writing time is 289.770
+===================================
+PHDF5 tests finished with no errors
+===================================
+------------------------------------------------------
+Running PBS epilogue script    - 21-May-2019 11:40:03
+------------------------------------------------------
+Checking node qb025 (MS)
+-> Killing process of fchen14: -bash
+Checking node qb213 ok
+Checking node qb208 ok
+Checking node qb207 ok
+Checking node qb206 ok
+Checking node qb205 ok
+Checking node qb198 ok
+Checking node qb194 ok
+Checking node qb193 ok
+Checking node qb192 ok
+Checking node qb191 ok
+Checking node qb188 ok
+Checking node qb187 ok
+Checking node qb186 ok
+Checking node qb185 ok
+Checking node qb184 ok
+Checking node qb180 ok
+Checking node qb179 ok
+Checking node qb178 ok
+Checking node qb177 ok
+Checking node qb176 ok
+Checking node qb175 ok
+Checking node qb174 ok
+Checking node qb173 ok
+Checking node qb172 ok
+Checking node qb171 ok
+Checking node qb170 ok
+Checking node qb169 ok
+Checking node qb168 ok
+Checking node qb167 ok
+Checking node qb166 ok
+Checking node qb165 ok
+Checking node qb164 ok
+Checking node qb163 ok
+Checking node qb162 ok
+Checking node qb161 ok
+Checking node qb160 ok
+Checking node qb159 ok
+Checking node qb158 ok
+Checking node qb157 ok
+Checking node qb156 ok
+Checking node qb155 ok
+Checking node qb154 ok
+Checking node qb153 ok
+Checking node qb152 ok
+Checking node qb151 ok
+Checking node qb150 ok
+Checking node qb149 ok
+Checking node qb148 ok
+Checking node qb147 ok
+Checking node qb146 ok
+Checking node qb135 ok
+Checking node qb134 ok
+Checking node qb133 ok
+Checking node qb132 ok
+Checking node qb127 ok
+Checking node qb124 ok
+Checking node qb119 ok
+Checking node qb118 ok
+Checking node qb117 ok
+Checking node qb116 ok
+Checking node qb115 ok
+Checking node qb114 ok
+Checking node qb113 ok
+Checking node qb112 ok
+Checking node qb101 ok
+Checking node qb098 ok
+Checking node qb097 ok
+Checking node qb096 ok
+Checking node qb095 ok
+Checking node qb094 ok
+Checking node qb093 ok
+Checking node qb092 ok
+Checking node qb090 ok
+Checking node qb089 ok
+Checking node qb088 ok
+Checking node qb087 ok
+Checking node qb086 ok
+Checking node qb085 ok
+Checking node qb084 ok
+Checking node qb083 ok
+Checking node qb082 ok
+Checking node qb081 ok
+Checking node qb080 ok
+Checking node qb079 ok
+Checking node qb078 ok
+Checking node qb062 ok
+Checking node qb060 ok
+Checking node qb059 ok
+Checking node qb058 ok
+Checking node qb057 ok
+Checking node qb056 ok
+Checking node qb055 ok
+Checking node qb054 ok
+Checking node qb052 ok
+Checking node qb051 ok
+Checking node qb046 ok
+Checking node qb045 ok
+Checking node qb044 ok
+Checking node qb043 ok
+Checking node qb025 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 21-May-2019 11:43:25
+------------------------------------------------------
+Exit Status:     0
+Job ID:          650193.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn100.100k.pbs
+Session Id:      34416
+Resource Limits: ncpus=1,neednodes=100:ppn=20,nodes=100:ppn=20,walltime=10:00:00
+Resources Used:  cput=06:34:59,mem=59830512kb,vmem=242489768kb,walltime=03:46:15
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb025
+Process id:      40041
+Last status:     21-May-2019:11:05 PBS_job=650193.qb3 user=fchen14 allocation=loni_loniadmin1 queue=checkpt total_load=201.90 cpu_hours=374.05 wall_hours=2.20 unused_nodes=0 total_nodes=100 ppn=20 avg_load=2.01 avg_cpu=197% avg_mem=57350mb avg_vmem=231971mb top_proc=fchen14:pgi:qb207:113G:28G:1.9hr:102% toppm=fchen14:pgi.mpi.pacc.out:qb056:115874M:29111M gpupeak=190 node_processes=4 avg_avail_mem=2230mb min_avail_mem=726mb reverified_avg_load=2.00
+------------------------------------------------------

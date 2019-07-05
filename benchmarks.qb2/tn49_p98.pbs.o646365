@@ -1,0 +1,303 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    646365.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      08-May-2019 13:45
+Node:      qb030 (78597)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb030
+qb033
+qb037
+qb045
+qb057
+qb058
+qb060
+qb061
+qb062
+qb063
+qb067
+qb070
+qb079
+qb106
+qb107
+qb108
+qb109
+qb110
+qb111
+qb112
+qb113
+qb114
+qb115
+qb116
+qb117
+qb118
+qb119
+qb123
+qb124
+qb125
+qb126
+qb127
+qb128
+qb129
+qb130
+qb131
+qb132
+qb134
+qb135
+qb136
+qb137
+qb138
+qb139
+qb140
+qb141
+qb155
+qb156
+qb157
+qb158
+
+A total of 980 processors on 49 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb030 13:45:21 
+Checking node qb033 13:45:23 
+Checking node qb037 13:45:25 
+Checking node qb045 13:45:27 
+Checking node qb057 13:45:28 
+Checking node qb058 13:45:30 
+Checking node qb060 13:45:32 
+Checking node qb061 13:45:33 
+Checking node qb062 13:45:35 
+Checking node qb063 13:45:37 
+Checking node qb067 13:45:39 
+Checking node qb070 13:45:40 
+Checking node qb079 13:45:42 
+Checking node qb106 13:45:44 
+Checking node qb107 13:45:45 
+Checking node qb108 13:45:47 
+Checking node qb109 13:45:49 
+Checking node qb110 13:45:51 
+Checking node qb111 13:45:52 
+Checking node qb112 13:45:54 
+Checking node qb113 13:45:56 
+Checking node qb114 13:45:58 
+Checking node qb115 13:45:59 
+Checking node qb116 13:46:01 
+Checking node qb117 13:46:03 
+Checking node qb118 13:46:05 
+Checking node qb119 13:46:07 
+Checking node qb123 13:46:08 
+Checking node qb124 13:46:10 
+Checking node qb125 13:46:12 
+Checking node qb126 13:46:13 
+Checking node qb127 13:46:15 
+Checking node qb128 13:46:17 
+Checking node qb129 13:46:19 
+Checking node qb130 13:46:20 
+Checking node qb131 13:46:22 
+Checking node qb132 13:46:24 
+Checking node qb134 13:46:25 
+Checking node qb135 13:46:27 
+Checking node qb136 13:46:29 
+Checking node qb137 13:46:30 
+Checking node qb138 13:46:32 
+Checking node qb139 13:46:34 
+Checking node qb140 13:46:36 
+Checking node qb141 13:46:38 
+Checking node qb155 13:46:39 
+Checking node qb156 13:46:41 
+Checking node qb157 13:46:43 
+Checking node qb158 13:46:44 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 08-May-2019 13:46:44
+------------------------------------------------------
+using 98 processes...
+--------------------------------
+Proc 86: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+--------------------------------
+Proc 87: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+--------------------------------
+Proc 92: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+--------------------------------
+Proc 80: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+--------------------------------
+Proc 81: --------------------------------
+Proc 93: *** testing PHDF5 dataset collective read...
+--------------------------------
+*** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+--------------------------------
+Proc 88: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 89: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+--------------------------------
+Proc 96: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+--------------------------------
+Proc 97: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+--------------------------------
+Proc 90: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+--------------------------------
+Proc 91: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+--------------------------------
+Proc 94: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 95: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+--------------------------------
+Proc 84: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 85: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+--------------------------------
+Proc 66: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+--------------------------------
+Proc 67: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+--------------------------------
+Proc 54: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+--------------------------------
+Proc 55: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+--------------------------------
+Proc 72: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+--------------------------------
+Proc 73: *** testing PHDF5 dataset collective read...
+--------------------------------
+Collective read test on file hdf5t/sample_kinase_phosphatase_protease.h5
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+H5Pcreate access succeed
+=>> PBS: job killed: walltime 18025 exceeded limit 18000
+------------------------------------------------------
+Running PBS epilogue script    - 08-May-2019 18:47:10
+------------------------------------------------------
+Checking node qb030 (MS)
+-> Killing process of fchen14: -bash
+Checking node qb158 ok
+Checking node qb157 ok
+Checking node qb156 ok
+Checking node qb155 ok
+Checking node qb141 ok
+Checking node qb140 ok
+Checking node qb139 ok
+Checking node qb138 ok
+Checking node qb137 ok
+Checking node qb136 ok
+Checking node qb135 ok
+Checking node qb134 ok
+Checking node qb132 ok
+Checking node qb131 ok
+Checking node qb130 ok
+Checking node qb129 ok
+Checking node qb128 ok
+Checking node qb127 ok
+Checking node qb126 ok
+Checking node qb125 ok
+Checking node qb124 ok
+Checking node qb123 ok
+Checking node qb119 ok
+Checking node qb118 ok
+Checking node qb117 ok
+Checking node qb116 ok
+Checking node qb115 ok
+Checking node qb114 ok
+Checking node qb113 ok
+Checking node qb112 ok
+Checking node qb111 ok
+Checking node qb110 ok
+Checking node qb109 ok
+Checking node qb108 ok
+Checking node qb107 ok
+Checking node qb106 ok
+Checking node qb079 ok
+Checking node qb070 ok
+Checking node qb067 ok
+Checking node qb063 ok
+Checking node qb062 ok
+Checking node qb061 ok
+Checking node qb060 ok
+Checking node qb058 ok
+Checking node qb057 ok
+Checking node qb045 ok
+Checking node qb037 ok
+Checking node qb033 ok
+Checking node qb030 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 08-May-2019 18:48:34
+------------------------------------------------------
+Exit Status:     271
+Job ID:          646365.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn49_p98.pbs
+Session Id:      78596
+Resource Limits: ncpus=1,neednodes=49:ppn=20,nodes=49:ppn=20,walltime=05:00:00
+Resources Used:  cput=00:00:01,mem=8056kb,vmem=275444kb,walltime=05:00:25
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb030
+Process id:      84299
+Last status:     08-May-2019:18:05 PBS_job=646365.qb3 user=fchen14 allocation=loni_loniadmin1 queue=checkpt total_load=23.74 cpu_hours=79.35 wall_hours=3.41 unused_nodes=0 total_nodes=49 ppn=20 avg_load=0.48 avg_cpu=46% avg_mem=45mb avg_vmem=423mb top_proc=fchen14:pgi:qb156:102M:24M:3.4hr:100% toppm=fchen14:pgi.mpi.pomp.out:qb132:103M:25M node_processes=4 avg_avail_mem=61128mb min_avail_mem=57898mb reverified_avg_load=0.48
+------------------------------------------------------

@@ -1,0 +1,199 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    643183.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      29-Apr-2019 14:08
+Node:      qb033 (84602)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb033
+
+A total of 20 processors on 1 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb033 14:08:57 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 29-Apr-2019 14:08:57
+------------------------------------------------------
+using 2 processes...
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 2
+line here 937
+line here 937
+line here 951
+num_data_chunks 2
+line here 937
+line here 937
+line here 951
+Reading time is 72.576
+Elapsed time is 27061.619
+Writing time is 0.412
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=1, 27135 sec
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 2
+line here 937
+line here 937
+line here 951
+num_data_chunks 2
+line here 937
+line here 937
+line here 951
+Reading time is 75.784
+Elapsed time is 13997.331
+Writing time is 0.248
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=2, 14074 sec
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 2
+line here 937
+line here 937
+line here 951
+num_data_chunks 2
+line here 937
+line here 937
+line here 951
+Reading time is 56.288
+Elapsed time is 6133.965
+Writing time is 0.263
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=5, 6190 sec
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 2
+line here 937
+line here 937
+line here 951
+num_data_chunks 2
+line here 937
+line here 937
+line here 951
+Reading time is 57.479
+Elapsed time is 3183.748
+Writing time is 0.446
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=10, 3242 sec
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 2
+line here 937
+line here 937
+line here 951
+num_data_chunks 2
+line here 937
+line here 937
+line here 951
+Reading time is 35.300
+Elapsed time is 33244.558
+Writing time is 0.466
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=20, 33281 sec
+MPI process 0 is on GPU 0
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 1 is on GPU 1
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+num_data_chunks 2
+line here 937
+line here 937
+line here 951
+num_data_chunks 2
+line here 937
+line here 937
+line here 951
+Reading time is 87.447
+Out of memory allocating 5230106780 bytes of device memory
+total/free CUDA memory: 5977800704/598474752
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x2de4250 device:0x1304120000 size:14416 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2de7ab0 device:0x1304123a00 size:14416 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aae60000010 device:0x1304220000 size:5230106780 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:14848 thread:1
+allocated block device:0x1304123a00 size:14848 thread:1
+allocated block device:0x1304220000 size:5230107136 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+gpu run , 96 sec
+input_file =  hdf5t/sample_kinase_phosphatase_protease.h5
+save csv =  True
+validate =  False
+keys= ['cosine', 'generalised', 'normal', 'sarika', 'start_loc', 'wu']
+protein_file_name: hdf5t/sample_kinase_phosphatase_protease.json
+Saving csv in: hdf5t/sample_kinase_phosphatase_protease.h5_res_csv
+------------------------------------------------------
+Running PBS epilogue script    - 30-Apr-2019 13:30:18
+------------------------------------------------------
+Checking node qb033 (MS)
+Checking node qb033 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 30-Apr-2019 13:30:19
+------------------------------------------------------
+Exit Status:     0
+Job ID:          643183.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn1_p2.pbs
+Session Id:      84601
+Resource Limits: ncpus=1,neednodes=1:ppn=20,nodes=1:ppn=20,walltime=72:00:00
+Resources Used:  cput=250:09:43,mem=713948kb,vmem=1172688kb,walltime=23:21:23
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb033
+Process id:      98771
+Last status:     30-Apr-2019:13:05 PBS_job=643183.qb3 user=fchen14 allocation=loni_loniadmin1 queue=checkpt total_load=39.98 cpu_hours=158.00 wall_hours=21.96 unused_nodes=0 total_nodes=1 ppn=20 avg_load=39.98 avg_cpu=2004% avg_mem=20080mb avg_vmem=20761mb top_proc=fchen14:pgi:qb033:10.0G:9.8G:79.6hr:1030% toppm=fchen14:pgi.mpi.pomp.out:qb033:10278M:10053M node_processes=6 avg_avail_mem=42187mb min_avail_mem=42187mb reverified_avg_load=40.04
+------------------------------------------------------

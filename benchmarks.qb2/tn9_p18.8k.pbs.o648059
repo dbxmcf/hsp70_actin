@@ -1,0 +1,571 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    648059.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      14-May-2019 16:43
+Node:      qb023 (58537)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb023
+qb028
+qb099
+qb118
+qb146
+qb147
+qb162
+qb163
+qb164
+
+A total of 180 processors on 9 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb023 16:43:54 
+Checking node qb028 16:43:56 
+Checking node qb099 16:43:57 
+Checking node qb118 16:43:59 
+Checking node qb146 16:44:01 
+Checking node qb147 16:44:02 
+Checking node qb162 16:44:04 
+Checking node qb163 16:44:06 
+Checking node qb164 16:44:08 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 14-May-2019 16:44:08
+------------------------------------------------------
+using 18 processes...
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 258.634
+Elapsed time is 17343.442
+Writing time is 2.142
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=1, 17606 sec
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 255.611
+Elapsed time is 8966.174
+Writing time is 1.536
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=2, 9225 sec
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 288.255
+Elapsed time is 3947.323
+Writing time is 1.909
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=5, 4240 sec
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 284.631
+Elapsed time is 2085.023
+Writing time is 2.086
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run  trd=10, 2373 sec
+MPI process 2 is on GPU 0
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 10 is on GPU 0
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 4 is on GPU 0
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 0 is on GPU 0
+Input file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 11 is on GPU 1
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 3 is on GPU 1
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 1 is on GPU 1
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 5 is on GPU 1
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 12 is on GPU 0
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 13 is on GPU 1
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 16 is on GPU 0
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 14 is on GPU 0
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 8 is on GPU 0
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 17 is on GPU 1
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 6 is on GPU 0
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 15 is on GPU 1
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 9 is on GPU 1
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 7 is on GPU 1
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 275.050
+Out of memory allocating 4295085282 bytes of device memory
+total/free CUDA memory: 5977800704/1599864832
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x2b750f5602b0 device:0x1308240000 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2b750f562f70 device:0x1308242e00 size:11432 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2b7521001010 device:0x1308340000 size:4298090940 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:11776 thread:1
+allocated block device:0x1308242e00 size:11776 thread:1
+allocated block device:0x1308340000 size:4298091008 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 4295085282 bytes of device memory
+Out of memory allocating 4298090940 bytes of device memory
+total/free CUDA memory: 5977800704/1599864832
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+total/free CUDA memory: 5977800704/1530527744
+host:0x27a82b0 device:0x1308240000 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x27aaf70 device:0x1308242e00 size:11432 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2b8da0000010 device:0x1308340000 size:4298090940 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:11776 thread:1
+allocated block device:0x1308242e00 size:11776 thread:1
+allocated block device:0x1308340000 size:4298091008 thread:1
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x2ba85f482210 device:0x1304120000 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2ba85f484ed0 device:0x1304122e00 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_b
+call to cuMemAlloc returned error 2: Out of memory
+
+host:0x2ba870000010 device:0x1304220000 size:4298090940 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:11776 thread:1
+allocated block device:0x1304122e00 size:11776 thread:1
+allocated block device:0x1304220000 size:4298091008 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 4295085282 bytes of device memory
+total/free CUDA memory: 5977800704/1533542400
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x2ae7d5c82210 device:0x1304120000 size:11432 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2ae7d5c84ec0 device:0x1304122e00 size:11432 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2ae7f0000010 device:0x1304220000 size:4295085282 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:11776 thread:1
+allocated block device:0x1304122e00 size:11776 thread:1
+allocated block device:0x1304220000 size:4295085568 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 4295085282 bytes of device memory
+total/free CUDA memory: 5977800704/1533149184
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x3a492d0 device:0x1304120000 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x3a4bf90 device:0x1304122e00 size:11432 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2b9a00000010 device:0x1304220000 size:4298090940 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:11776 thread:1
+allocated block device:0x1304122e00 size:11776 thread:1
+allocated block device:0x1304220000 size:4298091008 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 4298090940 bytes of device memory
+total/free CUDA memory: 5977800704/1530527744
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x2b016a1b32c0 device:0x1304120000 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2b016a1b5f80 device:0x1304122e00 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2b0180000010 device:0x1304220000 size:4298090940 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:11776 thread:1
+allocated block device:0x1304122e00 size:11776 thread:1
+allocated block device:0x1304220000 size:4298091008 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 4298090940 bytes of device memory
+total/free CUDA memory: 5977800704/1599864832
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x3c6d2b0 device:0x1308240000 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x3c6ff70 device:0x1308242e00 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2b7600000010 device:0x1308340000 size:4298090940 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:11776 thread:1
+allocated block device:0x1308242e00 size:11776 thread:1
+allocated block device:0x1308340000 size:4298091008 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 4295085282 bytes of device memory
+total/free CUDA memory: 5977800704/1530527744
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x3b182d0 device:0x1304120000 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x3b1af90 device:0x1304122e00 size:11432 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2abfd0000010 device:0x1304220000 size:4298090940 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:11776 thread:1
+allocated block device:0x1304122e00 size:11776 thread:1
+allocated block device:0x1304220000 size:4298091008 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 4298090940 bytes of device memory
+total/free CUDA memory: 5977800704/1599864832
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x2b3af65602b0 device:0x1308240000 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2b3af6562f70 device:0x1308242e00 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2b3b10000010 device:0x1308340000 size:4298090940 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:11776 thread:1
+allocated block device:0x1308242e00 size:11776 thread:1
+allocated block device:0x1308340000 size:4298091008 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 4295085282 bytes of device memory
+total/free CUDA memory: 5977800704/1599864832
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x21782b0 device:0x1308240000 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x217af70 device:0x1308242e00 size:11432 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2af7b0000010 device:0x1308340000 size:4298090940 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:11776 thread:1
+allocated block device:0x1308242e00 size:11776 thread:1
+allocated block device:0x1308340000 size:4298091008 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 4295085282 bytes of device memory
+total/free CUDA memory: 5977800704/1530527744
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x2b465d482210 device:0x1304120000 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2b465d484ed0 device:0x1304122e00 size:11432 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2b4670000010 device:0x1304220000 size:4298090940 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:11776 thread:1
+allocated block device:0x1304122e00 size:11776 thread:1
+allocated block device:0x1304220000 size:4298091008 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 4298090940 bytes of device memory
+total/free CUDA memory: 5977800704/1533083648
+Present table dump for device[1]: NVIDIA Tesla GPU 0, compute capability 3.5, threadid=1
+host:0x26262d0 device:0x1304120000 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2628f90 device:0x1304122e00 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2b7cb0000010 device:0x1304220000 size:4298090940 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1304120000 size:11776 thread:1
+allocated block device:0x1304122e00 size:11776 thread:1
+allocated block device:0x1304220000 size:4298091008 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 4298090940 bytes of device memory
+total/free CUDA memory: 5977800704/1599864832
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x2b4bdcd602b0 device:0x1308240000 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2b4bdcd62f70 device:0x1308242e00 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2b4bf0000010 device:0x1308340000 size:4298090940 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:11776 thread:1
+allocated block device:0x1308242e00 size:11776 thread:1
+allocated block device:0x1308340000 size:4298091008 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+Out of memory allocating 4295085282 bytes of device memory
+total/free CUDA memory: 5977800704/1599864832
+Present table dump for device[2]: NVIDIA Tesla GPU 1, compute capability 3.5, threadid=1
+host:0x2aef547b22b0 device:0x1308240000 size:11440 presentcount:1+0 line:445 name:dvc_blk_part_a
+host:0x2aef547b4f70 device:0x1308242e00 size:11432 presentcount:1+0 line:445 name:dvc_blk_part_b
+host:0x2aef70000010 device:0x1308340000 size:4298090940 presentcount:1+0 line:445 name:dvc_blk_part_a
+allocated block device:0x1308240000 size:11776 thread:1
+allocated block device:0x1308242e00 size:11776 thread:1
+allocated block device:0x1308340000 size:4298091008 thread:1
+call to cuMemAlloc returned error 2: Out of memory
+
+[qb164:mpi_rank_16][handle_cqe] Send desc error in msg to 0, wc_opcode=0
+[qb164:mpi_rank_16][handle_cqe] Msg from 0: wc.status=12, wc.wr_id=0x2aff6022a8c8, wc.opcode=0, vbuf->phead->type=0 = MPIDI_CH3_PKT_EAGER_SEND
+[qb164:mpi_rank_16][handle_cqe] src/mpid/ch3/channels/mrail/src/gen2/ibv_channel_manager.c:548: [] Got completion with error 12, vendor code=0x81, dest rank=0
+: Invalid argument (22)
+[qb164:mpi_rank_17][handle_cqe] Send desc error in msg to 1, wc_opcode=0
+[qb164:mpi_rank_17][handle_cqe] Msg from 1: wc.status=12, wc.wr_id=0x2ae6bc38d658, wc.opcode=0, vbuf->phead->type=0 = MPIDI_CH3_PKT_EAGER_SEND
+[qb164:mpi_rank_17][handle_cqe] src/mpid/ch3/channels/mrail/src/gen2/ibv_channel_manager.c:548: [] Got completion with error 12, vendor code=0x81, dest rank=1
+: Invalid argument (22)
+gpu run , 1223 sec
+input_file =  hdf5t/sample_kinase_phosphatase_receptor_protease.h5
+save csv =  True
+validate =  False
+keys= ['cosine', 'generalised', 'normal', 'sarika', 'start_loc', 'wu']
+protein_file_name: hdf5t/sample_kinase_phosphatase_receptor_protease.json
+Traceback (most recent call last):
+  File "rebuild_mat.py", line 130, in <module>
+    with open(pn_filename) as json_file:  
+FileNotFoundError: [Errno 2] No such file or directory: 'hdf5t/sample_kinase_phosphatase_receptor_protease.json'
+------------------------------------------------------
+Running PBS epilogue script    - 15-May-2019 02:22:07
+------------------------------------------------------
+Checking node qb023 (MS)
+-> Killing process of fchen14: -bash
+Checking node qb164 ok
+Checking node qb163 ok
+Checking node qb162 ok
+Checking node qb147 ok
+Checking node qb146 ok
+Checking node qb118 ok
+Checking node qb099 ok
+Checking node qb028 ok
+Checking node qb023 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 15-May-2019 02:22:23
+------------------------------------------------------
+Exit Status:     1
+Job ID:          648059.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn9_p18.8k.pbs
+Session Id:      58536
+Resource Limits: ncpus=1,neednodes=9:ppn=20,nodes=9:ppn=20,walltime=72:00:00
+Resources Used:  cput=42:43:26,mem=7024kb,vmem=274252kb,walltime=09:38:00
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb023
+Process id:      66382
+Last status:     15-May-2019:02:05 PBS_job=648059.qb3 user=fchen14 allocation=loni_loniadmin1 queue=checkpt total_load=90.28 cpu_hours=80.33 wall_hours=8.40 unused_nodes=0 total_nodes=9 ppn=20 avg_load=10.03 avg_cpu=997% avg_mem=16601mb avg_vmem=17259mb top_proc=fchen14:pgi:qb163:8.3G:8.1G:4.4hr:501% toppm=fchen14:pgi.mpi.pomp.out:qb118:8350M:8265M node_processes=4 avg_avail_mem=44652mb min_avail_mem=42337mb reverified_avg_load=2.85
+------------------------------------------------------

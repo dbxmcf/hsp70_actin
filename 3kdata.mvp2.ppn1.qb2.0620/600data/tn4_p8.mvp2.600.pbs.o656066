@@ -1,0 +1,91 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    656066.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      08-Jun-2019 20:52
+Node:      qb021 (65461)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb021
+qb112
+qb146
+qb147
+
+A total of 80 processors on 4 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb021 20:52:44 
+Checking node qb112 20:52:45 
+Checking node qb146 20:52:47 
+Checking node qb147 20:52:49 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 08-Jun-2019 20:52:49
+------------------------------------------------------
+using 8 processes...
+mpirun: Error: unknown option "-f"
+Type 'mpirun --help' for usage.
+omp run trd=5, 1 sec
+mpirun: Error: unknown option "-f"
+Type 'mpirun --help' for usage.
+omp run trd=5, 0 sec
+mpirun: Error: unknown option "-f"
+Type 'mpirun --help' for usage.
+omp run trd=10, 0 sec
+mpirun: Error: unknown option "-f"
+Type 'mpirun --help' for usage.
+omp run trd=10, 0 sec
+mpirun: Error: unknown option "-f"
+Type 'mpirun --help' for usage.
+omp run trd=5, 0 sec
+mpirun: Error: unknown option "-f"
+Type 'mpirun --help' for usage.
+omp run trd=5, 0 sec
+mpirun: Error: unknown option "-f"
+Type 'mpirun --help' for usage.
+omp run trd=10, 0 sec
+mpirun: Error: unknown option "-f"
+Type 'mpirun --help' for usage.
+omp run trd=10, 0 sec
+mpirun: Error: unknown option "-f"
+Type 'mpirun --help' for usage.
+omp run trd=5, 0 sec
+mpirun: Error: unknown option "-f"
+Type 'mpirun --help' for usage.
+omp run trd=5, 0 sec
+mpirun: Error: unknown option "-f"
+Type 'mpirun --help' for usage.
+omp run trd=10, 0 sec
+mpirun: Error: unknown option "-f"
+Type 'mpirun --help' for usage.
+omp run trd=10, 0 sec
+------------------------------------------------------
+Running PBS epilogue script    - 08-Jun-2019 20:52:50
+------------------------------------------------------
+Checking node qb021 (MS)
+Checking node qb147 ok
+Checking node qb146 ok
+Checking node qb112 ok
+Checking node qb021 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 08-Jun-2019 20:52:57
+------------------------------------------------------
+Exit Status:     0
+Job ID:          656066.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn4_p8.mvp2.600.pbs
+Session Id:      65460
+Resource Limits: ncpus=1,neednodes=4:ppn=20,nodes=4:ppn=20,walltime=02:30:00
+Resources Used:  cput=00:00:00,mem=600kb,vmem=13500kb,walltime=00:00:01
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb021
+Process id:      66102
+------------------------------------------------------

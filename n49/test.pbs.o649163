@@ -1,0 +1,228 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    649163.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      17-May-2019 00:03
+Node:      qb023 (25210)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb023
+qb028
+qb036
+qb037
+qb039
+qb040
+qb042
+qb043
+qb044
+qb070
+qb072
+qb073
+qb076
+qb088
+qb089
+qb096
+qb099
+qb105
+qb108
+qb113
+qb115
+qb124
+qb133
+qb141
+qb142
+qb143
+qb145
+qb146
+qb148
+qb149
+qb150
+qb151
+qb153
+qb154
+qb155
+qb156
+qb157
+qb158
+qb159
+qb160
+qb161
+qb164
+qb169
+qb170
+qb173
+qb174
+qb175
+qb176
+qb177
+
+A total of 980 processors on 49 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb023 00:03:45 
+Checking node qb028 00:03:47 
+Checking node qb036 00:03:48 
+Checking node qb037 00:03:50 
+Checking node qb039 00:03:52 
+Checking node qb040 00:03:53 
+Checking node qb042 00:03:55 
+Checking node qb043 00:03:57 
+Checking node qb044 00:03:59 
+Checking node qb070 00:04:00 
+Checking node qb072 00:04:02 
+Checking node qb073 00:04:07 
+Checking node qb076 00:04:14 
+Checking node qb088 00:04:16 
+Checking node qb089 00:04:18 
+Checking node qb096 00:04:19 
+Checking node qb099 00:04:21 
+Checking node qb105 00:04:23 
+Checking node qb108 00:04:28 
+Checking node qb113 00:04:29 
+Checking node qb115 00:04:31 
+Checking node qb124 00:04:33 
+Checking node qb133 00:04:34 
+Checking node qb141 00:04:36 
+Checking node qb142 00:04:38 
+Checking node qb143 00:04:40 
+Checking node qb145 00:04:41 
+Checking node qb146 00:04:43 
+Checking node qb148 00:04:45 
+Checking node qb149 00:04:46 
+Checking node qb150 00:04:48 
+Checking node qb151 00:04:50 
+Checking node qb153 00:04:51 
+Checking node qb154 00:04:53 
+Checking node qb155 00:04:55 
+Checking node qb156 00:04:57 
+Checking node qb157 00:04:58 
+Checking node qb158 00:05:00 
+Checking node qb159 00:05:02 
+Checking node qb160 00:05:03 
+Checking node qb161 00:05:05 
+Checking node qb164 00:05:07 
+Checking node qb169 00:05:09 
+Checking node qb170 00:05:10 
+Checking node qb173 00:05:12 
+Checking node qb174 00:05:14 
+Checking node qb175 00:05:15 
+Checking node qb176 00:05:17 
+Checking node qb177 00:05:19 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 17-May-2019 00:05:19
+------------------------------------------------------
+/project/fchen14/packages/mvapich2-2.3/install/bin/mpirun
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+DIM1(24) and DIM2(24) must be multiples of processes (98)
+------------------------------------------------------
+Running PBS epilogue script    - 17-May-2019 00:10:16
+------------------------------------------------------
+Checking node qb023 (MS)
+Checking node qb177 ok
+Checking node qb176 ok
+Checking node qb175 ok
+Checking node qb174 ok
+Checking node qb173 ok
+Checking node qb170 ok
+Checking node qb169 ok
+Checking node qb164 ok
+Checking node qb161 ok
+Checking node qb160 ok
+Checking node qb159 ok
+Checking node qb158 ok
+Checking node qb157 ok
+Checking node qb156 ok
+Checking node qb155 ok
+Checking node qb154 ok
+Checking node qb153 ok
+Checking node qb151 ok
+Checking node qb150 ok
+Checking node qb149 ok
+Checking node qb148 ok
+Checking node qb146 ok
+Checking node qb145 ok
+Checking node qb143 ok
+Checking node qb142 ok
+Checking node qb141 ok
+Checking node qb133 ok
+Checking node qb124 ok
+Checking node qb115 ok
+Checking node qb113 ok
+Checking node qb108 ok
+Checking node qb105 ok
+Checking node qb099 ok
+Checking node qb096 ok
+Checking node qb089 ok
+Checking node qb088 ok
+Checking node qb076 ok
+Checking node qb073 ok
+Checking node qb072 ok
+Checking node qb070 ok
+Checking node qb044 ok
+Checking node qb043 ok
+Checking node qb042 ok
+Checking node qb040 ok
+Checking node qb039 ok
+Checking node qb037 ok
+Checking node qb036 ok
+Checking node qb028 ok
+Checking node qb023 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 17-May-2019 00:11:52
+------------------------------------------------------
+Exit Status:     271
+Job ID:          649163.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        test.pbs
+Session Id:      25209
+Resource Limits: ncpus=1,neednodes=49:ppn=20,nodes=49:ppn=20,walltime=00:15:00
+Resources Used:  cput=00:00:01,mem=7912kb,vmem=275388kb,walltime=00:04:57
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb023
+Process id:      26523
+------------------------------------------------------

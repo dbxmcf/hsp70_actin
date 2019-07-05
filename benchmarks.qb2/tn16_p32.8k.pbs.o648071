@@ -1,0 +1,237 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    648071.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      14-May-2019 16:58
+Node:      qb168 (119602)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb168
+qb172
+qb173
+qb174
+qb175
+qb176
+qb177
+qb178
+qb182
+qb183
+qb184
+qb185
+qb186
+qb187
+qb188
+qb189
+
+A total of 320 processors on 16 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb168 16:58:07 
+Checking node qb172 16:58:09 
+Checking node qb173 16:58:10 
+Checking node qb174 16:58:12 
+Checking node qb175 16:58:14 
+Checking node qb176 16:58:15 
+Checking node qb177 16:58:17 
+Checking node qb178 16:58:19 
+Checking node qb182 16:58:21 
+Checking node qb183 16:58:22 
+Checking node qb184 16:58:24 
+Checking node qb185 16:58:26 
+Checking node qb186 16:58:28 
+Checking node qb187 16:58:30 
+Checking node qb188 16:58:31 
+Checking node qb189 16:58:33 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 14-May-2019 16:58:33
+------------------------------------------------------
+using 32 processes...
+MPI process 18 is on GPU 0
+--------------------------------
+Proc 18: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 24 is on GPU 0
+--------------------------------
+Proc 24: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 0 is on GPU 0
+Input file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 26 is on GPU 0
+--------------------------------
+Proc 26: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 6 is on GPU 0
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 30 is on GPU 0
+--------------------------------
+Proc 30: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 19 is on GPU 1
+--------------------------------
+Proc 19: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 1 is on GPU 1
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 25 is on GPU 1
+--------------------------------
+Proc 25: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 27 is on GPU 1
+--------------------------------
+Proc 27: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 16 is on GPU 0
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 20 is on GPU 0
+--------------------------------
+Proc 20: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 8 is on GPU 0
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 7 is on GPU 1
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 10 is on GPU 0
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 12 is on GPU 0
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 31 is on GPU 1
+--------------------------------
+Proc 31: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 22 is on GPU 0
+--------------------------------
+Proc 22: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 14 is on GPU 0
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 4 is on GPU 0
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 17 is on GPU 1
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 21 is on GPU 1
+--------------------------------
+Proc 21: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 9 is on GPU 1
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 2 is on GPU 0
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 11 is on GPU 1
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 13 is on GPU 1
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 23 is on GPU 1
+--------------------------------
+Proc 23: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 15 is on GPU 1
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 5 is on GPU 1
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 3 is on GPU 1
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 28 is on GPU 0
+--------------------------------
+Proc 28: *** testing PHDF5 dataset collective read...
+--------------------------------
+MPI process 29 is on GPU 1
+--------------------------------
+Proc 29: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 200.160
+Elapsed time is 518.797
+Writing time is 2.125
+===================================
+PHDF5 tests finished with no errors
+===================================
+gpu run , 723 sec
+input_file =  hdf5t/sample_kinase_phosphatase_receptor_protease.h5
+save csv =  True
+validate =  False
+keys= ['cosine', 'generalised', 'normal', 'sarika', 'start_loc', 'wu']
+protein_file_name: hdf5t/sample_kinase_phosphatase_receptor_protease.json
+Traceback (most recent call last):
+  File "rebuild_mat.py", line 130, in <module>
+    with open(pn_filename) as json_file:  
+FileNotFoundError: [Errno 2] No such file or directory: 'hdf5t/sample_kinase_phosphatase_receptor_protease.json'
+------------------------------------------------------
+Running PBS epilogue script    - 14-May-2019 17:10:47
+------------------------------------------------------
+Checking node qb168 (MS)
+Checking node qb189 ; modules change (nvidia_uvm 769973 <;) ; ok
+Checking node qb188 ; modules change (nvidia_uvm 770005 <;) ; ok
+Checking node qb187 ok
+Checking node qb186 ok
+Checking node qb185 ok
+Checking node qb184 ok
+Checking node qb183 ok
+Checking node qb182 ok
+Checking node qb178 ok
+Checking node qb177 ok
+Checking node qb176 ok
+Checking node qb175 ok
+Checking node qb174 ok
+Checking node qb173 ok
+Checking node qb172 ok
+Checking node qb168 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 14-May-2019 17:11:15
+------------------------------------------------------
+Exit Status:     1
+Job ID:          648071.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn16_p32.8k.pbs
+Session Id:      119601
+Resource Limits: ncpus=1,neednodes=16:ppn=20,nodes=16:ppn=20,walltime=72:00:00
+Resources Used:  cput=00:23:09,mem=7644kb,vmem=274908kb,walltime=00:12:14
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb168
+Process id:      120441
+------------------------------------------------------

@@ -325,8 +325,8 @@ int calc_coeffs_off_diagnol_block(sint **restrict data_part_a, tint part_a_dim0,
         result_pointers_diagnol *rp)
 {
     //int i, j, idx_a, idx_b;
-    int is_diagnol = 0;
-    int is_dvc_blk_diagnol = 0;
+    boolean is_diagnol = 0;
+    boolean is_dvc_blk_diagnol = 0;
     tint idx_b_loop_start = 0;
     if (data_part_a == data_part_b) {
         is_diagnol = 1;

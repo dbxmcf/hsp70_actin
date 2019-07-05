@@ -1,0 +1,1418 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    657503.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      12-Jun-2019 13:42
+Node:      qb067 (75888)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb067
+qb068
+qb069
+qb070
+qb071
+qb072
+qb073
+qb074
+qb075
+qb076
+qb077
+qb078
+qb079
+qb080
+qb081
+qb082
+qb084
+qb085
+qb086
+qb087
+qb088
+qb089
+qb090
+qb091
+qb092
+qb093
+qb094
+qb095
+qb096
+qb097
+qb098
+qb099
+qb100
+qb101
+qb102
+qb105
+qb106
+qb107
+qb108
+qb111
+qb112
+qb116
+qb118
+qb119
+qb121
+qb122
+qb123
+qb124
+qb126
+
+A total of 980 processors on 49 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb067 13:42:39 
+Checking node qb068 13:42:41 
+Checking node qb069 13:42:43 
+Checking node qb070 13:42:45 
+Checking node qb071 13:42:46 
+Checking node qb072 13:42:48 
+Checking node qb073 13:42:50 
+Checking node qb074 13:42:52 
+Checking node qb075 13:42:53 
+Checking node qb076 13:42:55 
+Checking node qb077 13:42:57 
+Checking node qb078 13:42:59 
+Checking node qb079 13:43:00 
+Checking node qb080 13:43:02 
+Checking node qb081 13:43:04 
+Checking node qb082 13:43:05 
+Checking node qb084 13:43:07 
+Checking node qb085 13:43:09 
+Checking node qb086 13:43:11 
+Checking node qb087 13:43:12 
+Checking node qb088 13:43:14 
+Checking node qb089 13:43:16 
+Checking node qb090 13:43:18 
+Checking node qb091 13:43:19 
+Checking node qb092 13:43:21 
+Checking node qb093 13:43:23 
+Checking node qb094 13:43:25 
+Checking node qb095 13:43:26 
+Checking node qb096 13:43:28 
+Checking node qb097 13:43:30 
+Checking node qb098 13:43:31 
+Checking node qb099 13:43:33 
+Checking node qb100 13:43:35 
+Checking node qb101 13:43:37 
+Checking node qb102 13:43:38 
+Checking node qb105 13:43:40 
+Checking node qb106 13:43:42 
+Checking node qb107 13:43:44 
+Checking node qb108 13:43:45 
+Checking node qb111 13:43:47 
+Checking node qb112 13:43:49 
+Checking node qb116 13:43:51 
+Checking node qb118 13:43:52 
+Checking node qb119 13:43:54 
+Checking node qb121 13:43:56 
+Checking node qb122 13:43:57 
+Checking node qb123 13:43:59 
+Checking node qb124 13:44:01 
+Checking node qb126 13:44:03 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 12-Jun-2019 13:44:03
+------------------------------------------------------
+using 98 processes...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 64: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 52: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 67: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 84: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 80: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 40: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 88: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 48: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 75: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 32: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 56: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 91: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 96: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 72: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 35: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 27: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 28: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 63: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 60: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 83: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 65: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 59: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 53: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 43: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 44: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 92: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 36: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 71: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 85: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 81: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 24: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 87: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 41: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 89: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 49: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 47: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 51: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 68: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 31: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 33: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 57: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 97: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 76: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 73: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 34: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 26: --------------------------------
+Proc 29: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 61: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 82: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 23: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 42: --------------------------------
+Proc 45: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 66: --------------------------------
+Proc 93: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 37: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+Proc 79: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 55: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 25: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 95: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 74: --------------------------------
+Proc 46: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 50: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 69: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 77: *** testing PHDF5 dataset collective read...
+--------------------------------
+-------------CPU AFFINITY-------------
+RANK:0  CPU_SET:   0  1  2  3  4  5  6  7  8  9
+RANK:1  CPU_SET:  10 11 12 13 14 15 16 17 18 19
+-------------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+*** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 58: *** testing PHDF5 dataset collective read...
+--------------------------------
+*** testing PHDF5 dataset collective read...
+--------------------------------
+*** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 70: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 54: --------------------------------
+--------------------------------
+Proc 86: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 20: *** testing PHDF5 dataset collective read...
+--------------------------------
+*** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 30: Proc 90: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 62: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 22: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: Proc 78: *** testing PHDF5 dataset collective read...
+--------------------------------
+*** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 94: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 21: *** testing PHDF5 dataset collective read...
+--------------------------------
+*** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+*** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 18: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 19: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 39: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 38: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 31.241
+Elapsed time is 483.365
+Writing time is 0.401
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=1, 518 sec
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 19: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 71: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 51: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 45: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 87: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 95: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 85: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 91: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 83: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 29: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 77: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 61: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 31: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 39: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 75: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 55: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 67: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 53: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 35: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 63: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 59: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 23: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 93: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 69: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 21: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 43: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 41: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 97: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 81: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 73: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 33: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 27: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 37: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 57: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 89: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 25: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 65: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 49: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 47: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 79: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 26: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 50: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 44: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 86: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 94: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 90: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 82: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 76: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 38: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 74: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 54: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 66: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 52: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 36: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 34: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 62: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 58: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 22: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 18: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 92: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 68: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 70: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 20: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 42: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+-------------CPU AFFINITY-------------
+--------------------------------
+Proc 40: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 96: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 80: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 84: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 28: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 32: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 60: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 30: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 56: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 88: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 64: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 48: *** testing PHDF5 dataset collective read...
+--------------------------------
+RANK:0  CPU_SET:   0  1  2  3  4  5  6  7  8  9
+RANK:1  CPU_SET:  10 11 12 13 14 15 16 17 18 19
+-------------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 72: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 24: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 78: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 46: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 21.211
+Elapsed time is 249.841
+Writing time is 0.350
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=2, 274 sec
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 41: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 95: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 45: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 81: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 39: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 57: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 87: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 61: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 35: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 21: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 85: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 63: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 37: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 47: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 53: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 59: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 71: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 49: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 73: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 89: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 96: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 50: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 80: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 38: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 56: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 86: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 34: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 31: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 29: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 93: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 23: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 62: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 36: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 82: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 77: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 27: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 46: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 91: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 67: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 64: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 42: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 25: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 48: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 69: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 55: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 79: *** testing PHDF5 dataset collective read...
+--------------------------------
+-------------CPU AFFINITY-------------
+Proc 40: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 97: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 94: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 51: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 44: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 18: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 60: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 32: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 92: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 83: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 75: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 52: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 58: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 66: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 65: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 43: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 70: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 72: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 54: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 88: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+RANK:0  CPU_SET:   0  1  2  3  4  5  6  7  8  9
+RANK:1  CPU_SET:  10 11 12 13 14 15 16 17 18 19
+Proc 19: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 33: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 30: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 28: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 8: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 22: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 20: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 84: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 76: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 74: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 26: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 90: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 24: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 68: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 78: *** testing PHDF5 dataset collective read...
+--------------------------------
+-------------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 23.337
+Elapsed time is 110.657
+Writing time is 0.380
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=5, 137 sec
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 35: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 63: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 83: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 85: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 71: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 43: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 57: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 53: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 59: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 41: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 47: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 9: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 49: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 69: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 25: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 89: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 39: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 55: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 73: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 51: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 95: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 91: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 81: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 87: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 21: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 19: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 31: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 65: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 37: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 67: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 15: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 23: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 8: Proc 27: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 75: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 11: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 38: --------------------------------
+Proc 33: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 79: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 97: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+-------------CPU AFFINITY-------------
+Proc 34: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 82: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 86: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 70: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 56: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 58: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 40: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 64: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 46: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 22: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 48: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 68: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 24: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 88: *** testing PHDF5 dataset collective read...
+--------------------------------
+*** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 54: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 72: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 90: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 80: *** testing PHDF5 dataset collective read...
+--------------------------------
+RANK:0  CPU_SET:   0  1  2  3  4  5  6  7  8  9
+RANK:1  CPU_SET:  10 11 12 13 14 15 16 17 18 19
+-------------------------------------
+Proc 62: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 84: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 20: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 42: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 18: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 52: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 30: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 36: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 61: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 66: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 14: *** testing PHDF5 dataset collective read...
+--------------------------------
+*** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 26: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 74: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 10: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 45: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 77: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 29: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 50: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 93: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 32: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 94: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 78: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 96: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+Proc 13: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 76: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 0: --------------------------------
+Proc 60: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 44: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 28: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 92: *** testing PHDF5 dataset collective read...
+--------------------------------
+*** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 12: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 11.729
+Elapsed time is 57.811
+Writing time is 0.394
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=10, 73 sec
+------------------------------------------------------
+Running PBS epilogue script    - 12-Jun-2019 14:00:45
+------------------------------------------------------
+Checking node qb067 (MS)
+Checking node qb126 ok
+Checking node qb124 ok
+Checking node qb123 ok
+Checking node qb122 ok
+Checking node qb121 ok
+Checking node qb119 ok
+Checking node qb118 ok
+Checking node qb116 ok
+Checking node qb112 ok
+Checking node qb111 ok
+Checking node qb108 ok
+Checking node qb107 ok
+Checking node qb106 ok
+Checking node qb105 ok
+Checking node qb102 ok
+Checking node qb101 ok
+Checking node qb100 ok
+Checking node qb099 ok
+Checking node qb098 ok
+Checking node qb097 ok
+Checking node qb096 ok
+Checking node qb095 ok
+Checking node qb094 ok
+Checking node qb093 ok
+Checking node qb092 ok
+Checking node qb091 ok
+Checking node qb090 ok
+Checking node qb089 ok
+Checking node qb088 ok
+Checking node qb087 ok
+Checking node qb086 ok
+Checking node qb085 ok
+Checking node qb084 ok
+Checking node qb082 ok
+Checking node qb081 ok
+Checking node qb080 ok
+Checking node qb079 ok
+Checking node qb078 ok
+Checking node qb077 ok
+Checking node qb076 ok
+Checking node qb075 ok
+Checking node qb074 ok
+Checking node qb073 ok
+Checking node qb072 ok
+Checking node qb071 ok
+Checking node qb070 ok
+Checking node qb069 ok
+Checking node qb068 ok
+Checking node qb067 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 12-Jun-2019 14:02:10
+------------------------------------------------------
+Exit Status:     0
+Job ID:          657503.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn49_p98.mvp2.3ke.pbs
+Session Id:      75887
+Resource Limits: ncpus=1,neednodes=49:ppn=20,nodes=49:ppn=20,walltime=02:30:00
+Resources Used:  cput=01:10:47,mem=11088kb,vmem=337092kb,walltime=00:16:43
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb067
+Process id:      77269
+------------------------------------------------------

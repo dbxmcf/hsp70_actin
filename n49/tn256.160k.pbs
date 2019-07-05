@@ -1,0 +1,35 @@
+#!/bin/bash
+#PBS -l nodes=256:ppn=20
+#PBS -l walltime=6:00:00
+#PBS -q checkpt
+#-N bmk
+#PBS -j oe
+#-A hpc_hpcadmin5
+#PBS -A loni_loniadmin1
+
+cd $PBS_O_WORKDIR/..
+#module purge
+#module load mvapich2/2.0/INTEL-14.0.2
+#module load python/3.5.2-anaconda-tensorflow
+#module load hdf5/mvapich2.3-pgi-18.7
+
+export MV2_ENABLE_AFFINITY=0
+
+NPROCS=$(( $PBS_NUM_NODES*2 ))
+#echo "using $NPROCS processes..."
+##input_h5="asdf/ta8000.h5"
+input_h5="asdf/ta160000.h5"
+#input_h5="hdf5t/sample_kinase_phosphatase_receptor_protease.h5"
+#input_h5="hdf5t/sample_kinase_phosphatase_protease.h5"
+#input_h5="asdf/sample_a-b_mix_2.h5"
+#input_h5="asdf/sample_hsp70_actin.h5"
+#input_h5="asdf/ta4292.h5"
+
+which mpirun
+#export OMP_NUM_THREADS=10
+#mpirun -np $NPROCS -machinefile $PBS_NODEFILE -x OMP_NUM_THREADS -npernode 2 ./pgi.mpi.pomp.out -f $input_h5 #-v
+export OMP_NUM_THREADS=1
+mpirun -np $NPROCS -machinefile $PBS_NODEFILE -x OMP_NUM_THREADS -npernode 2 ./pgi.mpi.pacc.out -f $input_h5 -p 14
+#input_h5="asdf/ta4292.h5"
+#mpirun -np $NPROCS -f $PBS_NODEFILE -ppn 2 ./a.out -c -v
+#echo "omp run $i trd=$OMP_NUM_THREADS, $SECONDS sec"

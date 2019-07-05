@@ -1,0 +1,253 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    660028.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      20-Jun-2019 02:18
+Node:      qb423 (3292)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb423
+qb424
+qb425
+qb426
+qb456
+qb486
+qb487
+qb488
+
+A total of 160 processors on 8 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb423 02:18:12 
+Checking node qb424 02:18:14 
+Checking node qb425 02:18:16 
+Checking node qb426 02:18:17 
+Checking node qb456 02:18:19 
+Checking node qb486 02:18:21 
+Checking node qb487 02:18:23 
+Checking node qb488 02:18:24 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 20-Jun-2019 02:18:24
+------------------------------------------------------
+using 8 processes...
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+-------------CPU AFFINITY-------------
+RANK:0  CPU_SET:   0  1  2  3  4  5  6  7  8  9
+RANK:1  CPU_SET:  10 11 12 13 14 15 16 17 18 19
+-------------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 6: --------------------------------
+--------------------------------
+*** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 30.349
+Elapsed time is 5789.040
+Writing time is 1.590
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=1, 5822 sec
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+-------------CPU AFFINITY-------------
+RANK:0  CPU_SET:   0  1  2  3  4  5  6  7  8  9
+RANK:1  CPU_SET:  10 11 12 13 14 15 16 17 18 19
+-------------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 29.127
+Elapsed time is 2982.452
+Writing time is 0.286
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=2, 3014 sec
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+-------------CPU AFFINITY-------------
+RANK:0  CPU_SET:   0  1  2  3  4  5  6  7  8  9
+RANK:1  CPU_SET:  10 11 12 13 14 15 16 17 18 19
+-------------------------------------
+Reading time is 27.824
+Elapsed time is 1317.382
+Writing time is 0.269
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=5, 1347 sec
+-------------CPU AFFINITY-------------
+RANK:0  CPU_SET:   0  1  2  3  4  5  6  7  8  9
+RANK:1  CPU_SET:  10 11 12 13 14 15 16 17 18 19
+-------------------------------------
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 0: --------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+*** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 24.256
+Elapsed time is 686.600
+Writing time is 0.271
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=10, 712 sec
+-------------CPU AFFINITY-------------
+RANK:0  CPU_SET:   0  1  2  3  4  5  6  7  8  9
+RANK:1  CPU_SET:  10 11 12 13 14 15 16 17 18 19
+-------------------------------------
+Input file is: hdf5t/sample_kinase_phosphatase_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_protease.h5.res_all.h5
+--------------------------------
+Proc 0: --------------------------------
+*** testing PHDF5 dataset collective read...
+--------------------------------
+Proc 1: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 6: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 7: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 4: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 5: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 2: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 3: *** testing PHDF5 dataset collective read...
+--------------------------------
+Reading time is 28.340
+Elapsed time is 707.990
+Writing time is 0.307
+===================================
+PHDF5 tests finished with no errors
+===================================
+omp run trd=20, 739 sec
+------------------------------------------------------
+Running PBS epilogue script    - 20-Jun-2019 05:32:19
+------------------------------------------------------
+Checking node qb423 (MS)
+Checking node qb488 ok
+Checking node qb487 ok
+Checking node qb486 ok
+Checking node qb456 ok
+Checking node qb426 ok
+Checking node qb425 ok
+Checking node qb424 ok
+Checking node qb423 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 20-Jun-2019 05:32:33
+------------------------------------------------------
+Exit Status:     0
+Job ID:          660028.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn8_p8.mvp2.3ke.pbs
+Session Id:      3291
+Resource Limits: ncpus=1,neednodes=8:ppn=20,nodes=8:ppn=20,walltime=72:00:00
+Resources Used:  cput=17:41:40,mem=10192kb,vmem=336060kb,walltime=03:13:56
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb423
+Process id:      6799
+Last status:     20-Jun-2019:05:05 PBS_job=660028.qb3 user=fchen14 allocation=loni_loniadmin1 queue=checkpt total_load=16.14 cpu_hours=6.26 wall_hours=2.00 unused_nodes=4 total_nodes=8 ppn=20 avg_load=2.01 avg_cpu=199% avg_mem=5024mb avg_vmem=5382mb top_proc=fchen14:intel:qb423:5.1G:4.9G:0.7hr:201% toppm=fchen14:intel.mpi.iomp.out:qb423:5157M:5030M node_processes=0 avg_avail_mem=57638mb min_avail_mem=52636mb reverified_avg_load=5.00
+------------------------------------------------------

@@ -1,0 +1,325 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    644440.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      02-May-2019 16:31
+Node:      qb072 (109235)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb072
+qb080
+qb088
+qb136
+qb174
+qb178
+qb182
+qb183
+qb185
+qb189
+qb190
+qb191
+qb192
+qb193
+qb195
+qb196
+qb197
+qb205
+qb206
+qb208
+qb209
+qb211
+qb213
+qb217
+qb219
+qb220
+qb224
+qb225
+qb226
+qb227
+qb228
+qb229
+qb230
+qb231
+qb232
+qb233
+qb234
+qb235
+qb236
+qb237
+qb238
+qb243
+qb244
+qb245
+qb246
+qb247
+qb248
+qb250
+qb346
+
+A total of 980 processors on 49 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb072 16:31:28 
+Checking node qb080 16:31:30 
+Checking node qb088 16:31:32 
+Checking node qb136 16:31:34 
+Checking node qb174 16:31:35 
+Checking node qb178 16:31:37 
+Checking node qb182 16:31:39 
+Checking node qb183 16:31:40 
+Checking node qb185 16:31:42 
+Checking node qb189 16:31:44 
+Checking node qb190 16:31:45 
+Checking node qb191 16:31:47 
+Checking node qb192 16:31:49 
+Checking node qb193 16:31:50 
+Checking node qb195 16:31:52 
+Checking node qb196 16:31:54 
+Checking node qb197 16:31:55 
+Checking node qb205 16:31:57 
+Checking node qb206 16:31:59 
+Checking node qb208 16:32:01 
+Checking node qb209 16:32:02 
+Checking node qb211 16:32:04 
+Checking node qb213 16:32:06 
+Checking node qb217 16:32:07 
+Checking node qb219 16:32:09 
+Checking node qb220 16:32:11 
+Checking node qb224 16:32:12 
+Checking node qb225 16:32:14 
+Checking node qb226 16:32:16 
+Checking node qb227 16:32:17 
+Checking node qb228 16:32:19 
+Checking node qb229 16:32:21 
+Checking node qb230 16:32:23 
+Checking node qb231 16:32:24 
+Checking node qb232 16:32:26 
+Checking node qb233 16:32:28 
+Checking node qb234 16:32:29 
+Checking node qb235 16:32:31 
+Checking node qb236 16:32:33 
+Checking node qb237 16:32:34 
+Checking node qb238 16:32:36 
+Checking node qb243 16:32:38 
+Checking node qb244 16:32:39 
+Checking node qb245 16:32:41 
+Checking node qb246 16:32:43 
+Checking node qb247 16:32:45 
+Checking node qb248 16:32:46 
+Checking node qb250 16:32:48 
+Checking node qb346 16:32:50 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 02-May-2019 16:32:50
+------------------------------------------------------
+using 98 processes...
+--------------------------------
+Proc 16: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 17: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 18: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 19: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 22: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 23: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 24: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 25: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 32: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 33: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 30: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 31: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 34: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 35: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 26: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 27: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 36: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 37: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 42: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 43: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 38: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 45: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 44: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 39: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 46: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 48: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 49: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 47: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 52: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 53: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 50: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 51: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 60: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 61: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 58: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 59: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 62: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 63: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 64: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 65: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 72: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 73: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 28: *** testing PHDF5 dataset collective read...
+--------------------------------
+--------------------------------
+Proc 29: *** testing PHDF5 dataset collective read...
+--------------------------------
+=>> PBS: job killed: walltime 18033 exceeded limit 18000
+------------------------------------------------------
+Running PBS epilogue script    - 02-May-2019 21:33:24
+------------------------------------------------------
+Checking node qb072 (MS)
+-> Killing process of fchen14: -bash
+Checking node qb346 ok
+Checking node qb250 ok
+Checking node qb248 ok
+Checking node qb247 ok
+Checking node qb246 ok
+Checking node qb245 ok
+Checking node qb244 ok
+Checking node qb243 ok
+Checking node qb238 ok
+Checking node qb237 ok
+Checking node qb236 ok
+Checking node qb235 ok
+Checking node qb234 ok
+Checking node qb233 ok
+Checking node qb232 ok
+Checking node qb231 ok
+Checking node qb230 ok
+Checking node qb229 ok
+Checking node qb228 ok
+Checking node qb227 ok
+Checking node qb226 ok
+Checking node qb225 ok
+Checking node qb224 ok
+Checking node qb220 ok
+Checking node qb219 ok
+Checking node qb217 ok
+Checking node qb213 ok
+Checking node qb211 ok
+Checking node qb209 ok
+Checking node qb208 ok
+Checking node qb206 ok
+Checking node qb205 ok
+Checking node qb197 ok
+Checking node qb196 ok
+Checking node qb195 ok
+Checking node qb193 ok
+Checking node qb192 ok
+Checking node qb191 ok
+Checking node qb190 ok
+Checking node qb189 ok
+Checking node qb185 ok
+Checking node qb183 ok
+Checking node qb182 ok
+Checking node qb178 ok
+Checking node qb174 ok
+Checking node qb136 ok
+Checking node qb088 ok
+Checking node qb080 ok
+Checking node qb072 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 02-May-2019 21:34:47
+------------------------------------------------------
+Exit Status:     271
+Job ID:          644440.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        tn49_p98.pbs
+Session Id:      109234
+Resource Limits: ncpus=1,neednodes=49:ppn=20,nodes=49:ppn=20,walltime=05:00:00
+Resources Used:  cput=00:00:01,mem=8052kb,vmem=275440kb,walltime=05:00:34
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb072
+Process id:      115611
+Last status:     02-May-2019:21:05 PBS_job=644440.qb3 user=fchen14 allocation=loni_loniadmin1 queue=checkpt total_load=48.22 cpu_hours=170.98 wall_hours=3.61 unused_nodes=0 total_nodes=49 ppn=20 avg_load=0.98 avg_cpu=95% avg_mem=47mb avg_vmem=429mb top_proc=fchen14:pgi:qb346:101M:18M:3.6hr:100% toppm=fchen14:pgi.mpi.pomp.out:qb234:106M:23M node_processes=4 avg_avail_mem=61357mb min_avail_mem=52021mb reverified_avg_load=0.97
+------------------------------------------------------

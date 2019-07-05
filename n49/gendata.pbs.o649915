@@ -1,0 +1,45 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    649915.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      20-May-2019 10:45
+Node:      qb502 (49621)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb502
+
+A total of 48 processors on 1 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb502 10:45:48 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 20-May-2019 10:45:48
+------------------------------------------------------
+------------------------------------------------------
+Running PBS epilogue script    - 20-May-2019 11:00:31
+------------------------------------------------------
+Checking node qb502 (MS)
+Checking node qb502 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 20-May-2019 11:00:34
+------------------------------------------------------
+Exit Status:     0
+Job ID:          649915.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        gendata.pbs
+Session Id:      49620
+Resource Limits: ncpus=1,neednodes=1:ppn=48,nodes=1:ppn=48,walltime=10:15:00
+Resources Used:  cput=00:13:52,mem=205118684kb,vmem=207199860kb,walltime=00:14:45
+Queue Used:      bigmem
+Account String:  loni_loniadmin1
+Node:            qb502
+Process id:      50276
+------------------------------------------------------

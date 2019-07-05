@@ -1,0 +1,62 @@
+--------------------------------------
+Running PBS prologue script
+--------------------------------------
+User and Job Data:
+--------------------------------------
+Job ID:    646171.qb3
+Username:  fchen14
+Group:     loniadmin
+Date:      07-May-2019 20:58
+Node:      qb142 (111791)
+--------------------------------------
+PBS has allocated the following nodes:
+
+qb142
+
+A total of 20 processors on 1 nodes allocated
+---------------------------------------------
+Check nodes and clean them of stray processes
+---------------------------------------------
+Checking node qb142 20:58:40 
+Done clearing all the allocated nodes
+------------------------------------------------------
+Concluding PBS prologue script - 07-May-2019 20:58:40
+------------------------------------------------------
+using 1 processes...
+Input file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5
+Output file is: hdf5t/sample_kinase_phosphatase_receptor_protease.h5.res_all.h5
+--------------------------------
+Proc 0: *** testing PHDF5 dataset collective read...
+--------------------------------
+Error: np*2 is not a square number! Exiting...
+omp run  trd=1, 12 sec
+input_file =  hdf5t/sample_kinase_phosphatase_receptor_protease.h5
+save csv =  True
+validate =  False
+keys= ['cosine', 'generalised', 'normal', 'sarika', 'start_loc', 'wu']
+protein_file_name: hdf5t/sample_kinase_phosphatase_receptor_protease.json
+Traceback (most recent call last):
+  File "rebuild_mat.py", line 130, in <module>
+    with open(pn_filename) as json_file:  
+FileNotFoundError: [Errno 2] No such file or directory: 'hdf5t/sample_kinase_phosphatase_receptor_protease.json'
+------------------------------------------------------
+Running PBS epilogue script    - 07-May-2019 20:59:03
+------------------------------------------------------
+Checking node qb142 (MS)
+Checking node qb142 ok
+------------------------------------------------------
+Concluding PBS epilogue script - 07-May-2019 20:59:05
+------------------------------------------------------
+Exit Status:     1
+Job ID:          646171.qb3
+Username:        fchen14
+Group:           loniadmin
+Job Name:        bmk
+Session Id:      111790
+Resource Limits: ncpus=1,neednodes=1:ppn=20,nodes=1:ppn=20,walltime=72:00:00
+Resources Used:  cput=00:00:08,mem=0kb,vmem=0kb,walltime=00:00:25
+Queue Used:      checkpt
+Account String:  loni_loniadmin1
+Node:            qb142
+Process id:      112396
+------------------------------------------------------
