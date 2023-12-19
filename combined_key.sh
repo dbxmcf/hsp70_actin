@@ -16,6 +16,7 @@ output_folder="./hdf5t"
 
 # remove possible tailing slashes
 output_folder=${output_folder%/}
+mkdir -p ${output_folder}
 input_sample_folder=${input_sample_folder%/}
 
 python lf_csv2_dtype_h5.py -f "$input_sample_folder" -o "$output_folder"
