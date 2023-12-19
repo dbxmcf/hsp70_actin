@@ -11,7 +11,7 @@ echo "took $SECONDS sec."
 #cd -
 #input_sample_folder="./sample_hsp70_actin"
 input_sample_folder="./Negative_key"
-# fill in absolute path here for output
+# fill in output path here
 output_folder="./hdf5t"
 
 # remove possible tailing slashes
@@ -37,20 +37,13 @@ export SLURM_OVERLAP=1
 mpirun -np 8 ./mpichomp.out -f $input_h5
 echo "omp run trd=$OMP_NUM_THREADS, $SECONDS sec"
 
-#export OMP_NUM_THREADS=1
-#SECONDS=0
-#mpirun -np $NPROCS -f $PBS_NODEFILE -ppn 2 ./pgi.mpi.pacc.out -f $input_h5
-#echo "gpu run $i GPU, $SECONDS sec"
-
 python rebuild_mat.py -f $input_h5 -csv #-validate
 
 # fill in absolute path here for input, *must* contain the csv file
-#cd ../
 SECONDS=0
 python aa_Triplets_key_cal_without_Negative_key.py
 echo "took $SECONDS sec."
-#cd -
-#input_sample_folder="./sample_hsp70_actin"
+
 input_sample_folder="./without_Negative_key/"
 # fill in absolute path here for output
 output_folder="./hdf5t"
