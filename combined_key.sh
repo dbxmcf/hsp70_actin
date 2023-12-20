@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # fill in absolute path here for input, *must* contain the csv file
-module purge
-module load python/3.7.6
-module load mvapich2/2.3.3/intel-19.0.5-hydra
+#module purge
+#module load python/3.7.6
+#module load mvapich2/2.3.3/intel-19.0.5-hydra
 #cd ../
+# build the executable
+make -f makefile.mpich
 SECONDS=0
 python aa_Triplets_key_cal_Negative_key.py
 echo "took $SECONDS sec."
